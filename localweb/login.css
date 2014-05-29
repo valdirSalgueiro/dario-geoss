@@ -1,0 +1,51 @@
+.geral {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #3333FF;
+	text-decoration: none;
+	background-color: #0000;
+	text-align: justify;
+	vertical-align: middle;
+	word-spacing: normal;
+	white-space: normal;
+}
+.formlogin {
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #77BA2E;
+	border-right-color: #77BA2E;
+	border-bottom-color: #77BA2E;
+	border-left-color: #77BA2E;
+	width: 290px;
+	height: 100px;
+}
+.dica {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: lighter;
+	border: thin dashed #0080FF;
+	height: auto;
+	width: auto;
+	display: none;
+	position: absolute;
+	top: 125px;
+	left: 10px;
+}
+.margem {
+	margin: 5px;
+}
+.cxtext {
+	border: 1px solid #00008C;
+	background-color: #C4C4C4;
+}
