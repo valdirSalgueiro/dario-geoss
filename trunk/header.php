@@ -31,6 +31,7 @@
     <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
+			mostrarCarregando();
 			// fetch where we want to submit the form to
 			var url = $(formEl).attr('action');
 
@@ -45,19 +46,39 @@
 				dataType: 'json',
 				success: function(rsp) {
 					if(rsp.success) {
-					    $(".modal-body").html(msg);      
+					    $(modalbody).html(msg);      
 						$(myModal).modal();
 					}
+					esconderCarregando();
 				},
 				error: function (jqXHR, textStatus,  errorThrown) {
 					alert(textStatus);
 					alert(errorThrown);
+					esconderCarregando();
 					}					
 			});
 
 			// return false so the form does not actually
 			// submit to the page
 			return false;
+		}
+		
+		var pleaseWaitDiv = $("<div class='modal js-loading-bar'><div class='modal-dialog' id='modalLoading'><div class='modal-content'><div class='modal-header'><h3>Carregando...</h3></div><div class='modal-body'><div class='progress progress-striped active'><div class='progress-bar'  role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100' style='width:70%'><span class='sr-only'>Carregando...</span></div></div></div></div></div></div>");
+
+        function mostrarCarregando(){
+            pleaseWaitDiv.modal({ show: true });
+            centralizarModal();
+			$(window).resize(function () { centralizarModal(); });
+        }
+		
+        function esconderCarregando(){
+            pleaseWaitDiv.modal('hide');
+        }
+
+		function centralizarModal() {
+			var modalH = $(modalLoading).height();
+			var windowH = $(window).height();
+			$('.modal-dialog').css({ 'top': windowH/2 - modalH});
 		}
 	</script>
 	<style>
@@ -132,7 +153,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Localidade<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="cadlogradouro.php"><span class="fa star-o"></span> Logradouro</a></li>
+							<li><a href="cadlogradouro.php"><span class="fa fa-road"></span> Logradouro</a></li>
 							<li><a href="cadbairro.php"><span class="fa fa-bookmark"></span> Bairro</a></li>
 							<li><a href="cadcidade.php"><span class="fa fa-map-marker"></span> Cidade</a></li>
 							<li><a href="caduf.php"><span class="fa fa-globe"></span> Estado</a></li>	
@@ -158,16 +179,16 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ocorrência<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="cadocorrencia.php">Ocorrência</a></li>
-							<li><a href="cadorigemocorrencia.php">Origem Ocorrência</a></li>	
+							<li><a href="cadocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
+							<li><a href="cadorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>	
 						</ul>
 					</li>									
 				
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastro Despacho<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="cad_despac_sai.php">Despacho Saída</a></li>
-							<li><a href="cad_despac_retorn.php">Despacho Retorno</a></li>	
+							<li><a href="cad_despac_sai.php"><span class="fa fa-mail-forward"></span> Despacho Saída</a></li>
+							<li><a href="cad_despac_retorn.php"><span class="fa fa-mail-reply"></span> Despacho Retorno</a></li>	
 						</ul>
 					</li>	
 					
@@ -189,7 +210,7 @@
                         <h4 class="modal-title">
                             Geosweb</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="modalbody">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">

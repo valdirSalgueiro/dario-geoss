@@ -59,7 +59,7 @@ foreach($_POST as $key => $value)
 		$instance->$key = $value;
 }	
 
-$instance->insert();
+//$instance->insert();
 
 if($instance instanceof despac_sai){
 	$id=mysqli_insert_id($db);
