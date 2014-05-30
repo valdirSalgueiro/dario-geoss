@@ -1,0 +1,365 @@
+PADRONIZAÇÃO DAS SESSÕES (Exemplo de Declaração preliminar de Escopo)
+
+ 
+
+CRIAÇÃO E MANUTENÇÃO DE USUÁRIOS
+
+Administra os usuários do sistema e o que cada um pode ou não realizar.
+
+Principais funcionalidades:
+
+ 
+
+- Cadastrar, editar e excluir usuários
+
+- Cadastro de perfis de usuário
+
+- Associação entre perfis e privilégios do sistema
+
+ 
+
+CADASTRO DE ALUNOS
+
+                  ID ALUNO
+
+                  NOME
+
+                  IDADE
+
+                  DATA DE NASCIMENTO
+
+                  NOME DOS PAIS
+
+                  RESPONSÁVEL FINANCEIRO / RG / CPF
+
+                  ENDEREÇO COMPLETO
+
+                  TELEFONES DE CONTATO (CELULAR, RESIDENCIAL, TRABALHO, OUTROS)
+
+ 
+
+EXECUÇÃO DE PESQUISAS (usuários)
+
+Controla a coleta dos dados para cada usuário cadastrado.
+
+Principais funcionalidades:
+
+ 
+
+- Execução de Pesquisas usando os usuários previamente cadastrados
+
+ 
+
+INTEGRAÇÃO
+
+Permite compartilhar informações registradas no sistema com outros sistemas.
+
+Principais funcionalidades:
+
+ 
+
+- Integração com atividades, relatórios, financeiro, agenda
+
+ 
+
+ 
+
+CRIAÇÃO E MANUTENÇÃO DE ATIVIDADES
+
+Administra as atividades cadastradas no sistema.
+
+Principais funcionalidades:
+
+ 
+
+CADASTRO DE ATIVIDADES (Cadastrar, editar e excluir atividades)
+
+                  ID
+
+                  ATIVIDADE
+
+                  VAGAS
+
+                  VALORES (CHEIO / DESCONTO)
+
+ 
+
+- Associação entre perfis e privilégios do sistema
+
+ 
+
+EXECUÇÃO DE PESQUISAS (atividades)
+
+Controla a coleta dos dados para cada atividade cadastrada.
+
+Principais funcionalidades:
+
+ 
+
+- Execução de Pesquisas usando as atividades previamente cadastrados
+
+ 
+
+INTEGRAÇÃO
+
+Permite compartilhar informações registradas no sistema com outros sistemas.
+
+Principais funcionalidades:
+
+ 
+
+- Integração com atividades, relatórios, financeiro, agenda
+
+ 
+
+ 
+
+ 
+
+ 
+
+CRIAÇÃO E MANUTENÇÃO DE FUNCIONÁRIOS
+
+Administra os funcionários cadastradas no sistema.
+
+Principais funcionalidades:
+
+ 
+
+CADASTRO DE FUNCIONÁRIOS (Cadastrar, editar e excluir funcionários)
+
+                  - ID
+
+                  - NOME COMPLETO
+
+                  - DOCUMENTAÇÃO
+
+                                    CPF
+
+                                    RG
+
+                                    TÍTULO DE ELEITOR
+
+                                    ENDEREÇO
+
+                                    TELEFONE
+
+                                    FUNÇÃO
+
+                                    REMUNERAÇÃO
+
+                                    VALE TRANSPORTE
+
+                                    AUXÍLIO REFEIÇÃO
+
+                                    FILHOS MENORES
+
+ 
+
+- Associação entre perfis e privilégios do sistema
+
+ 
+
+EXECUÇÃO DE PESQUISAS (funcionários)
+
+Controla a coleta dos dados para cada funcionário cadastrado.
+
+Principais funcionalidades:
+
+ 
+
+- Execução de Pesquisas usando os funcionários previamente cadastrados
+
+ 
+
+INTEGRAÇÃO
+
+Permite compartilhar informações registradas no sistema com outros sistemas.
+
+Principais funcionalidades:
+
+ 
+
+- Integração com atividades, relatórios, financeiro, agenda
+
+ 
+
+ 
+
+CRIAÇÃO E MANUTENÇÃO DE SERVIÇOS
+
+Administra os funcionários cadastradas no sistema.
+
+Principais funcionalidades:
+
+ 
+
+CADASTRO DE SERVIÇOS (Cadastrar, editar e excluir serviços)
+
+                  - ID
+
+                  - TIPO SERVIÇO
+
+                  - NOME SERVIÇO
+
+                                    ATIVIDADES
+
+                                    TRANSPORTE ESCOLAR
+
+                                    LANCHE
+
+                                    ALMOÇO
+
+                                    LANCHONETE PAIS DE ALUNOS
+
+                                                      RELACIONAMENTO COM ID ALUNO – ABRIR CONTA PÓS-PAGO
+
+ 
+
+- Associação entre perfis e privilégios do sistema
+
+ 
+
+EXECUÇÃO DE PESQUISAS (serviços)
+
+Controla a coleta dos dados para cada serviço cadastrado.
+
+Principais funcionalidades:
+
+ 
+
+- Execução de Pesquisas usando os serviços previamente cadastrados
+
+ 
+
+INTEGRAÇÃO
+
+Permite compartilhar informações registradas no sistema com outros sistemas.
+
+Principais funcionalidades:
+
+ 
+
+- Integração com alunos, funcionários, relatórios, financeiro, agenda
+
+ 
+
+ 
+
+CRIAÇÃO E MANUTENÇÃO DE FUNCIONALIDADES - FINANCEIRO
+
+Administra os funcionários cadastradas no sistema.
+
+Principais funcionalidades:
+
+ 
+
+- CONTROLE DE CONTAS A RECEBER
+
+                  POR ALUNO
+
+                  POR VENCIMENTOS          
+
+                  RECEBIDOS
+
+                  ABERTOS
+
+                  ATRASADOS
+
+                  POR ATIVIDADE
+
+                  POR SERVIÇO
+
+ 
+
+- CONTROLE DE CONTAS A PAGAR
+
+                  CADASTRO DE CONTAS
+
+                  CADASTRO DE FORNECEDOR/CEDENTE
+
+                  CADASTRO DE VENCIMENTOS
+
+                  CONTROLE DE CONTAS EM ABERTO
+
+                  CONTROLE DE CONTAS ATRASADAS
+
+                                    EMISSÃO DE ALERTA DE VENCIMENTOS (SEMANAL E DIÁRIO)
+
+ 
+
+- FLUXO DE CAIXA DIÁRIO, SEMANAL, MENSAL SOBRE QUALQUER PERÍODO
+
+- ANÁLISE FINANCEIRA DE CLIENTES E FORNECEDORES
+
+- CONTROLE DE PAGAMENTOS
+
+- CONTROLE DE RECEBIMENTOS
+
+- CONTROLE DE CAIXA
+
+- CONTROLE DE CONTAS BANCÁRIAS
+
+- CONTROLE DE DEPÓSITOS E TRANSFERÊNCIAS
+
+                  - CONTROLE DE PAGAMENTOS
+
+                  - EMISSÃO DE BOLETO BANCÁRIO (BRADESCO)
+
+                  - BAIXA AUTOMÁTICA (arquivo retorno bancário)
+
+                  - INTERGRAÇÃO COM NOTA FISCAL ELETRÔNICA (Recife / PE)
+
+                 
+
+- Associação entre perfis e privilégios do sistema
+
+ 
+
+EXECUÇÃO DE PESQUISAS (financeiro)
+
+Controla a coleta dos dados para cada serviço / atividades financeiras relacionadas.
+
+Principais funcionalidades:
+
+ 
+
+INTEGRAÇÃO
+
+Permite compartilhar informações registradas no sistema com outros sistemas.
+
+Principais funcionalidades:
+
+ 
+
+ - Integração com alunos, relatórios, financeiro, agenda
+
+ 
+
+ 
+
+RELATÓRIOS
+
+Relatórios que auxiliam no acompanhamento, gestão e melhoria das pesquisas.
+
+Principais funcionalidades:
+
+ 
+
+- Cadastro de Alunos
+
+- Cadastro de Atividades x Alunos – Analítico
+
+- Atividades realizadas x Alunos – Sintético – Mensal
+
+- Atividades realizadas – Alunos - Sintético – Semestral
+
+- Desempenho de Atividades x Alunos – Analítico
+
+- Atividades x Alunos x Valores c/ Descontos – Analítico / Sintético
+
+- Atividades x Alunos x Valores s/ Descontos – Analítico / Sintético
+
+ 
+
+* Ferramenta de exportação para Excel, formato fornecido pelo franqueador All4Kids.

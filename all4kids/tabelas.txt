@@ -1,0 +1,76 @@
+usuario
+	id
+	email
+	senha
+	idx_nivel
+
+aluno
+	id
+	nome
+	idade
+	data_nasc
+	nome_mae
+	nome_pai
+	responsavel_nome
+	responsavel_cpf
+	responsavel_rg
+	endereco
+
+atividade
+	id
+	vagas
+
+atividade_desconto
+	descricao
+	idx_atividade
+	idx_desconto		
+
+aluno_atividade
+	idx_atividade_desconto (?)
+	idx_aluno
+
+desconto
+	id
+	nome	
+	
+telefone
+	id
+	numero
+
+telefone_aluno
+	idx_aluno
+	idx_telefone
+
+funcionario
+	id
+	idx_funcao
+	nome
+	cpf
+	rg
+	titulo
+	endereco
+	telefone
+	remuneração
+
+beneficio
+	nome
+	valor
+		vale_transporte
+		auxilio_refeicao
+
+funcionario_funcao
+	idx_funcionario
+	idx_funcao
+
+funcao
+	id
+	descricao
+
+funcionario_filho
+	idx_funcionario		
+	idx_filho
+
+filho
+	id
+	nome
+	
