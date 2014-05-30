@@ -149,6 +149,18 @@
 							<li><a href="cadservico.php"><span class="fa fa-cogs"></span> Serviço</a></li>
 							<li><a href="cadvistoria.php"><span class="glyphicon glyphicon-ok"></span> Vistoria</a></li>
 							<li><a href="cadfecharvistoria.php"><span class="glyphicon glyphicon-saved"></span> Fechar Vistoria</a></li>
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>
+							<li><a href="listarsemaforo.php"><span class="fa fa-lightbulb-o"></span> Semáforo</a></li>
+							<li><a href="listarmaterial.php"><span class="glyphicon glyphicon-tags"></span> Material</a></li>
+							<li><a href="listarequipe.php"><span class="fa fa-users"></span> Equipe</a></li>
+							<li><a href="listaracessorio.php"><span class="fa fa-wrench"></span> Acessório</a></li>
+							<li><a href="listarfornecedor.php"><span class="glyphicon glyphicon-shopping-cart"></span> Fornecedor</a></li>
+							<li><a href="listarreclamante.php"><span class="glyphicon glyphicon-tag"></span> Reclamante</a></li>
+							<li><a href="listarusuarios.php"><span class="glyphicon glyphicon-user"></span> Usuário</a></li>
+							<li><a href="listarservico.php"><span class="fa fa-cogs"></span> Serviço</a></li>
+							<li><a href="listarvistoria.php"><span class="glyphicon glyphicon-ok"></span> Vistoria</a></li>
+							<li><a href="listarfecharvistoria.php"><span class="glyphicon glyphicon-saved"></span> Fechar Vistoria</a></li>							
 						</ul>
 					</li>	
 					<li class="dropdown">
@@ -157,6 +169,11 @@
 							<li><a href="cadmodeloveic.php"><span class="fa fa-taxi"></span> Modelo de Veículo</a></li>
 							<li><a href="cadtipoveic.php"><span class="fa fa-truck"></span> Tipo de Veículo</a></li>
 							<li><a href="cadveiculo.php"><span class="fa fa-car"></span> Veículo</a></li>	
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>		
+							<li><a href="listarmodeloveic.php"><span class="fa fa-taxi"></span> Modelo de Veículo</a></li>
+							<li><a href="listartipoveic.php"><span class="fa fa-truck"></span> Tipo de Veículo</a></li>
+							<li><a href="listarveiculo.php"><span class="fa fa-car"></span> Veículo</a></li>								
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -166,6 +183,12 @@
 							<li><a href="cadbairro.php"><span class="fa fa-bookmark"></span> Bairro</a></li>
 							<li><a href="cadcidade.php"><span class="fa fa-map-marker"></span> Cidade</a></li>
 							<li><a href="caduf.php"><span class="fa fa-globe"></span> Estado</a></li>	
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>	
+							<li><a href="listarlogradouro.php"><span class="fa fa-road"></span> Logradouro</a></li>
+							<li><a href="listarbairro.php"><span class="fa fa-bookmark"></span> Bairro</a></li>
+							<li><a href="listarcidade.php"><span class="fa fa-map-marker"></span> Cidade</a></li>
+							<li><a href="listaruf.php"><span class="fa fa-globe"></span> Estado</a></li>								
 						</ul>
 					</li>
 					
@@ -173,7 +196,11 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ferramenta<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="cadferramenta.php"><span class="fa fa-gear"></span> Ferramenta</a></li>
-							<li><a href="cadkitferramenta.php"><span class="fa fa-gears"></span> Kit Ferramenta</a></li>	
+							<li><a href="cadkitferramenta.php"><span class="fa fa-gears"></span> Kit Ferramenta</a></li>
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>	
+							<li><a href="listarferramenta.php"><span class="fa fa-gear"></span> Ferramenta</a></li>
+							<li><a href="listarkitferramenta.php"><span class="fa fa-gears"></span> Kit Ferramenta</a></li>							
 						</ul>
 					</li>
 					
@@ -182,6 +209,10 @@
 						<ul class="dropdown-menu">
 							<li><a href="cadfuncionario.php"><span class="fa fa-male"></span> Funcionário</a></li>
 							<li><a href="cadfuncaofuncion.php"><span class="fa fa-pencil"></span> Função Funcionário</a></li>	
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>	
+							<li><a href="listarfuncionario.php"><span class="fa fa-male"></span> Funcionário</a></li>
+							<li><a href="listarfuncaofuncion.php"><span class="fa fa-pencil"></span> Função Funcionário</a></li>							
 						</ul>
 					</li>
 					
@@ -190,6 +221,10 @@
 						<ul class="dropdown-menu">
 							<li><a href="cadocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
 							<li><a href="cadorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>	
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>		
+							<li><a href="listarocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
+							<li><a href="listarorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>								
 						</ul>
 					</li>									
 				
@@ -198,6 +233,10 @@
 						<ul class="dropdown-menu">
 							<li><a href="cad_despac_sai.php"><span class="fa fa-mail-forward"></span> Despacho Saída</a></li>
 							<li><a href="cad_despac_retorn.php"><span class="fa fa-mail-reply"></span> Despacho Retorno</a></li>	
+							<li class="divider"></li>
+							<li class="nav-header">Editar/Remover</li>	
+							<li><a href="listardespac_sai.php"><span class="fa fa-mail-forward"></span> Despacho Saída</a></li>
+							<li><a href="listardespac_retorn.php"><span class="fa fa-mail-reply"></span> Despacho Retorno</a></li>								
 						</ul>
 					</li>	
 					
