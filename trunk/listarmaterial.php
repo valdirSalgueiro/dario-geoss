@@ -29,6 +29,8 @@ $query = "SELECT id FROM cad_material";
 				<th data-hide="phone,tablet">Vida Útil</th>
 				<th data-hide="phone,tablet">Quantidade</th>
 				<th data-hide="phone,tablet">Fornecedor</th>
+				<th>Editar</th>
+				<th>Remover</th>
             </tr>
         </thead>
 		<tbody>     
@@ -62,7 +64,7 @@ $query = "SELECT id FROM cad_material";
 						}
 					}
 				}	
-				echo "</tr>";
+				echo "<td><a href=\"cadmaterial.php?id=$material->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=material&id=$material->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

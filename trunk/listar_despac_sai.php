@@ -2,14 +2,6 @@
 require 'header.php';
 include_once("class.despac_sai.php");
 
-function startsWith($haystack, $needle)
-{
-    return $needle === "" || strpos($haystack, $needle) === 0;
-}
-function endsWith($haystack, $needle)
-{
-    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-}
 ?>
 
 <script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
@@ -29,6 +21,8 @@ function endsWith($haystack, $needle)
 				<th>Motorista</th>
 				<th>Status</th>
 				<th>Km Inicial</th>
+				<th>Editar</th>
+				<th>Remover</th>				
             </tr>        
 		</thead> 
         <tbody>  
@@ -57,7 +51,7 @@ function endsWith($haystack, $needle)
 					}						
 					
 				}	
-				echo "</tr>";
+				echo "<td><a href=\"cad_despac_sai.php?id=$despac_sai->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=despac_sai&id=$despac_sai->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

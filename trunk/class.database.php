@@ -26,11 +26,21 @@
 private static $db;
 private $connection;
 
+//$mysql_host = "mysql1.000webhost.com";
+//$mysql_database = "a9564681_geoss";
+//$mysql_user = "a9564681_geoss";
+//$mysql_password = "valdir86";
+
 private function __construct() {
   $this->host = "localhost";                  //          <<---------
   $this->password = "dariojmc";           //          <<---------
   $this->user = "root";                   //          <<---------
   $this->database = "geoss";           //          <<---------
+  
+  //$this->host = "mysql1.000webhost.com";                  //          <<---------
+  //$this->password = "valdir86";           //          <<---------
+  //$this->user = "a9564681_geoss";                   //          <<---------
+  //$this->database = "a9564681_geoss";           //          <<---------  
   $this->rows = 0;
   $this->connection = new MySQLi($this->host,$this->user,$this->password,$this->database);
 }

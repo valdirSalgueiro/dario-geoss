@@ -1,66 +1,38 @@
 ﻿<?php
 require 'header.php';
-include_once("class.os.php");
+include_once("class.vistoria.php");
+
+$db = Database::getConnection(); 
+$query = "SELECT id FROM cad_vistoria";
 ?>
 
 <script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
 <script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
+<script src="scripts/footable.js" type="text/javascript"></script>
+<link   href="css/footable.core.css" rel="stylesheet" type="text/css">
+
 
 <div class="page-header">
     <h1>
-        OS
+        Vistoria
     </h1>
 </div>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Id</th>
-				<th>Status</th>
-				<th>Data hora</th>
-				<th>Laudo Técnico</th>
-				<th>Data hora fecha</th>
+				<th>Semáforo</th>
+				<th>OS</th>
 				<th>Editar</th>
 				<th>Remover</th>
-            </tr>        
-		</thead> 
-        <tbody>  
-<?php
-		$db = Database::getConnection(); 
-		$query = "SELECT id FROM cad_os";
-		if ($result = $db->query($query)) {
-			while ($obj = $result->fetch_object()) {			
-				$os = new os();
-				$os->select($obj->id);
-				echo "<tr>";
-				foreach($os as $key => $value)
-				{
-					if(is_scalar($value)){
-						if(
-						startsWith($key,"idx_")){							
-							continue;
-						}
-						else if($key=="idx_bairro"){
-							//$bairro = new bairro();
-							//$bairro->select($semaforo->idx_bairro);
-							//echo "<td>".utf8_encode($bairro->bai_nome)."</td>";
-						}						
-						else
-							echo "<td>".utf8_encode($value)."</td>";
-					}						
-					
-				}	
-				echo "<td><a href=\"cados.php?id=$os->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=os&id=$os->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
-			}
-
-			/* free result set */
-			$result->close();
-		}
-?>
-        </tbody>
+            </tr>
+        </thead>
     </table>
 	<script>
 	$(document).ready(function() {
     $('#example').dataTable({
+	"processing": true,
+    "serverSide": true,
+    "ajax": "process.php",
 	"oLanguage": {
     "sEmptyTable":     "Nenhum registro encontrado na tabela",
     "sInfo": "Mostrar _START_ até _END_ do _TOTAL_ registros",
@@ -85,6 +57,7 @@ include_once("class.os.php");
     }
 }
 	});
+	$('#example').footable();
 } );
 	</script>
     

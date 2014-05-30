@@ -15,15 +15,6 @@ if($id){
 	$vistoria->select($id);
 }
 
-function startsWith($haystack, $needle)
-{
-    return $needle === "" || strpos($haystack, $needle) === 0;
-}
-function endsWith($haystack, $needle)
-{
-    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-}
-
 ?>
 <script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
 <script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
