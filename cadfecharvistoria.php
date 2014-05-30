@@ -10,15 +10,6 @@ include_once("class.os.php");
 
 include_once("class.fecha_vistor.php");
 
-function startsWith($haystack, $needle)
-{
-    return $needle === "" || strpos($haystack, $needle) === 0;
-}
-function endsWith($haystack, $needle)
-{
-    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-}
-
 $fecha_vistor = new fecha_vistor();
 if($id){
 	$fecha_vistor->select($id);
