@@ -135,7 +135,7 @@ EOT;
                 <input type="text" name="numero" class="form-control input-sm" placeholder="Número" value="<?php echo $fornecedor->numero?>">
               </div>       			  
               <div class="form-group col-md-6 col-md-offset-3">
-                <input type="submit" value="Cadastrar" class="btn btn-info btn-block">
+                <input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
               </div>              			  
             </form>
           </div>

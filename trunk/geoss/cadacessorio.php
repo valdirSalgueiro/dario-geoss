@@ -23,7 +23,7 @@ if($id){
                 <input type="text" name="acequipam_nome" id="first_name" class="form-control input-sm" placeholder="Descrição" value="<?php echo $acess_equipam->acequipam_nome?>">
               </div>              
 			  <div class="form-group col-md-6 col-md-offset-3">
-                <input type="submit" value="Cadastrar" class="btn btn-info btn-block">
+                <input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
               </div>
             </form>
           </div>

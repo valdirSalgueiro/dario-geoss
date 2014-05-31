@@ -22,6 +22,7 @@
 	}
 	
 	$id = post('id');
+	$textoBotao=$id?"Alterar":"Cadastrar";
 	
 ?>
 <html lang='pt-br'>
@@ -121,6 +122,8 @@
       line-height: 1;
       letter-spacing: -1px;
     }
+
+	
 	</style>
 </head>
 <body>
