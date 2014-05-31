@@ -9,6 +9,9 @@ $funcionario_beneficio = new funcionario_beneficio();
 if($id){
 	$funcionario_beneficio->select($id);
 }
+
+$mensagem="$modo".o;
+
 ?>
     <div class="row centered-form">
       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -19,7 +22,7 @@ if($id){
             </h3>
           </div>
           <div class="panel-body">
-			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Funcionario beneficio cadastrado com sucesso');">
+			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Funcionario beneficio <?php echo $mensagem ?> com sucesso');">
 			<input type="hidden" name="id" value="<?php echo $id?>"> 
 			<input type="hidden" name="type" value="funcionario_beneficio">
 

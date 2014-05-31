@@ -9,6 +9,9 @@ $aluno_atividade = new aluno_atividade();
 if($id){
 	$aluno_atividade->select($id);
 }
+
+$mensagem="$modo".a;
+
 ?>
     <div class="row centered-form">
       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -19,7 +22,7 @@ if($id){
             </h3>
           </div>
           <div class="panel-body">
-			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno atividade cadastrada com sucesso');">
+			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno atividade <?php echo $mensagem ?> com sucesso');">
 			<input type="hidden" name="id" value="<?php echo $id?>"> 
 			<input type="hidden" name="type" value="aluno_atividade">
 

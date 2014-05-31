@@ -32,7 +32,8 @@ $columns = array(
 // SQL server connection information
 $sql_details = array(
     'user' => 'root',
-    'pass' => 'dariojmc',
+    //'pass' => 'dariojmc',
+	'pass' => '',
     'db'   => 'geoss',
     'host' => 'localhost'
 );

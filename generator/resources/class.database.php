@@ -34,9 +34,9 @@
  // ********** ADJUST THESE VALUES HERE **********
  
   $this->host = "localhost";                  //          <<---------
-  $this->password = "dariojmc";           //          <<---------
+  $this->password = "";           //          <<---------
   $this->user = "root";                   //          <<---------
-  $this->database = "geoss";           //          <<---------
+  $this->database = "all4kids";           //          <<---------
   $this->rows = 0;
  
  // **********************************************

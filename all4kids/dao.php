@@ -27,6 +27,8 @@ function post($key) {
 }
 
 $type = post('type');
+$id = post('id');
+$mode= post('mode');
 
 $resp = new stdClass();	
 $resp->success = false;
@@ -39,7 +41,17 @@ foreach($_POST as $key => $value)
 		$instance->$key = $value;
 }	
 
-$instance->insert();
+if($id){		
+	if($mode){
+		$instance->delete($id);
+	}
+	else{
+		$instance->update($id);
+	}
+}
+else{
+	$instance->insert();
+}
 
 $resp->success = true;
 
