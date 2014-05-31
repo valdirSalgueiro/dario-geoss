@@ -17,7 +17,7 @@ $query = "SELECT id FROM cad_bairro";
         Bairro
     </h1>
 </div>
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table table-hover table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
 				<th>Nome</th>
@@ -84,6 +84,8 @@ $query = "SELECT id FROM cad_bairro";
 }
 	});
 	$('#example').footable();
+	
+
 } );
 	</script>
     

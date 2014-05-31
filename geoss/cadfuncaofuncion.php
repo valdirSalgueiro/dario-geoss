@@ -23,7 +23,7 @@ if($id){
                 <input type="text" name="funcao_nome" class="form-control input-sm" placeholder="Nome" value="<?php echo utf8_encode($funcao_funcion->funcao_nome)?>">
               </div>
               <div class="form-group col-md-6 col-md-offset-3">
-                <input type="submit" value="Cadastrar" class="btn btn-info btn-block">
+                <input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
               </div>              			  
             </form>
           </div>
