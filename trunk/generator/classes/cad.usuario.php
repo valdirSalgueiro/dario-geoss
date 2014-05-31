@@ -27,18 +27,18 @@ $mensagem="$modo".o;
 			<input type="hidden" name="type" value="usuario">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="email" class="form-control input-sm" placeholder="Email" value="<?php echo $usuario->email?>">
+                <input type="text" name="email" class=" form-control input-sm"  placeholder="Email" value="<?php echo $usuario->email?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="senha" class="form-control input-sm" placeholder="Senha" value="<?php echo $usuario->senha?>">
+                <input type="text" name="senha" class=" form-control input-sm"  placeholder="Senha" value="<?php echo $usuario->senha?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_nivel">
-					<option value="0">Selecione uma Nivel</option>
+					<option value="0">Selecione um Nivel</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome

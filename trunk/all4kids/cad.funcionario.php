@@ -27,43 +27,43 @@ $mensagem="$modo".o;
 			<input type="hidden" name="type" value="funcionario">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $funcionario->nome?>">
+                <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $funcionario->nome?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="cpf" class="form-control input-sm" placeholder="Cpf" value="<?php echo $funcionario->cpf?>">
+                <input type="text" name="cpf" class=" form-control input-sm"  placeholder="Cpf" value="<?php echo $funcionario->cpf?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="rg" class="form-control input-sm" placeholder="Rg" value="<?php echo $funcionario->rg?>">
+                <input type="text" name="rg" class=" form-control input-sm"  placeholder="Rg" value="<?php echo $funcionario->rg?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="titulo" class="form-control input-sm" placeholder="Titulo" value="<?php echo $funcionario->titulo?>">
+                <input type="text" name="titulo" class=" form-control input-sm"  placeholder="Titulo" value="<?php echo $funcionario->titulo?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="endereco" class="form-control input-sm" placeholder="Endereco" value="<?php echo $funcionario->endereco?>">
+                <input type="text" name="endereco" class=" form-control input-sm"  placeholder="Endereco" value="<?php echo $funcionario->endereco?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="telefone" class="form-control input-sm" placeholder="Telefone" value="<?php echo $funcionario->telefone?>">
+                <input type="text" name="telefone" class=" form-control input-sm"  placeholder="Telefone" value="<?php echo $funcionario->telefone?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="remuneracao" class="form-control input-sm" placeholder="Remuneracao" value="<?php echo $funcionario->remuneracao?>">
+                <input type="text" name="remuneracao" class=" form-control input-sm"  placeholder="Remuneracao" value="<?php echo $funcionario->remuneracao?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_funcao">
-					<option value="0">Selecione uma Funcao</option>
+					<option value="0">Selecione um Funcao</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome

@@ -27,7 +27,7 @@ $mensagem="$modo".a;
 			<input type="hidden" name="type" value="telefone">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="numero" class="form-control input-sm" placeholder="Numero" value="<?php echo $telefone->numero?>">
+                <input type="text" name="numero" class=" form-control input-sm"  placeholder="Numero" value="<?php echo $telefone->numero?>">
 			                
 		</div>
 		

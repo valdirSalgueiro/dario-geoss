@@ -27,7 +27,7 @@ $mensagem="$modo".a;
 			<input type="hidden" name="type" value="nivel">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $nivel->nome?>">
+                <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $nivel->nome?>">
 			                
 		</div>
 		

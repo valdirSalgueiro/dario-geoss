@@ -27,13 +27,13 @@ $mensagem="$modo".o;
 			<input type="hidden" name="type" value="atividade_desconto">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $atividade_desconto->nome?>">
+                <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $atividade_desconto->nome?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_atividade">
-					<option value="0">Selecione uma Atividade</option>
+					<option value="0">Selecione um Atividade</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome
@@ -51,7 +51,7 @@ $mensagem="$modo".o;
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_desconto">
-					<option value="0">Selecione uma Desconto</option>
+					<option value="0">Selecione um Desconto</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome

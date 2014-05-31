@@ -28,7 +28,7 @@ $mensagem="$modo".o;
 
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_funcionario">
-					<option value="0">Selecione uma Funcionario</option>
+					<option value="0">Selecione um Funcionario</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome
@@ -46,7 +46,7 @@ $mensagem="$modo".o;
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_funcao">
-					<option value="0">Selecione uma Funcao</option>
+					<option value="0">Selecione um Funcao</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome

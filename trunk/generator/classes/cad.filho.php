@@ -27,7 +27,7 @@ $mensagem="$modo".o;
 			<input type="hidden" name="type" value="filho">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $filho->nome?>">
+                <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $filho->nome?>">
 			                
 		</div>
 		

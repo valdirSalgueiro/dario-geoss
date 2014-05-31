@@ -28,7 +28,7 @@ $mensagem="$modo".o;
 
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_aluno">
-					<option value="0">Selecione uma Aluno</option>
+					<option value="0">Selecione um Aluno</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome
@@ -46,16 +46,16 @@ $mensagem="$modo".o;
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_telefone">
-					<option value="0">Selecione uma Telefone</option>
+					<option value="0">Selecione um Telefone</option>
 					<?php
 						$db = Database::getConnection();
-						$sql = "SELECT id, nome
+						$sql = "SELECT id, numero
 								FROM telefone
-								ORDER BY nome";
+								ORDER BY numero";
 						$res = $db->query( $sql );
 						while ( $row = $res->fetch_assoc() ) {
 							$checked=($telefone_aluno->idx_telefone==$row['id'])?"selected":"";
-							echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['nome'].'</option>';
+							echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['numero'].'</option>';
 						}
 					?>
 			  </select>
