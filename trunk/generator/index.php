@@ -848,6 +848,7 @@ $cHeader="
 						<ul class=\"dropdown-menu\">";
 foreach($classes as $bla){
 	$blaUper=ucfirst($bla);
+	$blaUper=str_replace("_", " ",$blaUper);
 	$cHeader.="
 	<li><a href=\"cad.$bla.php\"> $blaUper</a></li>
 	";		
