@@ -143,71 +143,71 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Geral<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-	<li><a href="classes/cad.aluno.php"> Aluno</a></li>
+	<li><a href="cad.aluno.php"> Aluno</a></li>
 	
-	<li><a href="classes/cad.aluno_atividade.php"> Aluno_atividade</a></li>
+	<li><a href="cad.aluno_atividade.php"> Aluno_atividade</a></li>
 	
-	<li><a href="classes/cad.atividade.php"> Atividade</a></li>
+	<li><a href="cad.atividade.php"> Atividade</a></li>
 	
-	<li><a href="classes/cad.atividade_desconto.php"> Atividade_desconto</a></li>
+	<li><a href="cad.atividade_desconto.php"> Atividade_desconto</a></li>
 	
-	<li><a href="classes/cad.beneficio.php"> Beneficio</a></li>
+	<li><a href="cad.beneficio.php"> Beneficio</a></li>
 	
-	<li><a href="classes/cad.desconto.php"> Desconto</a></li>
+	<li><a href="cad.desconto.php"> Desconto</a></li>
 	
-	<li><a href="classes/cad.filho.php"> Filho</a></li>
+	<li><a href="cad.filho.php"> Filho</a></li>
 	
-	<li><a href="classes/cad.funcao.php"> Funcao</a></li>
+	<li><a href="cad.funcao.php"> Funcao</a></li>
 	
-	<li><a href="classes/cad.funcionario.php"> Funcionario</a></li>
+	<li><a href="cad.funcionario.php"> Funcionario</a></li>
 	
-	<li><a href="classes/cad.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
+	<li><a href="cad.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
 	
-	<li><a href="classes/cad.funcionario_filho.php"> Funcionario_filho</a></li>
+	<li><a href="cad.funcionario_filho.php"> Funcionario_filho</a></li>
 	
-	<li><a href="classes/cad.funcionario_funcao.php"> Funcionario_funcao</a></li>
+	<li><a href="cad.funcionario_funcao.php"> Funcionario_funcao</a></li>
 	
-	<li><a href="classes/cad.nivel.php"> Nivel</a></li>
+	<li><a href="cad.nivel.php"> Nivel</a></li>
 	
-	<li><a href="classes/cad.telefone.php"> Telefone</a></li>
+	<li><a href="cad.telefone.php"> Telefone</a></li>
 	
-	<li><a href="classes/cad.telefone_aluno.php"> Telefone_aluno</a></li>
+	<li><a href="cad.telefone_aluno.php"> Telefone_aluno</a></li>
 	
-	<li><a href="classes/cad.usuario.php"> Usuario</a></li>
+	<li><a href="cad.usuario.php"> Usuario</a></li>
 						
 							<li class="divider"></li>
 							<li class="nav-header">Editar/Remover</li>					
-	<li><a href="classes/list.aluno.php"> Aluno</a></li>
+	<li><a href="list.aluno.php"> Aluno</a></li>
 						
-	<li><a href="classes/list.aluno_atividade.php"> Aluno_atividade</a></li>
+	<li><a href="list.aluno_atividade.php"> Aluno_atividade</a></li>
 						
-	<li><a href="classes/list.atividade.php"> Atividade</a></li>
+	<li><a href="list.atividade.php"> Atividade</a></li>
 						
-	<li><a href="classes/list.atividade_desconto.php"> Atividade_desconto</a></li>
+	<li><a href="list.atividade_desconto.php"> Atividade_desconto</a></li>
 						
-	<li><a href="classes/list.beneficio.php"> Beneficio</a></li>
+	<li><a href="list.beneficio.php"> Beneficio</a></li>
 						
-	<li><a href="classes/list.desconto.php"> Desconto</a></li>
+	<li><a href="list.desconto.php"> Desconto</a></li>
 						
-	<li><a href="classes/list.filho.php"> Filho</a></li>
+	<li><a href="list.filho.php"> Filho</a></li>
 						
-	<li><a href="classes/list.funcao.php"> Funcao</a></li>
+	<li><a href="list.funcao.php"> Funcao</a></li>
 						
-	<li><a href="classes/list.funcionario.php"> Funcionario</a></li>
+	<li><a href="list.funcionario.php"> Funcionario</a></li>
 						
-	<li><a href="classes/list.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
+	<li><a href="list.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
 						
-	<li><a href="classes/list.funcionario_filho.php"> Funcionario_filho</a></li>
+	<li><a href="list.funcionario_filho.php"> Funcionario_filho</a></li>
 						
-	<li><a href="classes/list.funcionario_funcao.php"> Funcionario_funcao</a></li>
+	<li><a href="list.funcionario_funcao.php"> Funcionario_funcao</a></li>
 						
-	<li><a href="classes/list.nivel.php"> Nivel</a></li>
+	<li><a href="list.nivel.php"> Nivel</a></li>
 						
-	<li><a href="classes/list.telefone.php"> Telefone</a></li>
+	<li><a href="list.telefone.php"> Telefone</a></li>
 						
-	<li><a href="classes/list.telefone_aluno.php"> Telefone_aluno</a></li>
+	<li><a href="list.telefone_aluno.php"> Telefone_aluno</a></li>
 						
-	<li><a href="classes/list.usuario.php"> Usuario</a></li>
+	<li><a href="list.usuario.php"> Usuario</a></li>
 	
 						</ul>
 					</li>	
