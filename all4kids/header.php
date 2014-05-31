@@ -33,14 +33,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
-    <script type="text/javascript" src="scripts/ReView0.65b.js"></script>
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/datepicker.css" rel="stylesheet"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
     <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="scripts/bootstrap-datepicker.js"></script>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -122,6 +121,13 @@
 			var windowH = $(window).height();
 			$('.modal-dialog').css({ 'top': windowH/2 - modalH});
 		}
+		
+		$(document).ready(function() {
+				if(typeof $('.datepicker') != 'undefined')
+					$('.datepicker').datepicker();
+			}
+		);
+
 	</script>
 	<style>
 
@@ -176,11 +182,11 @@
 						<ul class="dropdown-menu">
 	<li><a href="cad.aluno.php"> Aluno</a></li>
 	
-	<li><a href="cad.aluno_atividade.php"> Aluno_atividade</a></li>
+	<li><a href="cad.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
 	
 	<li><a href="cad.atividade.php"> Atividade</a></li>
 	
-	<li><a href="cad.atividade_desconto.php"> Atividade_desconto</a></li>
+	<li><a href="cad.atividade_desconto.php"> Atividade desconto</a></li>
 	
 	<li><a href="cad.beneficio.php"> Beneficio</a></li>
 	
@@ -192,17 +198,17 @@
 	
 	<li><a href="cad.funcionario.php"> Funcionario</a></li>
 	
-	<li><a href="cad.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
+	<li><a href="cad.funcionario_beneficio.php"> Funcionario beneficio</a></li>
 	
-	<li><a href="cad.funcionario_filho.php"> Funcionario_filho</a></li>
+	<li><a href="cad.funcionario_filho.php"> Funcionario filho</a></li>
 	
-	<li><a href="cad.funcionario_funcao.php"> Funcionario_funcao</a></li>
+	<li><a href="cad.funcionario_funcao.php"> Funcionario funcao</a></li>
 	
 	<li><a href="cad.nivel.php"> Nivel</a></li>
 	
 	<li><a href="cad.telefone.php"> Telefone</a></li>
 	
-	<li><a href="cad.telefone_aluno.php"> Telefone_aluno</a></li>
+	<li><a href="cad.telefone_aluno.php"> Telefone aluno</a></li>
 	
 	<li><a href="cad.usuario.php"> Usuario</a></li>
 						
@@ -210,11 +216,11 @@
 							<li class="nav-header">Editar/Remover</li>					
 	<li><a href="list.aluno.php"> Aluno</a></li>
 						
-	<li><a href="list.aluno_atividade.php"> Aluno_atividade</a></li>
+	<li><a href="list.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
 						
 	<li><a href="list.atividade.php"> Atividade</a></li>
 						
-	<li><a href="list.atividade_desconto.php"> Atividade_desconto</a></li>
+	<li><a href="list.atividade_desconto.php"> Atividade desconto</a></li>
 						
 	<li><a href="list.beneficio.php"> Beneficio</a></li>
 						
@@ -226,17 +232,17 @@
 						
 	<li><a href="list.funcionario.php"> Funcionario</a></li>
 						
-	<li><a href="list.funcionario_beneficio.php"> Funcionario_beneficio</a></li>
+	<li><a href="list.funcionario_beneficio.php"> Funcionario beneficio</a></li>
 						
-	<li><a href="list.funcionario_filho.php"> Funcionario_filho</a></li>
+	<li><a href="list.funcionario_filho.php"> Funcionario filho</a></li>
 						
-	<li><a href="list.funcionario_funcao.php"> Funcionario_funcao</a></li>
+	<li><a href="list.funcionario_funcao.php"> Funcionario funcao</a></li>
 						
 	<li><a href="list.nivel.php"> Nivel</a></li>
 						
 	<li><a href="list.telefone.php"> Telefone</a></li>
 						
-	<li><a href="list.telefone_aluno.php"> Telefone_aluno</a></li>
+	<li><a href="list.telefone_aluno.php"> Telefone aluno</a></li>
 						
 	<li><a href="list.usuario.php"> Usuario</a></li>
 	

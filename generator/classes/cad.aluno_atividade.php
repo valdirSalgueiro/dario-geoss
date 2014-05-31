@@ -28,7 +28,7 @@ $mensagem="$modo".a;
 
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_atividade_desconto">
-					<option value="0">Selecione uma Atividade</option>
+					<option value="0">Selecione um Atividade</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome
@@ -46,7 +46,7 @@ $mensagem="$modo".a;
 		
 	<div class="form-group col-md-12">
 			  <select class="form-control input-sm" name="idx_aluno">
-					<option value="0">Selecione uma Aluno</option>
+					<option value="0">Selecione um Aluno</option>
 					<?php
 						$db = Database::getConnection();
 						$sql = "SELECT id, nome

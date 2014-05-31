@@ -27,12 +27,12 @@ $mensagem="$modo".o;
 			<input type="hidden" name="type" value="beneficio">
 
 	<div class="form-group col-md-12">
-                <input type="text" name="nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $beneficio->nome?>">
+                <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $beneficio->nome?>">
 			                
 		</div>
 		
 	<div class="form-group col-md-12">
-                <input type="text" name="valor" class="form-control input-sm" placeholder="Valor" value="<?php echo $beneficio->valor?>">
+                <input type="text" name="valor" class=" form-control input-sm"  placeholder="Valor" value="<?php echo $beneficio->valor?>">
 			                
 		</div>
 		

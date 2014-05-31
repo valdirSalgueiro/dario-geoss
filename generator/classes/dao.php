@@ -1,6 +1,6 @@
 <?php
 include_once("class.aluno.php");
-include_once("class.aluno_atividade.php");
+include_once("class.aluno_atividade_desconto.php");
 include_once("class.atividade.php");
 include_once("class.atividade_desconto.php");
 include_once("class.beneficio.php");

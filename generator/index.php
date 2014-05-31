@@ -31,6 +31,8 @@ if(file_exists($header))
 unlink($header);
 }
 
+$classes = [];
+
 while ($row = mysql_fetch_row($tablelist)) {
 
 // fill parameters from form
@@ -140,6 +142,7 @@ $countColumns=0;
 while ($row = mysql_fetch_row($result)) 
 {
 	$col=$row[0];
+	$tipocol=$row[1];
 	
 	if($col!=$key)
 	{
@@ -156,11 +159,15 @@ while ($row = mysql_fetch_row($result))
 			$partesUper=ucfirst($partes[1]);
 			
 			$tabela=$partes[1];
+			if($partes[2]){
+				$tabela.="_".$partes[2];
+			}
 			$sql1 = "SHOW COLUMNS FROM $tabela;";
 
 			$database->query($sql1);
 			$result1 = $database->result;
 			
+			$cols = [];
 			while ($row1 = mysql_fetch_row($result1)) 
 			{
 				$cols[].=$row1[0];
@@ -168,7 +175,7 @@ while ($row = mysql_fetch_row($result))
 			$coluna=$cols[1];
 			$cad.="
 			  <select class=\"form-control input-sm\" name=\"$col\">
-					<option value=\"0\">Selecione uma $partesUper</option>
+					<option value=\"0\">Selecione um $partesUper</option>
 					<?php
 						\$db = Database::getConnection();
 						\$sql = \"SELECT id, $coluna
@@ -185,9 +192,16 @@ while ($row = mysql_fetch_row($result))
 			  
 		}
 		else{
+			$datepicker1="";
+			$datepicker2="";
+			if($tipocol=="datetime"){
+				$datepicker1="datepicker";
+				$datepicker2="data-date-format=\"yyyy-mm-dd\"";
+			}
+			//class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd"
 			$lis.="<th>$colUper</th>";
 			$cad.= "
-                <input type=\"text\" name=\"$col\" class=\"form-control input-sm\" placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
+                <input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
 			  ";
 			$serv.="
 				array( 'db' => '$col', 'dt' => $countColumns ),
@@ -705,14 +719,13 @@ $cHeader="
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <!--meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"-->
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
-    <script type=\"text/javascript\" src=\"scripts/ReView0.65b.js\"></script>
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
     <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\"/>
 	<link href=\"css/datepicker.css\" rel=\"stylesheet\"/>
-	<link rel=\"stylesheet\" href=\"css/font-awesome.min.css\"/>
     <script type=\"text/javascript\" language=\"javascript\" src=\"scripts/jquery-1.11.1.min.js\"></script>
     <script type=\"text/javascript\" language=\"javascript\" src=\"scripts/bootstrap.min.js\"></script>
+	<script type=\"text/javascript\" language=\"javascript\" src=\"scripts/bootstrap-datepicker.js\"></script>
 	<script type=\"text/javascript\">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -794,6 +807,13 @@ $cHeader="
 			var windowH = \$(window).height();
 			\$('.modal-dialog').css({ 'top': windowH/2 - modalH});
 		}
+		
+		$(document).ready(function() {
+				if(typeof $('.datepicker') != 'undefined')
+					$('.datepicker').datepicker();
+			}
+		);
+
 	</script>
 	<style>
 
@@ -858,7 +878,8 @@ $cHeader.=
 							<li class=\"divider\"></li>
 							<li class=\"nav-header\">Editar/Remover</li>";
 foreach($classes as $bla){	
-	$blaUper=ucfirst($bla);						
+	$blaUper=ucfirst($bla);	
+	$blaUper=str_replace("_", " ",$blaUper);	
 	$cHeader.="					
 	<li><a href=\"list.$bla.php\"> $blaUper</a></li>
 	";

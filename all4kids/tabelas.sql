@@ -35,7 +35,7 @@ CREATE TABLE `atividade_desconto` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `aluno_atividade` (
+CREATE TABLE `aluno_atividade_desconto` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_atividade_desconto` int(10) NOT NULL,
   `idx_aluno` int(10) NOT NULL,
