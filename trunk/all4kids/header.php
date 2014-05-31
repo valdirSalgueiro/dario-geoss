@@ -24,6 +24,7 @@
 	
 	$id = post('id')==0?0:post('id');
 	$textoBotao=$id?"Alterar":"Cadastrar";
+	$modo=$id?"alterad":"cadastrad";
 	
 ?>
 <html lang='pt-br'>
@@ -59,6 +60,36 @@
 					if(rsp.success) {
 					    $(modalbody).html(msg);      
 						$(myModal).modal();
+					}
+					esconderCarregando();
+				},
+				error: function (jqXHR, textStatus,  errorThrown) {
+					alert(textStatus);
+					alert(errorThrown);
+					esconderCarregando();
+					}					
+			});
+
+			// return false so the form does not actually
+			// submit to the page
+			return false;
+		}
+		
+		var table;
+		function apagar(tipo,id) {
+			mostrarCarregando();
+
+			// setup the ajax request
+			$.ajax({
+				url: 'dao.php',
+				data: 'mode=deletar&type='+tipo+'&id='+id,
+				type: 'POST',
+				dataType: 'json',
+				success: function(rsp) {
+					if(rsp.success) {
+					    $(modalbody).html("Removido com sucesso!");      
+						$(myModal).modal();
+						tableAjax.fnDraw();
 					}
 					esconderCarregando();
 				},

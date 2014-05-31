@@ -9,6 +9,9 @@ $atividade_desconto = new atividade_desconto();
 if($id){
 	$atividade_desconto->select($id);
 }
+
+$mensagem="$modo".o;
+
 ?>
     <div class="row centered-form">
       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -19,7 +22,7 @@ if($id){
             </h3>
           </div>
           <div class="panel-body">
-			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Atividade desconto cadastrado com sucesso');">
+			<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Atividade desconto <?php echo $mensagem ?> com sucesso');">
 			<input type="hidden" name="id" value="<?php echo $id?>"> 
 			<input type="hidden" name="type" value="atividade_desconto">
 

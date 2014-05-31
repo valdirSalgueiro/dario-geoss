@@ -50,11 +50,13 @@ function removerMaterial(removerId){
 </script>
 
 <?php
+
+$desp_id=$despac_sai->id==0?0:$despac_sai->id;
 echo <<<EOT
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
 	$('.datepicker').datepicker();
-	if($despac_sai->id){
+	if($desp_id){
 		var array="$materialid".split(",");
 		var arrayText="$material".split(",");
 		var arrayQtd="$quantidade".split(",");

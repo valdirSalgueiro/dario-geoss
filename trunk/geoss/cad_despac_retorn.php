@@ -85,11 +85,12 @@ if($despac_retorn->id){
 </script>
 
 <?php
+$desp_id=$despac_retorn->id==0?0:$despac_retorn->id;
 echo <<<EOT
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
 	$('.datepicker').datepicker();
-	if($despac_retorn->id){
+	if($desp_id){
 		var array="$materialid".split(",");
 		var arrayText="$material".split(",");
 		var arrayQtd="$quantidade".split(",");
