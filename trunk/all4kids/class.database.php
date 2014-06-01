@@ -27,16 +27,13 @@ private static $db;
 private $connection;
 
 private function __construct() {
+///*
   $this->host = "localhost";                  //          <<---------
-  //$this->password = "dariojmc";           //          <<---------
   $this->password = "";           //          <<---------
   $this->user = "root";                   //          <<---------
   $this->database = "all4kids";           //          <<---------
-  
-  //$this->host = "mysql1.000webhost.com";                  //          <<---------
-  //$this->password = "valdir86";           //          <<---------
-  //$this->user = "a9564681_geoss";                   //          <<---------
-  //$this->database = "a9564681_geoss";           //          <<---------  
+  //*/  
+
   $this->rows = 0;
   $this->connection = new MySQLi($this->host,$this->user,$this->password,$this->database);
 }
