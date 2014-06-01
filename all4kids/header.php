@@ -30,16 +30,15 @@
 <html lang='pt-br'>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
-    <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/datepicker.css" rel="stylesheet"/>
-    <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
-	<script type="text/javascript" language="javascript" src="scripts/bootstrap-datepicker.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -129,57 +128,81 @@
 		);
 
 	</script>
-	<style>
+<style type="text/css">
 
-    /* Featurettes
-    ------------------------- */
+      /* Sticky footer styles
+      -------------------------------------------------- */
 
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
-    }
-    .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
 
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
 
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
 
-	
-	</style>
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+      code {
+        font-size: 80%;
+      }
+
+    </style>
 </head>
 <body>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">
-                        Toggle
-                        navigation
-                    </span>
-                </button> <a class="navbar-brand" href='index.php'>All4Kids</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Geral<b class="caret"></b></a>
-						<ul class="dropdown-menu">
+            <div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index-2.html"><img src="images/logo.gif" alt="Magicreche. Responsive site theme for Creche, Playschool, Preschool and Montessori." class="img-responsive"></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class=""><a href="#home">HOME</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">ALL4KIDS <b class="caret"></b></a>
+							<ul class="dropdown-menu">
 	<li><a href="cad.aluno.php"> Aluno</a></li>
 	
 	<li><a href="cad.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
@@ -212,8 +235,11 @@
 	
 	<li><a href="cad.usuario.php"> Usuario</a></li>
 						
-							<li class="divider"></li>
-							<li class="nav-header">Editar/Remover</li>					
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Listagens <b class="caret"></b></a>
+							<ul class="dropdown-menu">					
 	<li><a href="list.aluno.php"> Aluno</a></li>
 						
 	<li><a href="list.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
@@ -279,5 +305,3 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-<div class="container">
-	<br><br><br>

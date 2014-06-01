@@ -81,13 +81,6 @@ CREATE TABLE `beneficio` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `funcionario_funcao` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `idx_funcionario` int(10) NOT NULL,
-  `idx_funcao` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
 CREATE TABLE `funcionario_beneficio` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_funcionario` int(10) NOT NULL,
@@ -119,6 +112,8 @@ CREATE TABLE `nivel` (
   `nome` tinytext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO usuario (email,senha) values ('vns',123);
 
 -- DROP TABLE usuario;
 -- DROP TABLE aluno;

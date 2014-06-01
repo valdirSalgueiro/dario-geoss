@@ -1,6 +1,11 @@
 
 <?php
 
+include_once("class.database.php");
+
+$db = Database::getDb(); 
+
+
 $table = 'aluno';
  
 $primaryKey = 'id';
@@ -42,12 +47,13 @@ $columns = array(
     ),
 	
 );
+  
  
 $sql_details = array(
-    'user' => 'root',
-	'pass' => '',
-    'db'   => 'all4kids',
-    'host' => 'localhost'
+    'user' => $db->user,
+	'pass' => $db->password,
+    'db'   => $db->database,
+    'host' => $db->host
 );
  
 require( 'ssp.class.php' );
