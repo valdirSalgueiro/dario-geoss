@@ -13,7 +13,8 @@ if($id){
 $mensagem="$modo".a;
 
 ?>
-		<section id="contact" class="background1 background-image" style="margin-top:160px">
+		<section id="contact" class="background1 background-image" style="margin-top:160px;min-height: 67%;
+    height: 67%;">
 			<div class="container">
 				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
 					<div class="col-sm-12">
