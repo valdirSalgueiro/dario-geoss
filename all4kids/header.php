@@ -75,7 +75,7 @@
 			return false;
 		}
 		
-		var table;
+		var tableAjax;
 		function apagar(tipo,id) {
 			mostrarCarregando();
 
@@ -171,8 +171,6 @@
 	
 	<li><a href="cad.funcionario_filho.php"> Funcionario filho</a></li>
 	
-	<li><a href="cad.funcionario_funcao.php"> Funcionario funcao</a></li>
-	
 	<li><a href="cad.nivel.php"> Nivel</a></li>
 	
 	<li><a href="cad.telefone.php"> Telefone</a></li>
@@ -207,8 +205,6 @@
 	<li><a href="list.funcionario_beneficio.php"> Funcionario beneficio</a></li>
 						
 	<li><a href="list.funcionario_filho.php"> Funcionario filho</a></li>
-						
-	<li><a href="list.funcionario_funcao.php"> Funcionario funcao</a></li>
 						
 	<li><a href="list.nivel.php"> Nivel</a></li>
 						

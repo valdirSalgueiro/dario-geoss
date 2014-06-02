@@ -10,7 +10,6 @@ include_once("class.funcao.php");
 include_once("class.funcionario.php");
 include_once("class.funcionario_beneficio.php");
 include_once("class.funcionario_filho.php");
-include_once("class.funcionario_funcao.php");
 include_once("class.nivel.php");
 include_once("class.telefone.php");
 include_once("class.telefone_aluno.php");
