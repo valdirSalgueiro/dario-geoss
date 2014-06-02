@@ -15,7 +15,7 @@ include_once("class.database.php");
 	<script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
     <title></title>
 	<script type="text/javascript">
-		var ajaxSubmit = function(formEl) {
+		var ajaxSubmit = function(formEl, msg) {
 			// fetch where we want to submit the form to
 			var url = $(formEl).attr('action');
 
@@ -30,7 +30,15 @@ include_once("class.database.php");
 				dataType: 'json',
 				success: function(rsp) {
 					if(rsp.success) {
-						location.href="index.php";
+						if(msg){
+							$(modalbody).html(msg);      
+							$(myModal).modal();
+						}else{
+							location.href="index.php";
+						}
+					}else{
+						$(modalbody).html("Erro ao logar");      
+						$(myModal).modal();
 					}
 				},
 				error: function (jqXHR, textStatus,  errorThrown) {
@@ -46,6 +54,28 @@ include_once("class.database.php");
 	</script>
   </head>
   <body>
+    	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;</button>
+                        <h4 class="modal-title">
+                            All4Kids</h4>
+                    </div>
+                    <div class="modal-body" id="modalbody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Ok</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
     <div class="container">
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">

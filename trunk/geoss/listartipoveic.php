@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_tipo_veic";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadtipoveic.php?id=$tipo_veic->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"tipo_veic\",$tipo_veic->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadtipoveic.php?id=$tipo_veic->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"tipo_veic\",$tipo_veic->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

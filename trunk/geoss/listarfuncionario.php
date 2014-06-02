@@ -47,7 +47,7 @@ $query = "SELECT id FROM cad_funcionario";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadfuncionario.php?id=$funcionario->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"funcionario\",$funcionario->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadfuncionario.php?id=$funcionario->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"funcionario\",$funcionario->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_logradouro";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadlogradouro.php?id=$logradouro->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"logradouro\",$logradouro->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadlogradouro.php?id=$logradouro->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"logradouro\",$logradouro->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

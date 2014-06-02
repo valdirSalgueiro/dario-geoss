@@ -55,7 +55,7 @@ $query = "SELECT id FROM cad_kit_ferramenta";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadkitferramenta.php?id=$kit_ferramenta->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"kit_ferramenta\",$kit_ferramenta->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadkitferramenta.php?id=$kit_ferramenta->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"kit_ferramenta\",$kit_ferramenta->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

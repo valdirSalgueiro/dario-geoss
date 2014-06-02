@@ -51,7 +51,7 @@ $query = "SELECT id FROM cad_fornecedor";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadfornecedor.php?id=$fornecedor->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"fornecedor\",$fornecedor->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadfornecedor.php?id=$fornecedor->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"fornecedor\",$fornecedor->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

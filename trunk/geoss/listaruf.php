@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_uf";
 						}
 					}
 				}	
-				echo "<td><a href=\"caduf.php?id=$uf->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"uf\",$uf->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"caduf.php?id=$uf->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"uf\",$uf->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

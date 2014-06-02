@@ -61,14 +61,16 @@ foreach($_POST as $key => $value)
 		$instance->$key = $value;
 }	
 
-function apagarDespachoSaida()(
+function apagarDespachoSaida(){
+	global $instance;
 	if($instance instanceof despac_sai){
 		$sql = "DELETE FROM cad_despac_mat_selec WHERE idx_despac_sai = $id;";
 		$db->query($sql);
 	}
 }
 
-function apagarDespachoRetorno()(
+function apagarDespachoRetorno(){
+	global $instance;
 	if($instance instanceof despac_retorn){
 		$sql = "DELETE FROM cad_despac_mat_retirad WHERE idx_despac_retorn = $id;";
 		$db->query($sql);

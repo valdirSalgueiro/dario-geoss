@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_cidade";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadcidade.php?id=$cidade->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"cidade\",$cidade->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadcidade.php?id=$cidade->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"cidade\",$cidade->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
