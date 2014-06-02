@@ -7,8 +7,7 @@ require 'header.php';
 <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
 
-		<section id="contact" class="background1 background-image" style="margin-top:160px\;min-height: 67%;
-    height: 67%;">
+		<section id="contact" class="background1 background-image" style="padding-top:180px;min-height: 85%;    height: 85%;">
 			<div class="container">
 				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
 					<div class="col-sm-12">
