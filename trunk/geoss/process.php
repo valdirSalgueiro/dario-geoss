@@ -24,7 +24,7 @@ $columns = array(
         'db'        => 'id',
         'dt'        => 3,
         'formatter' => function( $d, $row ) {
-            return "<a href=\"remover.php?id=$d\" class=\"glyphicon glyphicon-remove\"></a>";
+            return "<a href=\"javascript:apagar(\"vistoria\",$d)\" class=\"glyphicon glyphicon-remove\"></a>";
         }
     ),	
 );

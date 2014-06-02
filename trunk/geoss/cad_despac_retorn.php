@@ -118,6 +118,7 @@ EOT;
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Despacho Retorno cadastrado com sucesso');">
 			  <input type="hidden" name="type" value="despac_retorn">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="data_hora_ret" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd" placeholder="Data Hora Retorno" value="<?php echo utf8_encode($despac_retorn->data_hora_ret)?>">
               </div>

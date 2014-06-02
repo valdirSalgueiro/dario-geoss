@@ -68,7 +68,7 @@ include_once("class.uf.php");
 					}						
 					
 				}	
-				echo "<td><a href=\"cadsemaforo.php?id=$semaforo->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=semaforo&id=$semaforo->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadsemaforo.php?id=$semaforo->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"semaforo\",$semaforo->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
@@ -79,7 +79,7 @@ include_once("class.uf.php");
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable({
+    tableAjax=$('#example').dataTable({
 	"oLanguage": {
     "sEmptyTable":     "Nenhum registro encontrado na tabela",
     "sInfo": "Mostrar _START_ até _END_ do _TOTAL_ registros",

@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_logradouro";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadlogradouro.php?id=$logradouro->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=logradouro&id=$logradouro->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadlogradouro.php?id=$logradouro->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"logradouro\",$logradouro->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
@@ -58,7 +58,7 @@ $query = "SELECT id FROM cad_logradouro";
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable({
+    tableAjax=$('#example').dataTable({
 	"oLanguage": {
     "sEmptyTable":     "Nenhum registro encontrado na tabela",
     "sInfo": "Mostrar _START_ até _END_ do _TOTAL_ registros",

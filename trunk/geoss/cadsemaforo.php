@@ -86,6 +86,7 @@ EOT;
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Semáforo cadastrado com sucesso');">
 			  <?php echo $semaforo->id?"<input type=\"hidden\" name=\"mode\" value=\"update\">":"";?>
 			  <input type="hidden" name="type" value="semaforo">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="num_semaforo" id="first_name" class="form-control input-sm" placeholder="Semáforo número" value="<?php echo $semaforo->num_semaforo?>">
               </div>

@@ -64,7 +64,7 @@ $query = "SELECT id FROM cad_material";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadmaterial.php?id=$material->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=material&id=$material->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadmaterial.php?id=$material->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"material\",$material->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
@@ -76,7 +76,7 @@ $query = "SELECT id FROM cad_material";
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable();
+    tableAjax=$('#example').dataTable();
 	$('#example').footable();
 } );
 	</script>

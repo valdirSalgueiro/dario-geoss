@@ -19,6 +19,7 @@ if($id){
           <div class="panel-body">
             <form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Ferramenta cadastrada com sucesso');">
 			  <input type="hidden" name="type" value="ferramenta">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="ferra_nome" class="form-control input-sm" placeholder="Descrição" value="<?php echo $ferramenta->ferra_nome?>">
               </div>              
