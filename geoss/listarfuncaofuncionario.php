@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_funcao_funcion";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadfuncaofuncion.php?id=$funcao_funcion->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"funcao_funcion\",$funcao_funcion->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadfuncaofuncion.php?id=$funcao_funcion->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"funcao_funcion\",$funcao_funcion->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */

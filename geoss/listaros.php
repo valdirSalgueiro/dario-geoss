@@ -49,7 +49,7 @@ include_once("class.os.php");
 					}						
 					
 				}	
-				echo "<td><a href=\"cados.php?id=$os->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"os\",$os->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cados.php?id=$os->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"#\" onclick='apagar(\"os\",$os->id)' class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
