@@ -74,6 +74,7 @@ div.equally {
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onsubmit="return ajaxSubmit(this,'Vistoria cadastrada com sucesso');">
               <input type="hidden" name="type" value="fecha_vistor">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
                 <div class="form-group col-md-12">
                   <input id="semaforo" name="idx_semaforo" class="form-control input-sm" type="hidden" value="<?php echo $fecha_vistor->idx_semaforo?>"> 
 				  <input id="filtrar" class="form-control input-sm" type="text" value="Selecione um semáforo" disabled>

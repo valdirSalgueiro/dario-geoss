@@ -20,6 +20,7 @@ if($id){
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Tipo de Veículo cadastrado com sucesso');">
 			  <input type="hidden" name="type" value="tipo_veic">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="tipo_nome" class="form-control input-sm" placeholder="Nome" value="<?php echo utf8_encode($tipo_veic->tipo_nome)?>">
               </div>

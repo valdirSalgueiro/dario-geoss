@@ -85,6 +85,7 @@ EOT;
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Fornecedor cadastrado com sucesso');">
 			  <input type="hidden" name="type" value="fornecedor">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="fornec_nome" class="form-control input-sm" placeholder="Nome" value="<?php echo $fornecedor->fornec_nome?>">
               </div>

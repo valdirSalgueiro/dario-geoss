@@ -64,6 +64,7 @@ if($id){
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Vistoria cadastrada com sucesso');">
 			  <input type="hidden" name="type" value="vistoria">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
 			  <div class="form-group col-md-12">
 				<input id="semaforo" name="idx_semaforo" class="form-control input-sm" type="hidden" value="<?php echo $vistoria->idx_semaforo?>">
 				<input id="filtrar" class="form-control input-sm" type="text" value="<?php echo $vistoria->idx_semaforo ? $vistoria->idx_semaforo : "Selecione um semáforo"?>" disabled>

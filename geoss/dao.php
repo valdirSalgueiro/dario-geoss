@@ -47,6 +47,8 @@ function post($key) {
 }
 
 $type = post('type');
+$id = post('id');
+$mode= post('mode');
 
 $resp = new stdClass();	
 $resp->success = false;
@@ -59,7 +61,37 @@ foreach($_POST as $key => $value)
 		$instance->$key = $value;
 }	
 
-$instance->insert();
+function apagarDespachoSaida()(
+	if($instance instanceof despac_sai){
+		$sql = "DELETE FROM cad_despac_mat_selec WHERE idx_despac_sai = $id;";
+		$db->query($sql);
+	}
+}
+
+function apagarDespachoRetorno()(
+	if($instance instanceof despac_retorn){
+		$sql = "DELETE FROM cad_despac_mat_retirad WHERE idx_despac_retorn = $id;";
+		$db->query($sql);
+		$sql = "DELETE FROM cad_despac_mat_devolv WHERE idx_despac_retorn = $id;";
+		$db->query($sql);
+	}
+}
+
+if($id){		
+	if($mode){
+		$instance->delete($id);
+		apagarDespachoSaida();
+		apagarDespachoRetorno();
+	}	
+	else{
+		$instance->update($id);
+		apagarDespachoSaida();
+		apagarDespachoRetorno();		
+	}
+}
+else{
+	$instance->insert();
+}
 
 if($instance instanceof despac_sai){
 	$id=mysqli_insert_id($db);
@@ -98,8 +130,6 @@ if($instance instanceof despac_retorn){
 		$instance->insert();
 	}	
 }
-
-
 
 $resp->success = true;
 

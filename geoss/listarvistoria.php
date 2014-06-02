@@ -29,7 +29,7 @@ $query = "SELECT id FROM cad_vistoria";
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable({
+    tableAjax=$('#example').dataTable({
 	"processing": true,
     "serverSide": true,
     "ajax": "process.php",

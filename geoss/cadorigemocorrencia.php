@@ -19,6 +19,7 @@ if($id){
           <div class="panel-body">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Origem Ocorrência cadastrada com sucesso');">
 			  <input type="hidden" name="type" value="origem_ocorrenc">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="origem_nome" class="form-control input-sm" placeholder="Nome" value="<?php echo utf8_encode($origem_ocorrenc->origem_nome)?>">
               </div>

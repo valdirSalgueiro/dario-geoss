@@ -19,6 +19,7 @@ if($id){
           <div class="panel-body">
             <form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Material cadastrado com sucesso');">
 			  <input type="hidden" name="type" value="material">
+			  <input type="hidden" name="id" value="<?php echo $id?>"> 
               <div class="form-group col-md-12">
                 <input type="text" name="mat_nome" id="first_name" class="form-control input-sm" placeholder="Descrição" value="<?php echo utf8_encode($material->mat_nome)?>">
               </div>

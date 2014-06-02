@@ -46,7 +46,7 @@ $query = "SELECT id FROM cad_cidade";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadcidade.php?id=$cidade->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=cidade&id=$cidade->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadcidade.php?id=$cidade->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"cidade\",$cidade->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
@@ -58,7 +58,7 @@ $query = "SELECT id FROM cad_cidade";
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable({
+    tableAjax=$('#example').dataTable({
 	"oLanguage": {
     "sEmptyTable":     "Nenhum registro encontrado na tabela",
     "sInfo": "Mostrar _START_ até _END_ do _TOTAL_ registros",

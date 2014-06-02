@@ -60,7 +60,7 @@ $query = "SELECT id FROM cad_fecha_vistor";
 						}
 					}
 				}	
-				echo "<td><a href=\"cadfecharvistoria.php?id=$fecha_vistor->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"remover.php?type=fecha_vistor&id=$fecha_vistor->id\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
+				echo "<td><a href=\"cadfecharvistoria.php?id=$fecha_vistor->id\" class=\"glyphicon glyphicon-edit\"></a></td><td><a href=\"javascript:apagar(\"fecha_vistor\",$fecha_vistor->id)\" class=\"glyphicon glyphicon-remove\"></a></td></tr>";
 			}
 
 			/* free result set */
@@ -72,7 +72,7 @@ $query = "SELECT id FROM cad_fecha_vistor";
     </table>
 	<script>
 	$(document).ready(function() {
-    $('#example').dataTable({
+    tableAjax=$('#example').dataTable({
 	"oLanguage": {
     "sEmptyTable":     "Nenhum registro encontrado na tabela",
     "sInfo": "Mostrar _START_ até _END_ do _TOTAL_ registros",
