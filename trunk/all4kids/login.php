@@ -1,22 +1,21 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <?php
 include_once("class.database.php");
+
 ?>
 <html lang='pt-br'>
   <head>
-    <meta name="generator" content="HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--meta name="viewport" content="width=device-width, initial-scale=1"-->
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/datepicker.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
     <title></title>
 	<script type="text/javascript">
-		var ajaxSubmit = function(formEl) {
+		var ajaxSubmit = function(formEl, msg) {
 			// fetch where we want to submit the form to
 			var url = $(formEl).attr('action');
 
@@ -31,7 +30,12 @@ include_once("class.database.php");
 				dataType: 'json',
 				success: function(rsp) {
 					if(rsp.success) {
-						location.href="index.php";
+						if(msg){
+							$(modalbody).html(msg);      
+							$(myModal).modal();
+						}else{
+							location.href="index.php";
+						}
 					}else{
 						$(modalbody).html("Erro ao logar");      
 						$(myModal).modal();
@@ -123,12 +127,12 @@ include_once("class.database.php");
             <form role="form" method="post" action="dao.php" onsubmit="return ajaxSubmit(this,'Usuário cadastrado com sucesso');">
               <input type="hidden" name="type" value="usuario">
 				<div class="form-group col-md-12">
-							<input type="text" name="email" class="form-control input-sm" placeholder="Email" value="<?php echo $usuario->email?>">
+							<input type="text" name="email" class="form-control input-sm" placeholder="Email">
 										
 					</div>
 					
 				<div class="form-group col-md-12">
-							<input type="text" name="senha" class="form-control input-sm" placeholder="Senha" value="<?php echo $usuario->senha?>">
+							<input type="text" name="senha" class="form-control input-sm" placeholder="Senha">
 										
 					</div>
 					

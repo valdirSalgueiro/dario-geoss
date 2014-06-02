@@ -24,7 +24,7 @@ $columns = array(
         'db'        => 'id',
         'dt'        => 1,
         'formatter' => function( $d, $row ) {
-            return "<a href='javascript:apagar(\"aluno_atividade_desconto\",$d)' class='glyphicon glyphicon-remove'></a>";
+            return "<a href='#' onclick='apagar(\"aluno_atividade_desconto\",$d)' class='glyphicon glyphicon-remove'></a>";
         }
     ),
 	

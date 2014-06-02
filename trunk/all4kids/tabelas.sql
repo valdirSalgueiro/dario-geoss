@@ -30,6 +30,7 @@ CREATE TABLE `atividade` (
 CREATE TABLE `atividade_desconto` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nome` tinytext NOT NULL,
+  `valor` int(10)  NOT NULL,
   `idx_atividade` int(10) NOT NULL,
   `idx_desconto` int(10) NOT NULL,
   PRIMARY KEY (`id`)
@@ -125,6 +126,13 @@ CREATE TABLE `conta` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+CREATE TABLE `servico` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nome` tinytext NOT NULL,
+  `tipo` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 CREATE TABLE `categoria` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nome` tinytext NOT NULL,
@@ -134,7 +142,42 @@ CREATE TABLE `categoria` (
 CREATE TABLE `conta_categoria` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_categoria` int(10) NOT NULL,
-  `idx_conta_receber` int(10) NOT NULL,
+  `idx_conta` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `conta_atividade` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idx_conta` int(10) NOT NULL,
+  `idx_atividade` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `conta_aluno` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idx_conta` int(10) NOT NULL,
+  `idx_aluno` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `conta_servico` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idx_conta` int(10) NOT NULL,
+  `idx_servico` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `aluno_servico` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idx_aluno` int(10) NOT NULL,
+  `idx_servico` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `fornecedor` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nome` tinytext NOT NULL,
+  `endereco` tinytext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

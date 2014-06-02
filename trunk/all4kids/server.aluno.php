@@ -42,7 +42,7 @@ $columns = array(
         'db'        => 'id',
         'dt'        => 10,
         'formatter' => function( $d, $row ) {
-            return "<a href='javascript:apagar(\"aluno\",$d)' class='glyphicon glyphicon-remove'></a>";
+            return "<a href='#' onclick='apagar(\"aluno\",$d)' class='glyphicon glyphicon-remove'></a>";
         }
     ),
 	
