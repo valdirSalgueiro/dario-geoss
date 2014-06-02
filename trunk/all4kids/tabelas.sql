@@ -113,19 +113,43 @@ CREATE TABLE `nivel` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+CREATE TABLE `conta` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nome` tinytext NOT NULL,
+  `valor` int(10) NOT NULL,
+  `data_vencimento` datetime NOT NULL,
+  `recebido` BIT NOT NULL,
+  `pagar` BIT NOT NULL,
+  `idx_categoria` int(10) NOT NULL,
+  `idx_tipo` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `categoria` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nome` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `conta_categoria` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idx_categoria` int(10) NOT NULL,
+  `idx_conta_receber` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 INSERT INTO usuario (email,senha) values ('vns',123);
 
 -- DROP TABLE usuario;
 -- DROP TABLE aluno;
 -- DROP TABLE atividade;
 -- DROP TABLE atividade_desconto;
--- DROP TABLE aluno_atividade; 
+-- DROP TABLE aluno_atividade_desconto; 
 -- DROP TABLE desconto;
 -- DROP TABLE telefone;
 -- DROP TABLE telefone_aluno;
 -- DROP TABLE funcionario;
 -- DROP TABLE beneficio;
--- DROP TABLE funcionario_funcao;
 -- DROP TABLE funcionario_beneficio;
 -- DROP TABLE funcionario_filho;
 -- DROP TABLE funcao;
