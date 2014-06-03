@@ -40,6 +40,13 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
     <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
+	<script src="scripts/footable.js" type="text/javascript"></script>
+	<link   href="css/footable.core.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
+	
 	<title>Geoss</title>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
