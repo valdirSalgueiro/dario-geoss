@@ -35,13 +35,7 @@ $todos ="";
 		}
 </script>
 
-
-<script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
-<script src="scripts/footable.js" type="text/javascript"></script>
-<link   href="css/footable.core.css" rel="stylesheet" type="text/css">
-
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table table-hover table-condensed table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
 				<th>Data</th>
