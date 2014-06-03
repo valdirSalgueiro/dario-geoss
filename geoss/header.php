@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
     <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
+	<title>Geoss</title>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -255,10 +256,12 @@
 						<ul class="dropdown-menu">
 							<li><a href="cadocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
 							<li><a href="cadorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>	
+							<li><a href="cadgerarocorrencia.php"><span class="fa fa-check"></span> Gerar Ocorrência</a></li>
 							<li class="divider"></li>
 							<li class="nav-header">Editar/Remover</li>		
 							<li><a href="listarocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
 							<li><a href="listarorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>								
+							<li><a href="listargerarocorrencia.php"><span class="fa fa-check"></span> Gerar Ocorrência</a></li>
 						</ul>
 					</li>									
 				

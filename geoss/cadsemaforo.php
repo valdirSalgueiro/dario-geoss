@@ -74,8 +74,36 @@ echo <<<EOT
 </script>
 EOT;
 ?>
+<script src="http://maps.google.com/maps?file=api&;amp;v=2.x&amp;key=ABQIAAAAtOjLpIVcO8im8KJFR8pcMhQjskl1-YgiA_BGX2yRrf7htVrbmBTWZt39_v1rJ4xxwZZCEomegYBo1w" type="text/javascript"></script>
+
+<script type="text/javascript">		
+	function carregarBase(ids) {
+			mostrarCarregando();
+
+			// setup the ajax request
+			$.ajax({
+				url: 'base.php',
+				data: {'ids': ids},
+				type: 'POST',
+				success: function(data) {
+				    $(mapaDigital).html(data);      
+					esconderCarregando();
+				},
+				error: function (jqXHR, textStatus,  errorThrown) {
+					alert(textStatus);
+					alert(errorThrown);
+					esconderCarregando();
+					}					
+			});
+
+			// return false so the form does not actually
+			// submit to the page
+			return false;
+		}
+</script>
+
     <div class="row centered-form">
-      <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <div class="col-xs-12 col-sm-8 col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
@@ -83,6 +111,9 @@ EOT;
             </h3>
           </div>
           <div class="panel-body">
+			<table>
+			<tr>
+			<td>
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Semáforo cadastrado com sucesso');">
 			  <?php echo $semaforo->id?"<input type=\"hidden\" name=\"mode\" value=\"update\">":"";?>
 			  <input type="hidden" name="type" value="semaforo">
@@ -127,10 +158,10 @@ EOT;
                 <input type="text" name="idx_are" id="password_confirmation" class="form-control input-sm" placeholder="Area" value="<?php echo $semaforo->idx_area?>">
               </div>
               <div class="form-group col-md-12">
-                <input type="text" name="latitude" id="password_confirmation" class="form-control input-sm" placeholder="Latitude" value="<?php echo $semaforo->latitude?>">
+                <input type="text" name="latitude" id="latitude" class="form-control input-sm" placeholder="Latitude" value="<?php echo $semaforo->latitude?>">
               </div>
               <div class="form-group col-md-12">
-                <input type="text" name="longitude" id="password_confirmation" class="form-control input-sm" placeholder="Longitude" value="<?php echo $semaforo->longitude?>">
+                <input type="text" name="longitude" id="longitude" class="form-control input-sm" placeholder="Longitude" value="<?php echo $semaforo->longitude?>">
               </div>
               <div class="form-group col-md-12">
                 <select class="form-control input-sm" name="modo" id="estados_config_escola">
@@ -186,15 +217,33 @@ EOT;
                   Em Rede
                 </option>
               </select>
-			  </div>			  
+			  </div>	
+			</td>	
+			<td style="vertical-align:middle">		
+				<div id="mapaDigital">
+				</div>
+			</td>			
+			</tr>
+			<tr>
+			<td>
               <div class="form-group col-md-6 col-md-offset-3">
                 <input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
               </div>              			  
             </form>
+			</td>
+			
+			</tr>
           </div>
         </div>
       </div>
-    </div>
+    </div>	
+
+	<script>
+	$(document).ready(function() {
+		carregarBase();
+	} );
+	</script>	
+
 	<?php
            require 'footer.php'
         ?>
