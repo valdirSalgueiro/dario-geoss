@@ -44,7 +44,7 @@ $todos ="";
         Semáforos
     </h1>
 </div>
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table table-hover table-condensed table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Cidade</th>
