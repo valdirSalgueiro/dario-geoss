@@ -4,10 +4,40 @@ include_once("class.semaforo.php");
 include_once("class.bairro.php");
 include_once("class.cidade.php");
 include_once("class.uf.php");
+
+$todos ="";
 ?>
 
 <script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
 <script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
+
+<script src="http://maps.google.com/maps?file=api&;amp;v=2.x&amp;key=ABQIAAAAtOjLpIVcO8im8KJFR8pcMhQjskl1-YgiA_BGX2yRrf7htVrbmBTWZt39_v1rJ4xxwZZCEomegYBo1w" type="text/javascript"></script>
+
+<script type="text/javascript">		
+	function carregarBase(ids) {
+			mostrarCarregando();
+
+			// setup the ajax request
+			$.ajax({
+				url: 'base.php',
+				data: {'ids': ids},
+				type: 'POST',
+				success: function(data) {
+				    $(mapaDigital).html(data);      
+					esconderCarregando();
+				},
+				error: function (jqXHR, textStatus,  errorThrown) {
+					alert(textStatus);
+					alert(errorThrown);
+					esconderCarregando();
+					}					
+			});
+
+			// return false so the form does not actually
+			// submit to the page
+			return false;
+		}
+</script>
 
 <div class="page-header">
     <h1>
@@ -38,7 +68,8 @@ include_once("class.uf.php");
 			while ($obj = $result->fetch_object()) {			
 				$semaforo = new semaforo();
 				$semaforo->select($obj->id);
-				echo "<tr>";
+				$todos.=$semaforo->id.",";
+				echo "<tr onclick='carregarBase($semaforo->id)'>";
 				foreach($semaforo as $key => $value)
 				{
 					if(is_scalar($value)){
@@ -77,7 +108,15 @@ include_once("class.uf.php");
 ?>
         </tbody>
     </table>
-	<script>
+	
+	<input type="submit" value="Mostrar Todas" onclick="carregarBase('<?php echo $todos?>');" class="btn btn-success btn-block">
+	
+	<div id="mapaDigital">
+	</div>
+	
+	<br><br>
+	
+	<script>	
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({
 	"oLanguage": {
@@ -104,6 +143,8 @@ include_once("class.uf.php");
     }
 }
 	});
+	
+	carregarBase();
 } );
 	</script>
     
