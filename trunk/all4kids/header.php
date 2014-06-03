@@ -124,7 +124,7 @@
 		}
 		
 		$(document).ready(function() {
-				if(typeof $('.datepicker') != 'undefined')
+				if($('.datepicker').length)
 					$('.datepicker').datepicker();
 			}
 		);
