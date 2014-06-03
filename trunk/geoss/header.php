@@ -288,7 +288,7 @@
 						<a href="basedigitalinstalada.php">Mapa Ocorrência</a>
 					</li>
 					<li>
-						<a href="basedigitalinstalada.php">Inventário</a>
+						<a href="inventario.php">Inventário</a>
 					</li>					
                     <li>
                         <a href="logout.php">Logout</a>
