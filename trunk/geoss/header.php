@@ -256,7 +256,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="cadocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
 							<li><a href="cadorigemocorrencia.php"><span class="fa fa-check-circle"></span> Origem Ocorrência</a></li>	
-							<li><a href="cadgerarocorrencia.php"><span class="fa fa-check"></span> Gerar Ocorrência</a></li>
+							<li><a href="cadgerarocorrencia.php"><span class="fa fa-check"></span> Gerar Ocorrência</a></li>							
 							<li class="divider"></li>
 							<li class="nav-header">Editar/Remover</li>		
 							<li><a href="listarocorrencia.php"><span class="fa fa-check"></span> Ocorrência</a></li>
@@ -266,7 +266,7 @@
 					</li>									
 				
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastro Despacho<b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Despacho<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="cad_despac_sai.php"><span class="fa fa-mail-forward"></span> Despacho Saída</a></li>
 							<li><a href="cad_despac_retorn.php"><span class="fa fa-mail-reply"></span> Despacho Retorno</a></li>	
@@ -277,6 +277,12 @@
 						</ul>
 					</li>	
 					
+					<li>
+						<a href="basedigitalinstalada.php">Mapa Ocorrência</a>
+					</li>
+					<li>
+						<a href="basedigitalinstalada.php">Inventário</a>
+					</li>					
                     <li>
                         <a href="logout.php">Logout</a>
                     </li>

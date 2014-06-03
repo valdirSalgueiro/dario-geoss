@@ -111,6 +111,8 @@ $todos ="";
 	
 	<input type="submit" value="Mostrar Todas" onclick="carregarBase('<?php echo $todos?>');" class="btn btn-success btn-block">
 	
+	<br><br>
+	
 	<div id="mapaDigital">
 	</div>
 	
