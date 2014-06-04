@@ -1,0 +1,21 @@
+<?wpl version="1.0"?>
+<smil>
+    <head>
+        <meta name="Generator" content="Microsoft Windows Media Player -- 11.0.5721.5230"/>
+        <meta name="AverageRating" content="0"/>
+        <meta name="TotalDuration" content="1747"/>
+        <meta name="ItemCount" content="7"/>
+        <title>webtv</title>
+    </head>
+    <body>
+        <seq>
+            <media src="videos\fifabrasil.mp3"/>
+            <media src="videos\01 - The Verve - Bittersweet Symphony.mp3"/>
+            <media src="videos\01-no_tone_feat._inusa_-_life_is_love-psg.mp3"/>
+            <media src="videos\Where Is The Love.mp3"/>
+            <media src="videos\Staind - So Far Away.mp3"/>
+            <media src="videos\Vanessa_da_Mata_&amp;_Ben_Harper_-_Boa_Sorte,_Good_Luck_(Deeplick_Remix).mp3"/>
+            <media src="videos\July_Hits_2007_-_05_Rihanna_Ft_Jay-Z_-_Umbrella.mp3"/>
+        </seq>
+    </body>
+</smil>

@@ -1,0 +1,342 @@
+form {display: inline;}
+body {margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px; color:#000000;}
+body, td, select, textarea { font-size: 11px; font-family: Tahoma; }
+input {
+	font-size: 10px;
+	font-family: Tahoma;
+	border: 1px solid #CCCCCC;
+}
+A:visited {
+	COLOR: #003063; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif
+}
+A:link {
+	COLOR: #003063
+}
+A:hover {
+	COLOR: #003063; BACKGROUND-COLOR: #E0F987;
+}
+A {
+	COLOR: #003063; TEXT-DECORATION: none
+}
+input.noborder, .noborder input{border: 0px}
+.botao {
+	BORDER-RIGHT: #9d9da1 1px solid;
+	BORDER-TOP: #f4f3f5 1px solid;
+	BORDER-LEFT: #f4f3f5 1px solid;
+	BORDER-BOTTOM: #9d9da1 1px solid;
+	BACKGROUND-COLOR: #e0e0e0;
+	font-family: Tahoma;
+	font-size: 10px;
+}
+
+h1{
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	padding: 0px;
+	margin: 0px;
+}
+h2{
+	font-weight: bold;
+	color: #003063;
+	font-family: Tahoma;
+	font-size: 11px;
+	padding: 0px;
+	margin: 10px 0px -10px 0px ;	
+}
+
+/** Layout do Submenu **/
+
+/* Setando as características da camada */
+.menuInsert {
+	background-color:#f8f8f8;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+	border-top: 0px solid #f8f8f8;
+	border-right: 1px solid #d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+	border-left: 1px solid #d4d4d4;
+}
+/* Setando margem zero e sem marcador de lista */
+.menuInsert ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+/* Dispondo o item de lista em linha */
+.menuInsert ul li {
+	display: inline;
+}
+/* Setando o link dentro do item de lista. Dispõe o elemento em bloco. */
+.menuInsert ul li a {
+	display: block;
+	text-decoration: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+/* Setando as características de evento do link */
+.menuInsert ul li  {
+	
+}
+.Link a:link, a:visited
+{
+color: #003063;
+border: 0px solid #f8f8f8;	
+}
+.menuInsert ul li a:hover, a:active {
+	color: #000000;
+	border-color: #CCCCCC;
+	background-color:#EEEEEE;
+}
+/**  Layout Submenu Fim **/
+.Header {
+	border-top: 1px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+}
+.Header1 {
+	border-top: 1px solid #bdbdbd;
+	border-right: 0px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px dashed #bdbdbd;
+	padding: 0px;
+}
+.Header3 {
+	border-top: 1px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	padding: 3px;
+}
+.Footer {
+	border: 1px solid #bdbdbd;
+}
+.Conteudo {
+
+
+	border-top: 0px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+}
+.ConteudoS {
+
+
+
+	border-top: 0px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 0px solid #bdbdbd;
+}
+.td-pesquisa {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #666666;
+	padding: 2px;
+	border-bottom-width: 0px;
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-left-color: #666666;
+}
+.Arial-12 {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+.Verdana-10-Azul-N {
+	font-weight: bold;
+	color: #003063;
+}
+.Destaque {
+	border-top: 1px solid #bdbdbd;
+	border-right: 0px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	padding: 0px;
+}
+.Coluna-Materia {
+
+	border-top: 0px dashed #bdbdbd;
+	border-right: 1px dashed #bdbdbd;
+	border-bottom: 0px dashed #bdbdbd;
+	border-left: 0px dashed #bdbdbd;
+	padding: 0px;
+}
+.Caixa-Materia {
+
+
+	border-top: 0px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 1px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	padding: 0px 2px;
+}
+.Fundo-Destaque {
+	background-image: url(../images/FundoDestaque.jpg);
+	background-repeat: repeat;
+}
+.Arial-12Branca {
+
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.HeaderConteudo {
+
+	border-top: 1px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	padding: 2px;
+}
+.LateralBordas {
+	border-top: 1px solid #bdbdbd;
+	border-right: 0px solid #bdbdbd;
+	border-bottom: 0px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	padding: 0px;
+	background-color: #f8f8f8;
+}
+p.titulo {
+	color: #333333;
+	padding: 5px;
+	background-color: #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+		
+.TituloTable {
+	color: #000000;
+	padding: 3px;
+	background-color: #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: normal;
+	border: 1px solid #bdbdbd;
+	text-transform: none;
+	font-family: Tahoma;
+	font-size: 11px;
+	height: 25px;
+}
+.TituloTableAzul {
+	color: #003063;
+	padding: 3px;
+	background-color: #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: none;
+	font-family: Tahoma;
+	font-size: 11px;
+	height: 25px;
+}
+p.titulofw {
+
+	color: #000000;
+	padding: 5px;
+	background-color: #F9960E;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.titulofl {
+
+
+	color: #000000;
+	padding: 5px;
+	background-color: #FA2537;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.titulodw {
+color: #000000;
+	padding: 5px;
+	background-color: #A2BB28;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.titulofh {
+color: #000000;
+	padding: 5px;
+	background-color: #00CCCC;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.titulodr {
+color: #000000;
+	padding: 5px;
+	background-color: #FF6600;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.titulocf {
+color: #000000;
+	padding: 5px;
+	background-color: #00A3DD;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+p.tituloar {
+color: #000000;
+	padding: 5px;
+	background-color: #006699;
+	background-repeat: no-repeat;
+	background-position: 1px;
+	font-weight: bold;
+	border: 1px solid #bdbdbd;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 12px;
+}
+

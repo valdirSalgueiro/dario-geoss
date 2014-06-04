@@ -1,0 +1,53 @@
+<STYLE type=text/css>BODY {
+	MARGIN: 0px
+}
+#colunaTexto {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; FONT-FAMILY: Verdana; TEXT-ALIGN: left
+}
+#colunaTexto H1 {
+	MARGIN-LEFT: 0px
+}
+H2 {
+	MARGIN-LEFT: 0px
+}
+H3 {
+	MARGIN-LEFT: 0px
+}
+H4 {
+	MARGIN-LEFT: 0px
+}
+H5 {
+	MARGIN-LEFT: 0px
+}
+H6 {
+	MARGIN-LEFT: 0px
+}
+#colunaTexto H1 {
+	FONT-SIZE: 15px; COLOR: #003399
+}
+#colunaTexto H2 {
+	FONT-SIZE: 13px; COLOR: #000000
+}
+#colunaTexto H3 {
+	FONT-SIZE: 13px; COLOR: #003399
+}
+#colunaTexto H4 {
+	FONT-SIZE: 12px; COLOR: #003399
+}
+#colunaTexto H5 {
+	
+}
+#colunaTexto A {
+	COLOR: #000; BORDER-BOTTOM: #000000 1px dashed; TEXT-DECORATION: none
+}
+#colunaTexto A:hover {
+	COLOR: #003399; TEXT-DECORATION: none; BORDER-BOTTOM-STYLE: none
+}
+#colunaTexto DIV#codigo {
+	BORDER-RIGHT: #006699 1px dashed; PADDING-RIGHT: 2px; BORDER-TOP: #006699 1px dashed; DISPLAY: block; PADDING-LEFT: 2px; BACKGROUND: #ffffff; PADDING-BOTTOM: 2px; MARGIN: 0px auto; FONT: 12px "Courier New", Courier, mono; OVERFLOW: auto; BORDER-LEFT: #006699 1px dashed; WIDTH: 92%; PADDING-TOP: 2px; BORDER-BOTTOM: #006699 1px dashed;
+}
+#colunaTexto DIV#destaque {
+	BORDER-RIGHT: #006699 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #006699 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; MARGIN: 0px auto; BORDER-LEFT: #006699 1px solid; WIDTH: 90%; PADDING-TOP: 3px; BORDER-BOTTOM: #006699 1px solid; BACKGROUND-COLOR: #e6f7ff; TEXT-ALIGN: left
+}
+</STYLE>
+

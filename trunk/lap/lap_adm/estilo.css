@@ -1,0 +1,47 @@
+<style tytpe="text/css">
+.fonte{Font-Family: arial; Font-Size: 8pt; Font-Style: normal; color: #666666; Text-Decoration: none}
+.fonte_link{Font-Family: arial; Font-Size: 8pt; Font-Style: normal; Text-Decoration: none}
+.botao{font-family: verdana; font-size: 10 px;background-color:;}
+a:link{color:#000080;text-decoration:none;font-family:Arial; font-size:10px;}
+a:active{color:#000080;font-family:Arial; font-size:10px;}
+a:visited{color:#000080;font-family:Arial; font-size:10px;}
+a:hover{text-decoration:none;color="black";size:1}
+.botao {
+	font-family        : Arial;
+	font-size          : 10px;
+	font-weight        : bold;
+	Color              : #9C74A5;
+}
+/* Campos text */
+.caixa {
+	border             : 1px solid #9C74A5;
+	font-family        : Arial;
+	font-size          : 11px;
+	color              : #9C74A5;
+}
+
+
+/****************************************************************************************************************/
+/**************************************************   FONTES   **************************************************/
+/****************************************************************************************************************/
+
+.F_Padrao { font-family:Arial; font-size:11px; color:#666666;}
+.F_erro   { font-family:Arial; font-size:10px; color:#993300;} /* Fonte de erro */
+
+/* Fonte: Arial; Tamanho: 11px */
+.Fonte_11_Azul        { font-family:Arial; font-size:11px; color:#2E77BD; } /*   Azul       */
+.Fonte_11_Amarelo     { font-family:Arial; font-size:11px; color:#FFCC66; } /*   Amarelo    */
+.Fonte_11_Laranja     { font-family:Arial; font-size:11px; color:#D6781B  } /*   Laranja    */
+.Fonte_11_Branco      {	font-family:Arial; font-size:11px; color:#FFFFFF; } /*   Branco     */
+.Fonte_11_Vermelho    {	font-family:Arial; font-size:11px; color:#CC3300; } /*   Vermelho   */
+.Fonte_11_Cinza       { font-family:Arial; font-size:11px; color:#333333; } /*   Cinza      */
+.fonte_branca
+{
+    color: #FFFFFF;
+    font-family: Verdana;
+    font-size: 14px;
+    text-decoration: underline;
+	font-weight:bold;
+}
+
+</style>

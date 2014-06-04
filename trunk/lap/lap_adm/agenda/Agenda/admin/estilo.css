@@ -1,0 +1,17 @@
+.barra {font: normal 12px arial,helvetica,sans-serif; color: #000000; text-decoration: none}
+
+.barra:hover {color: #CCCCCC}
+
+.preto {font: bold 10px arial,helvetica,sans-serif; color: #000000; text-decoration: none}
+
+.preto:hover {color: #CCCCCC}
+
+.msg {font-family: verdana, sans-serif; font-size:8pt; color:#666666; background:#F4F4F4; border: #cccccc 1px outset}
+
+.submit {font: normal 8pt "verdana","arial mt","arial narrow","arial"; background: #FFD25B; color: #000000; border: #cccccc 1px outset}
+
+.select {font: normal 9pt "verdana","arial mt","arial narrow","arial"; color: #616161;}
+
+.selecao {font: normal 8pt "verdana","arial mt","arial narrow","arial"; color: #000000; background: #F4F4F4; border: #cccccc 1px outset}
+
+form {margin: 0}

@@ -1,0 +1,83 @@
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(arquivos/bg.gif);
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #666666; TEXT-DECORATION: underline
+}
+.link:link { font-weight: none; TEXT-DECORATION: underline; color: #666666; }
+.link:visited { font-weight: none; TEXT-DECORATION: underline; color: #666666; }
+.link:hover { font-weight: none; TEXT-DECORATION: none; color: #666666; }
+.style11 {font-family: Arial, Helvetica, sans-serif}
+
+.style21 {font-family: Arial, Helvetica, sans-serif; font-size: 10px; }
+.style22 {font-size: 10px}
+.style25 {font-size: 12px}
+.style26 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.style27 {font-size: 14px; }
+.style28 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.menu {
+	FONT-SIZE: 90%; Z-INDEX: 1000; MARGIN: 1px 1px 0px 1px
+}
+.menu UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 150px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+* HTML .menu UL {
+	MARGIN-LEFT: 0px
+}
+.menu LI {
+	BACKGROUND: #d4d8bd; POSITION: relative;  border: double; HEIGHT: 26px
+}
+.menu TABLE {
+	FONT-SIZE: 1em; Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP: 0px; BORDER-COLLAPSE: collapse
+}
+.menu A {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 0px solid; DISPLAY: block; BORDER-LEFT: #fff 0px solid; WIDTH: 149px; COLOR: #000; TEXT-INDENT: 5px; LINE-HEIGHT: 25px; BORDER-BOTTOM: #fff 1px solid; HEIGHT: 25px; TEXT-DECORATION: none
+}
+.menu A:visited {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 0px solid; DISPLAY: block; BORDER-LEFT: #fff 0px solid; WIDTH: 149px; COLOR: #000; TEXT-INDENT: 5px; LINE-HEIGHT: 25px; BORDER-BOTTOM: #fff 1px solid; HEIGHT: 25px; TEXT-DECORATION: none
+}
+* HTML .menu A {
+	BACKGROUND: #d4d8bd; WIDTH: 149px
+}
+* HTML .menu A:visited {
+	BACKGROUND: #d4d8bd; WIDTH: 149px
+}
+* HTML .menu A:hover {
+	BACKGROUND: #949e7c; COLOR: #fff
+}
+.menu :hover > A {
+	BACKGROUND: #949e7c; COLOR: #fff
+}
+.menu UL UL {
+	LEFT: 150px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px
+}
+.menu UL LI:hover UL {
+	VISIBILITY: visible
+}
+.menu UL A:hover UL {
+	VISIBILITY: visible
+}
+.menu UL :hover UL UL {
+	VISIBILITY: hidden
+}
+.menu UL :hover UL :hover UL UL {
+	VISIBILITY: hidden
+}
+.menu UL :hover UL :hover UL {
+	VISIBILITY: visible
+}
+.menu UL :hover UL :hover UL :hover UL {
+	VISIBILITY: visible
+}

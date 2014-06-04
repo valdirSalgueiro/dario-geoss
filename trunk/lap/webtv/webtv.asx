@@ -1,0 +1,15 @@
+<Asx Version = "3.0" > 
+<Param Name = "AllowShuffle" Value = "yes" />
+
+<Param Name = "Temporary" Value = "True" />
+
+<Title > Friday´s WebTV</Title>
+
+<Entry> 
+<Ref href = "videos\agostinho1_02.wmv"/>
+</Entry>
+
+<Entry> 
+<Ref href = "videos\Vinheta TV_01.mpg"/>
+</Entry>
+</Asx>

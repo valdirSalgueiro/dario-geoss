@@ -1,0 +1,14 @@
+/* CSS Document */
+
+li:hover ul ul, li.over ul ul { 
+display:none; 
+}
+
+li:hover ul, li li:hover ul, li.over ul, 
+li li.over ul { 
+display: block; 
+} /* Aqui a magica */
+
+li:hover ul, li.over ul { 
+display: block; 
+}
