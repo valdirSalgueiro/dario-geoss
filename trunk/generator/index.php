@@ -95,22 +95,30 @@ if(\$id){
 \$mensagem=\"\$modo\".$genero;
 
 ?>
-    <div class=\"row centered-form\">
-      <div class=\"col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3\">
-        <div class=\"panel panel-default\">
-          <div class=\"panel-heading\">
-            <h3 class=\"panel-title\">
-              Cadastro $classeUpper
-            </h3>
-          </div>
-          <div class=\"panel-body\">
-			<form role=\"form\"  action=\"dao.php\" onSubmit=\"return ajaxSubmit(this,'$classeUpper <?php echo \$mensagem ?> com sucesso');\">
-			<input type=\"hidden\" name=\"id\" value=\"<?php echo \$id?>\"> 
-			<input type=\"hidden\" name=\"type\" value=\"$class\">
+		<section id=\"contact\" class=\"background1 background-image\" style=\"margin-top:160px;min-height: 67%;
+    height: 67%;\">
+			<div class=\"container\">
+				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
+					<div class=\"col-sm-12\">
+						<div class=\"panel panel-default\">
+						  <div class=\"panel-heading\">
+							<h3 class=\"panel-title\">
+							  Cadastro $classeUpper
+							</h3>
+						  </div>
+						  <div class=\"panel-body\">
+							<form role=\"form\"  action=\"dao.php\" onSubmit=\"return ajaxSubmit(this,'$classeUpper <?php echo \$mensagem ?> com sucesso');\">
+							<input type=\"hidden\" name=\"id\" value=\"<?php echo \$id?>\"> 
+							<input type=\"hidden\" name=\"type\" value=\"$class\">
 ";
 
 $serv="
 <?php
+
+include_once(\"class.database.php\");
+
+\$db = Database::getDb(); 
+
 
 \$table = '$class';
  
@@ -124,15 +132,22 @@ $lis= "
 require 'header.php';
 ?>
 
-<script type=\"text/javascript\" language=\"javascript\" src=\"scripts/dataTables.bootstrap.js\"></script>
-<script type=\"text/javascript\" language=\"javascript\" src=\"scripts/jquery.dataTables.js\"></script>
+<script type=\"text/javascript\" language=\"javascript\" src=\"js/dataTables.bootstrap.js\"></script>
+<script type=\"text/javascript\" language=\"javascript\" src=\"js/jquery.dataTables.js\"></script>
 
 
-<div class=\"page-header\">
-    <h1>
-        $classeUpper
-    </h1>
-</div>
+		<section id=\"contact\" class=\"background1 background-image\" style=\"padding-top:180px;min-height: 85%;    height: 85%;\">
+			<div class=\"container\">
+				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
+					<div class=\"col-sm-12\">
+					<div class=\"panel panel-default\">
+						  <div class=\"panel-heading\">
+							<h3 class=\"panel-title\">
+							  $classeUpper
+							</h3>
+						  </div>
+						  <div class=\"panel-body\">
+
 <table id=\"example\" class=\"table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">
         <thead>
             <tr>
@@ -201,7 +216,7 @@ while ($row = mysql_fetch_row($result))
 			//class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd"
 			$lis.="<th>$colUper</th>";
 			$cad.= "
-                <input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
+							<input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
 			  ";
 			$serv.="
 				array( 'db' => '$col', 'dt' => $countColumns ),
@@ -230,19 +245,20 @@ $serv.="
         'db'        => 'id',
         'dt'        => $countColumns,
         'formatter' => function( \$d, \$row ) {
-            return \"<a href='javascript:apagar(\\\"$class\\\",\$d)' class='glyphicon glyphicon-remove'></a>\";
+            return \"<a href='#' onclick='apagar(\\\"$class\\\",\$d)' class='glyphicon glyphicon-remove'></a>\";
         }
     ),
 	";	
 	$countColumns++;
 	$serv.="
 );
+  
  
 \$sql_details = array(
-    'user' => 'root',
-	'pass' => '',
-    'db'   => 'all4kids',
-    'host' => 'localhost'
+    'user' => \$db->user,
+	'pass' => \$db->password,
+    'db'   => \$db->database,
+    'host' => \$db->host
 );
  
 require( 'ssp.class.php' );
@@ -259,6 +275,12 @@ $lis.="
             </tr>
         </thead>
     </table>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
 	<script>
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({
@@ -302,14 +324,16 @@ fwrite($fileL, $lis);
 fwrite($fileS, $serv);	
 
 $cad.="
-			  <div class=\"form-group col-md-6 col-md-offset-3\">
-                <input type=\"submit\" value=\"<?php echo \$textoBotao?>\" class=\"btn btn-info btn-block\">
-              </div>	
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+					  <div class=\"form-group col-md-6 col-md-offset-3\">
+						<input type=\"submit\" value=\"<?php echo \$textoBotao?>\" class=\"btn btn-info btn-block\">
+					  </div>	
+					</form>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+	</section>
 	<?php
            require 'footer.php'
         ?>
@@ -578,31 +602,9 @@ $zeile7;
 
 ";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 $c.="
 }
 ";
-
-
-
-
-
-
-
-
-
 
 $c.= "
 
@@ -723,9 +725,10 @@ $cHeader="
     <meta name=\"author\" content=\"\">
     <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\"/>
 	<link href=\"css/datepicker.css\" rel=\"stylesheet\"/>
-    <script type=\"text/javascript\" language=\"javascript\" src=\"scripts/jquery-1.11.1.min.js\"></script>
-    <script type=\"text/javascript\" language=\"javascript\" src=\"scripts/bootstrap.min.js\"></script>
-	<script type=\"text/javascript\" language=\"javascript\" src=\"scripts/bootstrap-datepicker.js\"></script>
+	<link href=\"css/style.css\" rel=\"stylesheet\">
+    <script type=\"text/javascript\" language=\"javascript\" src=\"js/jquery-1.11.1.min.js\"></script>
+    <script type=\"text/javascript\" language=\"javascript\" src=\"js/bootstrap.min.js\"></script>
+	<script type=\"text/javascript\" language=\"javascript\" src=\"js/bootstrap-datepicker.js\"></script>
 	<script type=\"text/javascript\">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -760,7 +763,7 @@ $cHeader="
 			return false;
 		}
 		
-		var table;
+		var tableAjax;
 		function apagar(tipo,id) {
 			mostrarCarregando();
 
@@ -815,57 +818,25 @@ $cHeader="
 		);
 
 	</script>
-	<style>
 
-    /* Featurettes
-    ------------------------- */
-
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
-    }
-    .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
-
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-	
-	</style>
 </head>
 <body>
-<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">
-        <div class=\"container\">
-            <div class=\"navbar-header\">
-                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
-                    <span class=\"sr-only\">
-                        Toggle
-                        navigation
-                    </span>
-                </button> <a class=\"navbar-brand\" href='index.php'>All4Kids</a>
-            </div>
-            <div class=\"collapse navbar-collapse\">
-                <ul class=\"nav navbar-nav\">
-					<li class=\"dropdown\">
-						<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Geral<b class=\"caret\"></b></a>
-						<ul class=\"dropdown-menu\">";
+            <div class=\"navbar navbar-default navbar-fixed-top\">
+			<div class=\"container\">
+				<div class=\"navbar-header\">
+					<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
+						<span class=\"icon-bar\"></span>
+						<span class=\"icon-bar\"></span>
+						<span class=\"icon-bar\"></span>
+					</button>
+					<a class=\"navbar-brand\" href=\"index-2.html\"><img src=\"images/logo.gif\" alt=\"Magicreche. Responsive site theme for Creche, Playschool, Preschool and Montessori.\" class=\"img-responsive\"></a>
+				</div>
+				<div class=\"navbar-collapse collapse\">
+					<ul class=\"nav navbar-nav navbar-right\">
+						<li class=\"\"><a href=\"#home\">HOME</a></li>
+						<li class=\"dropdown\">
+							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">ALL4KIDS <b class=\"caret\"></b></a>
+							<ul class=\"dropdown-menu\">";
 foreach($classes as $bla){
 	$blaUper=ucfirst($bla);
 	$blaUper=str_replace("_", " ",$blaUper);
@@ -875,8 +846,12 @@ foreach($classes as $bla){
 }				
 $cHeader.=
 "					
-							<li class=\"divider\"></li>
-							<li class=\"nav-header\">Editar/Remover</li>";
+							</ul>
+						</li>
+						<li class=\"dropdown\">
+							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Listagens <b class=\"caret\"></b></a>
+							<ul class=\"dropdown-menu\">";
+							
 foreach($classes as $bla){	
 	$blaUper=ucfirst($bla);	
 	$blaUper=str_replace("_", " ",$blaUper);	
@@ -918,8 +893,6 @@ $cHeader.="
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-<div class=\"container\">
-	<br><br><br>
 ";
 
 fwrite($fileHeader, $cHeader);
