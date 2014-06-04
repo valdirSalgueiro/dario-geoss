@@ -1,0 +1,33 @@
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+form {
+	margin:40px;
+}
+input {
+	border:1px solid #333333;
+	width:200px;
+}
+div#usersList {
+	position:absolute;
+	border:1px solid #333333;
+	width:200px;
+	left:127px;
+	top:54px;
+	display:none;
+}
+div#usersList a {
+	float:left;
+	width:190px;
+	clear:both;
+	padding:3px 5px;
+	text-decoration:none;
+}
+div#usersList a:hover {
+	background-color:#666666;
+	color:#FFFFFF;
+}

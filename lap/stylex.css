@@ -1,0 +1,30 @@
+.box {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: 034580;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+}
+A.link-preto:link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 9px;
+text-decoration: none; 
+color: #1A486F;
+}
+A.link-preto:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 9px;
+text-decoration: none; 
+color: #1A486F;
+}
+A.link-preto:active {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 9px;
+text-decoration: none; 
+color: #1A486F;
+}
+A.link-preto:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 9px;
+text-decoration: undeline; 
+color: #5091C8;
