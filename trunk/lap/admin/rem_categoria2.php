@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 $codigo_categoria=$_GET['codigo_categoria'];
@@ -19,14 +19,14 @@ else
 <html>
 <body class=fonte>
 <form name=form1 method=post>
-<input type=hidden name='codigo_categoria2' value="<?echo $codigo_categoria;?>">
+<input type=hidden name='codigo_categoria2' value="<?phpecho $codigo_categoria;?>">
 <h1><font face=verdana color='#ff9900'><b>Remover Categoria</b></font></h1><hr color=black size=2>
-<BR>Deseja realmente remover a categoria <b><?echo $campo_categoria[nome_categoria];?> ?</b>
+<BR>Deseja realmente remover a categoria <b><?phpecho $campo_categoria[nome_categoria];?> ?</b>
 <table border=0 class=fonte>
 <tr><td width=200><input type=submit value=' Remover ' name=remover class=botao></td><td><input type=button value=' Cancelar ' class=botao onclick="window.location='rem_categoria.php';"></td></tr>
 </table>
 </form>
-<?
+<?php
 $codigo_categoria2=$_POST['codigo_categoria2'];
 $remover=$_POST['remover'];
 if(($codigo_categoria2!=NULL)and($remover!=NULL))

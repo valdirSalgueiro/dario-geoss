@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -57,7 +57,7 @@ body {
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[codigo_procedimento];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[codigo_procedimento];?>">
 
 <h1 class="style1"><font face=verdana>Modificar Tipo de Tabela:</font></h1>
 <hr color=black size=2>
@@ -65,20 +65,20 @@ body {
 <table border=0 class=fonte>
 
 <tr>
-  <td width="147">Tipo:</td><td width="405"><input name=tipo type=text class=botao id="tipo" value="<?echo $campo_noticia[tipo];?>" size=50 maxlength=100></td></tr>
+  <td width="147">Tipo:</td><td width="405"><input name=tipo type=text class=botao id="tipo" value="<?phpecho $campo_noticia[tipo];?>" size=50 maxlength=100></td></tr>
 
 <tr>
   <td>C&oacute;digo Procedimento  : </td>
-  <td><input name=codigo_procedimento type=text class=botao id="codigo_procedimento" value="<?echo $campo_noticia[codigo_procedimento];?>" size=50 maxlength=100></td>
+  <td><input name=codigo_procedimento type=text class=botao id="codigo_procedimento" value="<?phpecho $campo_noticia[codigo_procedimento];?>" size=50 maxlength=100></td>
 </tr>
 
 <tr>
   <td>Descri&ccedil;&atilde;o : </td>
-  <td><textarea name="descricao" cols="47" rows="4" class="botao" id="descricao"><?echo $campo_noticia[descricao];?>
+  <td><textarea name="descricao" cols="47" rows="4" class="botao" id="descricao"><?phpecho $campo_noticia[descricao];?>
 </textarea></td>
 </tr>
 <tr>
-  <td>Valor:</td><td><input name=valor type=text class=botao id="valor" value="<?echo $campo_noticia[valor];?>" size=50 maxlength=100></td></tr>
+  <td>Valor:</td><td><input name=valor type=text class=botao id="valor" value="<?phpecho $campo_noticia[valor];?>" size=50 maxlength=100></td></tr>
 
 
 <tr><td></td><td>&nbsp;</td></tr>
@@ -91,7 +91,7 @@ body {
 
 </form>
 
-<?
+<?php
 $tipo=$_POST['tipo'];
 $nome_antigo=$_POST['codigo_procedimento'];
 $codigo_procedimento=$_POST['codigo_procedimento'];

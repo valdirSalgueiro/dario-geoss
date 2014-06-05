@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -93,27 +93,27 @@ Ilha do Leite - Recife - PE - Fone : (81) 3222-0476 - 3222-2097 </td>
   </tr>
   <tr>
     <td width="135" class="style75">Nome :</td>
-    <td class="style72"><span class="style76"><? echo $campo_pac['nome']; ?></span></td>
+    <td class="style72"><span class="style76"><?php echo $campo_pac['nome']; ?></span></td>
     <td class="style75">Laudo N &ordm; :</td>
-    <td colspan="2" class="style72"><span class="style76"><? echo $campo_cod['id']; ?></span></td>
+    <td colspan="2" class="style72"><span class="style76"><?php echo $campo_cod['id']; ?></span></td>
   </tr>
   
   <tr>
     <td class="style75">Material :</td>
-    <td colspan="4" class="style72"><span class="style76"><? echo $campo_cod['material']; ?></span></td>
+    <td colspan="4" class="style72"><span class="style76"><?php echo $campo_cod['material']; ?></span></td>
   </tr>
   <tr>
     <td class="style75">Solicita&ccedil;&atilde;o :</td>
-    <td class="style72"><span class="style76"><? echo $campo_med['nome']; ?></span></td>
+    <td class="style72"><span class="style76"><?php echo $campo_med['nome']; ?></span></td>
     <td class="style75">Recepcionista :</td>
-    <td colspan="2" class="style72"><span class="style76"><? echo $campo_cod['por']; ?></span></td>
+    <td colspan="2" class="style72"><span class="style76"><?php echo $campo_cod['por']; ?></span></td>
   </tr>
   
   <tr>
     <td class="style75">Conv&ecirc;nio :</td>
-    <td width="323" class="style72"><span class="style76"><? echo $campo_conv['nome']; ?></span></td>
+    <td width="323" class="style72"><span class="style76"><?php echo $campo_conv['nome']; ?></span></td>
     <td width="186" class="style75">Previs&atilde;o de Sa&iacute;da:</td>
-    <td width="189" colspan="2" class="style72"><span class="style76"><? echo date ("d/m/Y",$campo_cod['data_previsao']); ?></span></td>
+    <td width="189" colspan="2" class="style72"><span class="style76"><?php echo date ("d/m/Y",$campo_cod['data_previsao']); ?></span></td>
   </tr>
   <tr>
     <td colspan="5" class="style72"><hr color="black" size="4" /></td>

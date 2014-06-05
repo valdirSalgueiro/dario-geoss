@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -74,14 +74,14 @@ body {
 
 <span class="style1"><br>
 </span><br>
-<? include "calendario.php"; ?>
+<?php include "calendario.php"; ?>
 <strong>* Todos os campos s&atilde;o obrigat&oacute;rios </strong><br>
 <br>
 <table border=0 class=fonte>
 
 
 <tr>
-<?
+<?php
 //Contando o número de agendamentos para a data
 $data = date("d/m/Y");
 
@@ -109,7 +109,7 @@ if($_POST['ver']!=NULL)
 <tr>
   <td class="style10">M&eacute;dico :</td>
   <td><select name="id_med" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -149,7 +149,7 @@ else
 <tr>
   <td class="style10">Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -197,7 +197,7 @@ else
 </table>
 
 </form>
-<?
+<?php
 
 $data = date("d/m/Y");
 $nome=$_POST['nome'];
@@ -265,7 +265,7 @@ $ex_status_id=$_POST['ex_status_id'];
  }
 
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());
@@ -275,7 +275,7 @@ $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or
 
 
 ?>
-<?
+<?php
 $dc=$_POST['dc'];
 $nome=$_POST['nome'];
 $id_med=$_POST['id_med'];

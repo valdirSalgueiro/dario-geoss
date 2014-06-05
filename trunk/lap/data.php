@@ -1,4 +1,4 @@
-<?
+<?php
 function calculo_tempo($hora_ini,$hora_fim)
 {
  $hora_temp=$hora_ini;

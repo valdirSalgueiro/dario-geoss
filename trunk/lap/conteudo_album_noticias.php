@@ -1,4 +1,4 @@
-<?
+<?php
 
 include('estilo.css');
 
@@ -12,7 +12,7 @@ include('conn.php');
 
 <body bgcolor="white" class="fundo">
 
-<?
+<?php
 
 $codigo_foto=$_GET['codigo_foto'];
 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -47,7 +47,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_foto_dia[nome_foto_dia];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_foto_dia[nome_foto_dia];?>">
 
 <h1><font face=verdana color='#ff9900'><b>Modificar Foto do Dia:</b></font></h1>
 <hr color=black size=2>
@@ -57,14 +57,14 @@ else
 
 <tr>
   <td width="147">T&iacute;tulo Foto do Dia:</td>
-  <td width="405"><input name=nome_foto_dia type=text class=botao id="nome_foto_dia" value="<?echo $campo_foto_dia[nome_foto_dia];?>" size=50 maxlength=100></td></tr>
+  <td width="405"><input name=nome_foto_dia type=text class=botao id="nome_foto_dia" value="<?phpecho $campo_foto_dia[nome_foto_dia];?>" size=50 maxlength=100></td></tr>
 
 
 <tr>
   <td>Descri&ccedil;&atilde;o Foto do Dia:</td>
   <td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_foto_dia');
 
@@ -81,12 +81,12 @@ $oFCKeditor->Create();
 
 <tr><td></td><td>&nbsp;</td></tr>
 
-<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_foto_dia.php?codigo_foto_dia=<?echo $campo_foto_dia[codigo_foto_dia];?>';"></td></tr>
+<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_foto_dia.php?codigo_foto_dia=<?phpecho $campo_foto_dia[codigo_foto_dia];?>';"></td></tr>
 </table>
 
 </form>
 
-<?
+<?php
 $nome_antigo=$_POST['nome_foto_dia'];
 $nome_foto_dia=$_POST['nome_foto_dia'];
 $descricao_foto_dia=$_POST['descricao_foto_dia'];

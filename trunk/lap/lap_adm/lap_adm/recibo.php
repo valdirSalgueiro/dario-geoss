@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -65,8 +65,8 @@ body {
 
 <span class="style1"><br>
 </span><br>
-<? if($_POST['imprimir']){ ?>
-<?
+<?php if($_POST['imprimir']){ ?>
+<?php
 ##Buscando os dados para postá-los quando der o pulo##
 $busca_ex="select * from exame where id  = '".$_POST['id']."';";
 $res_busca_ex=mysql_query($busca_ex,$conn);
@@ -90,14 +90,14 @@ return; } else {
 <table border=0 class=fonte>
 <tr>
   <td class="style10"><div align="left">Laudo N &ordm;  :</div></td>
-  <td><input name=id type=text class=botao id="id" value="<? echo $_POST['id'];?>" size=20 maxlength=20></td>
+  <td><input name=id type=text class=botao id="id" value="<?php echo $_POST['id'];?>" size=20 maxlength=20></td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<? if($_POST['imprimir']!=''){ ?>
+<?php if($_POST['imprimir']!=''){ ?>
 <tr>
   <td width="86" class="style10">Nome  :</td>
-  <td width="257"><input name=nome type=text class=botao id="nome" value="<?echo $campo_pac['nome'];?>" size=50 maxlength=50></td>
+  <td width="257"><input name=nome type=text class=botao id="nome" value="<?phpecho $campo_pac['nome'];?>" size=50 maxlength=50></td>
   <td width="54"><div align="right" class="style10">Valor : </div></td>
   <td width="111"><input name=valor type=text class=botao id="valor" size=20 maxlength=30></td>
 </tr>
@@ -117,12 +117,12 @@ return; } else {
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-</tr><? } ?>
+</tr><?php } ?>
 <tr><td></td><td><div align="center">
 
-  <? if($_POST['imprimir']==''){ ?><input type=submit value='Continuar' name="imprimir" class=botao>
-  <? } else { ?>
-  <input type=submit value='Imprimir' name="imprimir2" class=botao><? } ?>
+  <?php if($_POST['imprimir']==''){ ?><input type=submit value='Continuar' name="imprimir" class=botao>
+  <?php } else { ?>
+  <input type=submit value='Imprimir' name="imprimir2" class=botao><?php } ?>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <input type=submit value='Cancelar' class=botao>
 </div></td>
@@ -135,7 +135,7 @@ return; } else {
 
 </form>
 
-<?
+<?php
 if($_POST['imprimir2']){
 
 if(($_POST['nome']=='')and($_POST['valor']=='')and($_POST['servicos']=='')and($_POST['id']=='')){

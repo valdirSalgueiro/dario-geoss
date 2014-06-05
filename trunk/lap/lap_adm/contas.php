@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -110,7 +110,7 @@ body {
   <td></td>
   <td>&nbsp;</td>
 </tr>
-<br><tr><td></td><td><? if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Inserir Valor'><? } else { ?><input name="ok22" type=submit class=botao id="ok22" value='Ok'><? } ?>
+<br><tr><td></td><td><?php if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Inserir Valor'><?php } else { ?><input name="ok22" type=submit class=botao id="ok22" value='Ok'><?php } ?>
  <input type=submit value='Cancelar' class=botao><span class="atributos_titulo">
  <input name="button" type=button class="botao" onClick="history.go(-1);" value="Voltar">
  </span></td>
@@ -118,7 +118,7 @@ body {
 </table>
 
 </form>
-<?
+<?php
 if($_POST['ok']){
 //Inserindo os dados para o cadastro da conta a receber e pagar
 $tipo = $_POST['tipo'];

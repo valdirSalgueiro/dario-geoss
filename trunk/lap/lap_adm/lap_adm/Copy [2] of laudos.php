@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -126,7 +126,7 @@ else
 <tr>
   <td> Status  :</td>
   <td><select name="id" class="botaooo" id="id">
-    <?
+    <?php
 $exid = $campo_ex['id'];
 
 $sql = "select id,nome 
@@ -166,41 +166,41 @@ $num_cod=mysql_num_rows($res_busca_cod);
 </tr>
 <tr>
   <td width="174">Laudo N&uacute;mero  :</td>
-  <td width="367"><? echo $campo_ex['id']; ?></td>
+  <td width="367"><?php echo $campo_ex['id']; ?></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo_pac['nome']; ?>    </td>
+  <td><?php echo $campo_pac['nome']; ?>    </td>
 </tr>
 
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Previs&atilde;o de Saida:</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
 </tr>
 <tr>
   <td>Material :</td>
-  <td><input name=material type=text class=botao id="material" value="<? echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
+  <td><input name=material type=text class=botao id="material" value="<?php echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
 </tr>
 
 
 <tr>
   <td>Valor :</td>
   <td>R$
-    <input name=valor type=text class=botao id="valor" value="<? echo $campo_ex['valor']; ?>" size=26 maxlength=30></td>
+    <input name=valor type=text class=botao id="valor" value="<?php echo $campo_ex['valor']; ?>" size=26 maxlength=30></td>
 </tr>
 <tr>
   <td>Macroscopia : </td>
-  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="7"><? echo $campo_ex['macroscopia']; ?></textarea></td>
+  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="7"><?php echo $campo_ex['macroscopia']; ?></textarea></td>
 </tr>
 <tr>
   <td>C&oacute;d Microscopia:</td>
   <td><select name="codigo_micros" class="caixa" id="codigo_micros" onChange="submitar()">
-    <?
+    <?php
 $busca_atendimentos="select * from codigo order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -257,12 +257,12 @@ else
 </tr>
 <tr>
   <td>Microscopia :</td>
-  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><? echo $campo_ex['microscopia']; ?></textarea></td>
+  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><?php echo $campo_ex['microscopia']; ?></textarea></td>
 </tr>
 <tr>
   <td>C&oacute;d Conclus&atilde;o:</td>
   <td><select name="codigo_conc" class="caixa" id="codigo_conc" onChange="submitar()">
-    <?
+    <?php
 $busca_atendimentos="select * from codigo_conc order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -295,7 +295,7 @@ else
 </tr>
 <tr>
   <td>Conclus&atilde;o :</td>
-  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><? echo $campo_ex['conclusao']; ?>
+  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><?php echo $campo_ex['conclusao']; ?>
 </textarea></td>
 </tr>
 <tr>
@@ -312,7 +312,7 @@ else
 </tr>
 <tr>
   <td>Entrada :</td>
-  <td><textarea name="obs_entrada" id="obs_entrada" cols="45" rows="5"><? echo $campo_ex['obs_entrada']; ?>
+  <td><textarea name="obs_entrada" id="obs_entrada" cols="45" rows="5"><?php echo $campo_ex['obs_entrada']; ?>
 </textarea></td>
 </tr>
 <tr>
@@ -322,7 +322,7 @@ else
 <tr>
   <td>Laudo :</td>
   <td><span class="style1">
-    <textarea name="obs_saida" id="obs_saida" cols="45" rows="5"><? echo $campo_ex['obs_saida']; ?>
+    <textarea name="obs_saida" id="obs_saida" cols="45" rows="5"><?php echo $campo_ex['obs_saida']; ?>
 </textarea>
   </span></td>
 </tr>
@@ -340,11 +340,11 @@ else
 </tr>
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
-  <td><? echo $campo_med['nome']; ?></td>
+  <td><?php echo $campo_med['nome']; ?></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio :</td>
-  <td><? echo $campo_conv['nome']; ?></td>
+  <td><?php echo $campo_conv['nome']; ?></td>
 </tr>
 <tr>
   <td></td>
@@ -356,7 +356,7 @@ else
 </tr>
 </table>
 </form>
-<?
+<?php
 
 if($_POST['fin1']){
 

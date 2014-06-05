@@ -1,7 +1,7 @@
 <html>
 <link href="responsa.css" rel="stylesheet" type="text/css">
 
-<?
+<?php
 
 include('conn.php');
 
@@ -31,7 +31,7 @@ if($codigo_galeria!=NULL)
 
 <table border=0>
 
-<?
+<?php
 
 if($num_foto>0)
 

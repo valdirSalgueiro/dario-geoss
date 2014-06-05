@@ -1,4 +1,4 @@
-<?
+<?php
 function tamanho_img($foto)
 {
  $size=@getimagesize($foto);

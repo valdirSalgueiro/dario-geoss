@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -46,18 +46,18 @@ else
 -->
 </style>
 <form name=form1 method=post>
-<?
+<?php
  $busca_cliente="select * from paciente where id  = '".$id."';";
  $res_busca_cliente=mysql_query($busca_cliente,$conn);
  $campo_cliente=mysql_fetch_array($res_busca_cliente);
  ?>
 
-<h1><font face=verdana color='#000033'><b><? echo $campo_cliente['nome']; ?></b></font></h1>
+<h1><font face=verdana color='#000033'><b><?php echo $campo_cliente['nome']; ?></b></font></h1>
 <hr color=black size=2>
 </form>
 <p class="style6">&nbsp;</p>
 <p class="style6">
-  <?
+  <?php
 
           
 
@@ -125,11 +125,11 @@ Hist&oacute;rico do Paciente </p>
 <hr color=black size=2>
 <p class="style6">
   Fez <span class="style7">
-  <? $consulta2 = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."'") or die(mysql_error());
+  <?php $consulta2 = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."'") or die(mysql_error());
 $total_fotos = mysql_result($consulta2,0,"total");
 print $total_fotos; ?></span> exames.<br>
   Sua &uacute;ltima vinda na cl&iacute;nica foi em : <span class="style7">
-  <?
+  <?php
 
     $busca_pa2="select * from exame where paciente_id = '".$campo_cliente['id']."' order by id DESC limit 0,1;";
    $res_busca_pa2=mysql_query($busca_pa2,$conn);
@@ -140,16 +140,16 @@ print $total_fotos; ?></span> exames.<br>
     }
 	?>
   </span><br>
-Est&aacute; cadastrado desde : <span class="style7"><? echo date("d/m/Y - H:i",$campo_cliente['data_cadastro']); ?></span><br>
+Est&aacute; cadastrado desde : <span class="style7"><?php echo date("d/m/Y - H:i",$campo_cliente['data_cadastro']); ?></span><br>
 Tem <span class="style7">
-<? $consulta_aberto = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='1'") or die(mysql_error());
+<?php $consulta_aberto = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='1'") or die(mysql_error());
 $total_aberto = mysql_result($consulta_aberto,0,"total");
 print $total_aberto; ?> 
 </span> Exames em Aberto, <span class="style7">
-<? $consulta_andamento = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='2'") or die(mysql_error());
+<?php $consulta_andamento = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='2'") or die(mysql_error());
 $total_andamento = mysql_result($consulta_andamento,0,"total");
 print $total_andamento; ?></span> Em Andamento e <span class="style7">
-<? $consulta_fechado = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='3'") or die(mysql_error());
+<?php $consulta_fechado = mysql_query("SELECT count(paciente_id) as total FROM exame WHERE paciente_id = '".$campo_cliente['id']."' and ex_status_id='3'") or die(mysql_error());
 $total_fechado = mysql_result($consulta_fechado,0,"total");
 print $total_fechado; ?> 
 </span> Fechados.<br>

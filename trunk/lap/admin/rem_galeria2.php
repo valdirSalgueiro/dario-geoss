@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -43,7 +43,7 @@ else
 <h1><font face=verdana color='#ff9900'><b>Remover Galeria de Fotos </b></font></h1>
 <hr color=black size=2>
 
-Deseja realmente remover a Galeria de Fotos <b><?echo $campo[nome_galeria];?></b> ?<BR>
+Deseja realmente remover a Galeria de Fotos <b><?phpecho $campo[nome_galeria];?></b> ?<BR>
 
 <table border=0 class=fonte>
 
@@ -53,7 +53,7 @@ Deseja realmente remover a Galeria de Fotos <b><?echo $campo[nome_galeria];?></b
 
 </form>
 
-<?
+<?php
 
 $remover=$_POST['remover'];
 

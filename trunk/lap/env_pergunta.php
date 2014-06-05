@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include "conn.php";
 
@@ -15,10 +15,10 @@ if ($_POST['enviar']) {
 ?>
 <script>
 alert('Sua pergunta foi enviada.')
-window.opener.location = '<? echo "sugestoes.php" ?>';
+window.opener.location = '<?php echo "sugestoes.php" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

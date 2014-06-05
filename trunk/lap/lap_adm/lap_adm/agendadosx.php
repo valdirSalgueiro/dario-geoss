@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -83,7 +83,7 @@ body {
 <tr>
   <td>Paciente : </td>
   <td><select name="paciente" class="caixa" id="id">
-    <?
+    <?php
 $busca_pac="select * from paciente order by nome asc;";
 $res_busca_pac=mysql_query($busca_pac,$conn);
 $num_pac=mysql_num_rows($res_busca_pac);
@@ -118,7 +118,7 @@ else
 <tr>
   <td>M&eacute;dico</td>
   <td><select name="medico" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -161,7 +161,7 @@ else
 <tr>
   <td>Convenio</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -208,7 +208,7 @@ else
 <hr color=black size=1>
 </form>
 
-   <?
+   <?php
  
 
 $sql = "SELECT * FROM agendamentos WHERE ";
@@ -279,27 +279,27 @@ while($row = mysql_fetch_array($result)) { ?>
   <tr>
     <br>
     <td width="141"><span class="style3">Laudo N &ordm;:</span></td>
-    <td width="371"><span class="style3"><? echo $row['id']; ?></span></td>
+    <td width="371"><span class="style3"><?php echo $row['id']; ?></span></td>
   </tr>
   <tr>
     <td><span class="style3">Nome Paciente :</span></td>
-    <td><? echo $row['paciente']; ?></td>
+    <td><?php echo $row['paciente']; ?></td>
   </tr>
   <tr>
     <td><span class="style3">Nome M&eacute;dico :</span></td>
-    <td><? echo  $row['medico']; ?></td>
+    <td><?php echo  $row['medico']; ?></td>
   </tr>
   <tr>
     <td><span class="style3">Conv&ecirc;nio :</span></td>
-    <td><span class="style3"><? echo $row['convenio']; ?></span></td>
+    <td><span class="style3"><?php echo $row['convenio']; ?></span></td>
   </tr>
   
   <tr>
     <td>&nbsp;</td>
-    <td><a href="detalhes.php?id=<? echo $row['id']; ?>">Detalhes</a></td>
+    <td><a href="detalhes.php?id=<?php echo $row['id']; ?>">Detalhes</a></td>
   </tr>
 </table>
-<? 
+<?php 
 }
 }
  ?>

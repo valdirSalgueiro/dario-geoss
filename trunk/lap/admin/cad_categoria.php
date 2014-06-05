@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -48,7 +48,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $nome_categoria=$_POST['nome_categoria'];
 
@@ -101,7 +101,7 @@ if($nome_categoria!=NULL)
 
 
 ?>
-<?
+<?php
 
 $nome_subcategoria=$_POST['nome_subcategoria'];
 

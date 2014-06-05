@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -38,7 +38,7 @@ else
 
 <tr><td>Nome Categoria: </td><td><select name=codigo_categoria class=botao onchange='form1.submit();'>
 
-<?
+<?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -80,7 +80,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $codigo_categoria=$_POST['codigo_categoria'];
 

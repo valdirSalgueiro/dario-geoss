@@ -1,4 +1,4 @@
-<?
+<?php
 include('style.php');
 
 function printError($error, $width = 100, $url = '')

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -109,7 +109,7 @@ O usu&aacute;rio tem acesso aos logs.</td>
 
 </form>
 
-<?
+<?php
 
 
 

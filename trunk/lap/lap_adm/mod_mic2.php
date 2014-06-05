@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -57,7 +57,7 @@ body {
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[codigo];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[codigo];?>">
 
 <h1 class="style1"><font face=verdana>Modificar C&oacute;digo de Microscopia:</font></h1>
 <hr color=black size=2>
@@ -66,12 +66,12 @@ body {
 
 <tr>
   <td width="147">C&oacute;digo  : </td>
-  <td width="405"><input name=codigo type=text id="codigo" value="<?echo $campo_noticia[codigo];?>" size=50 maxlength=100></td>
+  <td width="405"><input name=codigo type=text id="codigo" value="<?phpecho $campo_noticia[codigo];?>" size=50 maxlength=100></td>
 </tr>
 
 <tr>
   <td>Descri&ccedil;&atilde;o : </td>
-  <td><textarea name="descricao" cols="47" rows="20" id="descricao"><?echo $campo_noticia[descricao];?>
+  <td><textarea name="descricao" cols="47" rows="20" id="descricao"><?phpecho $campo_noticia[descricao];?>
 </textarea></td>
 </tr>
 
@@ -86,7 +86,7 @@ body {
 
 </form>
 
-<?
+<?php
 $nome_antigo=$_POST['codigo'];
 $codigo_procedimento=$_POST['codigo'];
 $descricao=$_POST['descricao'];

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -61,7 +61,7 @@ body {
   <tr>
     <td></td>
     <td><input name="buscar" type=submit class=botao id="buscar" value=" Buscar ">
-      <? if($_POST['buscar']!=NULL){ ?><input name="todos" type=submit class=botao id="todos" value="Exibir Todos"><? } ?></td>
+      <?php if($_POST['buscar']!=NULL){ ?><input name="todos" type=submit class=botao id="todos" value="Exibir Todos"><?php } ?></td>
   </tr>
 </table></form>
 <table width="190" border="0">
@@ -79,7 +79,7 @@ body {
 </table>
 <br>
 <br>
-<?
+<?php
 $tipo=$_POST['tipo'];
 if($tipo==NULL){
  $busca_ex.="select * from contas order by id asc;";
@@ -158,7 +158,7 @@ echo "Total Recebido : R$&nbsp; <strong><font color=blue>$total_recebido,00</fon
 echo "<br><strong>$msg</strong>";
 }
  ?>
- <?
+ <?php
 $tipo=$_POST['tipo'];
 if($tipo!=NULL){
 

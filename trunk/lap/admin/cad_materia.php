@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -59,7 +59,7 @@ else
 </tr>
 <tr><td>Nome Categoria: </td><td><select name=codigo_categoria class=botao>
 
-<?
+<?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -106,14 +106,14 @@ else
 
 <tr>
   <td>Data: </td>
-  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?echo $hoje;?>" size=12 maxlength=12></td>
+  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?phpecho $hoje;?>" size=12 maxlength=12></td>
 </tr>
 
 <tr>
   <td>Not&iacute;cia:</td>
   <td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_noticia');
 
@@ -133,7 +133,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $codigo_categoria=$_POST['codigo_categoria'];
 $nome_noticia=$_POST['nome_noticia'];

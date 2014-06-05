@@ -1,4 +1,4 @@
-<?
+<?php
 function msg_email($msg_email)
 {
 $recado="<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'

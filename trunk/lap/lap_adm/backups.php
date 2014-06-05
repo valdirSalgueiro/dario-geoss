@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -75,16 +75,16 @@ body {
 <br>
 <table border=1 bordercolor="#000000" class=fonte>
 
-<? 	
+<?php 	
 //Buscando os BACKUPS
 $consulta1 = mysql_query("SELECT * FROM backup order by id DESC") or die(mysql_error());  $i=0; 	while($mensagens = mysql_fetch_array($consulta1)){ 
 $i++;
 ?>
 <tr>
-  <td width="174"><span class="style7"><? echo $mensagens['nome']; ?></span></td>
-  <td width="318"><div align="center"><a href="<? echo $mensagens['caminho']; ?>" target="_blank"><img src="download.gif" width="50" height="50" border="0"></a></div></td>
+  <td width="174"><span class="style7"><?php echo $mensagens['nome']; ?></span></td>
+  <td width="318"><div align="center"><a href="<?php echo $mensagens['caminho']; ?>" target="_blank"><img src="download.gif" width="50" height="50" border="0"></a></div></td>
 </tr>
-<? } ?>
+<?php } ?>
 </table>
 </form>
 

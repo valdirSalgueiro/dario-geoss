@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -50,7 +50,7 @@ else
 
 <table border=0 class=fonte>
 
-<?
+<?php
 
 for($x=0;$x<$num_file;$x++)
 
@@ -82,7 +82,7 @@ for($x=0;$x<$num_file;$x++)
 
 </form>
 
-<?
+<?php
 
 $adiciona_foto=$_POST['adiciona_foto'];
 

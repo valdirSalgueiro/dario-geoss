@@ -70,7 +70,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 </style>
 <script type="text/javascript" src="lightbox/lightbox.js"></script>
 <script src="funcoes1.js" type="text/javascript"></script>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 ?>
@@ -134,7 +134,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
                         <td width="94%"><span class="style26">
-                          <? $dia_semana = date("w");
+                          <?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -148,7 +148,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 
 						   ?>
                           ,
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -252,7 +252,7 @@ $consulta_cat15 = mysql_query("SELECT count(codigo_categoria) as total FROM noti
 $total_cat15 = mysql_result($consulta_cat15,0,"total");
 
     ?>!<font color="blue" class="style22"> &nbsp;&nbsp;
-                          <? include('whosonline.php'); ?>
+                          <?php include('whosonline.php'); ?>
                           </font> </span></td>
                         </tr>
                     </table></td>
@@ -340,7 +340,7 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -517,7 +517,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -694,7 +694,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -871,7 +871,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1048,7 +1048,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1225,7 +1225,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1392,7 +1392,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                       <td height="1" class="style22"></td>
                     </tr>
                   </table>
-                    <?
+                    <?php
 include "conn.php";
 $codigo_video=$_GET['codigo_video'];
 						
@@ -1409,7 +1409,7 @@ $up2 = mysql_query("UPDATE videos SET  visualizacoes='".$soma."' WHERE codigo_vi
 $consultass = mysql_query("SELECT * FROM videos WHERE codigo_video = '".$codigo_video."' ORDER BY codigo_video DESC") or die(mysql_error());
 
 ?>
-                    <?
+                    <?php
 			while($materias=mysql_fetch_array($consultass)) {
 			/*
 			 $busca_foto="select * from foto_videos where codigo_video = '".$materias[codigo_video]."' order by rand();";
@@ -1459,7 +1459,7 @@ $consultass = mysql_query("SELECT * FROM videos WHERE codigo_video = '".$codigo_
                     <table width="460" border="0" align="center" cellpadding="0" cellspacing="0">
                       <tr>
                         <td height="20" background="images/bg.jpg"><span class="style26 style28">&nbsp;<span class="style32">V&iacute;deo <span class="style33"> |
-                              <?=$materias['nome_video'] ?>
+                              <?php=$materias['nome_video'] ?>
                         </span></span></span></td>
                       </tr>
                     </table>
@@ -1469,14 +1469,14 @@ $consultass = mysql_query("SELECT * FROM videos WHERE codigo_video = '".$codigo_
                         <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
                           <tr>
                             <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo">
-                              <?=$materias['nome_video'] ?>
+                              <?php=$materias['nome_video'] ?>
                               </span><br />
                               <span class="materia">
-                              <?=$materias['data_cadastro'] ?>
+                              <?php=$materias['data_cadastro'] ?>
                               </span> &nbsp;&nbsp;<img src="images/ico_relogio.gif" align="absbottom" /> <span class="materia">
-                              <?=$materias['hora_cadastro'] ?>
+                              <?php=$materias['hora_cadastro'] ?>
                               </span> <span class="materia"> | Visualiza&ccedil;&otilde;es :</span> <span class="materia">
-                              <?=$materias['visualizacoes'] ?>
+                              <?php=$materias['visualizacoes'] ?>
                               </span><br />
                             </td>
                           </tr>
@@ -1488,28 +1488,28 @@ $consultass = mysql_query("SELECT * FROM videos WHERE codigo_video = '".$codigo_
                                 <tr>
                                   <td align="center">
 								      <object width="425" height="350">
-                                      <param name="movie" value="<? print $materias['link_video']; ?>" />
+                                      <param name="movie" value="<?php print $materias['link_video']; ?>" />
                                       </param>
-                                      <embed src="<? print $materias['link_video']; ?>" type="application/x-shockwave-flash" width="425" height="350"> </embed>
+                                      <embed src="<?php print $materias['link_video']; ?>" type="application/x-shockwave-flash" width="425" height="350"> </embed>
                                     </object>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td align="center" class="materia"><?=$materias['desc_video'] ?></td>
+                                  <td align="center" class="materia"><?php=$materias['desc_video'] ?></td>
                                 </tr>
                             </table></td>
                           </tr>
                           <tr>
                             <td valign="top" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;" class="materia"><div align="justify">
-                                <?=$materias['descricao_video'] ?>
+                                <?php=$materias['descricao_video'] ?>
                             </div></td>
                           </tr>
                           <tr>
                             <td height="25" background="images/site_divisao_materia.gif" style="padding-left:5px; padding-right:5px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                   <td width="21%" class="por">por
-                                    <?=$materias['por']?></td>
-                                  <td width="79%" align="right"><strong>|</strong> <a href="javascript:Comentarv('<?=$materias['codigo_video'] ?>')" class="l_menu_materia"> Comentar </a> <strong>|</strong> <a href="javascript:Enviarv('<?=$materias['codigo_video'] ?>')" class="l_menu_materia"> Enviar V&iacute;deo</a><a href="javascript:Imprimir('<?=$materias['codigo_video'] ?>')" class="l_menu_materia"> </a> <strong>|</strong> <a href="#" class="l_menu_materia"> Topo</a> <strong>|</strong> </td>
+                                    <?php=$materias['por']?></td>
+                                  <td width="79%" align="right"><strong>|</strong> <a href="javascript:Comentarv('<?php=$materias['codigo_video'] ?>')" class="l_menu_materia"> Comentar </a> <strong>|</strong> <a href="javascript:Enviarv('<?php=$materias['codigo_video'] ?>')" class="l_menu_materia"> Enviar V&iacute;deo</a><a href="javascript:Imprimir('<?php=$materias['codigo_video'] ?>')" class="l_menu_materia"> </a> <strong>|</strong> <a href="#" class="l_menu_materia"> Topo</a> <strong>|</strong> </td>
                                 </tr>
                             </table></td>
                           </tr>
@@ -1519,7 +1519,7 @@ $consultass = mysql_query("SELECT * FROM videos WHERE codigo_video = '".$codigo_
                               <td><div align="center"><a href="videos.php"><img src="images/botao_voltar.gif" width="67" height="24" border="0" /></a></div></td>
                             </tr>
                           </table>
-                          <p style="padding:10px; padding-top:0px;"><?
+                          <p style="padding:10px; padding-top:0px;"><?php
 //Contando o n&uacute;mero de coment&aacute;rios existentes
 $consultac = mysql_query("SELECT count(codigo_video) as total FROM tab_comentarios_videos where codigo_video = '".$materias['codigo_video']."'") or die(mysql_error());
 $totalcom = mysql_result($consultac,0,"total");
@@ -1527,11 +1527,11 @@ $totalcom = mysql_result($consultac,0,"total");
 </p>
                           <table width="100%" border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                              <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <? print $totalcom; ?> ] </span><span class="materia"></span> <br />
+                              <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <?php print $totalcom; ?> ] </span><span class="materia"></span> <br />
                               </td>
                             </tr>
                             <tr>
-                              <?
+                              <?php
 		$consulta = mysql_query("SELECT * FROM tab_comentarios_videos WHERE codigo_video = '".$materias['codigo_video']."' ORDER BY id_cmt DESC") or die(mysql_error());
 		
 
@@ -1540,18 +1540,18 @@ $totalcom = mysql_result($consultac,0,"total");
 	while($comentarios=mysql_fetch_array($consulta)) {
 ?>
                               <td valign="top" class="legenda_foto" align="center" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><div align="left" class="materia"><strong><b>
-                                  <?=$comentarios['nome_cmt']?>
+                                  <?php=$comentarios['nome_cmt']?>
                                   </b> </strong>em <span class="style30" style="border-top:1px #CCCCCC dotted;; font-size:11px; color:#333333;">
-                                  <?=$comentarios['data_cmt']?>
+                                  <?php=$comentarios['data_cmt']?>
                                   </span> :
-                                <?=$comentarios['texto_cmt']?>
+                                <?php=$comentarios['texto_cmt']?>
                                   <span style="padding:10px; padding-top:0px;"> </span></div></td>
                             </tr>
-                            <? } ?>
+                            <?php } ?>
                           </table>
                           <p style="padding:10px; padding-top:0px;"><span class="materia">
-                            <? if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
-                            <? } ?>
+                            <?php if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
+                            <?php } ?>
                           </span></p>
                           </td>
                       </tr>
@@ -1633,7 +1633,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </table>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td height="197"><?
+                            <td height="197"><?php
 include ("enquete/apgconecta.php");
 require ("enquete/apgvota.php");
 ?></td>
@@ -1679,7 +1679,7 @@ require ("enquete/apgvota.php");
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                               <td height="122"><div align="center">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes

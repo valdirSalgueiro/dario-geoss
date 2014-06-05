@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -73,7 +73,7 @@ function Imprimir(id) {
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -110,7 +110,7 @@ else
   <td>&nbsp;</td>
 </tr>
 <tr><td></td><td><input name="ok" type=submit class=botao id="ok" value='Ok'>
- <input type=submit value='Cancelar' class=botao> <? if($_POST['ok']!=NULL){  ?><input type=submit onClick="javascript:Imprimir('<?=$materias['id_materia'] ?>')" value='Imprimir' class=botao><? } ?>
+ <input type=submit value='Cancelar' class=botao> <?php if($_POST['ok']!=NULL){  ?><input type=submit onClick="javascript:Imprimir('<?php=$materias['id_materia'] ?>')" value='Imprimir' class=botao><?php } ?>
  <span class="atributos_titulo">
  <input name="button" type=button class="botao" onClick="history.go(-1);" value="Voltar">
  </span></td>
@@ -119,7 +119,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $codigo_categoria=$_POST['codigo_categoria'];
 

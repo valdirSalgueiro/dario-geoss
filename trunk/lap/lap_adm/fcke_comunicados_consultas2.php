@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -126,7 +126,7 @@ Não existe forma de consulta para o ano e o dia.</font></td><td></td></tr>
       </select>
     <tr>
     <td><span class="style1">Comunicado a enviar: </span></td>
-    <td><?
+    <td><?php
 
 $oFCKeditor = new FCKeditor('texto_para_enviar');
 
@@ -143,7 +143,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $cartao=$_POST['cartao'];
 

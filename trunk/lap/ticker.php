@@ -1,4 +1,4 @@
-<?
+<?php
 include "conn.php";
 //Busca das últimas notícias
 $busca_col="select * from noticias WHERE pais='".$_GET['lang']."' order by codigo_noticia desc limit 0,5;";
@@ -30,10 +30,10 @@ $campo_col4=mysql_fetch_array($res_busca_col4);
 <title>:: Portal Sentinela - O Vigilante da Amaz&ocirc;nia. ::</title>
 <script language="javascript" type="text/javascript"><!--
 var news = new Array(
-[ "<? echo $campo_col[nome_noticia];?>" , "noticia.php?lang=<? echo $_GET['lang']; ?>&&codigo_noticia=<? echo $campo_col[codigo_noticia]; ?>" ] ,
-[ "<? echo $campo_col2[nome_noticia];?>" , "noticia.php?lang=<? echo $_GET['lang']; ?>&&codigo_noticia=<? echo $campo_col2[codigo_noticia]; ?>" ] ,
-[ "<? echo $campo_col3[nome_noticia];?>" , "noticia.php?lang=<? echo $_GET['lang']; ?>&&codigo_noticia=<? echo $campo_col3[codigo_noticia]; ?>" ] ,
-[ "<? echo $campo_col4[nome_noticia];?>" , "noticia.php?lang=<? echo $_GET['lang']; ?>&&codigo_noticia=<? echo $campo_col4[codigo_noticia]; ?>" ] ,
+[ "<?php echo $campo_col[nome_noticia];?>" , "noticia.php?lang=<?php echo $_GET['lang']; ?>&&codigo_noticia=<?php echo $campo_col[codigo_noticia]; ?>" ] ,
+[ "<?php echo $campo_col2[nome_noticia];?>" , "noticia.php?lang=<?php echo $_GET['lang']; ?>&&codigo_noticia=<?php echo $campo_col2[codigo_noticia]; ?>" ] ,
+[ "<?php echo $campo_col3[nome_noticia];?>" , "noticia.php?lang=<?php echo $_GET['lang']; ?>&&codigo_noticia=<?php echo $campo_col3[codigo_noticia]; ?>" ] ,
+[ "<?php echo $campo_col4[nome_noticia];?>" , "noticia.php?lang=<?php echo $_GET['lang']; ?>&&codigo_noticia=<?php echo $campo_col4[codigo_noticia]; ?>" ] ,
 []
 ) ;
 //--></script>

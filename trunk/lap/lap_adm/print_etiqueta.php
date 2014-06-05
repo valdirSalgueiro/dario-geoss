@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -73,27 +73,27 @@ else
   </tr>
   <tr>
     <td><span class="style38">Laudo N º  :</span></td>
-    <td width="119"><span class="style38"><? echo $id; ?></span></td>
+    <td width="119"><span class="style38"><?php echo $id; ?></span></td>
   </tr>
   <tr>
     <td><span class="style38">Paciente :</span></td>
-    <td><span class="style38"><? echo $campo_pac['nome']; ?></span></td>
+    <td><span class="style38"><?php echo $campo_pac['nome']; ?></span></td>
   </tr>
   
   
   <tr>
     <td width="109"><span class="style38">Material :</span></td>
-    <td><span class="style38"><? echo $campo_cod['material']; ?></span></td>
+    <td><span class="style38"><?php echo $campo_cod['material']; ?></span></td>
   </tr>
   <tr>
     <td><span class="style38">Data de Entrada:</span></td>
-    <td><span class="style38"><? echo date("d/m/Y",$campo_cod['data_entrada']); ?></span></td>
+    <td><span class="style38"><?php echo date("d/m/Y",$campo_cod['data_entrada']); ?></span></td>
   </tr>
   
   
   <tr>
     <td><span class="style38">Previs&atilde;o de Saida: </span></td>
-    <td><span class="style38"><? echo date("d/m/Y",$campo_cod['data_previsao']); ?></span></td>
+    <td><span class="style38"><?php echo date("d/m/Y",$campo_cod['data_previsao']); ?></span></td>
   </tr>
   <tr>
     <td height="28" colspan="2"><hr color="black" size="2" /></td>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -51,7 +51,7 @@ body {
 -->
 </style>
 <body class=fonte>
-<?
+<?php
 /*
 $_POST[edia];
 $_POST[emes];
@@ -149,7 +149,7 @@ if(($id_pac!='')and($id_med!='')and($data_entrada!='')and($data_previsao!='')and
 <tr>
   <td width="174">Paciente :</td>
   <td width="367"><select name="id_pac" class="caixa" id="id_pac">
-    <?
+    <?php
 $busca_conv="select * from paciente order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -182,7 +182,7 @@ else
     </select>
     &nbsp;&nbsp;<a href="pac.php"></a> </td>
 </tr>
-<?
+<?php
 $dia = date("d");
 $mes = date("m");
 $ano = date("Y");
@@ -192,15 +192,15 @@ $min = date("i");
 
 <tr>
   <td>Data de Entrada :</td>
-  <td> <input name="edia" id="edia" value="<? echo $dia; ?>" size="2" maxlength="2">    
+  <td> <input name="edia" id="edia" value="<?php echo $dia; ?>" size="2" maxlength="2">    
     <span class="style1"> /
-    <input name="emes" id="emes" value="<? echo $mes; ?>" size="2" maxlength="2">
+    <input name="emes" id="emes" value="<?php echo $mes; ?>" size="2" maxlength="2">
     /
-    <input name="eano" id="eano" value="<? echo $ano; ?>" size="4" maxlength="4">
+    <input name="eano" id="eano" value="<?php echo $ano; ?>" size="4" maxlength="4">
 -
-<input name="ehora" id="ehora" value="<? echo $hora; ?>" size="2" maxlength="2">    
+<input name="ehora" id="ehora" value="<?php echo $hora; ?>" size="2" maxlength="2">    
 :
-<input name="emin" id="emin" value="<? echo $min; ?>" size="2" maxlength="2"> 
+<input name="emin" id="emin" value="<?php echo $min; ?>" size="2" maxlength="2"> 
 ( dd / mm / aaaa - HH : mm )
 &nbsp;</span></td>
 </tr>
@@ -209,7 +209,7 @@ $min = date("i");
 <tr>
   <td>Tipo de Exame :</td>
   <td><select name="id_ex" class="caixa" id="id_ex">
-    <?
+    <?php
 $busca_tex="select * from tipo_exame order by id_ex asc;";
 $res_busca_tex=mysql_query($busca_tex,$conn);
 $num_tex=mysql_num_rows($res_busca_tex);
@@ -244,7 +244,7 @@ else
 <tr>
 </tr><tr><td>Material :</td>
   <td><select name="material" class="caixa" id="material">
-    <?
+    <?php
 $busca_med="select * from material order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -279,7 +279,7 @@ else
 <tr>
 </tr><tr><td>Laboratório :</td>
   <td><select name="lab" class="caixa" id="lab">
-    <?
+    <?php
 $busca_med="select * from lab order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -315,7 +315,7 @@ else
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
   <td><select name="id_med" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -350,7 +350,7 @@ else
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -396,9 +396,9 @@ else
 /
 <input name="sano" id="sano" value="" size="4" maxlength="4">
 -
-<input name="shora" id="shora" value="<? echo "17"; ?>" size="2" maxlength="2">
+<input name="shora" id="shora" value="<?php echo "17"; ?>" size="2" maxlength="2">
 :
-<input name="smin" id="smin" value="<? echo "00"; ?>" size="2" maxlength="2"> 
+<input name="smin" id="smin" value="<?php echo "00"; ?>" size="2" maxlength="2"> 
 ( dd / mm / aaaa - HH : mm )</span> </td>
  <tr><td><br><br><input name="gravar" type=submit class=botao id="gravar" value='Gravar'> 
   &nbsp;&nbsp;<input name="cancel" type=submit class=botao id="cancel" value='Cancelar'>&nbsp;&nbsp;<input type=submit value='Reiniciar' class=botao>
@@ -410,7 +410,7 @@ else
     </td>
 </tr>
 </form>
-<?
+<?php
 if($_POST['cancel']){
 echo "<script>window.location='conteudo.php';</script>";
 }

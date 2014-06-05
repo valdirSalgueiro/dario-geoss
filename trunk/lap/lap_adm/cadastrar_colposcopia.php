@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -143,7 +143,7 @@ body {
       <tr>
         <td><span class="style11">TESTE SCHILLER </span></td>
         <td><select name="schiller" class="caixa" id="schiller" onChange="submitar()">
-          <?
+          <?php
 $busca_atendimentos="select * from schiller order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -202,7 +202,7 @@ else
       </tr>
       <tr>
         <td><span class="style11">DESCRI&Ccedil;&Atilde;O</span></td>
-        <td><textarea name="descricao" cols="40" rows="6" id="descricao"><? echo $_SESSION["schiller"]; ?></textarea></td>
+        <td><textarea name="descricao" cols="40" rows="6" id="descricao"><?php echo $_SESSION["schiller"]; ?></textarea></td>
       </tr>
       <tr>
         <td colspan="2">&nbsp;</td>
@@ -227,7 +227,7 @@ else
 </body>
 
 </html>
-<?
+<?php
 if(($_POST['cancelar'])or($_POST['reiniciar'])){
 	$_SESSION["schiller"]=NULL;
    printf("<script>alert('Reiniciando.');

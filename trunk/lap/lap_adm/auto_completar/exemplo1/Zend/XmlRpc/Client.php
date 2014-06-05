@@ -362,7 +362,7 @@ class Zend_XmlRpc_Client
      */
     protected function _buildRequest($method, $params=null)
     {
-        $data = '<?xml version="1.0"?>' ."\n"
+        $data = '<?phpxml version="1.0"?>' ."\n"
               . '<methodCall>'          ."\n"
               . '<methodName>'
               .     $method
@@ -511,7 +511,7 @@ class Zend_XmlRpc_Client
         // Reset the method signatures array
         $this->_methodSignatures = array();
 
-        $xml = "<?xml version='1.0' standalone='yes'?>\n"
+        $xml = "<?phpxml version='1.0' standalone='yes'?>\n"
              . "<methods>\n";
 
         foreach ($signatures as $methodName => $signature) {

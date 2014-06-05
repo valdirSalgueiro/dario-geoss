@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 include('mailling.php');
@@ -23,10 +23,10 @@ else
 <form name=form1 method=post>
 <h1><font face=arial color='#ff9900'><b>Recados:</b></font></h1><hr color=black size=2>
 <table border=0 bordercolor=black class=fonte>
-<tr><td bordercolor=white>E-mail:</td><td bordercolor=white><?echo $campo_recado[email_recado];?></td></tr>
-<tr><td bordercolor=white>Assunto:</td><td bordercolor=white><?echo $campo_recado[assunto];?></td></tr>
-<tr><td bordercolor=white>Mensagem:</td><td bordercolor=white><textarea name=msg class=botao cols=50 rows=15 readonly><?echo $campo_recado[msg];?></textarea></td></tr>
-<?
+<tr><td bordercolor=white>E-mail:</td><td bordercolor=white><?phpecho $campo_recado[email_recado];?></td></tr>
+<tr><td bordercolor=white>Assunto:</td><td bordercolor=white><?phpecho $campo_recado[assunto];?></td></tr>
+<tr><td bordercolor=white>Mensagem:</td><td bordercolor=white><textarea name=msg class=botao cols=50 rows=15 readonly><?phpecho $campo_recado[msg];?></textarea></td></tr>
+<?php
 if(($campo_recado['resposta']!=NULL)or($campo_recado['usu']!=NULL))
 {
  $readonly="readonly";
@@ -36,8 +36,8 @@ if(($campo_recado['resposta']!=NULL)or($campo_recado['usu']!=NULL))
  }
 }
 ?>
-<tr><td bordercolor=white>Resposta:</td><td bordercolor=white><textarea name=resposta class=botao cols=50 rows=15 <?echo $readonly;?>><?echo $campo_recado['resposta'];?></textarea></td></tr>
-<?
+<tr><td bordercolor=white>Resposta:</td><td bordercolor=white><textarea name=resposta class=botao cols=50 rows=15 <?phpecho $readonly;?>><?phpecho $campo_recado['resposta'];?></textarea></td></tr>
+<?php
 if($campo_recado[lido]==0)
 {
  echo "<tr><td bordercolor=white></td><td bordercolor=white><input type=submit value=' Enviar ' class=botao><input type=submit name=lido value=' Marcar como lido ' class=botao></td></tr>";
@@ -46,7 +46,7 @@ if($campo_recado[lido]==0)
 <tr><td bordercolor=white></td><td bordercolor=white><input type=button value=' Voltar ' onclick="history.go(-1);" class=botao></td></tr>
 </table>
 </form>
-<?
+<?php
 $resposta=$_POST['resposta'];
 $lido=$_POST['lido'];
 if(($lido!=NULL)or($resposta!=NULL))

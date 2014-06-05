@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -79,7 +79,7 @@ body {
 </form>
 
 <p>
-  <?
+  <?php
 $nome=$_POST['nome'];
 $data=mktime();
 $por=$_SESSION["usuario_autenticado"];
@@ -142,15 +142,15 @@ if($nome!=NULL)
     <td width="494" colspan="2" bgcolor="#333333"><div align="center" class="style4">Laborat&oacute;rios Cadastrados </div>
         <div align="center"></div>
     <div align="center"></div></td>
-    <?
+    <?php
 	$sql = "SELECT * FROM lab order by id ASC";
 	$result = mysql_query($sql);
 	  while($row = mysql_fetch_array($result)) { ?>
   </tr>
   <tr>
-    <td colspan="2"><div align="center"><? print $row['nome']; ?></div></td>
+    <td colspan="2"><div align="center"><?php print $row['nome']; ?></div></td>
   </tr>
-  <? } ?>
+  <?php } ?>
   <tr>
     <td colspan="2" bgcolor="#333333">&nbsp;</td>
   </tr>

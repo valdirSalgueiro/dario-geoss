@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -17,7 +17,7 @@ else
 <h1><font face=verdana color='#ff9900'><b>Remover Usuário</b></font></h1><hr color=black size=2>
 <table border=0 class=fonte>
 <tr><td>Nome:</td><td><select name=sel_nome onchange="form1.submit();" class=botao>
-<?
+<?php
 $busca_usu="select * from usu where usu <> '".$usuario_autenticado."' order by usu asc;";
 $res_busca_usu=mysql_query($busca_usu,$conn);
 $num_usu=mysql_num_rows($res_busca_usu);
@@ -38,7 +38,7 @@ else
 </select></td></tr>
 </table>
 </form>
-<?
+<?php
 $sel_nome=$_POST['sel_nome'];
 if($sel_nome!=NULL)
 {

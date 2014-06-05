@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -84,15 +84,15 @@ body {
 <tr>
   <td class="style10">Id do Exame  :</td>
   <td width="366"><span class="back">
-    <input name="id" type="text" id="id" disabled="disabled" value="<? echo $_GET['id']; ?>" size="5">
+    <input name="id" type="text" id="id" disabled="disabled" value="<?php echo $_GET['id']; ?>" size="5">
   </span></td>
   <td width="174">&nbsp;</td>
 </tr>
 
 
 <TD class=back2 align=right width=187><div align="left"><span class="style10">N&uacute;mero de C&oacute;digos:</span></div></td>
-    <td class=back><input name="codigos" type="text" id="codigos" value="<? echo $_GET[codigos]; ?>" size="5">
-<td><? if($_GET[codigos]==NULL){ ?><input id = "faturar" name="faturar" type=submit value='Avançar' class=botao><? } ?>
+    <td class=back><input name="codigos" type="text" id="codigos" value="<?php echo $_GET[codigos]; ?>" size="5">
+<td><?php if($_GET[codigos]==NULL){ ?><input id = "faturar" name="faturar" type=submit value='Avançar' class=botao><?php } ?>
   <span class="atributos_titulo">
     <input name="button" type=button class="botao" onClick="history.go(-1);" value="Voltar">
     </span></tr>
@@ -101,13 +101,13 @@ body {
 <hr color=black size=1>
 </form>
 <form name="faturar2" method="post">
-<?
+<?php
 if($_POST[faturar]!=NULL){
 	 echo "<script>
  window.location='faturar.php?id=$_GET[id]&&codigos=$_POST[codigos]';</script>";
 	}
 ?>
-<?
+<?php
 if($_GET[codigos]!=NULL)
 {
 $countInputs=$_GET[codigos];
@@ -145,8 +145,8 @@ else
 }
 }
 ?>
-<? if($_GET[codigos]!=NULL){ ?><table><tr><td><input id = "faturar2" name="faturar2" type=submit value='Faturar Exame' class=botao></form><? } ?></td></tr></table>
-<?
+<?php if($_GET[codigos]!=NULL){ ?><table><tr><td><input id = "faturar2" name="faturar2" type=submit value='Faturar Exame' class=botao></form><?php } ?></td></tr></table>
+<?php
 if($_POST[faturar2]!=NULL){
 $countInputs=$_GET[codigos];
 for($no=0;$no<$countInputs;$no++)

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -82,23 +82,23 @@ else
 <table width="645" border="0" bordercolor="#331A1C">
   <tr>
     <td width="109">Nome :</td>
-    <td><? echo $campo_pac['nome']; ?></td>
+    <td><?php echo $campo_pac['nome']; ?></td>
     <td>N º :</td>
-    <td><? echo $campo_coda['id']; ?></td>
+    <td><?php echo $campo_coda['id']; ?></td>
   </tr>
   <tr>
     <td>Material :</td>
-    <td colspan="3"><? echo $campo_coda['material']; ?></td>
+    <td colspan="3"><?php echo $campo_coda['material']; ?></td>
   </tr>
   <tr>
     <td>Solicitação :</td>
-    <td colspan="3"><? echo $campo_med['nome']; ?></td>
+    <td colspan="3"><?php echo $campo_med['nome']; ?></td>
   </tr>
   <tr>
     <td>Convênio :</td>
-    <td width="283"><? echo $campo_conv['nome']; ?></td>
+    <td width="283"><?php echo $campo_conv['nome']; ?></td>
     <td width="50">Data :</td>
-    <td width="185"><? echo date("d/m/Y-H:h",$campo_cod['data_cadastro']); ?></td>
+    <td width="185"><?php echo date("d/m/Y-H:h",$campo_cod['data_cadastro']); ?></td>
   </tr>
   <tr>
     <td height="28" colspan="4"><hr color="black" size="2" /></td>
@@ -130,7 +130,7 @@ else
         <td width="627"><span class="style42">MACROSCOPIA:</span></td>
       </tr>
       <tr>
-        <td height="87"><? echo $campo_coda['macroscopia']; ?></td>
+        <td height="87"><?php echo $campo_coda['macroscopia']; ?></td>
       </tr>
       <tr>
         <td><span class="style42">ACHADOS COLPOSCÓPICOS NORMAIS:</span> </td>
@@ -142,19 +142,19 @@ else
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>JEC Anterior : <? echo $campo_cod['jec_anterior']; ?></td>
+        <td>JEC Anterior : <?php echo $campo_cod['jec_anterior']; ?></td>
       </tr>
       <tr>
-        <td>JEC Posterior : <? echo $campo_cod['jec_anterior']; ?></td>
+        <td>JEC Posterior : <?php echo $campo_cod['jec_anterior']; ?></td>
       </tr>
       <tr>
-        <td>Última Glandula : <? echo $campo_cod['ultima_glandula']; ?></td>
+        <td>Última Glandula : <?php echo $campo_cod['ultima_glandula']; ?></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Teste Schiller  : <? echo $campo_cod['schiller']; ?></td>
+        <td>Teste Schiller  : <?php echo $campo_cod['schiller']; ?></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -169,7 +169,7 @@ else
         <td><span class="style42">DESCRIÇÃO :</span></td>
       </tr>
       <tr>
-        <td height="87"><? echo $campo_coda['conclusao']; ?></td>
+        <td height="87"><?php echo $campo_coda['conclusao']; ?></td>
       </tr>
 
     </table></td>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -47,7 +47,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_galeria[nome_galeria];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_galeria[nome_galeria];?>">
 
 <h1><font face=verdana color='#ff9900'><b>Modificar Galeria de Fotos:</b></font></h1>
 <hr color=black size=2>
@@ -57,13 +57,13 @@ else
 
 <tr>
   <td width="147">T&iacute;tulo Galeria:</td>
-  <td width="405"><input name=nome_galeria type=text class=botao id="nome_galeria" value="<?echo $campo_galeria[nome_galeria];?>" size=50 maxlength=100></td></tr>
+  <td width="405"><input name=nome_galeria type=text class=botao id="nome_galeria" value="<?phpecho $campo_galeria[nome_galeria];?>" size=50 maxlength=100></td></tr>
 
 
 <tr>
   <td>Descri&ccedil;&atilde;o Galeria:</td><td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_galeria');
 
@@ -80,12 +80,12 @@ $oFCKeditor->Create();
 
 <tr><td></td><td>&nbsp;</td></tr>
 
-<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_galerias.php?codigo_galeria=<?echo $campo_galeria[codigo_galeria];?>';"></td></tr>
+<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_galerias.php?codigo_galeria=<?phpecho $campo_galeria[codigo_galeria];?>';"></td></tr>
 </table>
 
 </form>
 
-<?
+<?php
 $nome_antigo=$_POST['nome_galeria'];
 $nome_galeria=$_POST['nome_galeria'];
 $descricao_galeria=$_POST['descricao_galeria'];

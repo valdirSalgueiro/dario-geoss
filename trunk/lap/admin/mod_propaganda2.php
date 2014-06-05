@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -47,7 +47,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_propaganda[nome_propaganda];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_propaganda[nome_propaganda];?>">
 
 <h1><font face=verdana color='#ff9900'><b>Modificar Foto Propaganda:</b></font></h1>
 <hr color=black size=2>
@@ -57,14 +57,14 @@ else
 
 <tr>
   <td width="200">N&uacute;mero Foto Propaganda:</td>
-  <td width="379"><input name=num type=text class=botao id="num" value="<?echo $campo_propaganda[nome_propaganda];?>" size=50 maxlength=100></td></tr>
+  <td width="379"><input name=num type=text class=botao id="num" value="<?phpecho $campo_propaganda[nome_propaganda];?>" size=50 maxlength=100></td></tr>
 
 
 <tr>
   <td>Descri&ccedil;&atilde;o Foto Propaganda:</td>
   <td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_propaganda');
 
@@ -81,12 +81,12 @@ $oFCKeditor->Create();
 
 <tr><td></td><td>&nbsp;</td></tr>
 
-<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_propaganda.php?codigo_propaganda=<?echo $campo_propaganda[codigo_propaganda];?>';"></td></tr>
+<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_propaganda.php?codigo_propaganda=<?phpecho $campo_propaganda[codigo_propaganda];?>';"></td></tr>
 </table>
 
 </form>
 
-<?
+<?php
 $nome_antigo=$_POST['nome_propaganda'];
 $nome_propaganda=$_POST['nome_propaganda'];
 $descricao_propaganda=$_POST['descricao_propaganda'];

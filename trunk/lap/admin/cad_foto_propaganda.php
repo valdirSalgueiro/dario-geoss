@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 ?>
@@ -45,7 +45,7 @@ a.menu_principal:active  { text-decoration: none; color:#33333; font-size:11px;}
 }
 -->
 </style>
-<?
+<?php
 $num_file=1;
 
 include('../estilo.css');
@@ -88,7 +88,7 @@ else
 
 <table border=0 class=fonte>
 
-<?
+<?php
 
 for($x=0;$x<$num_file;$x++)
 
@@ -120,7 +120,7 @@ for($x=0;$x<$num_file;$x++)
 
 </form>
 
-<?
+<?php
 
 $adiciona_foto=$_POST['adiciona_foto'];
 

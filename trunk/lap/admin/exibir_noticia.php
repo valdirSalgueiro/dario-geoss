@@ -25,37 +25,37 @@ if ($_GET['desativar_codigo_noticia']) {
 
 <table width="200" border="0" cellpadding="2" cellspacing="2" class="boldamarelo">
 <form name="ativar_form" method="post">
-  <? 	while($mensagens = mysql_fetch_array($consulta)){ ?>
+  <?php 	while($mensagens = mysql_fetch_array($consulta)){ ?>
   <tr>
     <td width="56" bgcolor="#DBDAF8">Código Notícia</td>
-    <td width="128" bgcolor="#E2E2E2"><? echo $mensagens['codigo_noticia']; ?> </td>
+    <td width="128" bgcolor="#E2E2E2"><?php echo $mensagens['codigo_noticia']; ?> </td>
   </tr>
   <tr>
     <td bgcolor="#DEDBFF">Título Notícia</td>
-    <td bgcolor="#E7E3E7"><? echo $mensagens['nome_noticia']; ?></td>
+    <td bgcolor="#E7E3E7"><?php echo $mensagens['nome_noticia']; ?></td>
   </tr>
   <tr>
     <td bgcolor="#DEDBFF">Visualizações</td>
-    <td bgcolor="#E7E3E7"><b><? echo $mensagens['visualizacoes']; ?></b></td>
+    <td bgcolor="#E7E3E7"><b><?php echo $mensagens['visualizacoes']; ?></b></td>
   </tr>
    <tr>
     <td bgcolor="#DEDBFF">Status</td>
-    <td bgcolor="#E7E3E7"><? if ($mensagens['ativado']==1) { echo "desativado"; } else { echo "ativado";} ?></td>
+    <td bgcolor="#E7E3E7"><?php if ($mensagens['ativado']==1) { echo "desativado"; } else { echo "ativado";} ?></td>
   </tr>
   <tr>  
-    <input name="codigo_noticia" id="codigo_noticia" type="hidden" value="<?=$mensagens['codigo_noticia']; ?>">
+    <input name="codigo_noticia" id="codigo_noticia" type="hidden" value="<?php=$mensagens['codigo_noticia']; ?>">
   <td colspan="2">
- <?
+ <?php
 if ($mensagens['ativado']==1) {
 ?>
-  <input name="ativar" type="button" class="botao" id="ativar" value="Ativar" onClick="javascript:location.href = 'exibir_noticia.php?ativar_codigo_noticia=<?=$mensagens['codigo_noticia']; ?>'"/>
-<?
+  <input name="ativar" type="button" class="botao" id="ativar" value="Ativar" onClick="javascript:location.href = 'exibir_noticia.php?ativar_codigo_noticia=<?php=$mensagens['codigo_noticia']; ?>'"/>
+<?php
 } elseif ($mensagens['ativado']==0) {
 ?>
-  <input name="desativar" type="button" class="botao" id="desativar" value="Desativar" onClick="javascript:location.href = 'exibir_noticia.php?desativar_codigo_noticia=<?=$mensagens['codigo_noticia']; ?>'"/>
-<? } ?>
+  <input name="desativar" type="button" class="botao" id="desativar" value="Desativar" onClick="javascript:location.href = 'exibir_noticia.php?desativar_codigo_noticia=<?php=$mensagens['codigo_noticia']; ?>'"/>
+<?php } ?>
  </td>
   </tr>
   </form>
-<? } ?>
+<?php } ?>
 </table>

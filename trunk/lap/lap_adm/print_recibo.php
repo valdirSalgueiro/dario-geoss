@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -61,7 +61,7 @@ else
     <td><div align="center"><strong>RECIBO</strong></div></td>
   </tr>
   <tr>
-    <td><div align="center">Recebi a importancia de <strong><? echo $valor; ?> </strong>de <strong><? echo $nome; ?></strong>, CPF: <strong><? echo $_GET[cpf];?> </strong>referente aos serviços de <strong><? echo $servicos; ?> </strong>em <strong><? echo $data; ?></strong></div></td>
+    <td><div align="center">Recebi a importancia de <strong><?php echo $valor; ?> </strong>de <strong><?php echo $nome; ?></strong>, CPF: <strong><?php echo $_GET[cpf];?> </strong>referente aos serviços de <strong><?php echo $servicos; ?> </strong>em <strong><?php echo $data; ?></strong></div></td>
   </tr>
   
   <tr>

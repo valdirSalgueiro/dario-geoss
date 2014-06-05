@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -48,7 +48,7 @@ body {
 
 <tr><td>Usuário:</td><td><select name=usu class=botao onChange="form1.submit();">
 
-<?
+<?php
 
 if($num_usu>0)
 
@@ -84,7 +84,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $usu=$_POST['usu'];
 

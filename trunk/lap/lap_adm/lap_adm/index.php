@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -16,7 +16,7 @@ body {
 .style36 {color: #000000; font-size: 10px; font-weight: bold; }
 -->
 </style>
-<?
+<?php
  //include('random.php');
  //$foto = gera_foto(); 
 ?>
@@ -77,7 +77,7 @@ body {
                     </div></td>
                   </tr>
                 </table>
-<?
+<?php
 
 $usu=$_POST['usu'];
 

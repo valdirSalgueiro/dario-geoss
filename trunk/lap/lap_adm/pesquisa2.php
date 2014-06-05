@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -63,7 +63,7 @@ else
 <tr>
   <td width="189">Nome do Paciente  :</td>
   <td width="425"><select name="id" class="caixa" id="id">
-    <?
+    <?php
 $busca_pac="select * from paciente order by nome asc;";
 $res_busca_pac=mysql_query($busca_pac,$conn);
 $num_pac=mysql_num_rows($res_busca_pac);
@@ -101,7 +101,7 @@ else
 <tr>
   <td>Nome M&eacute;dico :</td>
   <td><select name="id_med" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -136,7 +136,7 @@ else
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -174,7 +174,7 @@ else
 
 <TD class=back2 align=right width=189><div align="left">Entre das Datas : </div></td>
 <td class=back>
-								<select name=smonth><?
+								<select name=smonth><?php
 	for ($i= 1; $i < 13; $i ++)
 	{
 		echo "<option value=$i";
@@ -385,7 +385,7 @@ else
 <hr color=black size=1>
 </form>
 
-  <?
+  <?php
 $id_med=$_POST['id_med'];
 $convenio=$_POST['convenio'];
 $nome=$_POST['id'];
@@ -406,7 +406,7 @@ if ($resultado_total == 0) {
 else
 {
 while($mensagens = mysql_fetch_array($consulta)) { ?>
-<?
+<?php
  ##Busca do nome do paciente##
  $busca_pac="SELECT id,nome from paciente WHERE id = '".$mensagens['paciente_id']."'";
  $res_busca_pac=mysql_query($busca_pac,$conn);
@@ -424,27 +424,27 @@ while($mensagens = mysql_fetch_array($consulta)) { ?>
   <tr>
     <br>
     <td width="141"><span class="style3">Exame:</span></td>
-    <td width="371"><span class="style3"><? echo $mensagens['id']; ?></span></td>
+    <td width="371"><span class="style3"><?php echo $mensagens['id']; ?></span></td>
   </tr>
   <tr>
     <td><span class="style3">Nome Paciente :</span></td>
-    <td><? echo $campo_pac['nome']; ?></td>
+    <td><?php echo $campo_pac['nome']; ?></td>
   </tr>
   <tr>
     <td><span class="style3">Nome M&eacute;dico :</span></td>
-    <td><? echo $campo_med['nome']; ?></td>
+    <td><?php echo $campo_med['nome']; ?></td>
   </tr>
   <tr>
     <td><span class="style3">Conv&ecirc;nio :</span></td>
-    <td><span class="style3"><? echo $mensagens['convenio']; ?></span></td>
+    <td><span class="style3"><?php echo $mensagens['convenio']; ?></span></td>
   </tr>
   
   <tr>
     <td>&nbsp;</td>
-    <td><a href="detalhes.php?id=<? echo $mensagens['id']; ?>">Detalhes</a></td>
+    <td><a href="detalhes.php?id=<?php echo $mensagens['id']; ?>">Detalhes</a></td>
   </tr>
 </table>
-<? 
+<?php 
 }
 }
 }

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include "conn.php";
 
@@ -17,7 +17,7 @@ if ($_POST['enviar']) {
 alert('Seu comentário foi enviado.')
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -1,4 +1,4 @@
-<?
+<?php
 include('conn.php');
 
 function gera_foto()

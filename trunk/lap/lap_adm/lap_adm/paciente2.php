@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -126,7 +126,7 @@ a:active {
 
 		<span class="style6">
 
-           <?
+           <?php
 
            $busca_cliente="select * from paciente where id  = '".$id."';";
 

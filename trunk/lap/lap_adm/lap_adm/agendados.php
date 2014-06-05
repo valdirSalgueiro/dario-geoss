@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -62,7 +62,7 @@ body {
 <tr>
   <td class="style10">Paciente :</td>
   <td><select name="paciente" class="caixa" id="id">
-    <?
+    <?php
 $busca_pac="select * from agendamentos order by paciente asc;";
 $res_busca_pac=mysql_query($busca_pac,$conn);
 $num_pac=mysql_num_rows($res_busca_pac);
@@ -96,7 +96,7 @@ else
 <tr>
   <td class="style10">M&eacute;dico :</td>
   <td><select name="medico" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -136,7 +136,7 @@ else
 <tr>
   <td class="style10">Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -184,7 +184,7 @@ else
 </table>
 
 
-<?
+<?php
 if($_POST['todos']){
 $data = date("d/m/Y");
 $nome=$_POST['nome'];
@@ -252,7 +252,7 @@ $ex_status_id=$_POST['ex_status_id'];
  }
 }
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());
@@ -262,7 +262,7 @@ $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or
 
 
 ?>
-<?
+<?php
 if($_POST['buscar']){
 
 $nome=$_POST['dc'];

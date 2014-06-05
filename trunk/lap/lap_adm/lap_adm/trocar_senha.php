@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -93,7 +93,7 @@ function testa_vazio()
 
 </form>
 
-<?
+<?php
 
 $senha=$_POST['senha'];
 

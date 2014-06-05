@@ -145,7 +145,7 @@ a:hover{text-decoration:none;color="black";size:1}
                     </tr>
                   </table>
                     <table width="460" border="0" align="center" cellpadding="0" cellspacing="0">
-                      <tr><?
+                      <tr><?php
 					  //Contando o número de notícias cadastradas
 include "../conn.php";					  
 $consulta2 = mysql_query("SELECT count(codigo_noticia) as total FROM noticias WHERE nome_noticia like '%".$_GET['busca']."%' order by visualizacoes DESC limit  0,10") or die(mysql_error());
@@ -157,13 +157,13 @@ $totalmat = mysql_result($consulta2,0,"total");
                     <table width="468" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="6" height="590">&nbsp;</td>
-                        <td><?
+                        <td><?php
         include "../conn.php";
 		include "../data.php";
 		
 		?>
                           <span class="style29">
-                          <?
+                          <?php
 
 		   if($_GET['busca']!=NULL)
 		   {

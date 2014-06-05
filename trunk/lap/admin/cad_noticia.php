@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -31,7 +31,7 @@ else
 }
 
 ?>
-<?
+<?php
 //print date('d/n/Y-H:i');
 /*
 $hr = date("H:i:s", mktime(gmdate("H")-3, gmdate("i"), gmdate("s"), gmdate("m"), gmdate("d"), gmdate("Y")));
@@ -68,7 +68,7 @@ echo $data_completa;
 
 <tr><td>Nome Categoria: </td><td><select name=codigo_categoria class=botao>
 
-<?
+<?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -123,7 +123,7 @@ else
 
 <tr>
   <td>Data: </td>
-  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?echo $hoje;?>" size=12 maxlength=12></td>
+  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?phpecho $hoje;?>" size=12 maxlength=12></td>
 </tr>
 
 <tr>
@@ -146,7 +146,7 @@ else
 <tr>
   <td>Not&iacute;cia:</td><td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_noticia');
 
@@ -170,7 +170,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 if($_POST['no_entrada']==1){
 $ativado=0;
 $timestamp='';

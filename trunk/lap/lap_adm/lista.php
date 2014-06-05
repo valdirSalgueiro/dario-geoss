@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -95,7 +95,7 @@ body {
 <link href="estilo.css" rel="stylesheet" type="text/css">
 <body class=fonte>
 <form name="demoform" method=post>
-<h1 class="style1"><font face=verdana><img src="images/usuarios.jpg" width="50" height="50"> Relat&oacute;rio de Agendamentos da data <strong><? print $dia2; ?>/<? print $mes2; ?>/<? print $ano; ?></strong>  :</font></h1>
+<h1 class="style1"><font face=verdana><img src="images/usuarios.jpg" width="50" height="50"> Relat&oacute;rio de Agendamentos da data <strong><?php print $dia2; ?>/<?php print $mes2; ?>/<?php print $ano; ?></strong>  :</font></h1>
 <hr color=black size=2>
 <a href="javaScript:window.print()">Imprimir ?</a><br>
 <br> 
@@ -104,7 +104,7 @@ body {
 
 <tr>
   <td>Da Data :</td>
-  <td><strong><? print $dia2; ?>/<? print $mes2; ?>/<? print $ano; ?></strong>    <span class="style2"> &nbsp;</span></td>
+  <td><strong><?php print $dia2; ?>/<?php print $mes2; ?>/<?php print $ano; ?></strong>    <span class="style2"> &nbsp;</span></td>
 </tr>
 
 <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="HelloWorld/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;"></iframe>
@@ -112,7 +112,7 @@ body {
 <tr><td></td><td>&nbsp;</td></tr>
 </table>
 
-<?
+<?php
 $data = "$dia2/$mes2/$ano";
  $busca_ex.="select * from agendamentos  WHERE data = '".$data."' order by id asc;";
  $res_busca_ex=mysql_query($busca_ex,$conn);
@@ -143,16 +143,16 @@ $data = "$dia2/$mes2/$ano";
  <script>
 
 function excluir(){
-window.opener.location = '<? echo "excluir.php?id=$campo_ex[id]" ?>';
+window.opener.location = '<?php echo "excluir.php?id=$campo_ex[id]" ?>';
 window.close();
 }
 function abrir(){
-window.opener.location = '<? echo "alterar.php?id=$campo_ex[id]" ?>';
+window.opener.location = '<?php echo "alterar.php?id=$campo_ex[id]" ?>';
 window.close();
 }
 
 </script>
-<?  
+<?php  
      echo "<tr height=20><td bordercolor=white>$i</td><td bordercolor=white>$campo_ex[paciente]</td>&nbsp;&nbsp;<td bordercolor=white>$campo_ex[medico]</td><td bordercolor=white>&nbsp;&nbsp;$campo_ex[data]</td><td bordercolor=white>&nbsp;&nbsp;$campo_ex[convenio]</td><td bordercolor=white>&nbsp;&nbsp;($campo_ex[ddd]) $campo_ex[telefone]</td><td bordercolor=white>&nbsp;&nbsp;$campo_ex[obs]</td><td bordercolor=white><a href='javascript:excluir()'>Excluir</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href='javascript:abrir()'>Alterar</td></a></tr>";
 
   }
@@ -188,7 +188,7 @@ window.close();
  }
 
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());

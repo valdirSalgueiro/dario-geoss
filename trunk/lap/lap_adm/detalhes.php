@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -126,7 +126,7 @@ body {
   </tr>
 <tr>
   <td> Status  :</td>
-  <td><strong><? echo $campo_exa['nome']; ?></strong></td>
+  <td><strong><?php echo $campo_exa['nome']; ?></strong></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
@@ -134,52 +134,52 @@ body {
 </tr>
 <tr>
   <td width="174">Laudo N &ordm; :</td>
-  <td width="367"><? echo $campo_ex['id']; ?></td>
+  <td width="367"><?php echo $campo_ex['id']; ?></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo_pac['nome']; ?>    </td>
+  <td><?php echo $campo_pac['nome']; ?>    </td>
 </tr>
 
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Previs&atilde;o de Saida:</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
 </tr>
 <tr>
   <td>Material :</td>
-  <td><? echo $campo_ex['material']; ?></td>
+  <td><?php echo $campo_ex['material']; ?></td>
 </tr>
 
 
 <tr>
   <td>Valor :</td>
   <td>R$
-    <? echo $campo_ex['valor']; ?></td>
+    <?php echo $campo_ex['valor']; ?></td>
 </tr>
 <tr>
   <td>Macroscopia : </td>
-  <td><? echo $campo_ex['macroscopia']; ?></td>
+  <td><?php echo $campo_ex['macroscopia']; ?></td>
 </tr>
 <tr>
   <td>C&oacute;d Microscopia:</td>
-  <td><? echo $campo_ex['cod_microscopia']; ?></td>
+  <td><?php echo $campo_ex['cod_microscopia']; ?></td>
 </tr>
 <tr>
   <td>Microscopia :</td>
-  <td><? echo $campo_ex['microscopia']; ?></td>
+  <td><?php echo $campo_ex['microscopia']; ?></td>
 </tr>
 <tr>
   <td>C&oacute;d Conclus&atilde;o:</td>
-  <td><? echo $campo_ex['cod_conclusao']; ?></td>
+  <td><?php echo $campo_ex['cod_conclusao']; ?></td>
 </tr>
 <tr>
   <td>Conclus&atilde;o :</td>
-  <td><? echo $campo_ex['conclusao']; ?></td>
+  <td><?php echo $campo_ex['conclusao']; ?></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
@@ -194,12 +194,12 @@ body {
 </tr>
 <tr>
   <td>Entrada :</td>
-  <td><? echo $campo_ex['obs_entrada']; ?></td>
+  <td><?php echo $campo_ex['obs_entrada']; ?></td>
 </tr>
 <tr>
   <td>Laudo :</td>
   <td><span class="style1">
-    <? echo $campo_ex['obs_saida']; ?>
+    <?php echo $campo_ex['obs_saida']; ?>
   </span></td>
 </tr>
 <tr>
@@ -215,23 +215,23 @@ body {
 </tr>
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
-  <td><? echo $campo_med['nome']; ?></td>
+  <td><?php echo $campo_med['nome']; ?></td>
 </tr>
 <tr>
   <td>M&eacute;dico Execultante :</td>
-  <td><? echo $campo_ex['medico_execultante']; ?></td>
+  <td><?php echo $campo_ex['medico_execultante']; ?></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio :</td>
-  <td><? echo $campo_conve['nome']; ?></td>
+  <td><?php echo $campo_conve['nome']; ?></td>
 </tr>
 <tr>
   <td>Tipo de Tabela  :</td>
-  <td><? echo $campo_ex['tipo_tabela']; ?></td>
+  <td><?php echo $campo_ex['tipo_tabela']; ?></td>
 </tr>
 <tr>
   <td>C&oacute;digo de Procedimento   :</td>
-  <td><? echo $campo_ex['codigo_procedimento']; ?></td>
+  <td><?php echo $campo_ex['codigo_procedimento']; ?></td>
 </tr>
 <tr>
   <td></td>
@@ -243,7 +243,7 @@ body {
 </tr>
 </table>
 </form>
-<?
+<?php
 
 if($_POST['fin1']){
 

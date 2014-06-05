@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -63,14 +63,14 @@ body {
 
 <form name=form1 method=post>
 
-<h1><font face=verdana><b><span class="style1">Modificar Usuário:</span></b></font><font face=verdana color='#ff9900'><b> <?echo $campo_usu[usu];?></b></font></h1>
+<h1><font face=verdana><b><span class="style1">Modificar Usuário:</span></b></font><font face=verdana color='#ff9900'><b> <?phpecho $campo_usu[usu];?></b></font></h1>
 <hr color=black size=2>
 
-<input type=hidden name=usu_antigo value="<?echo $campo_usu[usu];?>">
+<input type=hidden name=usu_antigo value="<?phpecho $campo_usu[usu];?>">
 
 <table border=0 class=fonte>
 
-<tr><td>Usuário:</td><td><input type=text name=usu size=30 maxlength=30 class=botao value="<?echo $campo_usu[usu];?>"></td></tr>
+<tr><td>Usuário:</td><td><input type=text name=usu size=30 maxlength=30 class=botao value="<?phpecho $campo_usu[usu];?>"></td></tr>
 
 </table>
 
@@ -82,28 +82,28 @@ body {
 <td bgcolor='#00CC00'><p align="center">Cadastrar:</p></td><td bgcolor='#00CC00'><p align="center">Modificar:</p></td><td bgcolor='#00CC00'><p align="center">Remover:</p></td></tr>
 
 <tr><td bgcolor='#00CC00'>Usuário:</td>
-<td><center><input type=checkbox name=cad_usu value=1 id=acessos <?if($acesso[0]==1){echo "checked";}?>></center></td><td><p align="center"><input type=checkbox name=mod_usu value=1 id=acessos <?if($acesso[1]==1){echo "checked";}?>></p></td><td><p align="center"><input type=checkbox name=rem_usu value=1 id=acessos <?if($acesso[2]==1){echo "checked";}?>></p></td></tr>
+<td><center><input type=checkbox name=cad_usu value=1 id=acessos <?phpif($acesso[0]==1){echo "checked";}?>></center></td><td><p align="center"><input type=checkbox name=mod_usu value=1 id=acessos <?phpif($acesso[1]==1){echo "checked";}?>></p></td><td><p align="center"><input type=checkbox name=rem_usu value=1 id=acessos <?phpif($acesso[2]==1){echo "checked";}?>></p></td></tr>
 
 <tr>
   <td bgcolor='#00CC00'>Cadastro:</td>
-  <td><center><input type=checkbox name=cad value=1 id=acessos <?if($acesso[3]==1){echo "checked";}?>></center></td><td><p align="center">&nbsp;</p></td><td><p align="center">&nbsp;</p></td></tr>
+  <td><center><input type=checkbox name=cad value=1 id=acessos <?phpif($acesso[3]==1){echo "checked";}?>></center></td><td><p align="center">&nbsp;</p></td><td><p align="center">&nbsp;</p></td></tr>
 
 <tr>
   <td bgcolor='#00CC00'>Altera&ccedil;&atilde;o:</td>
-  <td><center><input type=checkbox name=alt value=1 id=acessos <?if($acesso[4]==1){echo "checked";}?>></center></td><td><p align="center">&nbsp;</p></td><td><p align="center">&nbsp;</p></td></tr>
+  <td><center><input type=checkbox name=alt value=1 id=acessos <?phpif($acesso[4]==1){echo "checked";}?>></center></td><td><p align="center">&nbsp;</p></td><td><p align="center">&nbsp;</p></td></tr>
 </table>
 
 <table border=1 bordercolor=black class=fonte width=400>
   <tr>
-    <td bordercolor=white><input type=checkbox name=exames value=1 id=acessos <?if($acesso[5]==1){echo "checked";}?>>
+    <td bordercolor=white><input type=checkbox name=exames value=1 id=acessos <?phpif($acesso[5]==1){echo "checked";}?>>
       O usu&aacute;rio tem acesso ao menu de exames.<br>
-<input type=checkbox name=financeiro value=1 id=acessos <?if($acesso[6]==1){echo "checked";}?>>
+<input type=checkbox name=financeiro value=1 id=acessos <?phpif($acesso[6]==1){echo "checked";}?>>
       O usu&aacute;rio pode acessar o financeiro.<br>
-      <input type=checkbox name=adm value=1 id=acessos <?if($acesso[7]==1){echo "checked";}?>>
+      <input type=checkbox name=adm value=1 id=acessos <?phpif($acesso[7]==1){echo "checked";}?>>
       O usu&aacute;rio tem acesso a administra&ccedil;&atilde;o.<br>
-      <input type=checkbox name=agendamento value=1 id=acessos <?if($acesso[8]==1){echo "checked";}?>>
+      <input type=checkbox name=agendamento value=1 id=acessos <?phpif($acesso[8]==1){echo "checked";}?>>
       O usu&aacute;rio pode agendar e pesquisar.<br>
-      <input type=checkbox name=logs value=1 id=acessos <?if($acesso[9]==1){echo "checked";}?>>
+      <input type=checkbox name=logs value=1 id=acessos <?phpif($acesso[9]==1){echo "checked";}?>>
       O usu&aacute;rio tem acesso aos logs.</td>
   </tr>
 </table>
@@ -120,7 +120,7 @@ body {
 
 </form>
 
-<?
+<?php
 
 
 

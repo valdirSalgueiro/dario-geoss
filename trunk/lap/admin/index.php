@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../conn.php');
 include('../estilo.css');
@@ -14,7 +14,7 @@ include('../estilo.css');
 <tr><td><b>Senha:</b></td><td><input type=password name=senha size=30 maxlength=30 class=botao></td></tr>
 <tr><td></td><td><input type=submit value=Entrar class=botao></td></tr>
 </table>
-<?
+<?php
 $usu=$_POST['usu'];
 $senha=$_POST['senha'];
 if(($usu!=NULL)and($senha!=NULL))

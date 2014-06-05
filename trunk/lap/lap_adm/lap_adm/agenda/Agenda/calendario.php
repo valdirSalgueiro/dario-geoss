@@ -17,7 +17,7 @@ function evento(year,_mes,dia)
 </script>
 </head>
 <body onSelectStart="return false">
-<?
+<?php
 
 function gerar($cp,$_)
 {
@@ -118,21 +118,21 @@ $_="ndes";
 <table width="160" border="0" cellspacing="1" cellpadding="1" align="center">
 <tr align="center" bgcolor="#CCCCCC">
  <td colspan="7" bgcolor="#FFD25B" align="center" class="preto">
-              <a href="<? echo $_SERVER["PHP_SELF"]."?mes=".($month-1)."&ano=".($year); ?>" class="preto">&#171;</a>
-              <?echo "$month_name $year";?>
-              <a href="<? echo $_SERVER["PHP_SELF"]."?mes=".($month+1)."&ano=".($year); ?>" class="preto">&#187;</a>
+              <a href="<?php echo $_SERVER["PHP_SELF"]."?mes=".($month-1)."&ano=".($year); ?>" class="preto">&#171;</a>
+              <?phpecho "$month_name $year";?>
+              <a href="<?php echo $_SERVER["PHP_SELF"]."?mes=".($month+1)."&ano=".($year); ?>" class="preto">&#187;</a>
 </td>
 </tr>
 <tr align="center">
-<?
+<?php
 $cp .= "end";
 for ($i=0;$i<7;$i++) { ?>
-  <td width="39" align="center" bgColor="#EEEEEE"><? echo "$day_name[$i]";
+  <td width="39" align="center" bgColor="#EEEEEE"><?php echo "$day_name[$i]";
   ?></td>
-  <? } $cp .= "e";?>
+  <?php } $cp .= "e";?>
   </tr>
   <tr align="center">
-  <?
+  <?php
 
   $cp .= "r F";
   if (date("w",mktime(0,0,0,$month,1,$year))==0) {
@@ -145,8 +145,8 @@ for ($i=0;$i<7;$i++) { ?>
     $d=date("t",mktime(0,0,0,$month,0,$year))-$a;
     ?>
     <td bgcolor="#ffffff" align="center"><font
-    color="#ffffff"><?=$d?></font></td>
-    <? }
+    color="#ffffff"><?php=$d?></font></td>
+    <?php }
     
     for($d=1;$d<=date("t",mktime(0,0,0,($month+1),0,$year));$d++)
     {
@@ -184,21 +184,21 @@ for ($i=0;$i<7;$i++) { ?>
 	  if(mysql_num_rows($sql)){
 	  $cor   =   mysql_result($sql, 0, "cor");
       ?>
-            <td bgcolor="#<?=$cor?>"  align="center" title="visualizar"><img src="../../img/delete.gif" width="24" height="24"><a href="javascript:evento(<? echo $year.",".$_mes.",".$dia;?>)"><?=$d?></a></td>
-      <?
+            <td bgcolor="#<?php=$cor?>"  align="center" title="visualizar"><img src="../../img/delete.gif" width="24" height="24"><a href="javascript:evento(<?php echo $year.",".$_mes.",".$dia;?>)"><?php=$d?></a></td>
+      <?php
       }
       else
       {
         ?>
-        <td <?=$bg;?> align="center"><font color=#333333><?$bold;?><?=$d //cor dos dias ?></td>
-        <?
+        <td <?php=$bg;?> align="center"><font color=#333333><?php$bold;?><?php=$d //cor dos dias ?></td>
+        <?php
       }
       if(date("w",mktime(0,0,0,$month,$d,$year))==0&date("t",mktime(0,0,0,($month+1),0,$year))>$d)
       {
         ?>
         </tr>
         <tr align="center">
-        <? }}
+        <?php }}
         $cp .= "erna";
         $da=$d+1;
         if(date("w",mktime(0,0,0,$month+1,1,$year))<>1)
@@ -208,9 +208,9 @@ for ($i=0;$i<7;$i++) { ?>
           {
             ?>
             <td bgcolor="#ffffff" align="center">
-			<font color="#ffffff"><?=$d?></font>
+			<font color="#ffffff"><?php=$d?></font>
 			</td>
-            <?
+            <?php
             $d++;
           }
         }

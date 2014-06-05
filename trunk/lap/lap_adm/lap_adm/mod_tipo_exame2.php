@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -57,7 +57,7 @@ body {
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[nome];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[nome];?>">
 
 <h1 class="style1"><font face=verdana>Modificar Tipo de Exame:</font></h1>
 <hr color=black size=2>
@@ -66,12 +66,12 @@ body {
 
 <tr>
   <td width="147">Nome:</td>
-  <td width="405"><input name=nome type=text class=botao id="nome" value="<?echo $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
+  <td width="405"><input name=nome type=text class=botao id="nome" value="<?phpecho $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
 
 
 <tr>
   <td>Dias</td>
-  <td><input name=dias type=text class=botao id="dias" value="<?echo $campo_noticia[dias];?>" size=50 maxlength=100></td></tr>
+  <td><input name=dias type=text class=botao id="dias" value="<?phpecho $campo_noticia[dias];?>" size=50 maxlength=100></td></tr>
 
 <tr><td></td><td><input type=submit value=' Modificar ' class=botao>
   <span class="atributos_titulo">
@@ -81,7 +81,7 @@ body {
 
 </form>
 
-<?
+<?php
 $nome=$_POST['nome'];
 $dias=$_POST['dias'];
 $nome_antigo=$_POST['nome'];

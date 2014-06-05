@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -76,8 +76,8 @@ body {
 
 <form name=pesquisa method=post>
 
-<h1 class="style4"><font face=verdana><span class="style1"><img src="arquivos/BotaoLupa.jpg" width="48" height="48"></span> <? if($_GET[dia]!=NULL){ ?>
-<span class="style11">LAP - Livro de Registro do dia <? echo "$_GET[dia] / $_GET[mes] / $_GET[ano]"; ?> <? } ?></span></font></h1>
+<h1 class="style4"><font face=verdana><span class="style1"><img src="arquivos/BotaoLupa.jpg" width="48" height="48"></span> <?php if($_GET[dia]!=NULL){ ?>
+<span class="style11">LAP - Livro de Registro do dia <?php echo "$_GET[dia] / $_GET[mes] / $_GET[ano]"; ?> <?php } ?></span></font></h1>
 <hr color=black size=2>
 
 <div align="center"><span class="style1"><br>
@@ -85,7 +85,7 @@ body {
 </form>
 
 
-  <?
+  <?php
 $id=$_POST['id'];
 $id_med=$_POST['id_med'];
 $convenio=$_POST['convenio'];
@@ -131,7 +131,7 @@ $result = mysql_query($sql);
 //die($sql);
 
 while($row = mysql_fetch_array($result)) { ?>
-<?
+<?php
  ##Busca do nome do paciente##
  $busca_pac="SELECT id,nome from paciente WHERE id = '".$row['paciente_id']."'";
  $res_busca_pac=mysql_query($busca_pac,$conn);
@@ -163,17 +163,17 @@ while($row = mysql_fetch_array($result)) { ?>
 <table width="1413" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
   <tr>
     <br>
-    <td width="61" class="style10"><span class="style12"><? echo $row['id']; ?></span></td>
-    <td width="95" class="style10"><span class="style12"><? echo date("d/m/Y",$row['data_entrada']); ?></span></td>
-    <td width="234" class="style12"><span class="style12"><? echo $campo_pac['nome']; ?></span></td>
-    <td width="149" class="style10"><span class="style12"><? echo $campo_conve['nome']; ?></span></td>
-    <td width="155" class="style3"><span class="style12"><? echo  $campo_med['nome']; ?></span></td>
-    <td width="552" class="style10"><span class="style12"><? echo $row['material']; ?></span></td>
-    <td width="167" class="style10"><div align="center" class="style12"><? echo $campo_convel['nome']; ?></div></td>
+    <td width="61" class="style10"><span class="style12"><?php echo $row['id']; ?></span></td>
+    <td width="95" class="style10"><span class="style12"><?php echo date("d/m/Y",$row['data_entrada']); ?></span></td>
+    <td width="234" class="style12"><span class="style12"><?php echo $campo_pac['nome']; ?></span></td>
+    <td width="149" class="style10"><span class="style12"><?php echo $campo_conve['nome']; ?></span></td>
+    <td width="155" class="style3"><span class="style12"><?php echo  $campo_med['nome']; ?></span></td>
+    <td width="552" class="style10"><span class="style12"><?php echo $row['material']; ?></span></td>
+    <td width="167" class="style10"><div align="center" class="style12"><?php echo $campo_convel['nome']; ?></div></td>
   </tr>
 </table>
 <hr color=black size=1>
-<? 
+<?php 
 }
 }
 

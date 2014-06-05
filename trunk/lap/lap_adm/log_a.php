@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -91,16 +91,16 @@ else
   
   <tr>
     <td width="289">Agendamento Número  :</td>
-    <td width="346"><? echo $campo_cod['id']; ?></td>
+    <td width="346"><?php echo $campo_cod['id']; ?></td>
   </tr>
   
   <tr>
     <td>Este Agendamento foi cadastrado por </td>
-    <td><strong><? echo $campo_cod['por']; ?> </strong>em <strong><? echo date("d/m/Y - H:i",$campo_cod['data_cadastro']); ?></strong></td>
+    <td><strong><?php echo $campo_cod['por']; ?> </strong>em <strong><?php echo date("d/m/Y - H:i",$campo_cod['data_cadastro']); ?></strong></td>
   </tr>
   <tr>
     <td>Este Agendamento foi alterado por :</td>
-    <td><strong><? if($campo_cod['etiqueta_por']!=NULL){ ?><? echo $campo_cod['etiqueta_por']; ?></strong> em <strong><? echo date("d/m/Y - H:i",$campo_cod['data_etiqueta']); ?><? } else { echo "Ainda não teve alteração neste agendamento."; } ?></strong></td>
+    <td><strong><?php if($campo_cod['etiqueta_por']!=NULL){ ?><?php echo $campo_cod['etiqueta_por']; ?></strong> em <strong><?php echo date("d/m/Y - H:i",$campo_cod['data_etiqueta']); ?><?php } else { echo "Ainda não teve alteração neste agendamento."; } ?></strong></td>
   </tr>
   <tr>
     <td height="28" colspan="2"><hr color="black" size="2" /></td>

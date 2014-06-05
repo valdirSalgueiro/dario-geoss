@@ -188,7 +188,7 @@ var http = createQCObject();
 
 function displayQCalendar(m,y) {
 	var ran_no=(Math.round((Math.random()*9999))); 
-	http.open('get', '<?= $ajaxPath; ?>?m='+m+'&y='+y+'&ran='+ran_no);
+	http.open('get', '<?php= $ajaxPath; ?>?m='+m+'&y='+y+'&ran='+ran_no);
    	http.onreadystatechange = function() {
 		if(http.readyState == 4 && http.status == 200) { 
       		var response = http.responseText;

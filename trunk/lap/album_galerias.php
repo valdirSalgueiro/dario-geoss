@@ -6,7 +6,7 @@ session_start();
 
 <title>Album de fotos.</title>
 
-<?
+<?php
 
 $codigo_galeria=$_GET['codigo_galeria'];
 

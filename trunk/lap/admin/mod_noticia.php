@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -55,7 +55,7 @@ else
 
 </form>
 <p>
-  <?
+  <?php
 if ($_POST['todos']) 
 {
  $busca_noticia="select * from noticias order by nome_noticia asc;";
@@ -97,7 +97,7 @@ if ($_POST['todos'])
 }
 
 ?>
- <?
+ <?php
 
 $nome=$_POST['nome'];
 

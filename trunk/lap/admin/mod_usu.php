@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -20,7 +20,7 @@ else
 <h1><font face=verdana color='#ff9900'><b>Modificar Usuário</b></font></h1><hr color=black size=2>
 <table border=0 class=fonte>
 <tr><td>Usuário:</td><td><select name=usu class=botao onchange="form1.submit();">
-<?
+<?php
 if($num_usu>0)
 {
  echo "<option value=''></option>";
@@ -38,7 +38,7 @@ else
 </select></td></tr>
 </table>
 </form>
-<?
+<?php
 $usu=$_POST['usu'];
 if($usu!=NULL)
 {

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -11,7 +11,7 @@ include "conn.php";
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
-<?
+<?php
 
 if($_GET['codigo_mac']!=NULL){
 
@@ -32,10 +32,10 @@ $_SESSION["macroscopia2"]= "$_SESSION[macroscopia2] $nbsp $campo_ex[macroscopia]
 ?>
 <script>
 alert('Adicionando código.')
-window.opener.location = '<? echo "ent.php?id=$_GET[id]" ?>';
+window.opener.location = '<?php echo "ent.php?id=$_GET[id]" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <body>

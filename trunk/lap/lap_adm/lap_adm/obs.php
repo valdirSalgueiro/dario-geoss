@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -31,7 +31,7 @@ else
 }
 
 ?>
-<?
+<?php
 //Testar Paciente
 $cpf=$_POST['cpf'];
 
@@ -127,7 +127,7 @@ if( !empty($_POST['cpf2']) )
 
 </form>
 
-<?
+<?php
 
 $codigo_categoria=$_POST['codigo_categoria'];
 

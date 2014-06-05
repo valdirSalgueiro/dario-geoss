@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -46,7 +46,7 @@ body {
 
 <tr>
   <td width="65">Filtrar Por:</td><td width="190"><select name="nome" class="caixa" id="nome">
-    <?
+    <?php
 $busca_status="select * from ex_status order by nome asc;";
 $res_busca_status=mysql_query($busca_status,$conn);
 $num_status=mysql_num_rows($res_busca_status);
@@ -81,7 +81,7 @@ else
 
 <tr>
   <td>Laudo N  :</td>
-  <td><input name="id" type="text" id="id" size="5" value="<?=$_SESSION["busca"]?>"></td>
+  <td><input name="id" type="text" id="id" size="5" value="<?php=$_SESSION["busca"]?>"></td>
 </tr>
 <tr>
   <td>Paciente : </td>
@@ -99,7 +99,7 @@ else
 </table>
 
 </form>
-<?
+<?php
 if($_POST['todos']){
 $nome=$_POST['nome'];
 $ex_status_id=$_POST['ex_status_id'];
@@ -165,7 +165,7 @@ $ex_status_id=$_POST['ex_status_id'];
  }
 }
 ?>
-<?
+<?php
 if($_POST['buscar']){
 
 

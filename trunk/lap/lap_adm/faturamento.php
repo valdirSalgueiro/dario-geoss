@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -85,7 +85,7 @@ body {
 <tr>
   <td class="style10">Conv&ecirc;nio :</td>
   <td width="366"><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -120,7 +120,7 @@ else
 
 
 <TD class=back2 align=right width=187><div align="left">Entre das Datas : </div></td>
-<td class=back><?
+<td class=back><?php
 $today= getdate();	
 $lang_month = array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
 	
@@ -288,7 +288,7 @@ echo'<select name=smonth>';
 <hr color=black size=1>
 </form>
 
-  <?
+  <?php
 $id_med=$_POST['id_med'];
 $convenio=$_POST['convenio'];
 $nome=$_POST['id'];
@@ -349,7 +349,7 @@ $result = mysql_query($sql);
 //die($sql);
 
 while($row = mysql_fetch_array($result)) { ?>
-<?
+<?php
  ##Busca do nome do paciente##
  $busca_pac="SELECT id,nome from paciente WHERE id = '".$row['paciente_id']."'";
  $res_busca_pac=mysql_query($busca_pac,$conn);
@@ -381,19 +381,19 @@ while($row = mysql_fetch_array($result)) { ?>
     <td width="100" bgcolor="#000033"><span class="style6"><span class="style8">Valor</span> :</span></td>
   </tr>
   <tr>
-    <td><span class="style3"><? echo $row['id']; ?></span></td>
-    <td><? echo $campo_pac['nome']; ?></td>
-    <td><span class="style3"><? echo $campo_conven['nome']; ?></span></td>
-    <td><span class="style3"><? echo $row['tipo_tabela']; ?></span></td>
-    <td><span class="style3"><? echo $row['codigo_procedimento']; ?> </span><br><span class="style3"> <? echo $row['codigo_procedimento2']; ?></span><br><span class="style3"><? echo $row['codigo_procedimento3']; ?></span></td>
-    <td><span class="style3"><? echo $row['valor']; ?></span></td>
+    <td><span class="style3"><?php echo $row['id']; ?></span></td>
+    <td><?php echo $campo_pac['nome']; ?></td>
+    <td><span class="style3"><?php echo $campo_conven['nome']; ?></span></td>
+    <td><span class="style3"><?php echo $row['tipo_tabela']; ?></span></td>
+    <td><span class="style3"><?php echo $row['codigo_procedimento']; ?> </span><br><span class="style3"> <?php echo $row['codigo_procedimento2']; ?></span><br><span class="style3"><?php echo $row['codigo_procedimento3']; ?></span></td>
+    <td><span class="style3"><?php echo $row['valor']; ?></span></td>
   </tr>
   <tr>
-    <td colspan="6"><div align="center"><a href="detalhes.php?id=<? echo $row['id']; ?>">Detalhes</a></div></td>
+    <td colspan="6"><div align="center"><a href="detalhes.php?id=<?php echo $row['id']; ?>">Detalhes</a></div></td>
   </tr>
 </table>
 <p>
-  <? 
+  <?php 
 $total = $total+$row['valor'];
 $total=number_format($total,2,',','.');
 }
@@ -406,13 +406,13 @@ $total=number_format($total,2,',','.');
 
 
  ?>
-</p><? if($_POST['pesquisar']!=NULL){ ?>
+</p><?php if($_POST['pesquisar']!=NULL){ ?>
 <table width="399" border="0">
   <tr>
     <td width="339"><div align="right"><strong>Valor Total : </strong></div></td>
-    <td width="50" bgcolor="#333333"><span class="style9"><? echo $total; ?></span></td>
+    <td width="50" bgcolor="#333333"><span class="style9"><?php echo $total; ?></span></td>
   </tr>
-</table><? } ?>
+</table><?php } ?>
 <p><br>
 </p>
 <hr color=black size=1>

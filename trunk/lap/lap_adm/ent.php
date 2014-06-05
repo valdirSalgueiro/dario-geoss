@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -68,7 +68,7 @@ body {
 -->
 </style>
 <body class=fonte>
-<?
+<?php
 /*
 $_POST[edia];
 $_POST[emes];
@@ -234,7 +234,7 @@ $id_exame = $campo_id_exa['id_exame']+1;
 <hr color=black size=2>
 <span class="style1"><br>
 </span><br>
-<?
+<?php
 $busca_paci="select * from paciente where id = '".$_POST[id_pac]."';";
 $res_busca_paci=mysql_query($busca_paci,$conn);
 $campo_paci=mysql_fetch_array($res_busca_paci);
@@ -245,10 +245,10 @@ $campo_paci=mysql_fetch_array($res_busca_paci);
 <tr>
   <td width="174">Paciente :</td>
   <td width="367"><select name="id_pac" class="caixa" id="id_pac" onChange="submitar()">
-    <? if($_POST['id_pac']!=NULL){ 
+    <?php if($_POST['id_pac']!=NULL){ 
    printf("<option value='$_POST[id_pac]'>$campo_paci[nome]");
     } else { ?>
-	<?
+	<?php
 $busca_conv="select * from paciente order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -281,7 +281,7 @@ else
     </select>
     &nbsp;&nbsp;<a href="pac.php"></a> </td>
 </tr>
-<?
+<?php
 $dia = date("d");
 $mes = date("m");
 $ano = date("Y");
@@ -291,21 +291,21 @@ $min = date("i");
 
 <tr>
   <td>Data de Entrada :</td>
-  <td> <input name="edia" id="edia" value="<? echo $dia; ?>" size="2" maxlength="2">    
+  <td> <input name="edia" id="edia" value="<?php echo $dia; ?>" size="2" maxlength="2">    
     <span class="style1"> /
-    <input name="emes" id="emes" value="<? echo $mes; ?>" size="2" maxlength="2">
+    <input name="emes" id="emes" value="<?php echo $mes; ?>" size="2" maxlength="2">
     /
-    <input name="eano" id="eano" value="<? echo $ano; ?>" size="4" maxlength="4">
+    <input name="eano" id="eano" value="<?php echo $ano; ?>" size="4" maxlength="4">
 -
-<input name="ehora" id="ehora" value="<? echo $hora; ?>" size="2" maxlength="2">    
+<input name="ehora" id="ehora" value="<?php echo $hora; ?>" size="2" maxlength="2">    
 :
-<input name="emin" id="emin" value="<? echo $min; ?>" size="2" maxlength="2"> 
+<input name="emin" id="emin" value="<?php echo $min; ?>" size="2" maxlength="2"> 
 ( dd / mm / aaaa - HH : mm )
 &nbsp;</span></td>
 </tr>
 <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="HelloWorld/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
 </iframe>
-<?
+<?php
 $busca_exa="select * from tipo_exame where id_ex = '".$_POST[id_ex]."';";
 $res_busca_exa=mysql_query($busca_exa,$conn);
 $campo_exa=mysql_fetch_array($res_busca_exa);
@@ -313,10 +313,10 @@ $campo_exa=mysql_fetch_array($res_busca_exa);
 <tr>
   <td>Tipo de Exame :</td>
   <td><select name="id_ex" class="caixa" id="id_ex" onChange="submitar()">
-    <? if($_POST['id_ex']!=NULL){ 
+    <?php if($_POST['id_ex']!=NULL){ 
    printf("<option value='$_POST[id_ex]'>$campo_exa[nome]");
     } else { ?>
-	<?
+	<?php
 $busca_tex="select * from tipo_exame order by id_ex asc;";
 $res_busca_tex=mysql_query($busca_tex,$conn);
 $num_tex=mysql_num_rows($res_busca_tex);
@@ -352,7 +352,7 @@ else
   <td><span class="style10">C&oacute;d Macroscopia:</span></td>
   <td><span class="style10">
     <select name="codigo_mac" class="caixa" id="codigo_mac" onChange="submitar()">
-      <?
+      <?php
 $busca_atendimentos="select * from codigo_mac order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -382,7 +382,7 @@ else
 
 ?>
     </select>
-  </span><span class="style10"><a href="javascript:abrir('codigos_macroscopia2.php?id=<? echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><span class="style18 style38"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>
+  </span><span class="style10"><a href="javascript:abrir('codigos_macroscopia2.php?id=<?php echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><span class="style18 style38"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>
     <?php
     if( $_POST['codigo_mac']!=''){
 	//die('entrou');
@@ -420,7 +420,7 @@ else
 <tr>
   <td><span class="style10">Macroscopia :</span></td>
   <td><span class="style10">
-    <?
+    <?php
 if($_SESSION[macroscopia]!=NULL){
 $mac="$_SESSION[macroscopia] $_GET[codigo_mac]";
 } else {
@@ -441,7 +441,7 @@ $oFCKeditor->Create();
 <tr>
 </tr><tr><td>Material :</td>
   <td><select name="material" class="caixa" id="material">
-    <?
+    <?php
 $busca_med="select * from material order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -476,7 +476,7 @@ else
 <tr>
 </tr><tr><td>Laboratório :</td>
   <td><select name="lab" class="caixa" id="lab">
-    <?
+    <?php
 $busca_med="select * from lab order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -512,7 +512,7 @@ else
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
   <td><select name="id_med" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -544,7 +544,7 @@ else
     </select>
     &nbsp;&nbsp;<a href="cad_med.php"></a></td>
 </tr>
-<?
+<?php
 ##Busca do id convenio do usuario##
 $busca_conve="select * from convenio where nome = '".$campo_paci[convenio]."';";
 $res_busca_conve=mysql_query($busca_conve,$conn);
@@ -553,10 +553,10 @@ $campo_conve=mysql_fetch_array($res_busca_conve);
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-   <? /* if($_POST['id_pac']!=NULL){ 
+   <?php /* if($_POST['id_pac']!=NULL){ 
    printf("<option value='$campo_conve[id]'>$campo_paci[convenio]");
     } else { */ ?>
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -595,7 +595,7 @@ else
   <br>Caracteres Restantes:
     <input name="caracteres" type="text" disabled value="150" size="3" maxlength="3" class=botao></td>
 </tr>
-<?
+<?php
 ##Calcular dias automático de acordo com o tipo de exame selecionado##
 
 
@@ -655,15 +655,15 @@ $dia_semana_previsao=date('w',$timestamp);
 ?>
  
 <tr> <td>Previs&atilde;o de Saida: </td>
-  <td><input name="sdia" id="sdia" value="<? echo $dia_previsao; ?>" size="2" maxlength="2">
+  <td><input name="sdia" id="sdia" value="<?php echo $dia_previsao; ?>" size="2" maxlength="2">
     <span class="style1"> /
-    <input name="smes" id="smes" value="<? echo $mes_previsao; ?>" size="2" maxlength="2">
+    <input name="smes" id="smes" value="<?php echo $mes_previsao; ?>" size="2" maxlength="2">
 /
-<input name="sano" id="sano" value="<? echo $ano_previsao; ?>" size="4" maxlength="4">
+<input name="sano" id="sano" value="<?php echo $ano_previsao; ?>" size="4" maxlength="4">
 -
-<input name="shora" id="shora" value="<? echo "17"; ?>" size="2" maxlength="2">
+<input name="shora" id="shora" value="<?php echo "17"; ?>" size="2" maxlength="2">
 :
-<input name="smin" id="smin" value="<? echo "00"; ?>" size="2" maxlength="2"> 
+<input name="smin" id="smin" value="<?php echo "00"; ?>" size="2" maxlength="2"> 
 ( dd / mm / aaaa - HH : mm )</span> </td></tr>
  <tr><td><br><br><input name="gravar" type=submit class=botao id="gravar" value='Gravar'> 
   &nbsp;&nbsp;
@@ -675,7 +675,7 @@ $dia_semana_previsao=date('w',$timestamp);
     </td>
 </tr></form>
 
-<?
+<?php
 if($_POST['reiniciar']){
 $_SESSION["microscopia"]=NULL;
 $_SESSION["codigo_conc"]=NULL;
