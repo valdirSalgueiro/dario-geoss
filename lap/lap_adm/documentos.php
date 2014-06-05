@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -84,7 +84,7 @@ body {
 </table>
 </form>
 
-<?
+<?php
 
 $codigo=$_POST['codigo'];
 $descricao=$_POST['descricao'];

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -16,7 +16,7 @@ else
 <html>
 <body class=fonte>
 <h1><font face=arial color='#ff9900'><b>Recados:</b></font></h1><hr color=black size=2>
-<?
+<?php
 $busca_recado="select * from recado order by data_recado desc;";
 $res_busca_recado=mysql_query($busca_recado);
 $num_recado=mysql_num_rows($res_busca_recado);

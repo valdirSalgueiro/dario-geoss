@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -54,7 +54,7 @@ else
 <tr>
   <td><BR>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_radio');
 
@@ -72,7 +72,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $descricao_radio=$_POST['descricao_radio'];
 $modificar=$_POST['modificar'];

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -75,7 +75,7 @@ body {
 <tr>
   <td class="style10">Conv&ecirc;nio : </td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -117,7 +117,7 @@ else
 </table>
 
 </form>
-<?
+<?php
 if($_POST['todos']) 
 {
 
@@ -167,7 +167,7 @@ if($_POST['todos'])
 
 ?>
 
-<?
+<?php
 
 $nome=$_POST['nome'];
 

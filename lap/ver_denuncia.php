@@ -1,4 +1,4 @@
-<?
+<?php
  session_start();
  
 
@@ -208,7 +208,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 .style34 {color: #000099}
 </style>
 <script type="text/javascript" src="lightbox/lightbox.js"></script>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 ?>
@@ -228,11 +228,11 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
           </table>
             <table width="772" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="772" height="150" background="arquivos/<? print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
+                <td width="772" height="150" background="arquivos/<?php print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
                   <tr>
                     <td height="124" colspan="2">&nbsp;</td>
                   </tr>
-                  <tr><?
+                  <tr><?php
 						if($_POST['buscarnot']){
 						$buscar = $_POST['buscar'];
 						echo "<script>window.location='noticias.php?busca=$buscar';</script>";
@@ -270,21 +270,21 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
                   <table width="772" height="17" border="0" align="center" cellpadding="0" cellspacing="0">
                   <tr>
                     <td width="3%" height="17"><div align="center"><img src="arquivos/casa.gif" width="16" height="15" /></div></td>
-                    <td width="5%" class="style11 style1"><a href="index.php" class="style25"><span class="menu">         <?
+                    <td width="5%" class="style11 style1"><a href="index.php" class="style25"><span class="menu">         <?php
 					 if($_SESSION['lang']==''){
                      $_SESSION['lang']='Brazil';
  }					  ?>
-                      <? if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span>Capa
-                      <? } if($_SESSION['lang']=='eng') { ?></span>Index<? } if($_SESSION['lang']=='esp') { ?></span>Início
-                      <? } ?></span></a></td>
+                      <?php if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span>Capa
+                      <?php } if($_SESSION['lang']=='eng') { ?></span>Index<?php } if($_SESSION['lang']=='esp') { ?></span>Início
+                      <?php } ?></span></a></td>
                     <td width="2%"><img src="arquivos/seta.gif" width="10" height="10" /></td>
                     <td width="44%" class="style11 style1 style25"><span class="style25"><a href="videos.php">Videos</a> | <a href="expediente.php">Expediente</a> | <a href="colunistas.php">Colunistas</a> | <a href="index.php" class="style25"><span class="menu">
-                      <? if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?>                    </span></a><a href="contato.php">Fale Conosco</a><? } if($_SESSION['lang']=='eng') { ?></span></a><a href="contato.php">Contact</a><? } if($_SESSION['lang']=='esp') { ?></span></a><a href="contato.php">Hable conosco</a><? } ?>  | <a href="#" onClick="javascript:window.external.AddFavorite('http://www.portalsentinela.com/','Portal Sentinela');">Favoritos</a></span></td>
+                      <?php if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?>                    </span></a><a href="contato.php">Fale Conosco</a><?php } if($_SESSION['lang']=='eng') { ?></span></a><a href="contato.php">Contact</a><?php } if($_SESSION['lang']=='esp') { ?></span></a><a href="contato.php">Hable conosco</a><?php } ?>  | <a href="#" onClick="javascript:window.external.AddFavorite('http://www.portalsentinela.com/','Portal Sentinela');">Favoritos</a></span></td>
                     <td width="46%" class="style11 style1"><table width="360" border="0" align="right" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="4%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
                         <td width="81%"><span class="style26">
-<?					
+<?php					
  if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){
 $dia_semana = date("w");
 
@@ -301,7 +301,7 @@ $dia_semana = date("w");
 
 						   ?>
 ,
-<?
+<?php
 
     $dia=date('d');
 
@@ -373,7 +373,7 @@ $dia_semana = date("w");
 
 						   ?>
 ,
-<?
+<?php
 
     $dia=date('d');
 
@@ -482,17 +482,17 @@ $consulta_cat15 = mysql_query("SELECT count(codigo_categoria) as total FROM noti
 $total_cat15 = mysql_result($consulta_cat15,0,"total");
 
     ?>!</span><font color=blue class="style22">
-&nbsp;&nbsp;<? //include('whosonline.php'); ?>
+&nbsp;&nbsp;<?php //include('whosonline.php'); ?>
 </font></td>
-                        <td width="15%"><? if($_SESSION['lang']=='eng'){	?>
+                        <td width="15%"><?php if($_SESSION['lang']=='eng'){	?>
                           <a href="index.php?lang=Brazil"><img src="images/Brazil.gif" alt="Brazil" width="18" height="12" border="0" /></a><span class="style25"> | </span> <a href="index.php?lang=esp"><img src="images/Spain.gif" alt="English" width="18" height="12" border="0" /></a>
-                          <? } ?>
-                          <? if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){ ?>
+                          <?php } ?>
+                          <?php if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){ ?>
                           <a href="index.php?lang=eng"><img src="images/United_States.gif" alt="English" width="18" height="12" border="0" /></a><span class="style25"> | </span> <a href="index.php?lang=esp"><img src="images/Spain.gif" alt="Espanish" width="18" height="12" border="0" /></a>
-                          <? } ?>
-                          <? if($_SESSION['lang']=='esp'){ ?>
+                          <?php } ?>
+                          <?php if($_SESSION['lang']=='esp'){ ?>
                           <a href="index.php?lang=Brazil"><img src="images/Brazil.gif" alt="Brazil" width="18" height="12" border="0" /></a><span class="style25"> | </span> <a href="index.php?lang=eng"><img src="images/United_States.gif" alt="English" width="18" height="12" border="0" /></a>
-                          <? } ?></td>
+                          <?php } ?></td>
                       </tr>
                     </table></td>
                     </tr>
@@ -531,11 +531,11 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                 </table>
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                           <tr>
-                            <td width="98" height="18" background="images/bg.jpg" class="style27"><div align="left" class="style11 style25 style71"><strong>&nbsp;<? if($_GET['lang']=='Brazil'){	?>
+                            <td width="98" height="18" background="images/bg.jpg" class="style27"><div align="left" class="style11 style25 style71"><strong>&nbsp;<?php if($_GET['lang']=='Brazil'){	?>
                               <span class="style81">Menu:</span>
-                            <? } else { ?>
+                            <?php } else { ?>
                             <span class="style81">Menu:</span>
-                            <? } ?></strong></div></td>
+                            <?php } ?></strong></div></td>
                           </tr>
                   </table>
                   <table width="152" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -626,7 +626,7 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                           <tr>
                             <td width="140"><div align="center"><span class="style26">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -802,7 +802,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                       <tr>
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                           <tr>
-                            <td width="140"><div align="center"><span class="style26"><?
+                            <td width="140"><div align="center"><span class="style26"><?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -979,7 +979,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                           <tr>
                             <td width="140"><div align="center"><span class="style26">
-                              <?
+                              <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1156,7 +1156,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1333,7 +1333,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1510,7 +1510,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1683,13 +1683,13 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                       <tr>
                         <td height="20" background="imgalessandro6.jpg"><table width="468" border="0" align="left" cellpadding="0" cellspacing="0">
                           <tr>
-                            <td height="20" background="images/bg.jpg"><span class="style26 style28"><span class="menu"><? if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span><span class="style81">Den&uacute;ncias [ <? $consultac = mysql_query("SELECT count(id_cmt) as total FROM denuncia WHERE ativado='0'") or die(mysql_error());
+                            <td height="20" background="images/bg.jpg"><span class="style26 style28"><span class="menu"><?php if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span><span class="style81">Den&uacute;ncias [ <?php $consultac = mysql_query("SELECT count(id_cmt) as total FROM denuncia WHERE ativado='0'") or die(mysql_error());
 print mysql_result($consultac,0,"total"); ?> ] 
-                              <? } if($_SESSION['lang']=='eng') { ?>
+                              <?php } if($_SESSION['lang']=='eng') { ?>
                             </span></span><span class="style81"><strong>Denuncias</strong>
-                            <? } if($_SESSION['lang']=='esp') { ?>
+                            <?php } if($_SESSION['lang']=='esp') { ?>
                             <strong>Denuncia</strong></span>
-                            <? } ?>
+                            <?php } ?>
                             </span></span></td>
                           </tr>
                         </table></td>
@@ -1706,7 +1706,7 @@ print mysql_result($consultac,0,"total"); ?> ]
                         </table>
 						<table width="464" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-						    <td height="200" background=""><div align="center"><span style="border:2px #EAEAEA dotted;"><span class="materia">Den&uacute;ncias do Portal Sentinela aqui. Existem <b><? $consultacc = mysql_query("SELECT count(id_cmt) as total FROM denuncia WHERE ativado='1'") or die(mysql_error());
+						    <td height="200" background=""><div align="center"><span style="border:2px #EAEAEA dotted;"><span class="materia">Den&uacute;ncias do Portal Sentinela aqui. Existem <b><?php $consultacc = mysql_query("SELECT count(id_cmt) as total FROM denuncia WHERE ativado='1'") or die(mysql_error());
 print mysql_result($consultacc,0,"total"); ?></b> Denúncias a serem averiguadas.</span></span></div>
 					          <span style="border:2px #EAEAEA dotted;"><span class="materia"><img src="arquivos/indio.gif" width="109" height="116" align="left" /></span></span><br />
 					        <br />
@@ -1715,7 +1715,7 @@ print mysql_result($consultacc,0,"total"); ?></b> Denúncias a serem averiguadas.
 					        <br />
 					        <br />
 					        <br />
-					        <?
+					        <?php
 //Contando o n&uacute;mero de perguntas existentes
 $consultac = mysql_query("SELECT count(id_cmt) as total FROM tab_perguntas") or die(mysql_error());
 $totalcom = mysql_result($consultac,0,"total");
@@ -1726,7 +1726,7 @@ $totalcom2 = mysql_result($consultacc,0,"total");
                             <table width="94%" border="0" cellpadding="0" cellspacing="0">
                               
                               <tr>
-                                <?
+                                <?php
 		$consulta = mysql_query("SELECT * FROM denuncia WHERE ativado = '0' ORDER BY id_cmt DESC") or die(mysql_error());
 		
 
@@ -1741,18 +1741,18 @@ $totalcom2 = mysql_result($consultacc,0,"total");
                                 <td width="587" align="center" valign="top" class="legenda_foto" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><div align="left" class="materia">
                                     <table border="0" cellpadding="0" cellspacing="0" width="459" height="42">
                                       <tr>
-                                        <td width="566" valign="top" bgcolor="#CCCCCC" style="border: 1px dashed #CC0000"><p align="left" class="materia"><strong><b><?=$comentarios['nome_cmt']?>
+                                        <td width="566" valign="top" bgcolor="#CCCCCC" style="border: 1px dashed #CC0000"><p align="left" class="materia"><strong><b><?php=$comentarios['nome_cmt']?>
                                             </b> </strong>em <span class="style83" style="border-top:1px #CCCCCC dotted;; font-size:11px; color:#333333;">
-                                            <?=$comentarios['data_cmt']?>
+                                            <?php=$comentarios['data_cmt']?>
                                               &nbsp;&nbsp;
-                                              <?=$comentarios['hora_cmt']?>
+                                              <?php=$comentarios['hora_cmt']?>
                                             </span> : <b>
-                                              <?=$comentarios['texto_cmt']?>
+                                              <?php=$comentarios['texto_cmt']?>
                                               </b> <br />
                                           </p>
                                           <p align="left" class="materia">&nbsp;</p></td>
                                       </tr>
-                                      <?
+                                      <?php
 $consulta2 = mysql_query("SELECT * FROM tab_respostas WHERE codigo_pergunta = '".$comentarios['id_cmt']."'") or die(mysql_error());
 
 $i=0;
@@ -1760,14 +1760,14 @@ while($campo_resp=mysql_fetch_array($consulta2)) {
 $i++;
 ?>
                                       <tr>                                      </tr>
-                                      <? } ?>
+                                      <?php } ?>
                                     </table>
                                 </div></td>
                               </tr>
-                              <? } ?>
+                              <?php } ?>
                             </table>
                             <p style="padding:10px; padding-top:0px;"><span class="materia">
-                              <? if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; perguntas.</font>"; } ?>
+                              <?php if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; perguntas.</font>"; } ?>
                               <br />
                               <br />
                               <br />
@@ -1855,7 +1855,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </table>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td height="197"><?
+                            <td height="197"><?php
 include ("enquete/apgconecta.php");
 require ("enquete/apgvota.php");
 ?></td>
@@ -1890,12 +1890,12 @@ require ("enquete/apgvota.php");
                       <tr>
                         <td height="68" valign="top"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                           <tr>
-                            <td width="98" height="20" background="images/bg.jpg" class="style27"><div align="left" class="style11 style25"><strong><span class="menu"><? if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span><span class="style81">Foto do Dia :<span class="style26 style28">
-                              <? } if($_SESSION['lang']=='eng') { ?>
+                            <td width="98" height="20" background="images/bg.jpg" class="style27"><div align="left" class="style11 style25"><strong><span class="menu"><?php if(($_SESSION['lang']=='Brazil')or($_SESSION['lang']=='')){	?></span><span class="style81">Foto do Dia :<span class="style26 style28">
+                              <?php } if($_SESSION['lang']=='eng') { ?>
                               <span class="style25">Picture of Day:</span>
-                              <? } if($_SESSION['lang']=='esp') { ?>
+                              <?php } if($_SESSION['lang']=='esp') { ?>
                               <span class="style25">Image del dia:
-                              <? } ?>
+                              <?php } ?>
                               </span> </span></span></strong></div></td>
                           </tr>
                         </table>
@@ -1907,7 +1907,7 @@ require ("enquete/apgvota.php");
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                               <td height="122"><div align="center">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes

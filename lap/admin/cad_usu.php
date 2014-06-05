@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -96,7 +96,7 @@ O usu&aacute;rio pode Cad / Mod / Rem Videos </td>
 
 </form>
 
-<?
+<?php
 
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -12,7 +12,7 @@ include "caracteres.php";
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
-<?
+<?php
 
 if($_GET['codigo_conc']!=NULL){
 
@@ -33,10 +33,10 @@ $_SESSION["codigo_conc"]= "$_SESSION[codigo_conc] $nbsp $campo_ex[conclusao]";
 ?>
 <script>
 alert('Adicionando código.')
-window.opener.location = '<? echo "laudos.php?id=$_GET[id]" ?>';
+window.opener.location = '<?php echo "laudos.php?id=$_GET[id]" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <body>

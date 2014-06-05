@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -144,7 +144,7 @@ function abrir(pagina,nome,caracteristicas) {
   <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
 </tr>
 <tr>
-<? if($campo_tipo['nome']!='HISTOPATOLOGICO'){ ?>
+<?php if($campo_tipo['nome']!='HISTOPATOLOGICO'){ ?>
   <td colspan="2" bgcolor="#000033">&nbsp;</td>
 </tr>
 <tr>
@@ -152,8 +152,8 @@ function abrir(pagina,nome,caracteristicas) {
 <form name="colposcopia" method="post">
     <input name="cadc" type=submit class=botaooo id="cadc" value='Cadastrar Colposcopia'>    
 </form>
-    <?  } ?>
-	<?
+    <?php  } ?>
+	<?php
 	if($_POST[cadc]!=NULL){
 	 echo "<script>
  window.location='cadastrar_colposcopia.php?id=$id';</script>";
@@ -175,7 +175,7 @@ function abrir(pagina,nome,caracteristicas) {
   <td><span class="style10"> Status  :</span></td>
   <td><span class="style10">
     <select name="id" class="botaooo" id="id">
-      <?
+      <?php
 $exid = $campo_ex['id'];
 
 $sql = "select id,nome 
@@ -216,39 +216,39 @@ $num_cod=mysql_num_rows($res_busca_cod);
 </tr>
 <tr>
   <td width="174"><span class="style10">Laudo N &ordm;  :</span></td>
-  <td width="367"><span class="style10"><? echo $campo_ex['id']; ?></span></td>
+  <td width="367"><span class="style10"><?php echo $campo_ex['id']; ?></span></td>
 </tr>
 <tr>
   <td><span class="style10">Paciente :</span></td>
-  <td><span class="style10"><? echo $campo_pac['nome']; ?>    </span></td>
+  <td><span class="style10"><?php echo $campo_pac['nome']; ?>    </span></td>
 </tr>
 
 <tr>
   <td><span class="style10">Data de Entrada :</span></td>
-  <td><span class="style10"><? echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
+  <td><span class="style10"><?php echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
      &nbsp;</span></td>
 </tr>
 <tr>
   <td><span class="style10">Previs&atilde;o de Saida:</span></td>
-  <td><span class="style10"><? echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></span></td>
+  <td><span class="style10"><?php echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></span></td>
 </tr>
 <tr>
   <td><span class="style10">Tipo de Exame:</span></td>
-  <td><span class="style10"><? echo $campo_tipo['nome']; ?></span></td>
+  <td><span class="style10"><?php echo $campo_tipo['nome']; ?></span></td>
 </tr>
 <tr>
  <td><span class="style10">Procedimentos Necessários ?</span></td><td> <input name="1" type="submit" class="botao" id="mais" value="1"><input name="2" type="submit" class="botao" id="mais" value="2"><input name="3" type="submit" class="botao" id="mais" value="3">
 <tr>
   <td><span class="style10">Material :</span></td>
   <td><span class="style10">
-    <input name=material type=text class=botao id="material" value="<? echo $campo_ex['material']; ?>" size=50 maxlength=50>
+    <input name=material type=text class=botao id="material" value="<?php echo $campo_ex['material']; ?>" size=50 maxlength=50>
   </span></td>
 </tr>
 <tr>
   <td><span class="style10">C&oacute;d Macroscopia:</span></td>
   <td><span class="style10">
     <select name="codigo_mac" class="caixa" id="codigo_mac" onChange="submitar()">
-      <?
+      <?php
 $busca_atendimentos="select * from codigo_mac order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -278,7 +278,7 @@ else
 
 ?>
     </select>
-  </span><span class="style10"><a href="javascript:abrir('codigos_macroscopia.php?id=<? echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><span class="style18 style38"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>
+  </span><span class="style10"><a href="javascript:abrir('codigos_macroscopia.php?id=<?php echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><span class="style18 style38"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>
     <?php
     if( $_POST['codigo_mac']!=''){
 	//die('entrou');
@@ -313,10 +313,10 @@ else
 	?>
     </span></td>
 </tr>
-<?
+<?php
 $espaco="&nbsp;";
 ?>
-<?
+<?php
  $busca_exm="select * from exame where id = '".$id."';";
  $res_busca_exm=mysql_query($busca_exm,$conn);
  $num_exm=mysql_num_rows($res_busca_exm);
@@ -333,7 +333,7 @@ $espaco="&nbsp;";
 </tr>
   <tr><td><span class="style10">Macroscopia :</span></td>
   <td><span class="style10">
-    <?
+    <?php
 
 $mac="$campo_exm[macroscopia] $_SESSION[macroscopia]";
 
@@ -352,7 +352,7 @@ $oFCKeditor->Create();
   <td><span class="style10">C&oacute;d Microscopia:</span></td>
   <td><span class="style10">
     <select name="codigo_micros" class="caixa" id="codigo_micros" onChange="submitar()">
-      <?
+      <?php
 $busca_atendimentos="select * from codigo order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -382,7 +382,7 @@ else
 
 ?>
     </select>
-    <a href="javascript:abrir('codigos_microscopia.php?id=<? echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>    
+    <a href="javascript:abrir('codigos_microscopia.php?id=<?php echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a>    
     <?php
     if( $_POST['codigo_micros']!=''){
 	//die('entrou');
@@ -438,7 +438,7 @@ else
 <tr>
   <td><span class="style10">Microscopia :</span></td>
   <td><span class="style10">
-    <?
+    <?php
 
 $mic="$campo_exm[microscopia] $_SESSION[microscopia]";
 
@@ -456,7 +456,7 @@ $oFCKeditor->Create();
   <td><span class="style10">C&oacute;d Conclus&atilde;o:</span></td>
   <td><span class="style10">
     <select name="codigo_conc" class="caixa" id="codigo_conc" onChange="submitar()">
-      <?
+      <?php
 $busca_atendimentos="select * from codigo_conc order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -486,7 +486,7 @@ else
 
 ?>
     </select>
-    <a href="javascript:abrir('codigos_conclusao.php?id=<? echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a></span></td>
+    <a href="javascript:abrir('codigos_conclusao.php?id=<?php echo $_GET[id];?>','IPS','width=800, height=650, resizable=no, scrollbars=yes, scrolbar=yes, status=no')"><img src="images/BotaoLupa.jpg" width="34" border="0" height="30"></a></span></td>
 </tr>
 <tr><td><span class="style10"><br></span></td>
 </tr>
@@ -494,7 +494,7 @@ else
 <tr>
   <td><span class="style10">Conclus&atilde;o :</span></td>
   <td><span class="style10">
-    <?
+    <?php
 
 
 $conc="$campo_exm[conclusao] $_SESSION[codigo_conc]";
@@ -512,10 +512,10 @@ $oFCKeditor->Create();
   <td><span class="style10">
    
     <select name="medico_execultante" class="caixa" id="medico_execultante">
-	<? 
+	<?php 
    printf("<option value='$campo_ex[medico_execultante]'>$campo_ex[medico_execultante]");
      ?>
-      <?
+      <?php
 $busca_med="select * from medico where nome != '".$campo_ex[medico_execultante]."'  order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -556,7 +556,7 @@ else
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<?
+<?php
   ##Busca do nome do médico##
  $busca_med="SELECT id,nome from medico WHERE id = '".$campo_ex['medico_id']."'";
  $res_busca_med=mysql_query($busca_med,$conn);
@@ -565,25 +565,25 @@ else
 ?>
 <tr>
   <td><span class="style10">Solicita&ccedil;&atilde;o :</span></td>
-  <td><span class="style10"><? echo $campo_med['nome']; ?></span></td>
+  <td><span class="style10"><?php echo $campo_med['nome']; ?></span></td>
 </tr>
 <tr>
   <td><span class="style10">Conv&ecirc;nio :</span></td>
-  <td><span class="style10"><? echo $campo_conv['nome']; ?></span></td>
+  <td><span class="style10"><?php echo $campo_conv['nome']; ?></span></td>
 </tr>
 <tr>
   <td><span class="style10">Tabela : </span></td>
-  <td><span class="style10"><? echo $campo_ex['tipo_tabela']; ?></span></td>
+  <td><span class="style10"><?php echo $campo_ex['tipo_tabela']; ?></span></td>
 </tr>
-<? if(($campo_ex['codigo_procedimento']!=NULL)or($campo_ex['codigo_procedimento2']!=NULL)or($campo_ex['codigo_procedimento3']!=NULL)){ ?><tr>
+<?php if(($campo_ex['codigo_procedimento']!=NULL)or($campo_ex['codigo_procedimento2']!=NULL)or($campo_ex['codigo_procedimento3']!=NULL)){ ?><tr>
   <td><span class="style10">C&oacute;digos de Procedimento inseridos : </span></td>
-  <td><span class="style10"><br> <b><? echo $campo_ex['codigo_procedimento']; ?> <br> <? echo $campo_ex['codigo_procedimento2']; ?> <br> <? echo $campo_ex['codigo_procedimento3']; ?></b>
-  </tr><? } ?>
+  <td><span class="style10"><br> <b><?php echo $campo_ex['codigo_procedimento']; ?> <br> <?php echo $campo_ex['codigo_procedimento2']; ?> <br> <?php echo $campo_ex['codigo_procedimento3']; ?></b>
+  </tr><?php } ?>
 <tr>
   <td><span class="style10">C&oacute;digo de Procedimento : </span></td>
   <td><span class="style10">
     <select name="codigo_procedimento" class="caixa" id="codigo_procedimento">
-      <?
+      <?php
 $busca_atendimentos="select * from tabela WHERE tipo = '".$campo_ex['tipo_tabela']."' order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -617,13 +617,13 @@ print $campo_atendimentos[nome];
   </span></td>
 </tr>
     </select>
-<? if($_POST['2']){
+<?php if($_POST['2']){
 ?>	
 <tr>
   <td><span class="style10">C&oacute;digo de Procedimento : </span></td>
   <td><span class="style10">
     <select name="codigo_procedimento2" class="caixa" id="codigo_procedimento2">
-      <?
+      <?php
 $busca_atendimentos="select * from tabela WHERE tipo = '".$campo_ex['tipo_tabela']."' order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -656,14 +656,14 @@ print $campo_atendimentos[nome];
 }
 ?>
     </select>
-<tr><td></td><? } ?>
-<? if($_POST['3']){
+<tr><td></td><?php } ?>
+<?php if($_POST['3']){
 ?>	
 <tr>
   <td><span class="style10">C&oacute;digo de Procedimento : </span></td>
   <td><span class="style10">
     <select name="codigo_procedimento2" class="caixa" id="codigo_procedimento2">
-      <?
+      <?php
 $busca_atendimentos="select * from tabela WHERE tipo = '".$campo_ex['tipo_tabela']."' order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -699,7 +699,7 @@ print $campo_atendimentos[nome];
   <td><span class="style10">C&oacute;digo de Procedimento : </span></td>
   <td><span class="style10">
     <select name="codigo_procedimento3" class="caixa" id="codigo_procedimento3">
-      <?
+      <?php
 $busca_atendimentos="select * from tabela WHERE tipo = '".$campo_ex['tipo_tabela']."' order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -731,7 +731,7 @@ print $campo_atendimentos[nome];
 }
 ?>
     </select>
-<tr><td></td><? } ?>
+<tr><td></td><?php } ?>
   <td><span class="style10">
     
     <br>
@@ -744,7 +744,7 @@ print $campo_atendimentos[nome];
 </tr>
 </table>
 </form>
-<?
+<?php
 if($_POST['cancelar']){
 	$_SESSION["microscopia"]=NULL;
 	$_SESSION["codigo_conc"]=NULL;

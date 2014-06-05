@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 
@@ -80,7 +80,7 @@ body {
 </table>
 
 </form>
-<?
+<?php
 if($_POST['todos']){
 
 $nome=$_POST['nome'];
@@ -142,7 +142,7 @@ $cremepe=$_POST['cremepe'];
 }
 
 ?>
-<?
+<?php
 
 $nome_cliente=$_POST['nome'];
 $email=$_POST['email'];

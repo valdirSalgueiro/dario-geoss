@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -43,10 +43,10 @@ body {
 </style>
 <body class=fonte>
 <form name=form1 method=post>
-<h1 class="style1"><font face=verdana><img src="images/usuarios.jpg" width="50" height="50"> Exames Pendentes por <? echo $_GET['convenio']; ?>:</font></h1>
+<h1 class="style1"><font face=verdana><img src="images/usuarios.jpg" width="50" height="50"> Exames Pendentes por <?php echo $_GET['convenio']; ?>:</font></h1>
 <hr color=black size=2>
 </form>
-<?
+<?php
 if($_POST['buscar']!=NULL)
 {
  echo "<script>

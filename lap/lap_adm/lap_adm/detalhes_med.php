@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -48,13 +48,13 @@ else
 
 <form name=form1 method=post>
 
-<h1 class="style1"><font face=verdana><?echo $campo_cliente[nome]." ".$campo_cliente[sobrenome_cliente];?></font></h1>
+<h1 class="style1"><font face=verdana><?phpecho $campo_cliente[nome]." ".$campo_cliente[sobrenome_cliente];?></font></h1>
 <hr color=black size=2>
 
 <table width="100" border="1" cellpadding="1" cellspacing="1" bordercolor="#000000" bgcolor="#FFFFFF">
   <tr>
     <td><table border=0 class=fonte>
-      <?
+      <?php
 
 $busca_foto="select * from foto_med where id = '".$campo_cliente['id']."' order by codigo_foto asc;";
 
@@ -110,22 +110,22 @@ for($x=0;$x<$linha;$x++)
 
 <tr>
   <td width="94"><div align="left">C&oacute;d. M&eacute;d : </div></td>
-  <td width="60"><?echo $campo_cliente[id];?></td>
+  <td width="60"><?phpecho $campo_cliente[id];?></td>
 </tr>
-<tr><td><div align="left">Nome:</div></td><td><?echo $campo_cliente[nome];?></td></tr>
+<tr><td><div align="left">Nome:</div></td><td><?phpecho $campo_cliente[nome];?></td></tr>
 <tr>
   <td><div align="left">Email:</div></td>
-  <td><?echo $campo_cliente[email];?></td>
+  <td><?phpecho $campo_cliente[email];?></td>
 </tr>
 
 <tr>
-  <td><div align="left">CREMEPE:</div></td><td><? echo $campo_cliente[cremepe];?></td></tr>
+  <td><div align="left">CREMEPE:</div></td><td><?php echo $campo_cliente[cremepe];?></td></tr>
 
 <tr>
-  <td><div align="left">Telefone:</div></td><td>(<? echo $campo_cliente[ddd_fone1];?>)&nbsp;<? echo $campo_cliente[fone_1];?></td></tr>
+  <td><div align="left">Telefone:</div></td><td>(<?php echo $campo_cliente[ddd_fone1];?>)&nbsp;<?php echo $campo_cliente[fone_1];?></td></tr>
 
 <tr>
-  <td><div align="left">Celular:</div></td><td>(<? echo $campo_cliente[ddd_fone2];?>)&nbsp;<? echo $campo_cliente[fone_2];?></td></tr>
+  <td><div align="left">Celular:</div></td><td>(<?php echo $campo_cliente[ddd_fone2];?>)&nbsp;<?php echo $campo_cliente[fone_2];?></td></tr>
 </table>
 
 <br>

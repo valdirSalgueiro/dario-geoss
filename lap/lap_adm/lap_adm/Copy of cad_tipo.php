@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -115,15 +115,15 @@ body {
     </div>
       <div align="center"></div>
       <div align="center"></div></td>
-	<?
+	<?php
 	$sql = "SELECT * FROM tipo_exame order by id_ex ASC";
 	$result = mysql_query($sql);
 	  while($row = mysql_fetch_array($result)) { ?>
   </tr>
   
   <tr>
-    <td colspan="2"><div align="center"><? print $row['nome']; ?><span class="style6"> -</span>  <span class="style8"><? print $row['dias']; ?> </span> <span class="style6">Dias </span></div></td>
-  </tr><? } ?>
+    <td colspan="2"><div align="center"><?php print $row['nome']; ?><span class="style6"> -</span>  <span class="style8"><?php print $row['dias']; ?> </span> <span class="style6">Dias </span></div></td>
+  </tr><?php } ?>
   <tr>
     <td colspan="2" bgcolor="#333333">&nbsp;</td>
   </tr>
@@ -134,7 +134,7 @@ body {
 <br>
 </form>
 
-<?
+<?php
 
 $tipo=$_POST['tipo'];
 $dias=$_POST['dias'];

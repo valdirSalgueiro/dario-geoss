@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -31,7 +31,7 @@ else
 }
 
 ?>
-<?
+<?php
 //Testar Paciente
 $cpf=$_POST['cpf'];
 
@@ -157,7 +157,7 @@ body {
      event.returnValue=false;
  }
 </script>
-<?
+<?php
 
 $nome=$_POST['nome'];
 $email=$_POST['email'];

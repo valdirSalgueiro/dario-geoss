@@ -1,4 +1,4 @@
-<?
+<?php
 
 include('conn.php');
 
@@ -58,7 +58,7 @@ ss.repeat = true;
 
 
 
-<?
+<?php
 
 for($x=1;$x<=$num_busca;$x++)
 
@@ -70,13 +70,13 @@ $campos=mysql_fetch_array($resultado);
 
 s = new slide();
 
-s.src =  "admin/<?=$campos['foto']?>";
+s.src =  "admin/<?php=$campos['foto']?>";
 
-s.link = "noticia.php?codigo_noticia=<?=$campos['codigo']?>";
+s.link = "noticia.php?codigo_noticia=<?php=$campos['codigo']?>";
 
 //s.title = "";
 
-s.text = "<left><A ID=s_link HREF=noticia.php?codigo_noticia=<?=$campos['codigo']?> target=_parent><font class=materia color=#003399><?=$campos['titulo']?></font></a></left>";
+s.text = "<left><A ID=s_link HREF=noticia.php?codigo_noticia=<?php=$campos['codigo']?> target=_parent><font class=materia color=#003399><?php=$campos['titulo']?></font></a></left>";
 
 //s.target = "";
 
@@ -88,7 +88,7 @@ s.text = "<left><A ID=s_link HREF=noticia.php?codigo_noticia=<?=$campos['codigo'
 
 ss.add_slide(s);
 
-<?
+<?php
 
 }
 

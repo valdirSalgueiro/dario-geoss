@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -66,7 +66,7 @@ body {
         <div align="center"></div></td>
   </tr>
 </table>
-<?
+<?php
 if($_POST['buscar']!=NULL)
 {
  echo "<script>

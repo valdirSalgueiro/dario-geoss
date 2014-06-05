@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -82,7 +82,7 @@ body {
 </form>
 
 <p>
-  <?
+  <?php
 $nome=$_POST['nome'];
 $data=mktime();
 $por=$_SESSION["usuario_autenticado"];

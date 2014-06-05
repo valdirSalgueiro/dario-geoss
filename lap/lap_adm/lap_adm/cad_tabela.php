@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -69,10 +69,10 @@ document.form1.submit();
 <tr>
   <td><span class="style8">Tipo : </span></td>
   <td><select name="tipo" class="caixa" id="tipo" onChange="submitar()">
-  <? if($_POST['tipo']!=NULL){ 
+  <?php if($_POST['tipo']!=NULL){ 
    printf("<option value='$_POST[tipo]'>$_POST[tipo]");
     } ?>
-    <?
+    <?php
 $busca_conv="select * from tabelas WHERE nome!= '".$_POST[tipo]."' order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -135,7 +135,7 @@ document.form1.submit();
 </form>
 
 <p>
-  <?
+  <?php
 $tipo=$_POST['tipo'];
 $codigo_procedimento=$_POST['codigo_procedimento'];
 $descricao=$_POST['descricao'];
@@ -195,13 +195,13 @@ if(($codigo_procedimento!=NULL)and($descricao!=NULL)and($valor!=NULL))
 
 ?>
 </p>
-<? if($_POST['tipo']!=NULL){ ?>
+<?php if($_POST['tipo']!=NULL){ ?>
 <table border=0 class=fonte>
   <tr>
-    <td width="328" colspan="2" bgcolor="#000033"><div align="center" class="style4">Tipo de Tabela <? echo $_POST['tipo']; ?></div>
+    <td width="328" colspan="2" bgcolor="#000033"><div align="center" class="style4">Tipo de Tabela <?php echo $_POST['tipo']; ?></div>
         <div align="center"></div>
       <div align="center"></div></td>
-    <?
+    <?php
 	$sql = "SELECT * FROM tabela WHERE tipo = '".$_POST['tipo']."'  order by id ASC";
 	$result = mysql_query($sql);
 	  while($row = mysql_fetch_array($result)) { ?>
@@ -214,16 +214,16 @@ if(($codigo_procedimento!=NULL)and($descricao!=NULL)and($valor!=NULL))
         <td width="79">Valor</td>
       </tr>
       <tr>
-        <td><? print $row['codigo_procedimento']; ?></td>
-        <td><? print $row['descricao']; ?></td>
-        <td><? print $row['valor']; ?></td>
+        <td><?php print $row['codigo_procedimento']; ?></td>
+        <td><?php print $row['descricao']; ?></td>
+        <td><?php print $row['valor']; ?></td>
       </tr>
     </table></td>
   </tr>
   <tr>
     <td colspan="2"><div align="center"></div></td>
   </tr>
-  <? } ?><? } ?>
+  <?php } ?><?php } ?>
   <tr>
     <td colspan="2" bgcolor="#000033">&nbsp;</td>
   </tr>

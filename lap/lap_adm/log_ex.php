@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -53,7 +53,7 @@ body {
 <tr>
   <td class="style10">Filtrar Por:</td>
   <td><select name="nome" class="caixa" id="nome">
-    <?
+    <?php
 $busca_status="select * from ex_status order by nome asc;";
 $res_busca_status=mysql_query($busca_status,$conn);
 $num_status=mysql_num_rows($res_busca_status);
@@ -100,7 +100,7 @@ else
 </table>
 
 </form>
-<?
+<?php
 if($_POST['todos']){
 $nome=$_POST['nome'];
 $ex_status_id=$_POST['ex_status_id'];
@@ -166,7 +166,7 @@ $ex_status_id=$_POST['ex_status_id'];
  }
 }
 ?>
-<?
+<?php
 if($_POST['buscar']){
 
 $nome=$_POST['nome'];

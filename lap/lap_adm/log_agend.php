@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -76,7 +76,7 @@ body {
 </table>
 
 
-<?
+<?php
 if($_POST['todos']){
 $data = date("d/m/Y");
 $nome=$_POST['nome'];
@@ -144,7 +144,7 @@ $ex_status_id=$_POST['ex_status_id'];
  }
 }
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());
@@ -154,7 +154,7 @@ $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or
 
 
 ?>
-<?
+<?php
 if($_POST['buscar']){
 
 $nome=$_POST['dc'];

@@ -8,7 +8,7 @@ function retirar_acentos_caracteres_especiais($string) {
 #Exemplo de uso
 //echo retirar_acentos_caracteres_especiais("¥µÀÁÂÃÄÅ");
 ?>
-<? /* FUNÇÃO QUE SUBSTITUI CARCATERES ESPECIAIS 
+<?php /* FUNÇÃO QUE SUBSTITUI CARCATERES ESPECIAIS 
           MAIUSCULOS PARA MINUSCULOS */ 
 
   function caracterEsp($string) { 

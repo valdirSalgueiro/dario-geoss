@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -72,11 +72,11 @@ body {
 <table border=0 class=fonte>
 <tr>
   <td width="137" class="style10">Laudo N &ordm; :</td>
-  <td width="404"><input name=id type=text class=botao id="id" value="<? echo $_POST['id'];?>" size=20 maxlength=20></td>
+  <td width="404"><input name=id type=text class=botao id="id" value="<?php echo $_POST['id'];?>" size=20 maxlength=20></td>
 </tr>
 
-<? if($_POST['ok']){ ?>
-<?
+<?php if($_POST['ok']){ ?>
+<?php
 ##Buscando os dados para postá-los quando der o pulo##
 $busca_ex="select * from exame where id_exame  = '".$_POST['id']."';";
 $res_busca_ex=mysql_query($busca_ex,$conn);
@@ -103,11 +103,11 @@ if($campo_ex['ex_status_id']==4)
 <BR><BR><table border=0 class=fonte>
   <tr>
     <td width="135">Nome Paciente :</td>
-    <td width="187" colspan="2"><strong><? echo $campo_pac['nome']; ?></strong></div></td>
+    <td width="187" colspan="2"><strong><?php echo $campo_pac['nome']; ?></strong></div></td>
   </tr>
   <tr>
     <td width="135">Nome Médico Solicitante :</td>
-    <td width="187" colspan="2"><strong><? echo $campo_med['nome']; ?></strong></div></td>
+    <td width="187" colspan="2"><strong><?php echo $campo_med['nome']; ?></strong></div></td>
   </tr>
   <tr>
     <td width="135">Motivo da exclusão :</td>
@@ -118,7 +118,7 @@ if($campo_ex['ex_status_id']==4)
     <td width="187" colspan="2"><strong><input name="sub2" type=submit class=botao id="sub2" value='Excluir Laudo'></strong></div></td>
   </tr>
   
-</table><? 
+</table><?php 
 die(); } 
 
 if($campo_ex['ex_status_id']!=4)
@@ -134,9 +134,9 @@ return; } else {
   <td></td>
   <td>&nbsp;</td>
 </tr>
-<? } ?><? } ?>
-<tr><td></td><td><? if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Excluir'>
-<? } else { ?><input name="ok22" type=submit class=botao id="ok22" value='Ok'><? } ?>
+<?php } ?><?php } ?>
+<tr><td></td><td><?php if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Excluir'>
+<?php } else { ?><input name="ok22" type=submit class=botao id="ok22" value='Ok'><?php } ?>
  <input type=submit value='Cancelar' class=botao><span class="atributos_titulo">
  <input name="button" type=button class="botao" onClick="history.go(-1);" value="Voltar">
  </span></td>
@@ -144,7 +144,7 @@ return; } else {
 </table>
 
 </form>
-<?
+<?php
 if($_POST['sub2']){
 
 $data= mktime();

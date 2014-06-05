@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -12,7 +12,7 @@ include "caracteres.php";
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
-<?
+<?php
 
 if($_GET['codigo_mac']!=NULL){
 
@@ -33,10 +33,10 @@ $_SESSION["macroscopia"]= "$_SESSION[macroscopia] $nbsp $campo_ex[macroscopia]";
 ?>
 <script>
 alert('Adicionando código.')
-window.opener.location = '<? echo "laudos.php?id=$_GET[id]" ?>';
+window.opener.location = '<?php echo "laudos.php?id=$_GET[id]" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <body>

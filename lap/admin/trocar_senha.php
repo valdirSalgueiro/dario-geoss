@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../estilo.css');
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -22,7 +22,7 @@ else
 <tr><td></td><td><input type=submit value="Trocar Senha" class=botao></td></tr>
 </table>
 </form>
-<?
+<?php
 $senha=$_POST['senha'];
 $confirmacao=$_POST['confirmacao'];
 if(($senha!=NULL)and($confirmacao!=NULL))

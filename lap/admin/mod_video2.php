@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -47,7 +47,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_video[nome_video];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_video[nome_video];?>">
 
 <h1><font face=verdana color='#ff9900'><b>Modificar Video:</b></font></h1>
 <hr color=black size=2>
@@ -56,21 +56,21 @@ else
 
 
 <tr>
-  <td width="147">T&iacute;tulo Video:</td><td width="405"><input name=nome_video type=text class=botao id="nome_video" value="<?echo $campo_video[nome_video];?>" size=50 maxlength=100></td></tr>
+  <td width="147">T&iacute;tulo Video:</td><td width="405"><input name=nome_video type=text class=botao id="nome_video" value="<?phpecho $campo_video[nome_video];?>" size=50 maxlength=100></td></tr>
 
 <tr>
   <td>Descri&ccedil;&atilde;o Video : </td>
-  <td><input name=desc_video type=text class=botao id="desc_video" value="<?echo $campo_video[desc_video];?>" size=50 maxlength=100></td>
+  <td><input name=desc_video type=text class=botao id="desc_video" value="<?phpecho $campo_video[desc_video];?>" size=50 maxlength=100></td>
 </tr>
 <tr>
   <td>Link Video : </td>
-  <td><input name=link_video type=text class=botao id="link_video" value="<?echo $campo_video[link_video];?>" size=50 maxlength=100></td>
+  <td><input name=link_video type=text class=botao id="link_video" value="<?phpecho $campo_video[link_video];?>" size=50 maxlength=100></td>
 </tr>
 
 <tr>
   <td>Sobre o Video :</td><td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_video');
 
@@ -92,7 +92,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 $nome_antigo=$_POST['nome_video'];
 $nome_video=$_POST['nome_video'];
 $desc_video=$_POST['desc_video'];

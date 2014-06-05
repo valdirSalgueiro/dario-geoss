@@ -34,7 +34,7 @@ class GetFoldersAndFiles {
 	function run() {
 
 		header ("Content-Type: application/xml; charset=utf-8");
-		echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
+		echo "<?phpxml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 		?>
 <!DOCTYPE Connector [
 

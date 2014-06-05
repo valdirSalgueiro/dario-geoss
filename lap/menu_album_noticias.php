@@ -1,6 +1,6 @@
 <html>
 
-<?
+<?php
 
 include('conn.php');
 
@@ -30,7 +30,7 @@ if($codigo_noticia!=NULL)
 
 <table border=0>
 
-<?
+<?php
 
 if($num_foto>0)
 

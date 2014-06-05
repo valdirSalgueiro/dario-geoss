@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -45,12 +45,12 @@ else
 
 <form name=form1 method=post>
 
-<h1 class="style1"><font face=verdana><? echo $campo_cod[codigo]; ?></font></h1>
+<h1 class="style1"><font face=verdana><?php echo $campo_cod[codigo]; ?></font></h1>
 <hr color=black size=2>
 <br>
 <table border=0 class=fonte>
 <tr><td width="94"><div align="left">Descri&ccedil;&atilde;o:</div></td>
-  <td width="475"><? echo $campo_cod[descricao]; ?> </td>
+  <td width="475"><?php echo $campo_cod[descricao]; ?> </td>
 </tr>
 </table>
 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -25,7 +25,7 @@ else
 }
 
 ?>
-<?
+<?php
 //Testar Paciente
 $cpf=$_POST['cpf'];
 
@@ -91,7 +91,7 @@ if( !empty($_POST['cpf2']) )
 <tr>
   <td width="174">Paciente :</td>
   <td width="367"><select name="nome" class="caixa" id="nome">
-    <?
+    <?php
 $busca_conv="select * from paciente order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -143,7 +143,7 @@ else
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
   <td><select name="nome" class="caixa" id="nome">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -177,7 +177,7 @@ else
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -230,7 +230,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $codigo_categoria=$_POST['codigo_categoria'];
 

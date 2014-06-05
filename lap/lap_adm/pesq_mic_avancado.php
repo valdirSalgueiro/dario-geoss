@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -65,7 +65,7 @@ body {
 </table>
 
 </form>
-<?
+<?php
 $_SESSION["palavra"]=$_POST[palavra];
 $palavra=$_SESSION["palavra"];
 if($_SESSION["palavra"]!=NULL){

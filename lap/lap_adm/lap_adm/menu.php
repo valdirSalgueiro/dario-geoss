@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -18,7 +18,7 @@ session_start();
 
 <body bgcolor=white class=fonte>
 
-<?
+<?php
 
 //include('estilo.css');
 include('data.php');
@@ -65,7 +65,7 @@ else
 
 <form name=form1 method=post>
 
-<fieldset><legend>Usuário: <b><?echo $usuario_autenticado;?></b></legend>
+<fieldset><legend>Usuário: <b><?phpecho $usuario_autenticado;?></b></legend>
 
 <center>
   <img src="img/logoff.gif" onClick="window.location='sair.php';" width="97" height="22">
@@ -87,7 +87,7 @@ else
 
 		d.add(2,1,'Trocar Senha','trocar_senha.php','','conteudo');
 
-		<?
+		<?php
 
 if($acesso[0]==1)
 

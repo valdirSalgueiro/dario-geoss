@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -80,10 +80,10 @@ Palavra-Chave :
 
 <table border=0 class=fonte>
   <tr>
-    <td width="647" colspan="2" bgcolor="#000033"><div align="center" class="style4">C&oacute;digos <? echo $_POST['tipo']; ?></div>
+    <td width="647" colspan="2" bgcolor="#000033"><div align="center" class="style4">C&oacute;digos <?php echo $_POST['tipo']; ?></div>
         <div align="center"></div>
     <div align="center"></div></td>
-    <?
+    <?php
 	if($_POST['buscar']==NULL){
 	$sql = "SELECT * FROM codigo_conc  order by id ASC";
 	$result = mysql_query($sql);
@@ -100,12 +100,12 @@ Palavra-Chave :
         <td width="89" class="style10">Palavra-Chave</td>
         <td width="403" class="style10">Descri&ccedil;&atilde;o</td>
         <td width="76" class="style10"><div align="center">Adicionar ? </div></td>
-      </tr><?  while($row = mysql_fetch_array($result)) { ?>
+      </tr><?php  while($row = mysql_fetch_array($result)) { ?>
       <tr>
-        <td class="atributos_titulo style9"><? print $row['id']; ?></td>
-        <td class="atributos_titulo style9"><? print $row['codigo']; ?></td>
-        <td class="atributos_titulo style9"><? print $row['descricao']; ?></td>
-        <td class="atributos_titulo style9"><div align="center"><a href="ponte_conclusao.php?id=<? echo $_GET['id'];?>&&codigo_conc=<? echo $row['id']; ?>"><img src="images/chk_on.gif" width="19" height="20" border="0"></a></div></td>  <? } ?>
+        <td class="atributos_titulo style9"><?php print $row['id']; ?></td>
+        <td class="atributos_titulo style9"><?php print $row['codigo']; ?></td>
+        <td class="atributos_titulo style9"><?php print $row['descricao']; ?></td>
+        <td class="atributos_titulo style9"><div align="center"><a href="ponte_conclusao.php?id=<?php echo $_GET['id'];?>&&codigo_conc=<?php echo $row['id']; ?>"><img src="images/chk_on.gif" width="19" height="20" border="0"></a></div></td>  <?php } ?>
       </tr>
     </table></td>
   </tr>
@@ -121,13 +121,13 @@ Palavra-Chave :
 </body>
 
 </html>
-<?
+<?php
 if($_POST['sim']){
 ?>
 <script>
-window.opener.location = '<? echo "laudos.php?codigo_noticia=$_GET[id]" ?>';
+window.opener.location = '<?php echo "laudos.php?codigo_noticia=$_GET[id]" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>

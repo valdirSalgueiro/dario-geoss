@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $rg3 = $_SESSION['rg2'];
@@ -31,7 +31,7 @@ else
 }
 
 ?>
-<?
+<?php
 //Testar Paciente
 $cpf=$_POST['nome'];
 
@@ -200,7 +200,7 @@ src.value += texto.substring(0,1);
 </tr>
 <tr>
   <td><span class="style10">RG :</span></td>
-  <td><input name=rg type=text class=botao id="rg" value="<? echo  $rg3; ?>" size=11 maxlength=16></td>
+  <td><input name=rg type=text class=botao id="rg" value="<?php echo  $rg3; ?>" size=11 maxlength=16></td>
 </tr>
 <tr>
   <td><span class="style10">Telefone Residencial *:</span></td>
@@ -223,7 +223,7 @@ src.value += texto.substring(0,1);
 <tr>
   <td><span class="style10">Conv&ecirc;nio *:</span></td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -280,7 +280,7 @@ else
   </span></div></td></tr>
 </form>
 
-<?
+<?php
 
 $nome=$_POST['nome'];
 $endereco=$_POST['endereco'];

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -44,7 +44,7 @@ else
 
 <table border=0 class=fonte>
 
-<tr><td>Nome Categoria: </td><td><input type=text name=nome_categoria value="<?echo $campo_categoria[nome_categoria];?>" size=51 maxlength=50 class=botao></td></tr>
+<tr><td>Nome Categoria: </td><td><input type=text name=nome_categoria value="<?phpecho $campo_categoria[nome_categoria];?>" size=51 maxlength=50 class=botao></td></tr>
 
 <tr><td></td><td><input type=submit value=' Modificar ' class=botao></td></tr>
 
@@ -54,7 +54,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $nome_categoria=$_POST['nome_categoria'];
 

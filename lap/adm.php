@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -65,7 +65,7 @@ body {
                     <td width="48%" class="style11 style1"><table width="360" border="0" align="right" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
-                        <td width="94%"><span class="style26"><? $dia_semana = date("w");
+                        <td width="94%"><span class="style26"><?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -78,7 +78,7 @@ body {
    }
 
 						   ?>, 
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -169,7 +169,7 @@ body {
       </table>
         <table width="776" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
           <tr>
-            <td height="35"><div align="center" class="style21"><span class="style30"><? print $_SESSION['usuario_autenticado']; ?> </span>, Bem vindo a administra&ccedil;&atilde;o do Portal Sentinela. <br />
+            <td height="35"><div align="center" class="style21"><span class="style30"><?php print $_SESSION['usuario_autenticado']; ?> </span>, Bem vindo a administra&ccedil;&atilde;o do Portal Sentinela. <br />
                 <br><br><br>
                 <br />
                 <iframe src="admin/main.php" name="iframe" align="left" width="1000" marginwidth="0" height="1300" marginheight="0" align="center" scrolling="Auto" frameborder="no" id="iframe"></iframe>

@@ -113,7 +113,7 @@ if (in_array($command,$valid_commands)) {
 		$fckphp_config=$auth->authenticate($extra,$fckphp_config);
 		if ($fckphp_config['authSuccess']!==true) {
 			header ("content-type: text/xml");
-			echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
+			echo "<?phpxml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 			?>
 <Connector command="authentication_failed" resourceType="authentication_failed">
 	<CurrentFolder path="authentication_failed" url="authentication_failed" />

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -52,7 +52,7 @@ else
 
 <table border=0 class=fonte>
 
-<tr><td><font face=verdana size=2 color=black><b>Usuário: <?echo $usuario_autenticado;?><br><a href='sair.php'>Logoff</a></b></font></td></tr>
+<tr><td><font face=verdana size=2 color=black><b>Usuário: <?phpecho $usuario_autenticado;?><br><a href='sair.php'>Logoff</a></b></font></td></tr>
 
 <tr><td><hr color=black size=1><input type=checkbox onclick='visivel(this,document.all.menu_usuario);'><b>Usuários</b><BR>
 
@@ -60,7 +60,7 @@ else
 
 <a href='trocar_senha.php' target='conteudo'>Trocar Senha</a><BR>
 
-<?
+<?php
 
 if($acesso[0]==1)
 

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 if($_GET['id']!=$_SESSION["id"]){
@@ -59,7 +59,7 @@ else
 }
 
 ?>
-<?
+<?php
 $pro=$_GET['p'];
 $semipro=$_GET['s'];
 $ama=$_GET['a'];
@@ -104,21 +104,21 @@ $ama=$_GET['a'];
                                 <ul>
                                         <!-- CSS Tabs -->
 
-<? if($_GET['p']=$pro){ ?>										
-<li id="current"><a href="laudos.php?p=<? echo "infos_tec";?>"><span>Informações Técnicas</span></a></li><? } else { ?><li><a href="laudos.php?p=<? echo "infos_tec";?>&&id=<? echo $_SESSION["id"];?>"><span>Informações Técnicas</span></a></li><? } ?>
+<?php if($_GET['p']=$pro){ ?>										
+<li id="current"><a href="laudos.php?p=<?php echo "infos_tec";?>"><span>Informações Técnicas</span></a></li><?php } else { ?><li><a href="laudos.php?p=<?php echo "infos_tec";?>&&id=<?php echo $_SESSION["id"];?>"><span>Informações Técnicas</span></a></li><?php } ?>
 
-<? if($_GET['s']=$semipro){ ?>
-<li id="current"><a href="laudos.php?s=<? echo "obs";?>&&id=<? echo $_SESSION["id"];?>"><span>Observações</span></a></li><? } else { ?><li><a href="laudos.php?s=<? echo "obs";?> &&id=<? echo $_SESSION["id"];?>"><span>Observações</span></a></li><? } ?>
+<?php if($_GET['s']=$semipro){ ?>
+<li id="current"><a href="laudos.php?s=<?php echo "obs";?>&&id=<?php echo $_SESSION["id"];?>"><span>Observações</span></a></li><?php } else { ?><li><a href="laudos.php?s=<?php echo "obs";?> &&id=<?php echo $_SESSION["id"];?>"><span>Observações</span></a></li><?php } ?>
 
-<? if($_GET['a']=$ama){ ?>
-<li id="current"><a href="laudos.php?a=<? echo "infos";?>&&id=<? echo $_SESSION["id"];?>"><span>Outras Informações</span></a></li><? } else { ?><li><a href="laudos.php?a=<? echo "infos";?>&&id=<? echo $_SESSION["id"];?>"><span>Outras Informações</span></a></li><? } ?>
+<?php if($_GET['a']=$ama){ ?>
+<li id="current"><a href="laudos.php?a=<?php echo "infos";?>&&id=<?php echo $_SESSION["id"];?>"><span>Outras Informações</span></a></li><?php } else { ?><li><a href="laudos.php?a=<?php echo "infos";?>&&id=<?php echo $_SESSION["id"];?>"><span>Outras Informações</span></a></li><?php } ?>
 
 
                                 </ul>
                         </div></td>
       </tr>
     </table>
-<? if($_GET['p']=$pro){ ?>
+<?php if($_GET['p']=$pro){ ?>
 <table border=0 class=fonte>
 <tr>
   <td>&nbsp;</td>
@@ -130,41 +130,41 @@ $ama=$_GET['a'];
 </tr>
 <tr>
   <td width="174">Exame :</td>
-  <td width="367"><? echo $campo_ex['id']; ?></td>
+  <td width="367"><?php echo $campo_ex['id']; ?></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo_pac['nome']; ?>    </td>
+  <td><?php echo $campo_pac['nome']; ?>    </td>
 </tr>
 
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo $campo_ex['data_entrada']; ?> 
+  <td><?php echo $campo_ex['data_entrada']; ?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Previs&atilde;o de Saida:</td>
-  <td><? echo $campo_ex['data_previsao']; ?></td>
+  <td><?php echo $campo_ex['data_previsao']; ?></td>
 </tr>
 <tr>
   <td>Material :</td>
-  <td><input name=material type=text class=botao id="material" value="<? echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
+  <td><input name=material type=text class=botao id="material" value="<?php echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
 </tr>
 
 
 <tr>
   <td>Valor :</td>
   <td>R$
-    <input name=valor type=text class=botao id="valor" value="<? echo $campo_ex['valor']; ?>" size=26 maxlength=30></td>
+    <input name=valor type=text class=botao id="valor" value="<?php echo $campo_ex['valor']; ?>" size=26 maxlength=30></td>
 </tr>
 <tr>
   <td>Macroscopia : </td>
-  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="7"><? echo $campo_ex['macroscopia']; ?></textarea></td>
+  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="7"><?php echo $campo_ex['macroscopia']; ?></textarea></td>
 </tr>
 <tr>
   <td>C&oacute;d :</td>
   <td><select name="codigo" class="caixa" id="codigo">
-    <?
+    <?php
 $busca_cod="select * from codigo order by id asc;";
 $res_busca_cod=mysql_query($busca_cod,$conn);
 $num_cod=mysql_num_rows($res_busca_cod);
@@ -197,12 +197,12 @@ else
 </tr>
 <tr>
   <td>Microscopia :</td>
-  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><? echo $campo_ex['microscopia']; ?>
+  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><?php echo $campo_ex['microscopia']; ?>
 </textarea></td>
 </tr>
 <tr>
   <td>Conclus&atilde;o :</td>
-  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><? echo $campo_ex['conclusao']; ?>
+  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><?php echo $campo_ex['conclusao']; ?>
 </textarea></td>
 </tr>
 <tr>
@@ -213,9 +213,9 @@ else
 <input type=submit value='Cancelar' class=botao> <input type=submit value='Reiniciar' class=botao></td>
 </tr>
 </table>
-<? } ?>
+<?php } ?>
 </form>
-<?
+<?php
 if($_POST['fin1']){
 
  $modificar="update exame set material = '".$_POST['material']."', valor = '".$_POST['valor']."', macroscopia = '".$_POST['macroscopia']."', microscopia = '".$_POST['microscopia']."',conclusao = '".$_POST['conclusao']."' where id = '".$id."';";
@@ -232,7 +232,7 @@ if($_POST['fin1']){
 ?>
 <form name=form1 method=post>
 
-<? if($_GET['s']=$semipro){ ?>
+<?php if($_GET['s']=$semipro){ ?>
 
 <span class="style1"><span class="style3"><br>
 </span><br>
@@ -240,7 +240,7 @@ if($_POST['fin1']){
 <table border=0 class=fonte>
 <tr>
   <td width="174">Entrada :</td>
-  <td width="367"><textarea name="obs_entrada" id="obs_entrada" cols="45" rows="5"><? echo $campo_ex['obs_entrada']; ?>
+  <td width="367"><textarea name="obs_entrada" id="obs_entrada" cols="45" rows="5"><?php echo $campo_ex['obs_entrada']; ?>
 </textarea></td>
 </tr>
 
@@ -252,7 +252,7 @@ if($_POST['fin1']){
 <tr>
   <td>Laudo :</td>
   <td><span class="style1">
-    <textarea name="obs_saida" id="obs_saida" cols="45" rows="5"><? echo $campo_ex['obs_saida']; ?>
+    <textarea name="obs_saida" id="obs_saida" cols="45" rows="5"><?php echo $campo_ex['obs_saida']; ?>
 </textarea>
   </span></td>
 </tr>
@@ -267,7 +267,7 @@ if($_POST['fin1']){
 </table>
 
 </form>
-<?
+<?php
 if($_POST['fin2']){
 
  $modificar2="update exame set obs_entrada = '".$_POST['obs_entrada']."', obs_saida = '".$_POST['obs_saida']."' where id = '".$id."';";
@@ -283,7 +283,7 @@ if($_POST['fin2']){
   }
   }
 ?>
-<? if($_GET['a']=$ama){ ?>
+<?php if($_GET['a']=$ama){ ?>
 <table border=0 class=fonte>
 
 <tr>
@@ -296,11 +296,11 @@ if($_POST['fin2']){
 </tr>
 <tr>
   <td width="174">Solicita&ccedil;&atilde;o :</td>
-  <td width="367"><? echo $campo_med['nome']; ?></td>
+  <td width="367"><?php echo $campo_med['nome']; ?></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio :</td>
-  <td><? echo $campo_ex['convenio']; ?></td>
+  <td><?php echo $campo_ex['convenio']; ?></td>
 </tr>
 
 <tr>
@@ -312,7 +312,7 @@ if($_POST['fin2']){
 </table>
 
 </form>
-<?
+<?php
 if($_POST['fin3']){
    
   @session_destroy("id");

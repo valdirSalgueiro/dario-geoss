@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -57,7 +57,7 @@ body {
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[nome];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[nome];?>">
 
 <h1 class="style1"><font face=verdana>Modificar Paciente:</font></h1>
 <hr color=black size=2>
@@ -66,45 +66,45 @@ body {
 
 <tr>
   <td width="147">Nome:</td>
-  <td width="405"><input name=nome type=text class=botao id="nome" value="<?echo $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
+  <td width="405"><input name=nome type=text class=botao id="nome" value="<?phpecho $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
 
 <tr>
   <td>Idade   : </td>
-  <td><input name=data_nascimento type=text class=botao id="data_nascimento" value="<?echo $campo_noticia[data_nascimento];?>" size=50 maxlength=100></td>
+  <td><input name=data_nascimento type=text class=botao id="data_nascimento" value="<?phpecho $campo_noticia[data_nascimento];?>" size=50 maxlength=100></td>
 </tr>
 <tr>
   <td>RG   : </td>
-  <td><input name=rg type=text class=botao id="rg" value="<?echo $campo_noticia[rg];?>" size=50 maxlength=100></td>
+  <td><input name=rg type=text class=botao id="rg" value="<?phpecho $campo_noticia[rg];?>" size=50 maxlength=100></td>
 </tr>
 <tr>
   <td>Telefone Residencial     : </td>
-  <td><input name=ddd_fone1 type=text class=botao id="ddd_fone1" value="<?echo $campo_noticia[ddd_fone1];?>" size=3 maxlength=3>
+  <td><input name=ddd_fone1 type=text class=botao id="ddd_fone1" value="<?phpecho $campo_noticia[ddd_fone1];?>" size=3 maxlength=3>
 -
-  <input name=fone_1 type=text class=botao id="fone_1" value="<?echo $campo_noticia[fone_1];?>" size=15 maxlength=100></td>
+  <input name=fone_1 type=text class=botao id="fone_1" value="<?phpecho $campo_noticia[fone_1];?>" size=15 maxlength=100></td>
 </tr>
 <tr>
   <td>Telefone Comercial     : </td>
-  <td><input name=ddd_fone2 type=text class=botao id="ddd_fone2" value="<?echo $campo_noticia[ddd_fone2];?>" size=3 maxlength=3>
+  <td><input name=ddd_fone2 type=text class=botao id="ddd_fone2" value="<?phpecho $campo_noticia[ddd_fone2];?>" size=3 maxlength=3>
     - 
-      <input name=fone_2 type=text class=botao id="fone_2" value="<?echo $campo_noticia[fone_2];?>" size=15 maxlength=100></td>
+      <input name=fone_2 type=text class=botao id="fone_2" value="<?phpecho $campo_noticia[fone_2];?>" size=15 maxlength=100></td>
 </tr>
 <tr>
   <td>Celular    : </td>
-  <td><input name=ddd_fone3 type=text class=botao id="ddd_fone3" value="<?echo $campo_noticia[ddd_fone3];?>" size=3 maxlength=3>
+  <td><input name=ddd_fone3 type=text class=botao id="ddd_fone3" value="<?phpecho $campo_noticia[ddd_fone3];?>" size=3 maxlength=3>
 -
-  <input name=fone_3 type=text class=botao id="fone_3" value="<?echo $campo_noticia[fone_3];?>" size=15 maxlength=100></td>
+  <input name=fone_3 type=text class=botao id="fone_3" value="<?phpecho $campo_noticia[fone_3];?>" size=15 maxlength=100></td>
 </tr>
 <tr>
   <td>Convenio   : </td>
-  <td><input name=convenio type=text class=botao id="convenio" value="<?echo $campo_noticia[convenio];?>" size=50 maxlength=100></td>
+  <td><input name=convenio type=text class=botao id="convenio" value="<?phpecho $campo_noticia[convenio];?>" size=50 maxlength=100></td>
 </tr>
 <tr>
   <td>N&uacute;mero Carteirinha    : </td>
-  <td><input name=identif_convenio type=text class=botao id="identif_convenio" value="<?echo $campo_noticia[identif_convenio];?>" size=50 maxlength=100></td>
+  <td><input name=identif_convenio type=text class=botao id="identif_convenio" value="<?phpecho $campo_noticia[identif_convenio];?>" size=50 maxlength=100></td>
 </tr>
 <tr>
   <td>Email   : </td>
-  <td><input name=email type=text class=botao id="email" value="<?echo $campo_noticia[email];?>" size=50 maxlength=100></td>
+  <td><input name=email type=text class=botao id="email" value="<?phpecho $campo_noticia[email];?>" size=50 maxlength=100></td>
 </tr>
 
 
@@ -118,7 +118,7 @@ body {
 
 </form>
 
-<?
+<?php
 $nome=$_POST['nome'];
 $endereco=$_POST['endereco'];
 $bairro=$_POST['bairro'];

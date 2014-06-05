@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -61,11 +61,11 @@ body {
 <table border=0 class=fonte>
 <tr>
   <td width="174"><span class="style6">Largura :</span></td>
-  <td width="318"><input name=width value=<?=$campo_config[width]?> type=text class=botao id="width" size=50 maxlength=50></td></tr>
+  <td width="318"><input name=width value=<?php=$campo_config[width]?> type=text class=botao id="width" size=50 maxlength=50></td></tr>
 <tr>
 <tr>
   <td width="174"><span class="style6">Altura :</span></td>
-  <td width="318"><input name=height value=<?=$campo_config[height]?> type=text class=botao id="height" size=50 maxlength=50></td></tr>
+  <td width="318"><input name=height value=<?php=$campo_config[height]?> type=text class=botao id="height" size=50 maxlength=50></td></tr>
 <tr>
   <td></td>
   <td>&nbsp;</td>
@@ -79,7 +79,7 @@ body {
 </form>
 
 <p>
-  <?
+  <?php
 $tipo=$_POST['cadastrar'];
 $data=mktime();
 $por=$_SESSION["usuario_autenticado"];

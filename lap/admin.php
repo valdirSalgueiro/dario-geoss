@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -18,7 +18,7 @@ body {
 .style36 {color: #000000; font-size: 10px; font-weight: bold; }
 -->
 </style>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 ?>
@@ -38,7 +38,7 @@ body {
           </table>
             <table width="772" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                 <td width="772" height="150" background="arquivos/<? print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
+                 <td width="772" height="150" background="arquivos/<?php print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
                   <tr>
                     <td width="768" height="124" colspan="2">&nbsp;</td>
                   </tr>
@@ -67,7 +67,7 @@ body {
                     <td width="48%" class="style11 style1"><table width="360" border="0" align="right" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
-                        <td width="94%"><span class="style26"><? $dia_semana = date("w");
+                        <td width="94%"><span class="style26"><?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -80,7 +80,7 @@ body {
    }
 
 						   ?>, 
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -190,7 +190,7 @@ body {
                     </div></td>
                   </tr>
                 </table>
-<?
+<?php
 
 $usu=$_POST['usu'];
 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -63,7 +63,7 @@ body {
 <tr>
   <td width="174"><span class="style7">Nome Conv&ecirc;nio:</span></td>
   <td width="318"><select name="nome" class="caixa" id="nome">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -117,7 +117,7 @@ else
 
 </form>
 
-<?
+<?php
 $nome=$_POST['nome'];
 $prazo=$_POST['dc'];
 $por=$_SESSION["usuario_autenticado"];

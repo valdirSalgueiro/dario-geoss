@@ -1,4 +1,4 @@
-<?
+<?php
 
 include('estilo.css');
 include('conn.php');
@@ -58,7 +58,7 @@ a.menu_principal:active  { text-decoration: none; color:#33333; font-size:11px;}
     </tr>
   </table>
   <br>
-<?
+<?php
 $busca_galeria="select * from galerias WHERE codigo_galeria = '".$_GET['codigo_galeria']."';";
 $res_busca_galeria=mysql_query($busca_galeria,$conn);
 $campo_galeria=mysql_fetch_array($res_busca_galeria);
@@ -66,7 +66,7 @@ echo "<BR><font class=titulo>$campo_galeria[nome_galeria]</font> - <font class=m
 echo "<BR><center><font class=materia>$campo_galeria[descricao_galeria]</center><BR><center><font class=materia>Por : $campo_galeria[por]</center></font><BR>";
 ?>
   <br>
-  <?
+  <?php
 
 $codigo_foto=$_GET['codigo_foto'];
 
@@ -98,8 +98,8 @@ if(($codigo_foto!=NULL)and($foto!=NULL)and($dimencao!=NULL))
 
 ?>
   <br>
- <? if($codigo_foto!=NULL){ ?></a><br />
-  <?
+ <?php if($codigo_foto!=NULL){ ?></a><br />
+  <?php
 //Contando o n&uacute;mero de coment&aacute;rios existentes
 $consultac = mysql_query("SELECT count(codigo_galeria) as total FROM tab_comentarios_galeria where codigo_foto = '".$codigo_foto."' ") or die(mysql_error());
 $totalcom = mysql_result($consultac,0,"total");
@@ -107,17 +107,17 @@ $totalcom = mysql_result($consultac,0,"total");
   <br>
   <table width="54%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td width="79%" align="right" bgcolor="#FFFFFF"><div align="center"><a href="javascript:Comentar('<?=$codigo_foto ?>')" class="l_menu_materia"><strong> CLIQUE AQUI para comentar </strong></a></div></td>
+      <td width="79%" align="right" bgcolor="#FFFFFF"><div align="center"><a href="javascript:Comentar('<?php=$codigo_foto ?>')" class="l_menu_materia"><strong> CLIQUE AQUI para comentar </strong></a></div></td>
     </tr>
   </table>
   <br>
   <table width="87%" border="0" cellpadding="0" cellspacing="0">
     <tr>
-      <td width="506" bgcolor="#CCCCCC" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <? print $totalcom; ?> ] </span><span class="materia"></span> <br />
+      <td width="506" bgcolor="#CCCCCC" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <?php print $totalcom; ?> ] </span><span class="materia"></span> <br />
       </td>
     </tr>
     <tr>
-      <?
+      <?php
 		$consulta = mysql_query("SELECT * FROM tab_comentarios_galeria WHERE  codigo_foto = '".$codigo_foto."' ORDER BY id_cmt DESC") or die(mysql_error());
 		
 
@@ -126,18 +126,18 @@ $totalcom = mysql_result($consultac,0,"total");
 	while($comentarios=mysql_fetch_array($consulta)) {
 ?>
       <td valign="top" class="legenda_foto" align="center" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><div align="left" class="materia"><strong><b>
-          <?=$comentarios['nome_cmt']?>
+          <?php=$comentarios['nome_cmt']?>
           </b> </strong>em <span class="style30" style="border-top:1px #CCCCCC dotted;; font-size:11px; color:#333333;">
-          <?=$comentarios['data_cmt']?>
+          <?php=$comentarios['data_cmt']?>
           </span> :
-        <?=$comentarios['texto_cmt']?>
+        <?php=$comentarios['texto_cmt']?>
           <span style="padding:10px; padding-top:0px;"> </span></div></td>
     </tr>
-    <? } ?>
+    <?php } ?>
   </table>
   <p style="padding:10px; padding-top:0px;"><span class="materia">
-    <? if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
-    <? } ?>
+    <?php if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
+    <?php } ?>
   </span></p>
   
 </div>

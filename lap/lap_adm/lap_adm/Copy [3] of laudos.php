@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -140,7 +140,7 @@ else
   <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
 </tr>
 <tr>
-<? if($campo_tipo['nome']!='HISTOPATOLOGICO'){ ?>
+<?php if($campo_tipo['nome']!='HISTOPATOLOGICO'){ ?>
   <td colspan="2" bgcolor="#000033"><div align="center"><span class="style9">Op&ccedil;&atilde;o de Colposcopia </span></div></td>
   </tr>
 <tr>
@@ -149,8 +149,8 @@ else
 	<form name="colposcopia" method="post">
     <input name="cadc" type=submit class=botaooo id="cadc" value='Cadastrar Colposcopia'>    
 	</form>
-    <?  } ?>
-	<?
+    <?php  } ?>
+	<?php
 	if($_POST[cadc]!=NULL){
 	 echo "<script>
  window.location='cadastrar_colposcopia.php?id=$id';</script>";
@@ -169,7 +169,7 @@ else
 <tr>
   <td> Status  :</td>
   <td><select name="id" class="botaooo" id="id">
-    <?
+    <?php
 $exid = $campo_ex['id'];
 
 $sql = "select id,nome 
@@ -209,37 +209,37 @@ $num_cod=mysql_num_rows($res_busca_cod);
 </tr>
 <tr>
   <td width="174">Laudo N&uacute;mero  :</td>
-  <td width="367"><? echo $campo_ex['id']; ?></td>
+  <td width="367"><?php echo $campo_ex['id']; ?></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo_pac['nome']; ?>    </td>
+  <td><?php echo $campo_pac['nome']; ?>    </td>
 </tr>
 
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_entrada']); ?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Previs&atilde;o de Saida:</td>
-  <td><? echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
+  <td><?php echo date("d-m-Y-H:h",$campo_ex['data_previsao']); ?></td>
 </tr>
 <tr>
   <td>Tipo de Exame:</td>
-  <td><? echo $campo_tipo['nome']; ?></td>
+  <td><?php echo $campo_tipo['nome']; ?></td>
 </tr>
 <tr>
-  <td colspan="2" bgcolor="#666666"><div align="center" class="style8"><? echo "Previs&atilde;o de $campo_tipo[dias] Dias."; ?></div></td>
+  <td colspan="2" bgcolor="#666666"><div align="center" class="style8"><?php echo "Previs&atilde;o de $campo_tipo[dias] Dias."; ?></div></td>
   </tr>
 <tr>
   <td>Material :</td>
-  <td><input name=material type=text class=botao id="material" value="<? echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
+  <td><input name=material type=text class=botao id="material" value="<?php echo $campo_ex['material']; ?>" size=50 maxlength=50></td>
 </tr>
 <tr>
   <td>Médico Execultante :</td>
   <td><select name="medico_execultante" class="caixa" id="medico_execultante">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -274,7 +274,7 @@ else
 <tr>
   <td>C&oacute;d Macroscopia:</td>
   <td><select name="codigo_mac" class="caixa" id="codigo_mac" onChange="submitar()">
-    <?
+    <?php
 $busca_atendimentos="select * from codigo_mac order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -339,12 +339,12 @@ else
 </tr>
 <tr>
   <td>Macroscopia :</td>
-  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="4"><? echo $_SESSION["macroscopia"]; ?></textarea></td>
+  <td><textarea name="macroscopia" id="macroscopia" cols="40" rows="4"><?php echo $_SESSION["macroscopia"]; ?></textarea></td>
 </tr>
 <tr>
   <td>C&oacute;d Microscopia:</td>
   <td><select name="codigo_micros" class="caixa" id="codigo_micros" onChange="submitar()">
-    <?
+    <?php
 $busca_atendimentos="select * from codigo order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -425,12 +425,12 @@ else
 </tr>
 <tr>
   <td>Microscopia :</td>
-  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><? echo $_SESSION["microscopia"]; ?></textarea></td>
+  <td><textarea name="microscopia" id="microscopia" cols="40" rows="4"><?php echo $_SESSION["microscopia"]; ?></textarea></td>
 </tr>
 <tr>
   <td>C&oacute;d Conclus&atilde;o:</td>
   <td><select name="codigo_conc" class="caixa" id="codigo_conc" onChange="submitar()">
-    <?
+    <?php
 $busca_atendimentos="select * from codigo_conc order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -463,7 +463,7 @@ else
 </tr>
 <tr>
   <td>Conclus&atilde;o :</td>
-  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><? echo $_SESSION["codigo_conc"]; ?>
+  <td><textarea name="conclusao" id="conclusao" cols="40" rows="4"><?php echo $_SESSION["codigo_conc"]; ?>
 </textarea></td>
 </tr>
 <tr>
@@ -484,20 +484,20 @@ else
 </tr>
 <tr>
   <td>Solicita&ccedil;&atilde;o :</td>
-  <td><? echo $campo_med['nome']; ?></td>
+  <td><?php echo $campo_med['nome']; ?></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio :</td>
-  <td><? echo $campo_conv['nome']; ?></td>
+  <td><?php echo $campo_conv['nome']; ?></td>
 </tr>
 <tr>
   <td>Tabela : </td>
-  <td><? echo $campo_ex['tipo_tabela']; ?></td>
+  <td><?php echo $campo_ex['tipo_tabela']; ?></td>
 </tr>
 <tr>
   <td>C&oacute;digo de Procedimento : </td>
   <td><select name="codigo_procedimento" class="caixa" id="codigo_procedimento">
-    <?
+    <?php
 $busca_atendimentos="select * from tabela WHERE tipo = '".$campo_ex['tipo_tabela']."' order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -534,7 +534,7 @@ else
 </tr>
 </table>
 </form>
-<?
+<?php
 if($_POST['cancelar']){
 	$_SESSION["microscopia"]=NULL;
 	$_SESSION["codigo_conc"]=NULL;

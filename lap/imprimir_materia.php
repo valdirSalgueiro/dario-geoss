@@ -1,4 +1,4 @@
-<?
+<?php
 include "conn.php";
 	$id = $_GET['id'];
 	$consulta = mysql_query("SELECT * FROM noticias WHERE codigo_noticia = '".$id."'") or die(mysql_error());
@@ -25,40 +25,40 @@ background-color:#FFFFFF;
   </tr>
   <tr>
     <td width="506" style="border:2px #EAEAEA dotted; padding-top:20px;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo">
-      <?=$materias['nome_noticia'] ?>
+      <?php=$materias['nome_noticia'] ?>
       </span><br />
-      <?=$materias['data_cadastro'] ?>
+      <?php=$materias['data_cadastro'] ?>
       &nbsp;&nbsp;<img src="images/ico_relogio.gif" align="absbottom" />
-      <?=$materias['hora_cadastro'] ?>
+      <?php=$materias['hora_cadastro'] ?>
       <br />    </td>
   </tr>
-  <? if ($materias['fotografo_materia'] != "") {?>
+  <?php if ($materias['fotografo_materia'] != "") {?>
   <tr>
     <td valign="top" class="legenda_foto" align="center" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><table width="100" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td align="right">Foto:
-          <?=$materias['fotografo_materia'] ?>        </td>
+          <?php=$materias['fotografo_materia'] ?>        </td>
       </tr>
       <tr>
-        <td align="center"><span class="legenda_foto" style="padding-top:15px;"><img src="images/materias/<?=$materias['foto_materia'] ?>" border="2" /></span></td>
+        <td align="center"><span class="legenda_foto" style="padding-top:15px;"><img src="images/materias/<?php=$materias['foto_materia'] ?>" border="2" /></span></td>
       </tr>
       <tr>
-        <td align="center"><?=$materias['legenda_foto_materia'] ?></td>
+        <td align="center"><?php=$materias['legenda_foto_materia'] ?></td>
       </tr>
     </table>
         </div></td>
   </tr>
-  <? } ?>
+  <?php } ?>
   <tr>
     <td valign="top" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;" class="materia"><div align="justify">
-      <?=$materias['descricao_noticia'] ?>
+      <?php=$materias['descricao_noticia'] ?>
     </div></td>
   </tr>
   <tr>
     <td height="25" background="images/site_divisao_materia.gif" style="padding-left:5px; padding-right:5px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="21%" class="por">por
-          <?=$materias['por']?></td>
+          <?php=$materias['por']?></td>
         <td width="79%" align="right"><strong>|</strong> <a href="http://www.portalsentinela.com" target="_blank" class="l_menu_materia">www.portalsentinela.com</a><a href="http://www.portalsentinela.com" class="l_menu_materia"></a> <strong>|</strong> </td>
       </tr>
     </table></td>

@@ -17,7 +17,7 @@ function agendamento(dia,_mes,year)
 </script>
 </head>
 <body onSelectStart="return false">
-<?
+<?php
 
 switch (date("m")) {
         case "01":    $mes2 = 1;     break;
@@ -150,21 +150,21 @@ $_="ndes";
 <table width="160" border="0" cellspacing="1" cellpadding="1" align="center">
 <tr align="center" bgcolor="#CCCCCC">
  <td colspan="7" bgcolor="#FFD25B" align="center" class="preto">
-              <a href="<? echo $_SERVER["PHP_SELF"]."?mes=".($month-1)."&ano=".($year); ?>" class="preto">&#171;</a>
-              <?echo "$month_name $year";?>
-              <a href="<? echo $_SERVER["PHP_SELF"]."?mes=".($month+1)."&ano=".($year); ?>" class="preto">&#187;</a>
+              <a href="<?php echo $_SERVER["PHP_SELF"]."?mes=".($month-1)."&ano=".($year); ?>" class="preto">&#171;</a>
+              <?phpecho "$month_name $year";?>
+              <a href="<?php echo $_SERVER["PHP_SELF"]."?mes=".($month+1)."&ano=".($year); ?>" class="preto">&#187;</a>
 </td>
 </tr>
 <tr align="center">
-<?
+<?php
 $cp .= "end";
 for ($i=0;$i<7;$i++) { ?>
-  <td width="39" align="center" bgColor="#EEEEEE"><? echo "$day_name[$i]";
+  <td width="39" align="center" bgColor="#EEEEEE"><?php echo "$day_name[$i]";
   ?></td>
-  <? } $cp .= "e";?>
+  <?php } $cp .= "e";?>
   </tr>
   <tr align="center">
-  <?
+  <?php
 
   $cp .= "r F";
   if (date("w",mktime(0,0,0,$month,1,$year))==0) {
@@ -177,8 +177,8 @@ for ($i=0;$i<7;$i++) { ?>
     $d=date("t",mktime(0,0,0,$month,0,$year))-$a;
     ?>
     <td bgcolor="#ffffff" align="center"><font
-    color="#ffffff"><?=$d?></font></td>
-    <? }
+    color="#ffffff"><?php=$d?></font></td>
+    <?php }
     
     for($d=1;$d<=date("t",mktime(0,0,0,($month+1),0,$year));$d++)
     {
@@ -221,24 +221,24 @@ $consulta = mysql_query("SELECT count(data) as total FROM agendamentos WHERE dat
 $total =  mysql_result($consulta,0,"total");
 if($total==17){
       ?>
-            <td bgcolor="#<?=$cor?>"  align="center" title="visualizar"><img src="img/delete.gif" width="13" height="13"><a href="javascript:agendamento(<? echo $dia.",".$_mes.",".$year;?>)"><?=$d?></a></td>
-      <?
+            <td bgcolor="#<?php=$cor?>"  align="center" title="visualizar"><img src="img/delete.gif" width="13" height="13"><a href="javascript:agendamento(<?php echo $dia.",".$_mes.",".$year;?>)"><?php=$d?></a></td>
+      <?php
 	  } else { ?>
-	    <td bgcolor="#<?=$cor?>"  align="center" title="visualizar"><a href="javascript:agendamento(<? echo $dia.",".$_mes.",".$year;?>)"><?=$d?></a></td>
-	  <? }
+	    <td bgcolor="#<?php=$cor?>"  align="center" title="visualizar"><a href="javascript:agendamento(<?php echo $dia.",".$_mes.",".$year;?>)"><?php=$d?></a></td>
+	  <?php }
       }
       else
       {
         ?>
-        <td <?=$bg;?> align="center"><font color=#333333><?$bold;?><?=$d //cor dos dias ?></td>
-        <?
+        <td <?php=$bg;?> align="center"><font color=#333333><?php$bold;?><?php=$d //cor dos dias ?></td>
+        <?php
       }
       if(date("w",mktime(0,0,0,$month,$d,$year))==0&date("t",mktime(0,0,0,($month+1),0,$year))>$d)
       {
         ?>
         </tr>
         <tr align="center">
-        <? }}
+        <?php }}
         $cp .= "erna";
         $da=$d+1;
         if(date("w",mktime(0,0,0,$month+1,1,$year))<>1)
@@ -248,9 +248,9 @@ if($total==17){
           {
             ?>
             <td bgcolor="#ffffff" align="center">
-			<font color="#ffffff"><?=$d?></font>
+			<font color="#ffffff"><?php=$d?></font>
 			</td>
-            <?
+            <?php
             $d++;
           }
         }

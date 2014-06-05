@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -83,26 +83,26 @@ else
   </tr>
   <tr>
     <td>Laudo Número  :</td>
-    <td><? echo $id; ?></td>
+    <td><?php echo $id; ?></td>
   </tr>
   <tr>
     <td>Nome :</td>
-    <td><? echo $nome; ?></td>
+    <td><?php echo $nome; ?></td>
   </tr>
   
   
   <tr>
     <td width="96">Serviços de :</td>
-    <td><? echo $servicos; ?></td>
+    <td><?php echo $servicos; ?></td>
   </tr>
   <tr>
     <td>Valor :</td>
-    <td><? echo $valor; ?></td>
+    <td><?php echo $valor; ?></td>
   </tr>
   
   <tr>
     <td>Data :</td>
-    <td><? echo $data; ?></td>
+    <td><?php echo $data; ?></td>
   </tr>
   <tr>
     <td height="28" colspan="2"><hr color="black" size="2" /></td>

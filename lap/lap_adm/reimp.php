@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -68,13 +68,13 @@ body {
 
 <span class="style1"><br>
 </span><br>
-<?
+<?php
 if(($_POST['id']=='')and($_POST['ok'])){
 echo "Preencha o número do exame que deseja reimprimir.&nbsp;&nbsp;<a href='reimp.php'>Preencher Novamente</a><br>"; 
 return; 
 } 
 ?>
-<?
+<?php
 if(($_POST['id']!='')and($_POST['ok']!='')){
 
   ##Busca do nome do exame##
@@ -119,14 +119,14 @@ echo "Este exame já teve etiqueta impressa.&nbsp;&nbsp;<a href='print_etiqueta.p
   
   <tr>
     <td width="135" class="style10">Impressa em :</td>
-    <td width="187" colspan="2"><strong><? print date("d/m/Y - H:i",$campo[data_etiqueta]); ?></strong></div></td>
+    <td width="187" colspan="2"><strong><?php print date("d/m/Y - H:i",$campo[data_etiqueta]); ?></strong></div></td>
   </tr>
      <tr>
     <td colspan="2" bgcolor="#000033">&nbsp;</td>
   </tr>
   
   
-</table><? 
+</table><?php 
 die(); } 
 
 $data_etiqueta = mktime();
@@ -270,7 +270,7 @@ echo "<script>window.open('exame_fim_lx300.php?id=$_POST[id]');</script>";
   <td class="style10">Laudo N &ordm;  </td>
   </tr>
 <tr>
-  <td><input name=id type=text class=botao id="id" value="<? echo $_GET['id'];?>" size=20 maxlength=20></td>
+  <td><input name=id type=text class=botao id="id" value="<?php echo $_GET['id'];?>" size=20 maxlength=20></td>
   </tr>
 <tr>
   <td></td>

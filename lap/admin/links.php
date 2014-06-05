@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -54,7 +54,7 @@ else
 <tr>
   <td><BR>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_links');
 
@@ -72,7 +72,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $descricao_links=$_POST['descricao_links'];
 $modificar=$_POST['modificar'];

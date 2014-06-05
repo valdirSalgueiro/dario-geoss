@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -55,7 +55,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_produto[nome_produto];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_produto[nome_produto];?>">
 
 <h1 class="style1"><font face=verdana>Exame:</font></h1>
 <hr color=black size=2>
@@ -64,19 +64,19 @@ else
 
 <tr>
   <td width="157">ID: </td>
-  <td width="157"><div align="center"><?echo $campo_produto[nome_produto];?></div></td></tr>
+  <td width="157"><div align="center"><?phpecho $campo_produto[nome_produto];?></div></td></tr>
 
 <tr>
   <td>Nome Paciente: </td>
-  <td><div align="center"><?echo $campo_produto[qtd];?></div></td>
+  <td><div align="center"><?phpecho $campo_produto[qtd];?></div></td>
 </tr>
 <tr>
   <td>Data de Entrada</td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[qtd];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[qtd];?></div></td>
 </tr>
 <tr>
   <td>Previs&atilde;o de Saida</td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[qtd];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[qtd];?></div></td>
 </tr>
 <tr>
   <td>Material</td>
@@ -84,25 +84,25 @@ else
 </tr>
 <tr>
   <td>Solicita&ccedil;&atilde;o  :</td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[valor_unit];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[valor_unit];?></div></td>
 </tr>
 
 <tr>
   <td>Soma dos Valores : </td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[soma_valores];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[soma_valores];?></div></td>
 </tr>
 
 <tr>
   <td>Tipo de Pagamento:</td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[tipo_pagamento];?></div></td></tr>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[tipo_pagamento];?></div></td></tr>
 
 <tr>
   <td>Data de Cadastro : </td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[data_cadastro];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[data_cadastro];?></div></td>
 </tr>
 <tr>
   <td>Usu&aacute;rio : </td>
-  <td bgcolor="#FFFFFF"><div align="center"><?echo $campo_produto[usuario];?></div></td>
+  <td bgcolor="#FFFFFF"><div align="center"><?phpecho $campo_produto[usuario];?></div></td>
 </tr>
 
 
@@ -115,7 +115,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $promocao=$_POST['promocao'];
 

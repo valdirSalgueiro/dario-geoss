@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -88,7 +88,7 @@ body {
 </tr>
 <tr>
   <td>&nbsp;</td>
-  <td><?
+  <td><?php
 
 $oFCKeditor = new FCKeditor('descricao');
 
@@ -123,7 +123,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $codigo=$_POST['codigo'];
 $descricao2=$_POST['descricao'];

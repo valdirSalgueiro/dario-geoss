@@ -1,11 +1,11 @@
-<?
+<?php
 /*
 session_start();
 $usuario_autenticado=$_SESSION["dados_usuario"];
 include "whosonline_other.php";
 */
 ?>
-<?
+<?php
 include "conn.php";
 
 if ($_POST['enviar'])

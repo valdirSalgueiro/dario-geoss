@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -42,7 +42,7 @@ body {
 
 <tr><td>Nome:</td><td><select name=sel_nome onChange="form1.submit();" class=botao>
 
-<?
+<?php
 
 $busca_usu="select * from usu where usu <> '".$usuario_autenticado."' order by usu asc;";
 
@@ -84,7 +84,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $sel_nome=$_POST['sel_nome'];
 

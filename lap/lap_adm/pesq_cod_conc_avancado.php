@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -51,7 +51,7 @@ body {
 <table border=0 class=fonte>
 <tr>
   <td width="97">Palavra-Chave : </td>
-  <td width="203"><input name="palavra" type="text" id="palavra" value="<?=$_SESSION["palavra"]?>"></td></tr>
+  <td width="203"><input name="palavra" type="text" id="palavra" value="<?php=$_SESSION["palavra"]?>"></td></tr>
 </table>
 
 <table border=0>
@@ -65,7 +65,7 @@ body {
 </table>
 
 </form>
-<?
+<?php
 $_SESSION["palavra"]=$_POST[palavra];
 $palavra=$_SESSION["palavra"];
 if($_SESSION["palavra"]!=NULL){

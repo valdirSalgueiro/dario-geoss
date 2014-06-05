@@ -25,33 +25,33 @@ if ($_GET['desativar_codigo_galeria']) {
 
 <table width="200" border="0" cellpadding="2" cellspacing="2" class="boldamarelo">
 <form name="ativar_form" method="post">
-  <? 	while($mensagens = mysql_fetch_array($consulta)){ ?>
+  <?php 	while($mensagens = mysql_fetch_array($consulta)){ ?>
   <tr>
     <td width="56" bgcolor="#DBDAF8">Código Galeria</td>
-    <td width="128" bgcolor="#E2E2E2"><? echo $mensagens['codigo_galeria']; ?> </td>
+    <td width="128" bgcolor="#E2E2E2"><?php echo $mensagens['codigo_galeria']; ?> </td>
   </tr>
   <tr>
     <td bgcolor="#DEDBFF">Título Galeria</td>
-    <td bgcolor="#E7E3E7"><? echo $mensagens['nome_galeria']; ?></td>
+    <td bgcolor="#E7E3E7"><?php echo $mensagens['nome_galeria']; ?></td>
   </tr>
    <tr>
     <td bgcolor="#DEDBFF">Status</td>
-    <td bgcolor="#E7E3E7"><? if ($mensagens['ativado']==1) { echo "desativado"; } else { echo "ativado";} ?></td>
+    <td bgcolor="#E7E3E7"><?php if ($mensagens['ativado']==1) { echo "desativado"; } else { echo "ativado";} ?></td>
   </tr>
   <tr>  
-    <input name="codigo_galeria" id="codigo_galeria" type="hidden" value="<?=$mensagens['codigo_galeria']; ?>">
+    <input name="codigo_galeria" id="codigo_galeria" type="hidden" value="<?php=$mensagens['codigo_galeria']; ?>">
   <td colspan="2">
- <?
+ <?php
 if ($mensagens['ativado']==1) {
 ?>
-  <input name="ativar" type="button" class="botao" id="ativar" value="Ativar" onClick="javascript:location.href = 'exibir_galeria.php?ativar_codigo_galeria=<?=$mensagens['codigo_galeria']; ?>'"/>
-<?
+  <input name="ativar" type="button" class="botao" id="ativar" value="Ativar" onClick="javascript:location.href = 'exibir_galeria.php?ativar_codigo_galeria=<?php=$mensagens['codigo_galeria']; ?>'"/>
+<?php
 } elseif ($mensagens['ativado']==0) {
 ?>
-  <input name="desativar" type="button" class="botao" id="desativar" value="Desativar" onClick="javascript:location.href = 'exibir_galeria.php?desativar_codigo_galeria=<?=$mensagens['codigo_galeria']; ?>'"/>
-<? } ?>
+  <input name="desativar" type="button" class="botao" id="desativar" value="Desativar" onClick="javascript:location.href = 'exibir_galeria.php?desativar_codigo_galeria=<?php=$mensagens['codigo_galeria']; ?>'"/>
+<?php } ?>
  </td>
   </tr>
   </form>
-<? } ?>
+<?php } ?>
 </table>

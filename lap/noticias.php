@@ -122,7 +122,7 @@ a:hover{text-decoration:none;color="black";size:1}
 }
 .style30 {color: #FFFFFF}
 </style>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 ?>
@@ -146,7 +146,7 @@ a:hover{text-decoration:none;color="black";size:1}
                   <tr>
                     <td height="124" colspan="2"><div align="center"><img src="lap_adm/img/lap.gif" width="76" height="100" /></div></td>
                   </tr>
-                  <tr><?
+                  <tr><?php
 						if($_POST['buscarnot']){
 						$buscar = $_POST['buscar'];
 						echo "<script>window.location='noticias.php?busca=$buscar';</script>";
@@ -191,7 +191,7 @@ a:hover{text-decoration:none;color="black";size:1}
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
                         <td width="94%"><span class="style26">
-                          <? $dia_semana = date("w");
+                          <?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -205,7 +205,7 @@ a:hover{text-decoration:none;color="black";size:1}
 
 						   ?>
                           ,
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -309,7 +309,7 @@ $consulta_cat15 = mysql_query("SELECT count(codigo_categoria) as total FROM noti
 $total_cat15 = mysql_result($consulta_cat15,0,"total");
 
     ?>!<font color="blue" class="style22"> &nbsp;&nbsp;
-                          <? include('whosonline.php'); ?>
+                          <?php include('whosonline.php'); ?>
                           </font> </span></td>
                         </tr>
                     </table></td>
@@ -397,7 +397,7 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -574,7 +574,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -751,7 +751,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -928,7 +928,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1105,7 +1105,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1282,7 +1282,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1457,19 +1457,19 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                     </tr>
                   </table>
                     <table width="460" border="0" align="center" cellpadding="0" cellspacing="0">
-                      <tr><?
+                      <tr><?php
 					  //Contando o número de notícias cadastradas
 include "conn.php";					  
 $consulta2 = mysql_query("SELECT count(codigo_noticia) as total FROM noticias WHERE nome_noticia like '%".$_GET['busca']."%'") or die(mysql_error());
 $totalmat = mysql_result($consulta2,0,"total");
 					   ?>
-                        <td height="20" background="images/bg.jpg"><span class="style26 style28">&nbsp;<span class="style30">Not&iacute;cias [ <? print $totalmat; ?> ]  </span></span></td>
+                        <td height="20" background="images/bg.jpg"><span class="style26 style28">&nbsp;<span class="style30">Not&iacute;cias [ <?php print $totalmat; ?> ]  </span></span></td>
                       </tr>
                     </table>
                     <table width="468" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="6" height="590">&nbsp;</td>
-                        <td><?
+                        <td><?php
         include "conn.php";
 		include "data.php";
 		
@@ -1497,7 +1497,7 @@ $totalmat = mysql_result($consulta2,0,"total");
 
 		?>
                           <span class="style29">
-                          <?
+                          <?php
 						 
 
 		   $mod_noticia = "update noticias set visualizacoes = visualizacoes + 1 WHERE codigo_noticia = $codigo_noticia;";
@@ -1777,7 +1777,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </table>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td height="197"><?
+                            <td height="197"><?php
 include ("enquete/apgconecta.php");
 require ("enquete/apgvota.php");
 ?></td>
@@ -1823,7 +1823,7 @@ require ("enquete/apgvota.php");
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                               <td height="122"><div align="center">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes

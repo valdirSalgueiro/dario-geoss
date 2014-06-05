@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -61,11 +61,11 @@ else
 <table border=0 class=fonte>
 <tr>
   <td width="174">Exame :</td>
-  <td width="367"><input name=id type=text class=botao id="id" value="<? echo $_POST['id'];?>" size=20 maxlength=20></td>
+  <td width="367"><input name=id type=text class=botao id="id" value="<?php echo $_POST['id'];?>" size=20 maxlength=20></td>
 </tr>
 
-<? if($_POST['ok']){ ?>
-<?
+<?php if($_POST['ok']){ ?>
+<?php
 ##Buscando os dados para postá-los quando der o pulo##
 $busca_ex="select * from exame where id  = '".$_POST['id']."';";
 $res_busca_ex=mysql_query($busca_ex,$conn);
@@ -89,16 +89,16 @@ return; } else {
 ?>
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo $campo['data_entrada'];?> 
+  <td><?php echo $campo['data_entrada'];?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Valor :</td>
-  <td><? echo $campo['valor'];?></td>
+  <td><?php echo $campo['valor'];?></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo['paciente_id'];?></td>
+  <td><?php echo $campo['paciente_id'];?></td>
 </tr>
 <tr>
   <td>Data de Saida :</td>
@@ -118,14 +118,14 @@ return; } else {
   <td></td>
   <td>&nbsp;</td>
 </tr>
-<? } ?><? } ?>
-<tr><td></td><td><? if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Ok'><? } else { ?><input name="ok2" type=submit class=botao id="ok2" value='Ok'><? } ?>
+<?php } ?><?php } ?>
+<tr><td></td><td><?php if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Ok'><?php } else { ?><input name="ok2" type=submit class=botao id="ok2" value='Ok'><?php } ?>
  <input type=submit value='Cancelar' class=botao></td>
 </tr>
 </table>
 
 </form>
-<?
+<?php
 if($_POST['ok2']){
 
 if(($_POST['edia']=='')or($_POST['emes']=='')or($_POST['eano']=='')or($_POST['ehora']=='')or($_POST['emin']=='')){

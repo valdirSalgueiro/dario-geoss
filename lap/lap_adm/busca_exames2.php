@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -57,7 +57,7 @@ body {
 <table border=0 class=fonte>
 
 <TD class=back2 align=right><div align="left" class="style10">Entre das Datas : </div></td>
-    <td class=back><?
+    <td class=back><?php
 $today= getdate();	
 $lang_month = array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
 	
@@ -182,7 +182,7 @@ echo'<select name=smonth>';
 <tr>
   <td class="style10">M&eacute;dico : </td>
   <td><select name="medico" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -225,7 +225,7 @@ else
 </table>
 
 
-<?
+<?php
 if($_POST['todos']){
 $data = date("d/m/Y");
 $nome=$_POST['nome'];
@@ -305,7 +305,7 @@ $etimestamp= mktime(23, 59, 59, $_POST[emonth], $_POST[eday], $_POST[eyear]);
  }
 }
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());
@@ -315,7 +315,7 @@ $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or
 
 
 ?>
-<?
+<?php
 if($_POST['buscar']){
 $stimestamp= mktime(0, 0, 0, $_POST[smonth], $_POST[sday], $_POST[syear]);
 $etimestamp= mktime(23, 59, 59, $_POST[emonth], $_POST[eday], $_POST[eyear]);

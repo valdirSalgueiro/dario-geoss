@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -57,7 +57,7 @@ body {
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[nome];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[nome];?>">
 
 <h1 class="style1"><font face=verdana>Modificar Convenio:</font></h1>
 <hr color=black size=2>
@@ -66,11 +66,11 @@ body {
 
 <tr>
   <td width="147">Nome:</td>
-  <td width="405"><input name=nome type=text class=botao id="nome" value="<?echo $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
+  <td width="405"><input name=nome type=text class=botao id="nome" value="<?phpecho $campo_noticia[nome];?>" size=50 maxlength=100></td></tr>
 
 <tr>
   <td>Tipo  : </td>
-  <td><input name=tipo type=text class=botao id="tipo" value="<?echo $campo_noticia[tipo];?>" size=50 maxlength=100></td>
+  <td><input name=tipo type=text class=botao id="tipo" value="<?phpecho $campo_noticia[tipo];?>" size=50 maxlength=100></td>
 </tr>
 
 
@@ -84,7 +84,7 @@ body {
 
 </form>
 
-<?
+<?php
 $nome=$_POST['nome'];
 $tipo=$_POST['tipo'];
 

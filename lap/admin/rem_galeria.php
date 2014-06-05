@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -51,7 +51,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $nome=$_POST['nome'];
 

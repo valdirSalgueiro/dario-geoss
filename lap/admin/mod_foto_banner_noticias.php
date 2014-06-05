@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -38,7 +38,7 @@ else
 }
 }
 ?>
-<? if($_POST['oka']==NULL){ 
+<?php if($_POST['oka']==NULL){ 
  include('../conn.php');
 ?>
 <html>
@@ -50,7 +50,7 @@ else
   <font color="#333333" size="2">Qual a categoria ?</font> </b></font>
   <form name='cat' method="post">
   <select name="codigo_banner_noticias" class="botao" id="codigo_banner_noticias">
-    <?
+    <?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -85,14 +85,14 @@ else
 ?>
     </select>
   <input name="oka" type=submit class=botao id="oka" value="Ir"></form>
-</h1><? } if(($_POST['oka']!=NULL)or($_POST['ok']!=NULL)){ ?>
+</h1><?php } if(($_POST['oka']!=NULL)or($_POST['ok']!=NULL)){ ?>
 <hr color=black size=2>
 
 <form name=remover method=post>
 
 <table border=0 class=fonte>
 
-<?
+<?php
 
 $busca_foto="select * from foto_banner_noticias where codigo_banner_noticias = '".$codigo_banner_noticias."' order by codigo_foto asc;";
 
@@ -144,7 +144,7 @@ for($x=0;$x<$linha;$x++)
 
 </table>
 
-<?
+<?php
 
 echo "<input type=submit value=' Ok ' class=botao name='ok'>";
 
@@ -156,13 +156,13 @@ echo "<input type=submit value=' Ok ' class=botao name='ok'>";
 
 <table border=0>
 
-<tr><td></td><td><input type=button class=botao value=" Adicionar Foto " onClick="window.location='cad_foto_banner_noticias.php?codigo_banner_noticias=<? echo $codigo_banner_noticias;?>';"><input type=button value="FIM" class=botao onClick="window.location='conteudo.php';"></td></tr>
+<tr><td></td><td><input type=button class=botao value=" Adicionar Foto " onClick="window.location='cad_foto_banner_noticias.php?codigo_banner_noticias=<?php echo $codigo_banner_noticias;?>';"><input type=button value="FIM" class=botao onClick="window.location='conteudo.php';"></td></tr>
 
 </table>
 
 </form>
 
-<?
+<?php
 }
 include "conn.php";
 $ok=$_POST['ok'];

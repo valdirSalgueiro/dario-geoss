@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -93,27 +93,27 @@ else
   </tr>
   <tr>
     <td width="135" class="style67">Nome :</td>
-    <td class="style67"><? echo $campo_pac['nome']; ?></td>
+    <td class="style67"><?php echo $campo_pac['nome']; ?></td>
     <td class="style67">Laudo N &ordm; :</td>
-    <td colspan="2" class="style67"><? echo $campo_cod['id']; ?></td>
+    <td colspan="2" class="style67"><?php echo $campo_cod['id']; ?></td>
   </tr>
   
   <tr>
     <td class="style67">Material :</td>
-    <td colspan="4" class="style67"><? echo $campo_cod['material']; ?></td>
+    <td colspan="4" class="style67"><?php echo $campo_cod['material']; ?></td>
   </tr>
   <tr>
     <td class="style67">Solicita&ccedil;&atilde;o :</td>
-    <td class="style67"><? echo $campo_med['nome']; ?></td>
+    <td class="style67"><?php echo $campo_med['nome']; ?></td>
     <td class="style67">Recepcionista :</td>
-    <td colspan="2" class="style67"><? echo $campo_cod['por']; ?></td>
+    <td colspan="2" class="style67"><?php echo $campo_cod['por']; ?></td>
   </tr>
   
   <tr>
     <td class="style67">Conv&ecirc;nio :</td>
-    <td width="323" class="style67"><? echo $campo_conv['nome']; ?></td>
+    <td width="323" class="style67"><?php echo $campo_conv['nome']; ?></td>
     <td width="186" class="style67">Previs&atilde;o de Sa&iacute;da:</td>
-    <td width="189" colspan="2" class="style67"><? echo date ("d/m/Y",$campo_cod['data_previsao']); ?></td>
+    <td width="189" colspan="2" class="style67"><?php echo date ("d/m/Y",$campo_cod['data_previsao']); ?></td>
   </tr>
   <tr>
     <td colspan="5" class="style67"><hr color="black" size="1" /></td>

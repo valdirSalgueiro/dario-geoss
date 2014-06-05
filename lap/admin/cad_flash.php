@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 ?>
@@ -45,7 +45,7 @@ a.menu_principal:active  { text-decoration: none; color:#33333; font-size:11px;}
 }
 -->
 </style>
-<?
+<?php
 $num_file=1;
 
 include('../estilo.css');
@@ -89,7 +89,7 @@ else
 
 <table border=0 class=fonte>
 
-<?
+<?php
 
 for($x=0;$x<$num_file;$x++)
 
@@ -107,7 +107,7 @@ for($x=0;$x<$num_file;$x++)
 <tr>
   <td>Categoria : </td>
   <td><select name="codigo_categoria" class="botao">
-    <?
+    <?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -148,7 +148,7 @@ else
 
 </form>
 
-<?
+<?php
 
 $adiciona_foto=$_POST['adiciona_foto'];
 $codigo_banner_noticias=$_POST['codigo_categoria'];

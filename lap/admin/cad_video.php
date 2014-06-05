@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -59,17 +59,17 @@ else
 </tr>
 <tr>
   <td>Usu&aacute;rio</td>
-  <td><? echo $usuario_autenticado; ?></td>
+  <td><?php echo $usuario_autenticado; ?></td>
 </tr>
 <tr>
   <td>Data: </td>
-  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?echo $hoje;?>" size=12 maxlength=12></td>
+  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?phpecho $hoje;?>" size=12 maxlength=12></td>
 </tr>
 
 <tr>
   <td>Sobre o Video :</td><td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_video');
 
@@ -91,7 +91,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 
 $nome_video=$_POST['nome_video'];
 $desc_video=$_POST['desc_video'];

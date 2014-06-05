@@ -1,4 +1,4 @@
-<title>.::Deletar::.</title><?
+<title>.::Deletar::.</title><?php
 
 session_start();
 
@@ -33,4 +33,4 @@ $sql = mysql_query("DELETE FROM denuncia WHERE id_cmt = '".$_GET['id_cmt']."'") 
 document.location.href = 'exibir_denuncie.php?alerta=denuncie_deletado'
 </script>
 
-<? if ($_GET['alerta']=='denuncie_deletado') { ?> <script> alert('Mensagem deletada') </script> <? } ?>
+<?php if ($_GET['alerta']=='denuncie_deletado') { ?> <script> alert('Mensagem deletada') </script> <?php } ?>

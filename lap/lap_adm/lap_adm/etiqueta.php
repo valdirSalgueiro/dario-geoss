@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -61,10 +61,10 @@ else
 <table border=0 class=fonte>
 <tr>
   <td width="174">Laudo Número :</td>
-  <td width="367"><input name=id type=text class=botao id="id" value="<? echo $_POST['id'];?>" size=20 maxlength=20></td>
+  <td width="367"><input name=id type=text class=botao id="id" value="<?php echo $_POST['id'];?>" size=20 maxlength=20></td>
 </tr>
-<? if($_POST['ok']){ ?>
-<?
+<?php if($_POST['ok']){ ?>
+<?php
 ##Buscando os dados para postá-los quando der o pulo##
 $busca_ex="select * from exame where id  = '".$_POST['id']."';";
 $res_busca_ex=mysql_query($busca_ex,$conn);
@@ -77,19 +77,19 @@ $campo_pac=mysql_fetch_array($res_busca_ex2);
 ?>
 <tr>
   <td>Paciente :</td>
-  <td><? echo $campo_pac['nome'];?></td>
+  <td><?php echo $campo_pac['nome'];?></td>
 </tr>
 <tr>
   <td>Material :</td>
-  <td><? echo $campo['material'];?></td>
+  <td><?php echo $campo['material'];?></td>
 </tr>
 <tr>
   <td>Data de Entrada :</td>
-  <td><? echo date("d/m/Y - H:i",$campo['data_entrada']);?> 
+  <td><?php echo date("d/m/Y - H:i",$campo['data_entrada']);?> 
     <span class="style1"> &nbsp;</span></td>
 </tr>
 
-<?
+<?php
 if($campo['id']=='')
 {
 echo "Este exame não existe.&nbsp;&nbsp;<a href='etiqueta.php'>Refazer A busca</a><br>"; 
@@ -109,24 +109,24 @@ echo "Este exame já teve etiqueta impressa.&nbsp;&nbsp;<a href='print_etiqueta.p
   
   <tr>
     <td width="135">Impressa em :</td>
-    <td width="187" colspan="2"><strong><? print date("d/m/Y - H:i",$campo[data_etiqueta]); ?></strong></div></td>
+    <td width="187" colspan="2"><strong><?php print date("d/m/Y - H:i",$campo[data_etiqueta]); ?></strong></div></td>
   </tr>
      <tr>
     <td colspan="2" bgcolor="#000033">&nbsp;</td>
   </tr>
   
   
-</table><? 
+</table><?php 
 die(); } 
 
 ?>
 <tr>
-  <td>Previs&atilde;o de Saida: </td>  <td><? echo date("d/m/Y - H:i",$campo['data_previsao']);?></td>
+  <td>Previs&atilde;o de Saida: </td>  <td><?php echo date("d/m/Y - H:i",$campo['data_previsao']);?></td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<? } ?>
-<tr><td></td><td><? if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Ok'><? } else { ?><input name="ok2" type=submit class=botao id="ok2" value='Imprimir'><? } ?>
+<?php } ?>
+<tr><td></td><td><?php if($_POST['ok']==''){ ?><input name="ok" type=submit class=botao id="ok" value='Ok'><?php } else { ?><input name="ok2" type=submit class=botao id="ok2" value='Imprimir'><?php } ?>
  <input type=submit value='Cancelar' class=botao>
  <span class="atributos_titulo">
  <input name="button" type=button class="botao" onClick="history.go(-1);" value="Voltar">
@@ -135,7 +135,7 @@ die(); }
 </table>
 
 </form>
-<?
+<?php
 if($_POST['ok2']){
 
 $data_etiqueta = mktime();

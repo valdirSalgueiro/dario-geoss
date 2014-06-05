@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -64,7 +64,7 @@ body {
 <tr>
   <td><span class="style7">Tabela:</span></td>
   <td><select name="tipo" class="caixa" id="tipo">
-    <?
+    <?php
 $busca_conv="select * from tabelas order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -113,7 +113,7 @@ else
 
 </form>
 
-<?
+<?php
 $nome=$_POST['nome'];
 $tipo=$_POST['tipo'];
 $cod_anpa=$_POST['cod_anpa'];

@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -40,7 +40,7 @@ else
 
 <table border=0 class=fonte>
 
-<?
+<?php
 
 $busca_foto="select * from foto_galerias where codigo_galeria = '".$codigo_galeria."' order by codigo_foto asc;";
 
@@ -92,7 +92,7 @@ for($x=0;$x<$linha;$x++)
 
 </table>
 
-<?
+<?php
 
 echo "<input type=submit value=' Ok ' class=botao name='ok'>";
 
@@ -104,13 +104,13 @@ echo "<input type=submit value=' Ok ' class=botao name='ok'>";
 
 <table border=0>
 
-<tr><td></td><td><input type=button class=botao value=" Adicionar Foto " onClick="window.location='cad_foto_galerias.php?codigo_galeria=<?echo $codigo_galeria;?>';"><input type=button value="FIM" class=botao onClick="window.location='conteudo.php';"></td></tr>
+<tr><td></td><td><input type=button class=botao value=" Adicionar Foto " onClick="window.location='cad_foto_galerias.php?codigo_galeria=<?phpecho $codigo_galeria;?>';"><input type=button value="FIM" class=botao onClick="window.location='conteudo.php';"></td></tr>
 
 </table>
 
 </form>
 
-<?
+<?php
 
 $ok=$_POST['ok'];
 

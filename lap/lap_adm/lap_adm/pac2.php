@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $rg3 = $_SESSION['rg2'];
@@ -31,7 +31,7 @@ else
 }
 
 ?>
-<?
+<?php
 //Testar Paciente
 $cpf=$_POST['cpf'];
 
@@ -172,7 +172,7 @@ body {
 <tr>
   <td>UF *:</td>
   <td><select name="uf" class="caixa" id="uf">
-    <?
+    <?php
 $busca_uf="select * from uf order by uf asc;";
 $res_busca_uf=mysql_query($busca_uf,$conn);
 $num_uf=mysql_num_rows($res_busca_uf);
@@ -209,11 +209,11 @@ else
 </tr>
 <tr>
   <td>CPF :</td>
-  <td><input name=cpf type=text class=botao id="cpf" onkeypress='ajustar_cpf(this,event);' value="<? echo  $cpf3; ?>" size=11 maxlength=14 ></td>
+  <td><input name=cpf type=text class=botao id="cpf" onkeypress='ajustar_cpf(this,event);' value="<?php echo  $cpf3; ?>" size=11 maxlength=14 ></td>
 </tr>
 <tr>
   <td>RG *:</td>
-  <td><input name=rg type=text class=botao id="rg" value="<? echo  $rg3; ?>" size=11 maxlength=16></td>
+  <td><input name=rg type=text class=botao id="rg" value="<?php echo  $rg3; ?>" size=11 maxlength=16></td>
 </tr>
 <tr>
   <td>Fone1 *:</td>
@@ -236,7 +236,7 @@ else
 <tr>
   <td>Conv&ecirc;nio *:</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -294,7 +294,7 @@ else
 </table>
 </form>
 
-<?
+<?php
 
 $nome=$_POST['nome'];
 $endereco=$_POST['endereco'];

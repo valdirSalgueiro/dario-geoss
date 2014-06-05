@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -71,22 +71,22 @@ body {
 <tr>
 
   <td width="174">Data  :</td>
-  <td width="367"><input name="dc" value="<? echo $campo_agend['data'];  ?>" size="11">
+  <td width="367"><input name="dc" value="<?php echo $campo_agend['data'];  ?>" size="11">
   <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.demoform.dc);return false;" HIDEFOCUS><img class="PopcalTrigger" align="absmiddle" src="HelloWorld/calbtn.gif" width="34" height="22" border="0" alt=""></a><span class="style1"> &nbsp;</span></td>
 </tr>
 <tr>
   <td>Paciente :</td>
-  <td><input name=nome type=text class=botao id="nome" value="<? echo $campo_agend['paciente'];  ?>" size=50 maxlength=11></td>
+  <td><input name=nome type=text class=botao id="nome" value="<?php echo $campo_agend['paciente'];  ?>" size=50 maxlength=11></td>
 </tr>
 <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="HelloWorld/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;"></iframe>
 <tr>
   <td>M&eacute;dico Atual : </td>
-  <td><? echo $campo_agend['medico'];  ?></td>
+  <td><?php echo $campo_agend['medico'];  ?></td>
 </tr>
 <tr>
   <td>M&eacute;dico :</td>
   <td><select name="medico" class="caixa" id="medico">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -119,18 +119,18 @@ else
 </tr>
 <tr>
   <td>Telefone:</td>
-  <td><input name=ddd type=text class=botao id="ddd" value="<? echo $campo_agend['ddd'];  ?>" size=3 maxlength=3>
+  <td><input name=ddd type=text class=botao id="ddd" value="<?php echo $campo_agend['ddd'];  ?>" size=3 maxlength=3>
     -
-      <input name=telefone type=text class=botao id="telefone" value="<? echo $campo_agend['telefone'];  ?>" size=8 maxlength=8></td>
+      <input name=telefone type=text class=botao id="telefone" value="<?php echo $campo_agend['telefone'];  ?>" size=8 maxlength=8></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio Atual : </td>
-  <td><? echo $campo_agend['convenio'];  ?></td>
+  <td><?php echo $campo_agend['convenio'];  ?></td>
 </tr>
 <tr>
   <td>Conv&ecirc;nio :</td>
   <td><select name="convenio" class="caixa" id="convenio">
-    <?
+    <?php
 $busca_conv="select * from convenio order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -174,7 +174,7 @@ else
 </table>
 
 </form>
-<?
+<?php
 //Alterando o agendamento
 if($_POST['alterar']){
 

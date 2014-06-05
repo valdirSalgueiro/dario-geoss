@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -113,7 +113,7 @@ body {
 <br>
 </form>
 
-<?
+<?php
 
 $tipo=$_POST['tipo'];
 $dias=$_POST['dias'];

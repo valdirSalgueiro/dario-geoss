@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -58,7 +58,7 @@ body {
 <tr>
   <td class="style10">M&eacute;dico : </td>
   <td><select name="medico" class="caixa" id="id_med">
-    <?
+    <?php
 $busca_med="select * from medico order by nome asc;";
 $res_busca_med=mysql_query($busca_med,$conn);
 $num_med=mysql_num_rows($res_busca_med);
@@ -101,7 +101,7 @@ else
 </table>
 
 
-<?
+<?php
 if($_POST['todos']){
 $data = date("d/m/Y");
 $nome=$_POST['nome'];
@@ -182,7 +182,7 @@ $etimestamp= mktime(23, 59, 59, $_POST[emonth], $_POST[eday], $_POST[eyear]);
  }
 }
 ?>
-<?
+<?php
 //Excluindo um agendamento
 if($_POST['excluir']){
 $sql = mysql_query("DELETE FROM agendamentos WHERE id = '".$campo_ex[id]."'") or die(mysql_error());

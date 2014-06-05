@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -72,7 +72,7 @@ body {
 
 </form>
 <p>
-  <?
+  <?php
 if ($_POST['todos']) 
 {
  $busca_noticia="select * from itens_exame order by id asc;";
@@ -114,7 +114,7 @@ if ($_POST['todos'])
 }
 
 ?>
- <?
+ <?php
 
 $nome=$_POST['nome'];
 

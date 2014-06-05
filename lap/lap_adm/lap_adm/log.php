@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -91,20 +91,20 @@ else
   
   <tr>
     <td width="135">Laudo Número  :</td>
-    <td width="257"><? echo $campo_cod['id']; ?></td>
+    <td width="257"><?php echo $campo_cod['id']; ?></td>
   </tr>
   
   <tr>
     <td>Este Exame foi cadastrado por </td>
-    <td><strong><? echo $campo_cod['por']; ?> </strong>em <strong><? echo date("d/m/Y - H:i",$campo_cod['data_entrada']); ?></strong></td>
+    <td><strong><?php echo $campo_cod['por']; ?> </strong>em <strong><?php echo date("d/m/Y - H:i",$campo_cod['data_entrada']); ?></strong></td>
   </tr>
   <tr>
     <td>A etiqueta foi impressa por  :</td>
-    <td><strong><? if($campo_cod['etiqueta_por']!=NULL){ ?><? echo $campo_cod['etiqueta_por']; ?></strong> em <strong><? echo date("d/m/Y - H:i",$campo_cod['data_etiqueta']); ?><? } else { echo "Ainda não teve etiqueta impressa"; } ?></strong></td>
+    <td><strong><?php if($campo_cod['etiqueta_por']!=NULL){ ?><?php echo $campo_cod['etiqueta_por']; ?></strong> em <strong><?php echo date("d/m/Y - H:i",$campo_cod['data_etiqueta']); ?><?php } else { echo "Ainda não teve etiqueta impressa"; } ?></strong></td>
   </tr>
   <tr>
     <td>O Exame foi digitado por   :</td>
-    <td><strong><? if($campo_cod['modificado_por']!=NULL){ ?><? echo $campo_cod['modificado_por']; ?></strong> em <strong><? echo date("d/m/Y - H:i",$campo_cod['data_modificado']); ?> </strong>definindo o Status : <strong><? echo $campo_exa['nome']; ?><? } else { echo "Este exame ainda não foi digitado"; } ?></strong></td>
+    <td><strong><?php if($campo_cod['modificado_por']!=NULL){ ?><?php echo $campo_cod['modificado_por']; ?></strong> em <strong><?php echo date("d/m/Y - H:i",$campo_cod['data_modificado']); ?> </strong>definindo o Status : <strong><?php echo $campo_exa['nome']; ?><?php } else { echo "Este exame ainda não foi digitado"; } ?></strong></td>
   </tr>
   <tr>
     <td height="28" colspan="2"><hr color="black" size="2" /></td>

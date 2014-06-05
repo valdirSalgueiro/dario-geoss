@@ -70,7 +70,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 </style>
 <script type="text/javascript" src="lightbox/lightbox.js"></script>
 <script src="funcoes1.js" type="text/javascript"></script>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 
@@ -136,7 +136,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
                         <td width="94%"><span class="style26">
-                          <? $dia_semana = date("w");
+                          <?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -150,7 +150,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 
 						   ?>
                           ,
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -254,7 +254,7 @@ $consulta_cat15 = mysql_query("SELECT count(codigo_categoria) as total FROM noti
 $total_cat15 = mysql_result($consulta_cat15,0,"total");
 
     ?>!<font color="blue" class="style22"> &nbsp;&nbsp;
-                          <? include('whosonline.php'); ?>
+                          <?php include('whosonline.php'); ?>
                           </font> </span></td>
                         </tr>
                     </table></td>
@@ -342,7 +342,7 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -519,7 +519,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -696,7 +696,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -873,7 +873,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1050,7 +1050,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1227,7 +1227,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1394,7 +1394,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                       <td height="1" class="style22"></td>
                     </tr>
                   </table>
-                    <?
+                    <?php
 						include "conn.php";
 						$codigo_noticia=$_GET['codigo_noticia'];
 						
@@ -1410,7 +1410,7 @@ $up2 = mysql_query("UPDATE noticias SET  visualizacoes='".$soma."' WHERE codigo_
 $consultass = mysql_query("SELECT * FROM noticias e, categorias c WHERE e.codigo_categoria = c.codigo_categoria and codigo_noticia = '".$codigo_noticia."' ORDER BY codigo_noticia DESC") or die(mysql_error());
 
 ?>
-                    <?
+                    <?php
 			
 						  //Vendo se o código da notícia existe
 
@@ -1472,7 +1472,7 @@ if($total_cod==0){  echo "<script>alert('Código Inexistente');
                       <tr>
                         <td height="20" background="images/bg.jpg"><span class="style26 style28">&nbsp;<span class="style32">Not&iacute;cia <span class="style33">
                           | 
-                          <?=$materias['nome_categoria'] ?>
+                          <?php=$materias['nome_categoria'] ?>
                          </span></span></span></td>
                       </tr>
                     </table>
@@ -1482,69 +1482,69 @@ if($total_cod==0){  echo "<script>alert('Código Inexistente');
                         <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
                           <tr>
                             <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo">
-                              <?=$materias['nome_noticia'] ?>
+                              <?php=$materias['nome_noticia'] ?>
                               </span><br />
                               <span class="materia">
-                              <?=$materias['data_cadastro'] ?>
+                              <?php=$materias['data_cadastro'] ?>
                               </span> &nbsp;&nbsp;<img src="images/ico_relogio.gif" align="absbottom" /> <span class="materia">
-                              <?=$materias['hora_cadastro'] ?>
+                              <?php=$materias['hora_cadastro'] ?>
                               </span>| <span class="materia">Fotos :</span> <span class="materia">
-                              <?
+                              <?php
 							  //Contando o número de fotos existentes
 $consulta2 = mysql_query("SELECT count(codigo_noticia) as total FROM foto_noticias WHERE codigo_noticia = '".$materias['codigo_noticia']."'") or die(mysql_error());
 $total_fotos = mysql_result($consulta2,0,"total");
 print $total_fotos;
 							  ?>
-                            </span> | <span class="materia">Lingua :</span> <img src="images/<?=$materias['pais']  ?>.gif" align="absbottom" /> | <span class="materia"><? if($materias['data_entrada']!=0){ ?>Esta not&iacute;cia entra no ar em <?  $tempo=date("j-n-Y-H:i",$materias['data_entrada']); print $tempo; }  ?> </span><br />                            </td>
+                            </span> | <span class="materia">Lingua :</span> <img src="images/<?php=$materias['pais']  ?>.gif" align="absbottom" /> | <span class="materia"><?php if($materias['data_entrada']!=0){ ?>Esta not&iacute;cia entra no ar em <?php  $tempo=date("j-n-Y-H:i",$materias['data_entrada']); print $tempo; }  ?> </span><br />                            </td>
                           </tr>
                           <tr>
                             <td valign="top" class="legenda_foto" align="center" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><table width="100" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
-                                  <? if($total_fotos!=0){ 
+                                  <?php if($total_fotos!=0){ 
                                      ?><td align="right" class="materia">Foto: 
-                                    <?=$campo_foto['descricao_foto'] ?>
-                                  </td><? } ?>
+                                    <?php=$campo_foto['descricao_foto'] ?>
+                                  </td><?php } ?>
                                 </tr>
                                 <tr>
                                   <td align="center"><span class="legenda_foto" style="padding-top:15px;">
-<? if($total_fotos==1){  ?>								  		
-<a href="admin/<?=$campo_foto['foto']; ?>" rel="lightbox" title="<?=$campo_foto['descricao_foto'] ?>"><img src="admin/<?=$campo_foto['foto']; ?>" name="PictureBox" width="250" border="0" id="PictureBox" /></a><? } else { if($total_fotos!=0){ ?><? echo "<center><tr>
+<?php if($total_fotos==1){  ?>								  		
+<a href="admin/<?php=$campo_foto['foto']; ?>" rel="lightbox" title="<?php=$campo_foto['descricao_foto'] ?>"><img src="admin/<?php=$campo_foto['foto']; ?>" name="PictureBox" width="250" border="0" id="PictureBox" /></a><?php } else { if($total_fotos!=0){ ?><?php echo "<center><tr>
 
-<td><center><a href='#' title='Mais Fotos...' onclick=window.open('album_noticias.php?codigo_noticia=$codigo_noticia','Entrada','toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=no,scrollbars=no,width=750,height=550');>"; ?><img src="admin/<?=$campo_foto['foto']; ?>" name="PictureBox" width="250" border="0" id="PictureBox" /></a><? } } ?></span></td>
+<td><center><a href='#' title='Mais Fotos...' onclick=window.open('album_noticias.php?codigo_noticia=$codigo_noticia','Entrada','toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=no,scrollbars=no,width=750,height=550');>"; ?><img src="admin/<?php=$campo_foto['foto']; ?>" name="PictureBox" width="250" border="0" id="PictureBox" /></a><?php } } ?></span></td>
                                 </tr>
                                 <tr>
-                                  <td align="center" class="materia"><?=$materias['legenda_foto_materia'] ?></td>
+                                  <td align="center" class="materia"><?php=$materias['legenda_foto_materia'] ?></td>
                                 </tr>
                             </table></td>
                           </tr>
                           <tr>
                             <td valign="top" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;" class="materia"><div align="justify">
-                                <?=$materias['descricao_noticia'] ?>
+                                <?php=$materias['descricao_noticia'] ?>
                             </div></td>
                           </tr>
                           <tr>
                             <td height="25" background="images/site_divisao_materia.gif" style="padding-left:5px; padding-right:5px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                   <td width="21%" class="por">por
-                                    <?=$materias['por']?></td>
-                                  <td width="79%" align="right"><strong>|</strong> <a href="javascript:Comentar('<?=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Comentar </a> <strong>|</strong> <a href="javascript:EnviarMateria('<?=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Enviar Mat&eacute;ria </a> <strong>|</strong> <a href="javascript:Imprimir('<?=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Imprimir </a> <strong>|</strong> <a href="#" class="l_menu_materia"> Topo</a> <strong>|</strong> </td>
+                                    <?php=$materias['por']?></td>
+                                  <td width="79%" align="right"><strong>|</strong> <a href="javascript:Comentar('<?php=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Comentar </a> <strong>|</strong> <a href="javascript:EnviarMateria('<?php=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Enviar Mat&eacute;ria </a> <strong>|</strong> <a href="javascript:Imprimir('<?php=$materias['codigo_noticia'] ?>')" class="l_menu_materia"> Imprimir </a> <strong>|</strong> <a href="#" class="l_menu_materia"> Topo</a> <strong>|</strong> </td>
                                 </tr>
                             </table></td>
                           </tr>
                         </table>
                           <br />
-                          <?
+                          <?php
 //Contando o n&uacute;mero de coment&aacute;rios existentes
 $consultac = mysql_query("SELECT count(codigo_noticia) as total FROM tab_comentarios where codigo_noticia = '".$materias['codigo_noticia']."'") or die(mysql_error());
 $totalcom = mysql_result($consultac,0,"total");
 ?>
                           <table width="100%" border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                              <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <? print $totalcom; ?> ] </span><span class="materia"></span> <br />
+                              <td width="506" style="border:2px #EAEAEA dotted;"><img src="images/ico_meus_documentos.gif" width="36" height="36" align="left" /> <span class="titulo"> Coment&aacute;rios   [ <?php print $totalcom; ?> ] </span><span class="materia"></span> <br />
                               </td>
                             </tr>
                             <tr>
-                              <?
+                              <?php
 		$consulta = mysql_query("SELECT * FROM tab_comentarios WHERE codigo_noticia = '".$materias['codigo_noticia']."' ORDER BY id_cmt DESC") or die(mysql_error());
 		
 
@@ -1553,19 +1553,19 @@ $totalcom = mysql_result($consultac,0,"total");
 	while($comentarios=mysql_fetch_array($consulta)) {
 ?>
                               <td valign="top" class="legenda_foto" align="center" style="padding-top:15px; padding:5px; border:2px #EAEAEA dotted;"><div align="left" class="materia"><strong><b>
-                                <?=$comentarios['nome_cmt']?>
+                                <?php=$comentarios['nome_cmt']?>
                                   </b> </strong>em <span class="style30" style="border-top:1px #CCCCCC dotted;; font-size:11px; color:#333333;">
-                                    <?=$comentarios['data_cmt']?>
+                                    <?php=$comentarios['data_cmt']?>
                                   </span> :
-                                <?=$comentarios['texto_cmt']?>
+                                <?php=$comentarios['texto_cmt']?>
                                 <span style="padding:10px; padding-top:0px;">
                                 </span></div></td>
                             </tr>
-                            <? } ?>
+                            <?php } ?>
                           </table>
                           <p style="padding:10px; padding-top:0px;"><span class="materia">
-                            <? if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
-                            <? } ?>
+                            <?php if($totalcom==0){ echo "<font class='materia'>Ainda n&atilde;o h&aacute; coment&aacute;rios.</font>"; } ?>
+                            <?php } ?>
                           </span></p>
                         </td>
                       </tr>
@@ -1647,7 +1647,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </table>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td height="197"><?
+                            <td height="197"><?php
 include ("enquete/apgconecta.php");
 require ("enquete/apgvota.php");
 ?></td>
@@ -1693,7 +1693,7 @@ require ("enquete/apgvota.php");
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                               <td height="122"><div align="center">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes

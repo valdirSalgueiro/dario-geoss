@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -61,10 +61,10 @@ body {
 <tr>
   <td class="style10">Nome:</td>
   <td><select name="nome" class="caixa" id="nome" onChange="submitar()">
-    <? if($_POST['tipo']!=NULL){ 
+    <?php if($_POST['tipo']!=NULL){ 
    printf("<option value='$_POST[tipo]'>$_POST[tipo]");
     } ?>
-    <?
+    <?php
 $busca_conv="select * from tipo_exame WHERE nome!= '".$_POST[tipo]."' order by nome asc;";
 $res_busca_conv=mysql_query($busca_conv,$conn);
 $num_conv=mysql_num_rows($res_busca_conv);
@@ -104,7 +104,7 @@ else
 
 </form>
 <p>
-  <?
+  <?php
 if ($_POST['todos']) 
 {
  $busca_noticia="select * from tipo_exame order by id_ex asc;";
@@ -146,7 +146,7 @@ if ($_POST['todos'])
 }
 
 ?>
- <?
+ <?php
 
 $nome=$_POST['nome'];
 

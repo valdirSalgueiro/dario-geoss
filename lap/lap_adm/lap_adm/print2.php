@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 $id = $_GET['id'];
@@ -82,25 +82,25 @@ else
   </tr>
   <tr>
     <td width="135">Nome :</td>
-    <td><? echo $campo_pac['nome']; ?></td>
+    <td><?php echo $campo_pac['nome']; ?></td>
     <td>Laudo N º :</td>
-    <td colspan="2"><? echo $campo_cod['id']; ?></td>
+    <td colspan="2"><?php echo $campo_cod['id']; ?></td>
   </tr>
   
   <tr>
     <td>Material :</td>
-    <td colspan="4"><? echo $campo_mat['nome']; ?></td>
+    <td colspan="4"><?php echo $campo_mat['nome']; ?></td>
   </tr>
   <tr>
     <td>Solicitação :</td>
-    <td colspan="4"><? echo $campo_med['nome']; ?></td>
+    <td colspan="4"><?php echo $campo_med['nome']; ?></td>
   </tr>
   
   <tr>
     <td>Convênio :</td>
-    <td width="257"><? echo $campo_conv['nome']; ?></td>
+    <td width="257"><?php echo $campo_conv['nome']; ?></td>
     <td width="112">Previsão de Saída:</td>
-    <td width="123" colspan="2"><? echo date ("d/m/Y-H:h",$campo_cod['data_previsao']); ?></td>
+    <td width="123" colspan="2"><?php echo date ("d/m/Y-H:h",$campo_cod['data_previsao']); ?></td>
   </tr>
   <tr>
     <td height="28" colspan="5"><hr color="black" size="2" /></td>
@@ -110,19 +110,19 @@ else
     <td colspan="5">Exame Macroscópico :</td>
   </tr>
   <tr>
-    <td height="87" colspan="5"><? echo $campo_cod['macroscopia']; ?></td>
+    <td height="87" colspan="5"><?php echo $campo_cod['macroscopia']; ?></td>
   </tr>
   <tr>
     <td colspan="5">Exame Microscópico :</td>
   </tr>
   <tr>
-    <td height="87" colspan="5"><? echo $campo_cod['microscopia']; ?></td>
+    <td height="87" colspan="5"><?php echo $campo_cod['microscopia']; ?></td>
   </tr>
   <tr>
     <td colspan="5">Conclusão :</td>
   </tr>
   <tr>
-    <td height="87" colspan="5"><? echo $campo_cod['conclusao']; ?></td>
+    <td height="87" colspan="5"><?php echo $campo_cod['conclusao']; ?></td>
   </tr>
 </table>
 <script language="javascript">window.print(); </script>

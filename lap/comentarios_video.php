@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include "conn.php";
 
@@ -15,10 +15,10 @@ if ($_POST['enviar']) {
 ?>
 <script>
 alert('Seu comentário foi enviado.')
-window.opener.location = '<? echo "ver_video.php?codigo_video=$_GET[id]" ?>';
+window.opener.location = '<?php echo "ver_video.php?codigo_video=$_GET[id]" ?>';
 window.close();
 </script>
-<?
+<?php
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

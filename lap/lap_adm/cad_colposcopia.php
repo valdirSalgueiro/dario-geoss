@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $usuario_autenticado=$_SESSION["usuario_autenticado"];
@@ -112,7 +112,7 @@ else
       <tr>
         <td><span class="style11">TESTE SCHILLER </span></td>
         <td><select name="schiller" class="caixa" id="schiller" onChange="submitar()">
-            <?
+            <?php
 $busca_atendimentos="select * from schiller order by id asc;";
 $res_busca_atendimentos=mysql_query($busca_atendimentos,$conn);
 $num_atendimentos=mysql_num_rows($res_busca_atendimentos);
@@ -160,19 +160,19 @@ else
       </tr>
       <tr>
         <td><span class="style11">DESCRI&Ccedil;&Atilde;O</span></td>
-        <td><textarea name="descricao" id="descricao" cols="30" rows="4"><? echo $_SESSION["schiller"]; ?></textarea></td>
+        <td><textarea name="descricao" id="descricao" cols="30" rows="4"><?php echo $_SESSION["schiller"]; ?></textarea></td>
       </tr>
       <tr>
         <td width="134"><span class="style11">JEC ANTERIOR </span></td>
-        <td width="257"><input name=jec_anterior type=text class=botao id="jec_anterior" value="<? echo $campo_co['jec_anterior']; ?>" size=5></td>
+        <td width="257"><input name=jec_anterior type=text class=botao id="jec_anterior" value="<?php echo $campo_co['jec_anterior']; ?>" size=5></td>
       </tr>
       <tr>
         <td><span class="style11">JEC POSTERIOR </span></td>
-        <td><input name=jec_posterior type=text class=botao id="jec_posterior" value="<? echo $campo_co['jec_posterior']; ?>" size=5></td>
+        <td><input name=jec_posterior type=text class=botao id="jec_posterior" value="<?php echo $campo_co['jec_posterior']; ?>" size=5></td>
       </tr>
       <tr>
         <td><span class="style11">&Uacute;LTIMA GLANDULA </span></td>
-        <td><input name=ultima_glandula type=text class=botao id="ultima_glandula" value="<? echo $campo_co['ultima_glandula']; ?>" size=5></td>
+        <td><input name=ultima_glandula type=text class=botao id="ultima_glandula" value="<?php echo $campo_co['ultima_glandula']; ?>" size=5></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -199,7 +199,7 @@ else
 </span></td>
 </tr>
 </form>
-<?
+<?php
 
 if($_POST['fin1']){
 

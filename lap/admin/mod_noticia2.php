@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -47,7 +47,7 @@ else
 
 <form name=form1 method=post>
 
-<input type=hidden name=nome_antigo value="<?echo $campo_noticia[nome_noticia];?>">
+<input type=hidden name=nome_antigo value="<?phpecho $campo_noticia[nome_noticia];?>">
 
 <h1><font face=verdana color='#ff9900'><b>Modificar Not&iacute;cia:</b></font></h1>
 <hr color=black size=2>
@@ -56,7 +56,7 @@ else
 
 <tr><td width="147">Nome Categoria: </td><td width="405"><select name=codigo_categoria class=botao>
 
-<?
+<?php
 
 $busca_categoria="select * from categorias order by nome_categoria asc;";
 
@@ -117,16 +117,16 @@ else
 </tr>
 
 <tr>
-  <td>T&iacute;tulo Not&iacute;cia:</td><td><input name=nome_noticia type=text class=botao id="nome_noticia" value="<?echo $campo_noticia[nome_noticia];?>" size=50 maxlength=100></td></tr>
+  <td>T&iacute;tulo Not&iacute;cia:</td><td><input name=nome_noticia type=text class=botao id="nome_noticia" value="<?phpecho $campo_noticia[nome_noticia];?>" size=50 maxlength=100></td></tr>
 
 <tr>
   <td>Descri&ccedil;&atilde;o Not&iacute;cia : </td>
-  <td><input name=desc_not type=text class=botao id="desc_not" value="<?echo $campo_noticia[desc_not];?>" size=50 maxlength=100></td>
+  <td><input name=desc_not type=text class=botao id="desc_not" value="<?phpecho $campo_noticia[desc_not];?>" size=50 maxlength=100></td>
 </tr>
 
 <tr>
   <td>Data Entrada : </td>
-  <td><?
+  <td><?php
   $tempo=date("d-n-Y-H:i",$campo_noticia['data_entrada']);
   if($campo_noticia['data_entrada']=='0'){
   print "A notícia já está no ar."; } else {
@@ -137,7 +137,7 @@ else
 <tr>
   <td>Not&iacute;cia:</td><td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_noticia');
 
@@ -154,12 +154,12 @@ $oFCKeditor->Create();
 
 <tr><td></td><td>&nbsp;</td></tr>
 
-<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_noticias.php?codigo_noticia=<?echo $campo_noticia[codigo_noticia];?>';"></td></tr>
+<tr><td></td><td><input type=submit value=' Modificar ' class=botao><input type=button value=" Foto " class=botao onClick="window.location='mod_foto_noticias.php?codigo_noticia=<?phpecho $campo_noticia[codigo_noticia];?>';"></td></tr>
 </table>
 
 </form>
 
-<?
+<?php
 $codigo_categoria=$_POST['codigo_categoria'];
 $nome_antigo=$_POST['nome_noticia'];
 $nome_noticia=$_POST['nome_noticia'];

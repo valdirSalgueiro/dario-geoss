@@ -6,7 +6,7 @@ $usuario_autenticado=$_SESSION["usuario_autenticado"];
 
 if($_SESSION["usuario_autenticado"]!=NULL){ ?>
 <meta http-equiv="refresh" content="300;URL=sair.php">
-<? } ?>
+<?php } ?>
 <html>
 	<style type="text/css">
 <!--

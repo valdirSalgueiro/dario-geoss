@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -51,14 +51,14 @@ else
 
 <tr>
   <td>Data: </td>
-  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?echo $hoje;?>" size=12 maxlength=12></td>
+  <td><input name=data_cadastro type=text class=botao id="data_cadastro" value="<?phpecho $hoje;?>" size=12 maxlength=12></td>
 </tr>
 
 <tr>
   <td>Descri&ccedil;&atilde;o Foto do Dia:</td>
   <td>
 
-<?
+<?php
 
 $oFCKeditor = new FCKeditor('descricao_foto_dia');
 
@@ -80,7 +80,7 @@ $oFCKeditor->Create();
 
 </form>
 
-<?
+<?php
 $nome_foto_dia=$_POST['nome_foto_dia'];
 $descricao_foto_dia=$_POST['descricao_foto_dia'];
 $ativado=0;

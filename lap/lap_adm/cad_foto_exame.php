@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -65,7 +65,7 @@ body {
 
 <h1><font face=verdana color='#ff9900'><span class="style1">Fotos:</span></h1>
 <hr color=black size=2>
-<?
+<?php
 //FOTOS DO EXAME
           
 
@@ -175,7 +175,7 @@ echo "<br><br><center><img src=$campo_propaganda[foto] name=PictureBox width=100
           ?>
 <table border=0 class=fonte>
 
-<?
+<?php
 
 for($x=0;$x<$num_file;$x++)
 
@@ -211,7 +211,7 @@ for($x=0;$x<$num_file;$x++)
 
 </form>
 
-<?
+<?php
 
 $adiciona_foto=$_POST['adiciona_foto'];
 

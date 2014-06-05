@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -89,7 +89,7 @@ body {
 
 <TD class=style10 align=right width=178><div align="left">Entre das Datas : </div></td>
 <td class=back>
-								<?
+								<?php
 $today= getdate();	
 $lang_month = array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
 	
@@ -256,16 +256,16 @@ echo'<select name=smonth>';
 
 <hr color=black size=1>
 </form>
-<?
+<?php
 if($_POST['pesquisar']!=NULL){
 
 echo "<script>window.open('ver_livro.php?dia=$_POST[sday]&&mes=$_POST[smonth]&&ano=$_POST[syear]');</script>";
 
 }
 ?>
-<? if($_POST[sday]!=NULL){ ?>
-<span class="style11">Livro de Registro do dia <? echo "$_POST[sday] / $_POST[smonth] / $_POST[syear]"; ?> <? } ?></span>
-  <?
+<?php if($_POST[sday]!=NULL){ ?>
+<span class="style11">Livro de Registro do dia <?php echo "$_POST[sday] / $_POST[smonth] / $_POST[syear]"; ?> <?php } ?></span>
+  <?php
 $id=$_POST['id'];
 $id_med=$_POST['id_med'];
 $convenio=$_POST['convenio'];
@@ -303,7 +303,7 @@ $result = mysql_query($sql);
 //die($sql);
 
 while($row = mysql_fetch_array($result)) { ?>
-<?
+<?php
  ##Busca do nome do paciente##
  $busca_pac="SELECT id,nome from paciente WHERE id = '".$row['paciente_id']."'";
  $res_busca_pac=mysql_query($busca_pac,$conn);
@@ -335,17 +335,17 @@ while($row = mysql_fetch_array($result)) { ?>
 <table width="728" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
   <tr>
     <br>
-    <td width="35" class="style10"><span class="style3"><? echo $row['id']; ?></span></td>
-    <td width="64" class="style10"><span class="style3"><? echo date("d/m/Y",$row['data_entrada']); ?></span></td>
-    <td width="197" class="style12"><? echo $campo_pac['nome']; ?></td>
-    <td width="81" class="style10"><span class="style3"><? echo $campo_conve['nome']; ?></span></td>
-    <td width="108" class="style3"><? echo  $campo_med['nome']; ?></td>
-    <td width="163" class="style10"><span class="style3"><? echo $row['material']; ?></span></td>
-    <td width="80" class="style10"><span class="style3"><? echo $campo_convel['nome']; ?></span></td>
+    <td width="35" class="style10"><span class="style3"><?php echo $row['id']; ?></span></td>
+    <td width="64" class="style10"><span class="style3"><?php echo date("d/m/Y",$row['data_entrada']); ?></span></td>
+    <td width="197" class="style12"><?php echo $campo_pac['nome']; ?></td>
+    <td width="81" class="style10"><span class="style3"><?php echo $campo_conve['nome']; ?></span></td>
+    <td width="108" class="style3"><?php echo  $campo_med['nome']; ?></td>
+    <td width="163" class="style10"><span class="style3"><?php echo $row['material']; ?></span></td>
+    <td width="80" class="style10"><span class="style3"><?php echo $campo_convel['nome']; ?></span></td>
   </tr>
 </table>
 <hr color=black size=1>
-<? 
+<?php 
 }
 }
 

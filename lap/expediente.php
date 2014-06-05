@@ -68,7 +68,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 </style>
 <script type="text/javascript" src="lightbox/lightbox.js"></script>
 <script src="funcoes1.js" type="text/javascript"></script>
-<?
+<?php
  include('random.php');
  $foto = gera_foto(); 
 ?>
@@ -88,11 +88,11 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
           </table>
             <table width="772" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="772" height="150" background="arquivos/<? print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
+                <td width="772" height="150" background="arquivos/<?php print $foto; ?>.jpg"><table width="768" border="0" align="center" cellpadding="0" cellspacing="0">
                   <tr>
                     <td height="124" colspan="2">&nbsp;</td>
                   </tr>
-                  <tr><?
+                  <tr><?php
 						if($_POST['buscarnot']){
 						$buscar = $_POST['buscar'];
 						echo "<script>window.location='noticias.php?busca=$buscar';</script>";
@@ -137,7 +137,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
                       <tr>
                         <td width="6%"><div align="center"><img src="arquivos/calendario.gif" width="14" height="14"></div></td>
                         <td width="94%"><span class="style26">
-                          <? $dia_semana = date("w");
+                          <?php $dia_semana = date("w");
 						  switch($dia_semana)
    {
       case "0" : echo "Domingo"; break;
@@ -151,7 +151,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="lightbox/overlay
 
 						   ?>
                           ,
-                          <?
+                          <?php
 
     $dia=date('d');
 
@@ -255,7 +255,7 @@ $consulta_cat15 = mysql_query("SELECT count(codigo_categoria) as total FROM noti
 $total_cat15 = mysql_result($consulta_cat15,0,"total");
 
     ?>!<font color="blue" class="style22"> &nbsp;&nbsp;
-                          <? include('whosonline.php'); ?>
+                          <?php include('whosonline.php'); ?>
                           </font> </span></td>
                         </tr>
                     </table></td>
@@ -380,7 +380,7 @@ $total_cat15 = mysql_result($consulta_cat15,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -557,7 +557,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -734,7 +734,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -911,7 +911,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1088,7 +1088,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1265,7 +1265,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                         <td height="68" valign="top"><table width="150" height="68" border="1">
                             <tr>
                               <td width="140"><div align="center"><span class="style26">
-                                  <?
+                                  <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes
@@ -1448,7 +1448,7 @@ $total_propaganda = mysql_result($consulta_propaganda,0,"total");
                       <tr>
                         <td width="6" height="590">&nbsp;</td>
                         <td><span class="materia">
-                          <?
+                          <?php
 include "conn.php";
 
 $busca_exp="select * from expediente;";
@@ -1549,7 +1549,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </table>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td height="197"><?
+                            <td height="197"><?php
 include ("enquete/apgconecta.php");
 require ("enquete/apgvota.php");
 ?></td>
@@ -1595,7 +1595,7 @@ require ("enquete/apgvota.php");
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                               <td height="122"><div align="center">
-                                <?
+                                <?php
                    
 		  
 		  		 //Contando o n&uacute;mero de foto_do_dia existentes

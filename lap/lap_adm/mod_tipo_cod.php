@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 
@@ -67,7 +67,7 @@ body {
 
 </form>
 
-<?
+<?php
 $modificar=$_POST['modificar'];
 $nome="g";
 

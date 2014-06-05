@@ -72,7 +72,7 @@ class GetUploadProgress {
 		$status=isset($vals[$index['STATUS'][0]]['value'])?$vals[$index['STATUS'][0]]['value']:1;
 		
 		header ("content-type: text/xml");
-		echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
+		echo "<?phpxml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 		?>
 <Connector command="GetUploadProgress" resourceType="<?php echo $this->type; ?>">
 	<CurrentFolder path="<?php echo $this->raw_cwd; ?>" url="<?php echo $this->actual_cwd; ?>" />
