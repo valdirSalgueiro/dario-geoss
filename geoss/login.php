@@ -13,6 +13,7 @@ include_once("class.database.php");
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/datepicker.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
     <title></title>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl, msg) {
@@ -62,7 +63,7 @@ include_once("class.database.php");
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             &times;</button>
                         <h4 class="modal-title">
-                            All4Kids</h4>
+                            Geoss</h4>
                     </div>
                     <div class="modal-body" id="modalbody">
                     </div>
