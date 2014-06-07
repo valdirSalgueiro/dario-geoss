@@ -1,6 +1,11 @@
 
 <?php
 
+include_once("class.database.php");
+
+$db = Database::getDb(); 
+
+
 $table = 'aluno_atividade';
  
 $primaryKey = 'id';
@@ -19,17 +24,18 @@ $columns = array(
         'db'        => 'id',
         'dt'        => 1,
         'formatter' => function( $d, $row ) {
-            return "<a href='javascript:apagar(\"aluno_atividade\",$d)' class='glyphicon glyphicon-remove'></a>";
+            return "<a href='#' onclick='apagar(\"aluno_atividade\",$d)' class='glyphicon glyphicon-remove'></a>";
         }
     ),
 	
 );
+  
  
 $sql_details = array(
-    'user' => 'root',
-	'pass' => '',
-    'db'   => 'all4kids',
-    'host' => 'localhost'
+    'user' => $db->user,
+	'pass' => $db->password,
+    'db'   => $db->database,
+    'host' => $db->host
 );
  
 require( 'ssp.class.php' );
