@@ -14,7 +14,7 @@ $mensagem="$modo".a;
 
 ?>
 		<section id="contact" class="background1 background-image" style="margin-top:160px;min-height: 67%;
-    height: 67%;">
+    height: auto%;">
 			<div class="container">
 				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
 					<div class="col-sm-12">
@@ -29,12 +29,12 @@ $mensagem="$modo".a;
 							<input type="hidden" name="id" value="<?php echo $id?>"> 
 							<input type="hidden" name="type" value="atividade">
 
-	<div class="form-group col-md-12">
+	<div class="form-group col-md-12" style="text-align: left">
 							<input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $atividade->nome?>">
 			                
 		</div>
 		
-	<div class="form-group col-md-12">
+	<div class="form-group col-md-12" style="text-align: left">
 							<input type="text" name="vagas" class=" form-control input-sm"  placeholder="Vagas" value="<?php echo $atividade->vagas?>">
 			                
 		</div>

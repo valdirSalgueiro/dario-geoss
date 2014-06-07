@@ -22,7 +22,7 @@ require 'header.php';
 <table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th><th>Nome mae</th><th>Nome pai</th><th>Responsavel nome</th><th>Responsavel cpf</th><th>Responsavel rg</th><th>Endereco</th><th>Idade</th><th>Data nasc</th>
+<th>Nome</th><th>Email</th><th>Nome mae</th><th>Nome pai</th><th>Responsavel nome</th><th>Responsavel cpf</th><th>Responsavel rg</th><th>Endereco</th><th>Plano saude</th><th>Emergencia</th><th>Responsavel emergencia</th><th>Carteira</th><th>Entregou carteira</th><th>Ativo</th><th>Idade</th><th>Data nasc</th>
 				<th>Editar</th>
 				<th>Remover</th>
             </tr>
