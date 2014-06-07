@@ -145,138 +145,49 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class=""><a href="#home">HOME</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">ALL4KIDS <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aluno <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-	<li><a href="cad.alergia.php"> Alergia</a></li>
-	
-	<li><a href="cad.aluno.php"> Aluno</a></li>
-	
-	<li><a href="cad.aluno_alergia.php"> Aluno alergia</a></li>
-	
-	<li><a href="cad.aluno_atividade.php"> Aluno atividade</a></li>
-	
-	<li><a href="cad.aluno_servico.php"> Aluno servico</a></li>
-	
-	<li><a href="cad.atividade.php"> Atividade</a></li>
-	
-	<li><a href="cad.beneficio.php"> Beneficio</a></li>
-	
-	<li><a href="cad.categoria.php"> Categoria</a></li>
-	
-	<li><a href="cad.conta.php"> Conta</a></li>
-	
-	<li><a href="cad.conta_categoria.php"> Conta categoria</a></li>
-	
-	<li><a href="cad.dia.php"> Dia</a></li>
-	
-	<li><a href="cad.dia_atividade.php"> Dia atividade</a></li>
-	
-	<li><a href="cad.dia_servico.php"> Dia servico</a></li>
-	
-	<li><a href="cad.filho.php"> Filho</a></li>
-	
-	<li><a href="cad.fornecedor.php"> Fornecedor</a></li>
-	
-	<li><a href="cad.funcao.php"> Funcao</a></li>
-	
-	<li><a href="cad.funcionario.php"> Funcionario</a></li>
-	
-	<li><a href="cad.funcionario_beneficio.php"> Funcionario beneficio</a></li>
-	
-	<li><a href="cad.funcionario_filho.php"> Funcionario filho</a></li>
-	
-	<li><a href="cad.horario.php"> Horario</a></li>
-	
-	<li><a href="cad.horario_atividade.php"> Horario atividade</a></li>
-	
-	<li><a href="cad.horario_servico.php"> Horario servico</a></li>
-	
-	<li><a href="cad.intervalo.php"> Intervalo</a></li>
-	
-	<li><a href="cad.nivel.php"> Nivel</a></li>
-	
-	<li><a href="cad.nivelescolar.php"> Nivelescolar</a></li>
-	
-	<li><a href="cad.servico.php"> Servico</a></li>
-	
-	<li><a href="cad.telefone.php"> Telefone</a></li>
-	
-	<li><a href="cad.telefone_aluno.php"> Telefone aluno</a></li>
-	
-	<li><a href="cad.usuario.php"> Usuario</a></li>
-						
+								<li><a href="cad.aluno.php"> Cadastro</a></li>			
+								<li><a href="list.aluno.php"> Listagem</a></li>								
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Listagens <b class="caret"></b></a>
-							<ul class="dropdown-menu">					
-	<li><a href="list.alergia.php"> Alergia</a></li>
-						
-	<li><a href="list.aluno.php"> Aluno</a></li>
-						
-	<li><a href="list.aluno_alergia.php"> Aluno alergia</a></li>
-						
-	<li><a href="list.aluno_atividade.php"> Aluno atividade</a></li>
-						
-	<li><a href="list.aluno_servico.php"> Aluno servico</a></li>
-						
-	<li><a href="list.atividade.php"> Atividade</a></li>
-						
-	<li><a href="list.beneficio.php"> Beneficio</a></li>
-						
-	<li><a href="list.categoria.php"> Categoria</a></li>
-						
-	<li><a href="list.conta.php"> Conta</a></li>
-						
-	<li><a href="list.conta_categoria.php"> Conta categoria</a></li>
-						
-	<li><a href="list.dia.php"> Dia</a></li>
-						
-	<li><a href="list.dia_atividade.php"> Dia atividade</a></li>
-						
-	<li><a href="list.dia_servico.php"> Dia servico</a></li>
-						
-	<li><a href="list.filho.php"> Filho</a></li>
-						
-	<li><a href="list.fornecedor.php"> Fornecedor</a></li>
-						
-	<li><a href="list.funcao.php"> Funcao</a></li>
-						
-	<li><a href="list.funcionario.php"> Funcionario</a></li>
-						
-	<li><a href="list.funcionario_beneficio.php"> Funcionario beneficio</a></li>
-						
-	<li><a href="list.funcionario_filho.php"> Funcionario filho</a></li>
-						
-	<li><a href="list.horario.php"> Horario</a></li>
-						
-	<li><a href="list.horario_atividade.php"> Horario atividade</a></li>
-						
-	<li><a href="list.horario_servico.php"> Horario servico</a></li>
-						
-	<li><a href="list.intervalo.php"> Intervalo</a></li>
-						
-	<li><a href="list.nivel.php"> Nivel</a></li>
-						
-	<li><a href="list.nivelescolar.php"> Nivelescolar</a></li>
-						
-	<li><a href="list.servico.php"> Servico</a></li>
-						
-	<li><a href="list.telefone.php"> Telefone</a></li>
-						
-	<li><a href="list.telefone_aluno.php"> Telefone aluno</a></li>
-						
-	<li><a href="list.usuario.php"> Usuario</a></li>
-	
-						</ul>
-					</li>	
-					
-                    <li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Funcionario <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="cad.funcionario.php"> Cadastro</a></li>			
+								<li><a href="list.funcionario.php"> Listagem</a></li>								
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Atividade <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="cad.atividade.php"> Cadastro</a></li>			
+								<li><a href="list.atividade.php"> Listagem</a></li>	
+								<li><a href="assoc.atividade.php"> Associar</a></li>									
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servico <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="cad.servico.php"> Cadastro</a></li>			
+								<li><a href="list.servico.php"> Listagem</a></li>		
+								<li><a href="assoc.servico.php"> Associar</a></li>									
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Financeiro <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="cad.contapagar.php"> Contas a Pagar</a></li>			
+								<li><a href="cad.contareceber.php"> Contas a Receber</a></li>				
+								<li class="divider"></li>				
+								<li><a href="cad.fornecedor.php"> Fornecedor</a></li>		
+							</ul>
+						</li>						
+						<li>
                         <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
+						</li>
+					</ul>
             </div><!--/.nav-collapse -->
         </div>
     </div><!-- Begin page content -->
