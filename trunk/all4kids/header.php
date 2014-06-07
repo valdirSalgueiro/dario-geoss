@@ -35,6 +35,7 @@
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
     <meta name="description" content="">
     <meta name="author" content="">
+	<title>All4kids</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/datepicker.css" rel="stylesheet"/>
 	<link href="css/style.css" rel="stylesheet">
@@ -58,6 +59,37 @@
 				dataType: 'json',
 				success: function(rsp) {
 					if(rsp.success) {
+						if(typeof files != 'undefined' && files.length>0){
+							var data = new FormData();
+							$.each(files, function(key, value)
+							{
+								data.append(key, value);
+							});
+									
+							$.ajax({
+								url: 'upload.php?files=1&id='+rsp.id,
+								type: 'POST',
+								data: data,
+								cache: false,
+								dataType: 'json',
+								processData: false, // Don't process the files
+								contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+								success: function(data, textStatus, jqXHR)
+								{
+									if(typeof data.error === 'undefined')
+									{
+									}
+									else
+									{
+										console.log('ERRORS: ' + data.error);
+									}
+								},
+								error: function(jqXHR, textStatus, errorThrown)
+								{
+									console.log('ERRORS: ' + textStatus);
+								}
+							});
+						}
 					    $(modalbody).html(msg);      
 						$(myModal).modal();
 					}
@@ -76,6 +108,7 @@
 		}
 		
 		var tableAjax;
+		var files;
 		function apagar(tipo,id) {
 			mostrarCarregando();
 
@@ -126,8 +159,20 @@
 		$(document).ready(function() {
 				if(typeof $('.datepicker') != 'undefined')
 					$('.datepicker').datepicker();
+					
+				$('input[type=file]').on('change', prepareUpload);
+				function prepareUpload(event)
+				{
+					files = event.target.files;
+					$.each(files, function(key, value)
+					{
+						$('<input>').attr('type','hidden').attr('name','file'+key).attr('value',value.name).appendTo('form');
+					});
+				}
+					
 			}
 		);
+		
 
 	</script>
 

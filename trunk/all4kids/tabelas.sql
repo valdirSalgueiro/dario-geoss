@@ -4,16 +4,13 @@ DROP TABLE IF EXISTS usuario;
 DROP TABLE IF EXISTS aluno;
 DROP TABLE IF EXISTS nivelescolar;
 DROP TABLE IF EXISTS atividade;
-DROP TABLE IF EXISTS dia_atividade;
-DROP TABLE IF EXISTS horario_atividade;
-DROP TABLE IF EXISTS dia_servico;
-DROP TABLE IF EXISTS horario_servico;
+DROP TABLE IF EXISTS dia_horario_atividade;
+DROP TABLE IF EXISTS dia_horario_servico;
 DROP TABLE IF EXISTS nivel_escolar;
 DROP TABLE IF EXISTS alergia;
 DROP TABLE IF EXISTS aluno_alergia;
 DROP TABLE IF EXISTS aluno_atividade;
-DROP TABLE IF EXISTS telefone;
-DROP TABLE IF EXISTS telefone_aluno;
+DROP TABLE IF EXISTS aluno_telefone;
 DROP TABLE IF EXISTS funcionario;
 DROP TABLE IF EXISTS beneficio;
 DROP TABLE IF EXISTS funcionario_beneficio;
@@ -101,31 +98,19 @@ CREATE TABLE `atividade` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `dia_atividade` (
+CREATE TABLE `dia_horario_atividade` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_atividade` int(10) NOT NULL,
+  `idx_horario` int(10) NOT NULL,
   `idx_dia` int(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `horario_atividade` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `idx_atividade` int(10) NOT NULL,
-  `idx_horario` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE `dia_servico` (
+CREATE TABLE `dia_horario_servico` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_servico` int(10) NOT NULL,
+  `idx_horario` int(10) NOT NULL,
   `idx_dia` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE `horario_servico` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `idx_servico` int(10) NOT NULL,
-  `idx_horario` int(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -136,16 +121,10 @@ CREATE TABLE `aluno_atividade` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `telefone` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `numero` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE `telefone_aluno` (
+CREATE TABLE `aluno_telefone` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_aluno` int(10) NOT NULL,
-  `idx_telefone` int(10) NOT NULL,
+  `numero` int(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

@@ -151,7 +151,6 @@ function update($id)
 
 
 $sql = " UPDATE aluno SET  nome = '$this->nome',email = '$this->email',nome_mae = '$this->nome_mae',nome_pai = '$this->nome_pai',responsavel_nome = '$this->responsavel_nome',responsavel_cpf = '$this->responsavel_cpf',responsavel_rg = '$this->responsavel_rg',endereco = '$this->endereco',plano_saude = '$this->plano_saude',emergencia = '$this->emergencia',responsavel_emergencia = '$this->responsavel_emergencia',carteira = '$this->carteira',entregou_carteira = '$this->entregou_carteira',ativo = '$this->ativo',idade = '$this->idade',idx_nivelescolar = '$this->idx_nivelescolar',data_nasc = '$this->data_nasc' WHERE id = $id ";
-
 $result = $this->database->query($sql);
 
 
