@@ -42,7 +42,6 @@ function adicionar(type,type2){
 	var valor2=$("#"+type2+'Campo').val();
 	var texto2=$("#"+type2+"Campo option:selected").text();
 	adicionar_(type,type2,valor,texto,valor2,texto2);
-	id++;
 }
 function adicionar_(type,type2,valor,texto,valor2,texto2){
 	$("#"+type+'Conteudo').append("\
@@ -56,6 +55,7 @@ function adicionar_(type,type2,valor,texto,valor2,texto2){
 	</div>\
 	<div id=\""+type+id+"\" class=\"form-group col-md-4\"><input type=\"button\" onclick=\"remover("+type+id+")\" value=\"Remover\" class=\"btn btn-danger btn-block\"></div>\
 	");
+	id++;
 }
 
 function remover(removerId){
