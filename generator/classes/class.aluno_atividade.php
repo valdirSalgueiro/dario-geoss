@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        aluno_atividade
-* GENERATION DATE:  01.06.2014
+* GENERATION DATE:  07.06.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.aluno_atividade.php
 * FOR MYSQL TABLE:  aluno_atividade
 * FOR MYSQL DB:     all4kids
@@ -32,7 +32,7 @@ class aluno_atividade
 
 var $id;   // KEY ATTR. WITH AUTOINCREMENT
 
-var $idx_atividade_desconto;   // (normal Attribute)
+var $idx_atividade;   // (normal Attribute)
 var $idx_aluno;   // (normal Attribute)
 
 var $database; // Instance of class database
@@ -65,7 +65,7 @@ $row = $result->fetch_object();
 
 $this->id = $row->id;
 
-$this->idx_atividade_desconto = $row->idx_atividade_desconto;
+$this->idx_atividade = $row->idx_atividade;
 
 $this->idx_aluno = $row->idx_aluno;
 
@@ -90,7 +90,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO aluno_atividade ( idx_atividade_desconto,idx_aluno ) VALUES ( '$this->idx_atividade_desconto','$this->idx_aluno' )";
+$sql = "INSERT INTO aluno_atividade ( idx_atividade,idx_aluno ) VALUES ( '$this->idx_atividade','$this->idx_aluno' )";
 $result = $this->database->query($sql);
 
 
@@ -105,7 +105,7 @@ function update($id)
 
 
 
-$sql = " UPDATE aluno_atividade SET  idx_atividade_desconto = '$this->idx_atividade_desconto',idx_aluno = '$this->idx_aluno' WHERE id = $id ";
+$sql = " UPDATE aluno_atividade SET  idx_atividade = '$this->idx_atividade',idx_aluno = '$this->idx_aluno' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 

@@ -37,9 +37,10 @@
     <meta name="author" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/datepicker.css" rel="stylesheet"/>
-    <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
-	<script type="text/javascript" language="javascript" src="scripts/bootstrap-datepicker.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -74,7 +75,7 @@
 			return false;
 		}
 		
-		var table;
+		var tableAjax;
 		function apagar(tipo,id) {
 			mostrarCarregando();
 
@@ -129,70 +130,54 @@
 		);
 
 	</script>
-	<style>
 
-    /* Featurettes
-    ------------------------- */
-
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
-    }
-    .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
-
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-	
-	</style>
 </head>
-<body>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">
-                        Toggle
-                        navigation
-                    </span>
-                </button> <a class="navbar-brand" href='index.php'>All4Kids</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Geral<b class="caret"></b></a>
-						<ul class="dropdown-menu">
+<body style="background-color: #222">
+            <div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index-2.html"><img src="images/logo.gif" alt="Magicreche. Responsive site theme for Creche, Playschool, Preschool and Montessori." class="img-responsive"></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class=""><a href="#home">HOME</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">ALL4KIDS <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+	<li><a href="cad.alergia.php"> Alergia</a></li>
+	
 	<li><a href="cad.aluno.php"> Aluno</a></li>
 	
-	<li><a href="cad.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
+	<li><a href="cad.aluno_alergia.php"> Aluno alergia</a></li>
+	
+	<li><a href="cad.aluno_atividade.php"> Aluno atividade</a></li>
+	
+	<li><a href="cad.aluno_servico.php"> Aluno servico</a></li>
 	
 	<li><a href="cad.atividade.php"> Atividade</a></li>
 	
-	<li><a href="cad.atividade_desconto.php"> Atividade desconto</a></li>
-	
 	<li><a href="cad.beneficio.php"> Beneficio</a></li>
 	
-	<li><a href="cad.desconto.php"> Desconto</a></li>
+	<li><a href="cad.categoria.php"> Categoria</a></li>
+	
+	<li><a href="cad.conta.php"> Conta</a></li>
+	
+	<li><a href="cad.conta_categoria.php"> Conta categoria</a></li>
+	
+	<li><a href="cad.dia.php"> Dia</a></li>
+	
+	<li><a href="cad.dia_atividade.php"> Dia atividade</a></li>
+	
+	<li><a href="cad.dia_servico.php"> Dia servico</a></li>
 	
 	<li><a href="cad.filho.php"> Filho</a></li>
+	
+	<li><a href="cad.fornecedor.php"> Fornecedor</a></li>
 	
 	<li><a href="cad.funcao.php"> Funcao</a></li>
 	
@@ -202,9 +187,19 @@
 	
 	<li><a href="cad.funcionario_filho.php"> Funcionario filho</a></li>
 	
-	<li><a href="cad.funcionario_funcao.php"> Funcionario funcao</a></li>
+	<li><a href="cad.horario.php"> Horario</a></li>
+	
+	<li><a href="cad.horario_atividade.php"> Horario atividade</a></li>
+	
+	<li><a href="cad.horario_servico.php"> Horario servico</a></li>
+	
+	<li><a href="cad.intervalo.php"> Intervalo</a></li>
 	
 	<li><a href="cad.nivel.php"> Nivel</a></li>
+	
+	<li><a href="cad.nivelescolar.php"> Nivelescolar</a></li>
+	
+	<li><a href="cad.servico.php"> Servico</a></li>
 	
 	<li><a href="cad.telefone.php"> Telefone</a></li>
 	
@@ -212,21 +207,40 @@
 	
 	<li><a href="cad.usuario.php"> Usuario</a></li>
 						
-							<li class="divider"></li>
-							<li class="nav-header">Editar/Remover</li>					
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Listagens <b class="caret"></b></a>
+							<ul class="dropdown-menu">					
+	<li><a href="list.alergia.php"> Alergia</a></li>
+						
 	<li><a href="list.aluno.php"> Aluno</a></li>
 						
-	<li><a href="list.aluno_atividade_desconto.php"> Aluno atividade desconto</a></li>
+	<li><a href="list.aluno_alergia.php"> Aluno alergia</a></li>
+						
+	<li><a href="list.aluno_atividade.php"> Aluno atividade</a></li>
+						
+	<li><a href="list.aluno_servico.php"> Aluno servico</a></li>
 						
 	<li><a href="list.atividade.php"> Atividade</a></li>
 						
-	<li><a href="list.atividade_desconto.php"> Atividade desconto</a></li>
-						
 	<li><a href="list.beneficio.php"> Beneficio</a></li>
 						
-	<li><a href="list.desconto.php"> Desconto</a></li>
+	<li><a href="list.categoria.php"> Categoria</a></li>
+						
+	<li><a href="list.conta.php"> Conta</a></li>
+						
+	<li><a href="list.conta_categoria.php"> Conta categoria</a></li>
+						
+	<li><a href="list.dia.php"> Dia</a></li>
+						
+	<li><a href="list.dia_atividade.php"> Dia atividade</a></li>
+						
+	<li><a href="list.dia_servico.php"> Dia servico</a></li>
 						
 	<li><a href="list.filho.php"> Filho</a></li>
+						
+	<li><a href="list.fornecedor.php"> Fornecedor</a></li>
 						
 	<li><a href="list.funcao.php"> Funcao</a></li>
 						
@@ -236,9 +250,19 @@
 						
 	<li><a href="list.funcionario_filho.php"> Funcionario filho</a></li>
 						
-	<li><a href="list.funcionario_funcao.php"> Funcionario funcao</a></li>
+	<li><a href="list.horario.php"> Horario</a></li>
+						
+	<li><a href="list.horario_atividade.php"> Horario atividade</a></li>
+						
+	<li><a href="list.horario_servico.php"> Horario servico</a></li>
+						
+	<li><a href="list.intervalo.php"> Intervalo</a></li>
 						
 	<li><a href="list.nivel.php"> Nivel</a></li>
+						
+	<li><a href="list.nivelescolar.php"> Nivelescolar</a></li>
+						
+	<li><a href="list.servico.php"> Servico</a></li>
 						
 	<li><a href="list.telefone.php"> Telefone</a></li>
 						
@@ -279,5 +303,3 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-<div class="container">
-	<br><br><br>
