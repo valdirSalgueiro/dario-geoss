@@ -30,11 +30,11 @@ var id=0;
 function adicionar(type){
 	var valor=$("#"+type+'Campo').val();
 	adicionar_(type,valor);
-	id++;
 }
 
 function adicionar_(type,valor){
 	$("#"+type+'Conteudo').append("<div id=\""+type+id+"\" class=\"form-group col-md-6\"><input type=\"text\" name=\""+type+"[]\" class=\"form-control input-sm\" value=\""+valor+"\" readonly></div><div id=\""+type+id+"\" class=\"form-group col-md-6\"><input type=\"button\" onclick=\"remover("+type+id+")\" value=\"Remover\" class=\"btn btn-danger btn-block\"></div>");
+	id++;	
 }	
 	
 
