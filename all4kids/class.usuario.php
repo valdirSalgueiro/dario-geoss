@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        usuario
-* GENERATION DATE:  02.06.2014
+* GENERATION DATE:  07.06.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.usuario.php
 * FOR MYSQL TABLE:  usuario
 * FOR MYSQL DB:     all4kids

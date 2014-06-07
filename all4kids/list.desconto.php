@@ -3,22 +3,15 @@
 require 'header.php';
 ?>
 
-<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" src="scripts/dataTables.bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
 
 
-		<section id="contact" class="background1 background-image" style="padding-top:180px;min-height: 85%;    height: 85%;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Desconto
-							</h3>
-						  </div>
-						  <div class="panel-body">
-
+<div class="page-header">
+    <h1>
+        Desconto
+    </h1>
+</div>
 <table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -28,12 +21,6 @@ require 'header.php';
             </tr>
         </thead>
     </table>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
 	<script>
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({
