@@ -7,7 +7,7 @@ require 'header.php';
 <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
 
-		<section id="contact" class="background1 background-image" style="padding-top:180px;min-height: 85%;    height: 85%;">
+		<section id="contact" class="background1 background-image" style="padding-top:180px;height: auto;">
 			<div class="container">
 				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
 					<div class="col-sm-12">
@@ -22,7 +22,7 @@ require 'header.php';
 <table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th><th>Email</th><th>Nome mae</th><th>Nome pai</th><th>Responsavel nome</th><th>Responsavel cpf</th><th>Responsavel rg</th><th>Endereco</th><th>Plano saude</th><th>Emergencia</th><th>Responsavel emergencia</th><th>Carteira</th><th>Entregou carteira</th><th>Ativo</th><th>Idade</th><th>Data nasc</th>
+<th>Nome</th><th>Idade</th><th>Atividade 1</th><th>Atividade 2</th><th>Servico 1</th><th>Servico 2</th>
 				<th>Editar</th>
 				<th>Remover</th>
             </tr>

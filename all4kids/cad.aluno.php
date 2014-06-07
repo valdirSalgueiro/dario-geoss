@@ -10,9 +10,57 @@ if($id){
 	$aluno->select($id);
 }
 
+if($aluno->id){
+	$db = Database::getConnection();
+	$sql = "SELECT *
+			FROM aluno_telefone
+			WHERE idx_aluno=$aluno->id";
+	$res = $db->query( $sql );
+	while ( $row = $res->fetch_assoc() ) {
+		$telefone.=$row['numero'].",";
+	}
+}
+
 $mensagem="$modo".o;
 
 ?>
+<script type="text/javascript" language="javascript">
+var id=0;
+
+function adicionar(type){
+	var valor=$("#"+type+'Campo').val();
+	adicionar_(type,valor);
+	id++;
+}
+
+function adicionar_(type,valor){
+	$("#"+type+'Conteudo').append("<div id=\""+type+id+"\" class=\"form-group col-md-6\"><input type=\"text\" name=\""+type+"[]\" class=\"form-control input-sm\" value=\""+valor+"\" readonly></div><div id=\""+type+id+"\" class=\"form-group col-md-6\"><input type=\"button\" onclick=\"remover("+type+id+")\" value=\"Remover\" class=\"btn btn-danger btn-block\"></div>");
+}	
+	
+
+function remover(removerId){
+  $(removerId).remove();
+}
+
+</script>
+
+<?php
+$aluno_id=$aluno->id==0?0:$aluno->id;
+echo <<<EOT
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+	if($aluno_id){
+		var array="$telefone".split(",");
+		for (var i=0;i<array.length-1; i++) {
+			adicionar_('telefone',array[i]);
+		}			
+	}
+} 
+);
+</script>
+EOT;
+?>
+
 		<section id="contact" class="background1 background-image" style="margin-top:160px;min-height: 67%;
     height: auto%;">
 			<div class="container">
@@ -25,7 +73,7 @@ $mensagem="$modo".o;
 							</h3>
 						  </div>
 						  <div class="panel-body">
-							<form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno <?php echo $mensagem ?> com sucesso');">
+							<form role="form" enctype="multipart/form-data" action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno <?php echo $mensagem ?> com sucesso');">
 							<input type="hidden" name="id" value="<?php echo $id?>"> 
 							<input type="hidden" name="type" value="aluno">
 
@@ -85,7 +133,8 @@ $mensagem="$modo".o;
 		</div>
 		
 	<div class="form-group col-md-12" style="text-align: left">
-							<input type="text" name="carteira" class=" form-control input-sm"  placeholder="Carteira" value="<?php echo $aluno->carteira?>">
+							<input type="hidden" id="carteira" name="carteira">
+							Carteira de vacinacao: <input name="carteira_aluno" type="file" />
 			                
 		</div>
 		
@@ -93,7 +142,7 @@ $mensagem="$modo".o;
 				<?php
 				$checked=($aluno->entregou_carteira)?"checked":"";
 				?>
-				Entregou carteira <input type="checkbox" name="entregou_carteira" value="1" <?php echo $checked ?>>
+				Entregou carteira de vacinacao <input type="checkbox" name="entregou_carteira" value="1" <?php echo $checked ?>>
 			                  
 		</div>
 		
@@ -132,10 +181,18 @@ $mensagem="$modo".o;
 							<input type="text" name="data_nasc" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd" placeholder="Data nasc" value="<?php echo $aluno->data_nasc?>">
 			                
 		</div>
+					<div class="form-group col-md-6">
+						<input id="telefoneCampo" type="text" class="form-control input-sm" placeholder="Telefone">
+					</div>
+					<div class="form-group col-md-6">
+						<input type="button" value="Adicionar" onclick="adicionar('telefone');" class="btn btn-success btn-block">
+					</div>			
+					<div id="telefoneConteudo">
+					</div>
 		
-					  <div class="form-group col-md-6 col-md-offset-3">
+					<div class="form-group col-md-6 col-md-offset-3">
 						<input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
-					  </div>	
+					</div>	
 					</form>
 				  </div>
 				</div>
