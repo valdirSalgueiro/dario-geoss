@@ -14,18 +14,8 @@ $mensagem="$modo".a;
 
 ?>						
 
-		<section id="contact" class="background1 background-image" style="margin-top:160px;min-height: 67%;
-    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-						<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Associar aluno com atividade
-							</h3>
-						  </div>
-						  <div class="panel-body">
+<div class="conteudo-principal">
+    <fieldset>  
 						  <form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Associacao <?php echo $mensagem ?> com sucesso');">
 						  <input type="hidden" name="type" value="aluno_atividade">
 						  <div class="form-group col-md-6" style="text-align: left">
@@ -63,30 +53,29 @@ $mensagem="$modo".a;
 						</div>		
 						<div class="form-group col-md-6" style="text-align: left">
 							<input type="button" value="Recalcular" class="btn btn-success btn-block" onclick="calcular()">										
-						</div>							
-					  
-					<table class="table table-hover table-striped table-bordered">
+						</div>		
+						
+					<div class="form-group col-md-12" style="text-align: left">
+					<table class="table list">
 						<thead>
 							 <tr> <th>Atividade</th><th>Valor</th></tr>
 						</thead>
 						<tfoot id="tfoot">
 						</tfoot>
 						<tbody id="tbody">
+							<tr><td colspan="2" align="center">Sem dados para exibir</td><tr>
 						</tbody>
 					</table>
+					</div>
+					
 					
 					  <div class="form-group col-md-6 col-md-offset-3">
 						<input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
 					  </div>						
 					  
 					  </form>
-					</div>
-				</div>								
-			  </div>
-			</div>
+					</fieldset>
 		</div>
-		
-	</section>
   
   <script type="text/javascript">
 	var objAtividades = new Object();

@@ -3,35 +3,20 @@
 require 'header.php';
 ?>
 
-<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
+<div class="conteudo-principal">
+    <fieldset>  
 
-		<section id="contact" class="background1 background-image" style="padding-top:180px;    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Atividade
-							</h3>
-						  </div>
-						  <div class="panel-body">
-
-<table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table list" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th><th>Vagas</th>
+<th class="sortable">Nome</th><th class="sortable">Vagas</th>
 				<th>Editar</th>
 				<th>Remover</th>
             </tr>
         </thead>
     </table>
-	</div>
-	</div>
-	</div>
-	</div>
+	</fieldset>
 	</div>
 	</section>
 	<script>
