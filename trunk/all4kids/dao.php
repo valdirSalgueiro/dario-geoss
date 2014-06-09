@@ -62,9 +62,11 @@ if($id){
 	}
 }
 else{
-	$instance->insert();
-	$id=mysqli_insert_id($db);
-	$resp->id = $id;
+	if(!($instance instanceof aluno_atividade)){	
+		$instance->insert();
+		$id=mysqli_insert_id($db);
+		$resp->id = $id;
+	}
 }
 
 function apagarVinculos(){
@@ -104,9 +106,30 @@ if($instance instanceof aluno){
 	}
 }
 
+if($instance instanceof aluno_atividade){
+	$aluno=post('aluno');
+	$atividade=post('atividade');
+	//var_dump($atividade);
+	//var_dump($aluno);
+	if(isset($aluno) && is_array($aluno)){
+		foreach( $aluno as $key => $n ) {			
+			$sql = "DELETE FROM aluno_atividade WHERE idx_aluno = $n;";
+			$db->query($sql);
+			foreach( $atividade as $key2 => $n2 ) {
+				//echo "$n,$n2<br>";
+				$instance = new aluno_atividade();
+				$instance->idx_aluno=$n;
+				$instance->idx_atividade=$n2;
+				$instance->insert();
+			}
+		}
+	}
+}
+
 if($instance instanceof atividade){	
 	$dia=post('dia');
 	$horario=post('horario');
+	
 	if(isset($dia) && is_array($dia)){
 		foreach( $dia as $key => $n ) {
 			$instance = new dia_horario_atividade();

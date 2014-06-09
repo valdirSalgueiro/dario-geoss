@@ -1,4 +1,4 @@
-
+<!doctype html>
 <?php
 	error_reporting (E_ALL ^ E_NOTICE); 
 
@@ -27,7 +27,7 @@
 	$modo=$id?"alterad":"cadastrad";
 	
 ?>
-<html lang='pt-br'>
+<html lang='en'>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,9 +39,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/datepicker.css" rel="stylesheet"/>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/chosen.css" rel="stylesheet">
     <script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/chosen.jquery.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>	
 	<script type="text/javascript">
 		var ajaxSubmit = function(formEl,msg) {
 			mostrarCarregando();
@@ -89,6 +91,10 @@
 									console.log('ERRORS: ' + textStatus);
 								}
 							});
+						}
+						if($('#modalCadastro').length>0){
+							$('#modalCadastro').modal('hide');
+							tableAjax.fnDraw();
 						}
 					    $(modalbody).html(msg);      
 						$(myModal).modal();
@@ -157,7 +163,7 @@
 		}
 		
 		$(document).ready(function() {
-				if(typeof $('.datepicker') != 'undefined')
+				if($('.datepicker').length>0)
 					$('.datepicker').datepicker();
 					
 				$('input[type=file]').on('change', prepareUpload);
@@ -175,9 +181,14 @@
 		
 
 	</script>
-
+	<style>
+.chosen-container * {
+box-sizing: content-box;
+}
+	</style>
 </head>
 <body style="background-color: #222">
+
             <div class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
