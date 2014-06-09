@@ -62,7 +62,9 @@ if($id){
 	}
 }
 else{
-	if(!($instance instanceof aluno_atividade)){	
+	if(!($instance instanceof aluno_atividade)
+		&& !($instance instanceof aluno_servico)
+	){	
 		$instance->insert();
 		$id=mysqli_insert_id($db);
 		$resp->id = $id;
@@ -109,17 +111,31 @@ if($instance instanceof aluno){
 if($instance instanceof aluno_atividade){
 	$aluno=post('aluno');
 	$atividade=post('atividade');
-	//var_dump($atividade);
-	//var_dump($aluno);
 	if(isset($aluno) && is_array($aluno)){
 		foreach( $aluno as $key => $n ) {			
 			$sql = "DELETE FROM aluno_atividade WHERE idx_aluno = $n;";
 			$db->query($sql);
 			foreach( $atividade as $key2 => $n2 ) {
-				//echo "$n,$n2<br>";
 				$instance = new aluno_atividade();
 				$instance->idx_aluno=$n;
 				$instance->idx_atividade=$n2;
+				$instance->insert();
+			}
+		}
+	}
+}
+
+if($instance instanceof aluno_servico){
+	$aluno=post('aluno');
+	$servico=post('servico');
+	if(isset($aluno) && is_array($aluno)){
+		foreach( $aluno as $key => $n ) {			
+			$sql = "DELETE FROM aluno_servico WHERE idx_aluno = $n;";
+			$db->query($sql);
+			foreach( $servico as $key2 => $n2 ) {
+				$instance = new aluno_servico();
+				$instance->idx_aluno=$n;
+				$instance->idx_servico=$n2;
 				$instance->insert();
 			}
 		}

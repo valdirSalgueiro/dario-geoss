@@ -2,37 +2,21 @@
 	<?php
 require 'header.php';
 ?>
+<div class="conteudo-principal">
+    <fieldset> 
 
-<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-
-
-		<section id="contact" class="background1 background-image" style="padding-top:180px;    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Servico
-							</h3>
-						  </div>
-						  <div class="panel-body">
-
-<table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table list" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th><th>Tipo</th>
-				<th>Editar</th>
-				<th>Remover</th>
+<th class="sortable">Nome</th><th class="sortable">Tipo</th>
+				<th class="sortable">Editar</th>
+				<th class="sortable">Remover</th>
             </tr>
         </thead>
     </table>
+	</fieldset>
 	</div>
-	</div>
-	</div>
-	</div>
-	</div>
+
 	</section>
 	<script>
 	$(document).ready(function() {

@@ -2,29 +2,19 @@
 <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
 
-		<section id="contact" class="background1 background-image" style="padding-top:180px;    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Contas a pagar 
+<div class="conteudo-principal">
+    <fieldset>  
 							<span class="btn btn-success fileinput-button" data-toggle="modal" data-target=".bs-example-modal-lg">
 								<i class="glyphicon glyphicon-plus"></i>
 								<span>Adicionar</span>
-							</span>
-							</h3>
-						  </div>
-						  <div class="panel-body">
-
-<table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+							</span><br><br>
+<table id="example" class="table list" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th>
-<th>Valor</th>
-<th>Data vencimento</th>
-<th>Faturado</th>
+<th class="sortable">Nome</th>
+<th class="sortable">Valor</th>
+<th class="sortable">Data vencimento</th>
+<th class="sortable">Faturado</th>
 <!--th>Pagar</th>
 <th>Repetir</th>
 <th>Juros</th>
@@ -35,12 +25,8 @@
             </tr>
         </thead>
     </table>
+	</fieldset>
 	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
 	<script>
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({

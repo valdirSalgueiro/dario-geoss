@@ -105,6 +105,14 @@ $columns = array(
         }
     ),
 	
+	array(
+        'db'        => 'id',
+        'dt'        => 8,
+        'formatter' => function( $d, $row ) {
+            return "<a href='view.aluno.php?id=$d' class='glyphicon glyphicon-eye-open'></a>";
+        }
+    ),	
+	
 );
   
  

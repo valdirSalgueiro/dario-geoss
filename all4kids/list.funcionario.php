@@ -3,37 +3,22 @@
 require 'header.php';
 ?>
 
-<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
 
-		<section id="contact" class="background1 background-image" style="padding-top:180px;    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Funcionario
-							</h3>
-						  </div>
-						  <div class="panel-body">
+<div class="conteudo-principal">
+    <fieldset>   
 
-<table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+<table id="example" class="table list" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th>Nome</th><th>Cpf</th><th>Rg</th><th>Titulo</th><th>Endereco</th><th>Telefone</th><th>Remuneracao</th>
+<th class="sortable">Nome</th><th class="sortable">Cpf</th><th class="sortable">Rg</th><th class="sortable">Titulo</th><th class="sortable">Endereco</th><th class="sortable">Telefone</th><th class="sortable">Remuneracao</th>
 				<th>Editar</th>
 				<th>Remover</th>
             </tr>
         </thead>
     </table>
+	</fieldset>
 	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
 	<script>
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({
