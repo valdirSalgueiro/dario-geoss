@@ -199,10 +199,10 @@ box-sizing: content-box;
                     <div class="navbar nav-collapse menu-novo">
                         <ul class="nav pull-right">
                             <li class="dropdown pull-right ">
-								<a href="javascript:void(0);">Sair </a></li>
+								<a href="javascript:void(0);"><span class="glyphicon-log-out"></span> Sair </a></li>
                             <li class="divider-vertical"></li>
                             <li class="dropdown pull-right">
-								<a href="javascript:void(0);">Admin</a>                                
+								<a href="javascript:void(0);"><span class="glyphicon glyphicon-cog"></span>  Admin</a>                                
                             </li>
                             
                         </ul>
@@ -233,17 +233,17 @@ box-sizing: content-box;
                             </div>                            
                             <ul class="big-menu">
                                 <li class="top">
-									<a href="inicio.php" class="top_link">Inicio</a></li>
+									<a href="inicio.php" class="top_link"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                                 <li class="top">
 								<a href="#"  class="top_link"><span>Aluno</span><b class="down"></b> </a>
                                     <ul class="sub-menu" style="width: 380px">
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.aluno.php">Cadastro</a>
+													<a href="cad.aluno.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
 												</li>
 												<li>
-													<a href="list.aluno.php">Listagem</a>
+													<a href="list.aluno.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
                                             </ul>
                                         </li>                                        
@@ -255,10 +255,10 @@ box-sizing: content-box;
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.funcionario.php">Cadastro</a>
+													<a href="cad.funcionario.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
 												</li>
 												<li>
-													<a href="list.funcionario.php">Listagem</a>
+													<a href="list.funcionario.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
                                             </ul>
                                         </li>                                        
@@ -270,16 +270,16 @@ box-sizing: content-box;
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.atividade.php">Cadastro</a>
+													<a href="cad.atividade.php"><span class="glyphicon glyphicon-file"></span> Cadastro</a>
 												</li>
 												<li>
-													<a href="list.atividade.php">Listagem</a>
+													<a href="list.atividade.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
 												<li>
-													<a href="assoc.atividade.php">Associar ao aluno</a>
+													<a href="assoc.atividade.php"><span class="glyphicon glyphicon-resize-small"></span> Associar ao aluno</a>
 												</li>	
-												<li>
-													<a href="view.atividade.php">Calendario de Atividades</a>
+												<li  style="width: 300px">
+													<a href="view.atividade.php"><span class="glyphicon glyphicon-calendar"></span> Calendario de Atividades</a>
 												</li>												
                                             </ul>
                                         </li>                                        
@@ -291,34 +291,34 @@ box-sizing: content-box;
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.servico.php">Cadastro</a>
+													<a href="cad.servico.php"><span class="glyphicon glyphicon-file"></span> Cadastro</a>
 												</li>
 												<li>
-													<a href="list.servico.php">Listagem</a>
+													<a href="list.servico.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
 												<li>
-													<a href="assoc.servico.php">Associar ao aluno</a>
+													<a href="assoc.servico.php"><span class="glyphicon glyphicon-resize-small"></span> Associar ao aluno</a>
 												</li>		
-												<li>
-													<a href="view.servico.php">Calendario de Servicos</a>
+												<li style="width: 300px">
+													<a href="view.servico.php"><span class="glyphicon glyphicon-calendar"></span> Calendario de Servicos</a>
 												</li>												
                                             </ul>
                                         </li>                                        
                                     </ul>
                                 </li> 								
                                 <li class="top">
-								<a href="#" onclick="$(myModal).modal();" class="top_link"><span>Financeiro</span><b class="down"></b> </a>
+								<a href="#" onclick="$(myModal).modal();" class="top_link">Financeiro<b class="down"></b> </a>
                                     <ul class="sub-menu" style="width: 380px">
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.contapagar.php">Contas a pagar</a>
+													<a href="cad.contapagar.php"><span class="glyphicon glyphicon-usd"></span> Contas a pagar</a>
 												</li>
 												<li>
-													<a href="cad.contareceber.php">Contas a receber</a>
+													<a href="cad.contareceber.php"><span class="glyphicon glyphicon-usd"></span> Contas a receber</a>
 												</li>
 												<li>
-													<a href="cad.fornecedor.php">Fornecedor</a>
+													<a href="cad.fornecedor.php"><span class="glyphicon glyphicon-tags"></span> Fornecedor</a>
 												</li>												
                                             </ul>
                                         </li>                                        

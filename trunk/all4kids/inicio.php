@@ -69,21 +69,19 @@ EOT;
 	<table>
 	<tr>
 	<td>
-    <fieldset>      	
+ 	
 		
 		<canvas id="canvas" height="450" width="450"></canvas>
 		<br><br>
 		<span style="color:#F38630" class="glyphicon glyphicon-stop">Contas a pagar (<?php echo $contaspagar ?>)</span>
 		<br>
 		<span style="color:#E0E4CC" class="glyphicon glyphicon-stop">Contas a receber (<?php echo $contasreceber ?>)</span>
-    </fieldset>
+
 	</td>
-		<td>
-		<fieldset>      	
+		<td >   	
 		
-		<canvas id="canvas2" height="450" width="450"></canvas>
-		<span style="color:lightblue" class="glyphicon glyphicon-stop">Atividades cadastradas por dia</span>
-    </fieldset>
+		<canvas id="canvas2" height="450" width="450" style="float:right"></canvas>
+		<span style="color:lightblue;float:right" class="glyphicon glyphicon-stop">Atividades cadastradas por dia</span>
 	</td>
 	</tr>
 	</table>

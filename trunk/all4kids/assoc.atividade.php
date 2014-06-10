@@ -49,10 +49,10 @@ $mensagem="$modo".a;
 							  </select>							  
 						</div>	
 						<div class="form-group col-md-6" style="text-align: left">
-							<input type="text" id="desconto" class=" form-control input-sm"  value="0" placeholder="Desconto  (em %)">											
+							<input type="text" id="desconto" class=" form-control input-sm"  style="width:500px" placeholder="Desconto  (em %)">											
 						</div>		
 						<div class="form-group col-md-6" style="text-align: left">
-							<input type="button" value="Recalcular" class="btn btn-success btn-block" onclick="calcular()">										
+							<input type="button" value="Recalcular" class="btn btn-success btn-block" style="width:500px" onclick="calcular()">										
 						</div>		
 						
 					<div class="form-group col-md-12" style="text-align: left">
