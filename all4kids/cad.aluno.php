@@ -62,23 +62,31 @@ EOT;
 <div class="conteudo-principal">
   <div class="iconGroup cliente">
     <fieldset class="groupFields open">      
-	<form role="form" enctype="multipart/form-data" action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno"
-        <?php echo $mensagem ?> com sucesso');">
+	<form role="form" enctype="multipart/form-data" action="dao.php" onSubmit="return ajaxSubmit(this,'Aluno <?php echo $mensagem ?> com sucesso');">
         <input type="hidden" name="id" value="<?php echo $id?>">
         <input type="hidden" name="type" value="aluno">
 
           <div class="form-group col-md-6" style="text-align: left">
             <input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $aluno->nome?>">
-
           </div>
 
           <div class="form-group col-md-6" style="text-align: left">
             <input type="text" name="email" class=" form-control input-sm"  placeholder="Email" value="<?php echo $aluno->email?>">
-
           </div>
+		  
+		  <div class="form-group col-md-6" style="text-align: left">
+            <input type="text" name="idade" class=" form-control input-sm"  placeholder="Idade" value="<?php echo $aluno->idade?>" required>
+          </div>
+		  
+		  <div class="form-group col-md-6" style="text-align: left">
+            <input type="text" name="data_nasc" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd" placeholder="Data nasc" value="<?php echo $aluno->data_nasc?>" required>
+          </div>
+		  
 		  <div class="form-group col-md-12" style="text-align: left">
 			<a href="#" class="theme-hidefields-label" onclick="$(opcionais).toggle();"> Exibir mais campos (opcionais) </a>
 		  </div>
+		  
+
 		  
 		  <div id="opcionais" style="display:none">
 
@@ -128,10 +136,10 @@ EOT;
           </div>
 
           <div class="form-group col-md-6" style="text-align: left">
-            <input type="hidden" id="carteira" name="carteira">
-              Carteira de vacinacao: <input name="carteira_aluno" type="file" />
+            <input type="hidden" id="carteira" name="<?php echo $aluno->carteira?>">
+              Carteira de vacinacao: <input type="file" />
 
-            </div>
+          </div>
 
           <div class="form-group col-md-6" style="text-align: left">
             <?php
@@ -147,12 +155,7 @@ EOT;
 				?>
             Ativo <input type="checkbox" name="ativo" value="1" <?php echo $checked ?>>
 
-          </div>
-
-          <div class="form-group col-md-6" style="text-align: left">
-            <input type="text" name="idade" class=" form-control input-sm"  placeholder="Idade" value="<?php echo $aluno->idade?>">
-
-          </div>
+          </div>         
 
           <div class="form-group col-md-6" style="text-align: left">
             <select class="form-control input-sm" name="idx_nivelescolar">
@@ -169,16 +172,16 @@ EOT;
 						}
 					?>
             </select>
-
-          </div>
-
+          </div>          
+		  
           <div class="form-group col-md-6" style="text-align: left">
-            <input type="text" name="data_nasc" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd" placeholder="Data nasc" value="<?php echo $aluno->data_nasc?>">
-
+            <input type="hidden" id="foto" name="<?php echo $aluno->foto?>">
+              Foto: <input type="file" />
           </div>
+		  
           <div class="form-group col-md-6">
             <input id="telefoneCampo" type="text" class="form-control input-sm" placeholder="Telefone">
-					</div>
+		  </div>
           <div class="form-group col-md-6">
             <input type="button" value="Adicionar" onclick="adicionar('telefone');" class="btn btn-success btn-block">
 					</div>

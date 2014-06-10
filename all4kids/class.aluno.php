@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        aluno
-* GENERATION DATE:  07.06.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.aluno.php
+* GENERATION DATE:  10.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/classes/class.aluno.php
 * FOR MYSQL TABLE:  aluno
 * FOR MYSQL DB:     all4kids
 * -------------------------------------------------------
@@ -49,6 +49,7 @@ var $ativo;   // (normal Attribute)
 var $idade;   // (normal Attribute)
 var $idx_nivelescolar;   // (normal Attribute)
 var $data_nasc;   // (normal Attribute)
+var $foto;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -114,6 +115,8 @@ $this->idx_nivelescolar = $row->idx_nivelescolar;
 
 $this->data_nasc = $row->data_nasc;
 
+$this->foto = $row->foto;
+
 }
 
 // **********************
@@ -135,7 +138,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO aluno ( nome,email,nome_mae,nome_pai,responsavel_nome,responsavel_cpf,responsavel_rg,endereco,plano_saude,emergencia,responsavel_emergencia,carteira,entregou_carteira,ativo,idade,idx_nivelescolar,data_nasc ) VALUES ( '$this->nome','$this->email','$this->nome_mae','$this->nome_pai','$this->responsavel_nome','$this->responsavel_cpf','$this->responsavel_rg','$this->endereco','$this->plano_saude','$this->emergencia','$this->responsavel_emergencia','$this->carteira','$this->entregou_carteira','$this->ativo','$this->idade','$this->idx_nivelescolar','$this->data_nasc' )";
+$sql = "INSERT INTO aluno ( nome,email,nome_mae,nome_pai,responsavel_nome,responsavel_cpf,responsavel_rg,endereco,plano_saude,emergencia,responsavel_emergencia,carteira,entregou_carteira,ativo,idade,idx_nivelescolar,data_nasc,foto ) VALUES ( '$this->nome','$this->email','$this->nome_mae','$this->nome_pai','$this->responsavel_nome','$this->responsavel_cpf','$this->responsavel_rg','$this->endereco','$this->plano_saude','$this->emergencia','$this->responsavel_emergencia','$this->carteira','$this->entregou_carteira','$this->ativo','$this->idade','$this->idx_nivelescolar','$this->data_nasc','$this->foto' )";
 $result = $this->database->query($sql);
 
 
@@ -150,7 +153,8 @@ function update($id)
 
 
 
-$sql = " UPDATE aluno SET  nome = '$this->nome',email = '$this->email',nome_mae = '$this->nome_mae',nome_pai = '$this->nome_pai',responsavel_nome = '$this->responsavel_nome',responsavel_cpf = '$this->responsavel_cpf',responsavel_rg = '$this->responsavel_rg',endereco = '$this->endereco',plano_saude = '$this->plano_saude',emergencia = '$this->emergencia',responsavel_emergencia = '$this->responsavel_emergencia',carteira = '$this->carteira',entregou_carteira = '$this->entregou_carteira',ativo = '$this->ativo',idade = '$this->idade',idx_nivelescolar = '$this->idx_nivelescolar',data_nasc = '$this->data_nasc' WHERE id = $id ";
+$sql = " UPDATE aluno SET  nome = '$this->nome',email = '$this->email',nome_mae = '$this->nome_mae',nome_pai = '$this->nome_pai',responsavel_nome = '$this->responsavel_nome',responsavel_cpf = '$this->responsavel_cpf',responsavel_rg = '$this->responsavel_rg',endereco = '$this->endereco',plano_saude = '$this->plano_saude',emergencia = '$this->emergencia',responsavel_emergencia = '$this->responsavel_emergencia',carteira = '$this->carteira',entregou_carteira = '$this->entregou_carteira',ativo = '$this->ativo',idade = '$this->idade',idx_nivelescolar = '$this->idx_nivelescolar',data_nasc = '$this->data_nasc',foto = '$this->foto' WHERE id = $id ";
+
 $result = $this->database->query($sql);
 
 

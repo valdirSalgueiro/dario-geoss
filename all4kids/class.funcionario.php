@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        funcionario
-* GENERATION DATE:  07.06.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.funcionario.php
+* GENERATION DATE:  10.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/classes/class.funcionario.php
 * FOR MYSQL TABLE:  funcionario
 * FOR MYSQL DB:     all4kids
 * -------------------------------------------------------
@@ -40,6 +40,12 @@ var $endereco;   // (normal Attribute)
 var $telefone;   // (normal Attribute)
 var $remuneracao;   // (normal Attribute)
 var $idx_funcao;   // (normal Attribute)
+var $foto;   // (normal Attribute)
+var $planosaude;   // (normal Attribute)
+var $nomeplano;   // (normal Attribute)
+var $contatotelefone;   // (normal Attribute)
+var $contatonome;   // (normal Attribute)
+var $contatoendereco;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -87,6 +93,18 @@ $this->remuneracao = $row->remuneracao;
 
 $this->idx_funcao = $row->idx_funcao;
 
+$this->foto = $row->foto;
+
+$this->planosaude = $row->planosaude;
+
+$this->nomeplano = $row->nomeplano;
+
+$this->contatotelefone = $row->contatotelefone;
+
+$this->contatonome = $row->contatonome;
+
+$this->contatoendereco = $row->contatoendereco;
+
 }
 
 // **********************
@@ -108,7 +126,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO funcionario ( nome,cpf,rg,titulo,endereco,telefone,remuneracao,idx_funcao ) VALUES ( '$this->nome','$this->cpf','$this->rg','$this->titulo','$this->endereco','$this->telefone','$this->remuneracao','$this->idx_funcao' )";
+$sql = "INSERT INTO funcionario ( nome,cpf,rg,titulo,endereco,telefone,remuneracao,idx_funcao,foto,planosaude,nomeplano,contatotelefone,contatonome,contatoendereco ) VALUES ( '$this->nome','$this->cpf','$this->rg','$this->titulo','$this->endereco','$this->telefone','$this->remuneracao','$this->idx_funcao','$this->foto','$this->planosaude','$this->nomeplano','$this->contatotelefone','$this->contatonome','$this->contatoendereco' )";
 $result = $this->database->query($sql);
 
 
@@ -123,7 +141,7 @@ function update($id)
 
 
 
-$sql = " UPDATE funcionario SET  nome = '$this->nome',cpf = '$this->cpf',rg = '$this->rg',titulo = '$this->titulo',endereco = '$this->endereco',telefone = '$this->telefone',remuneracao = '$this->remuneracao',idx_funcao = '$this->idx_funcao' WHERE id = $id ";
+$sql = " UPDATE funcionario SET  nome = '$this->nome',cpf = '$this->cpf',rg = '$this->rg',titulo = '$this->titulo',endereco = '$this->endereco',telefone = '$this->telefone',remuneracao = '$this->remuneracao',idx_funcao = '$this->idx_funcao',foto = '$this->foto',planosaude = '$this->planosaude',nomeplano = '$this->nomeplano',contatotelefone = '$this->contatotelefone',contatonome = '$this->contatonome',contatoendereco = '$this->contatoendereco' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 

@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        fornecedor
-* GENERATION DATE:  07.06.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.fornecedor.php
+* GENERATION DATE:  10.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/classes/class.fornecedor.php
 * FOR MYSQL TABLE:  fornecedor
 * FOR MYSQL DB:     all4kids
 * -------------------------------------------------------
@@ -34,6 +34,23 @@ var $id;   // KEY ATTR. WITH AUTOINCREMENT
 
 var $nome;   // (normal Attribute)
 var $endereco;   // (normal Attribute)
+var $tipo_pessoa;   // (normal Attribute)
+var $cnpj;   // (normal Attribute)
+var $razao_social;   // (normal Attribute)
+var $inscricao_estadual;   // (normal Attribute)
+var $inscricao_municipal;   // (normal Attribute)
+var $aniversario;   // (normal Attribute)
+var $cep;   // (normal Attribute)
+var $numero;   // (normal Attribute)
+var $bairro;   // (normal Attribute)
+var $complemento;   // (normal Attribute)
+var $cidade;   // (normal Attribute)
+var $fone_comercial;   // (normal Attribute)
+var $fone_residencial;   // (normal Attribute)
+var $contato;   // (normal Attribute)
+var $celular;   // (normal Attribute)
+var $observacoes;   // (normal Attribute)
+var $email;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -69,6 +86,40 @@ $this->nome = $row->nome;
 
 $this->endereco = $row->endereco;
 
+$this->tipo_pessoa = $row->tipo_pessoa;
+
+$this->cnpj = $row->cnpj;
+
+$this->razao_social = $row->razao_social;
+
+$this->inscricao_estadual = $row->inscricao_estadual;
+
+$this->inscricao_municipal = $row->inscricao_municipal;
+
+$this->aniversario = $row->aniversario;
+
+$this->cep = $row->cep;
+
+$this->numero = $row->numero;
+
+$this->bairro = $row->bairro;
+
+$this->complemento = $row->complemento;
+
+$this->cidade = $row->cidade;
+
+$this->fone_comercial = $row->fone_comercial;
+
+$this->fone_residencial = $row->fone_residencial;
+
+$this->contato = $row->contato;
+
+$this->celular = $row->celular;
+
+$this->observacoes = $row->observacoes;
+
+$this->email = $row->email;
+
 }
 
 // **********************
@@ -90,7 +141,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO fornecedor ( nome,endereco ) VALUES ( '$this->nome','$this->endereco' )";
+$sql = "INSERT INTO fornecedor ( nome,endereco,tipo_pessoa,cnpj,razao_social,inscricao_estadual,inscricao_municipal,aniversario,cep,numero,bairro,complemento,cidade,fone_comercial,fone_residencial,contato,celular,observacoes,email ) VALUES ( '$this->nome','$this->endereco','$this->tipo_pessoa','$this->cnpj','$this->razao_social','$this->inscricao_estadual','$this->inscricao_municipal','$this->aniversario','$this->cep','$this->numero','$this->bairro','$this->complemento','$this->cidade','$this->fone_comercial','$this->fone_residencial','$this->contato','$this->celular','$this->observacoes','$this->email' )";
 $result = $this->database->query($sql);
 
 
@@ -105,7 +156,7 @@ function update($id)
 
 
 
-$sql = " UPDATE fornecedor SET  nome = '$this->nome',endereco = '$this->endereco' WHERE id = $id ";
+$sql = " UPDATE fornecedor SET  nome = '$this->nome',endereco = '$this->endereco',tipo_pessoa = '$this->tipo_pessoa',cnpj = '$this->cnpj',razao_social = '$this->razao_social',inscricao_estadual = '$this->inscricao_estadual',inscricao_municipal = '$this->inscricao_municipal',aniversario = '$this->aniversario',cep = '$this->cep',numero = '$this->numero',bairro = '$this->bairro',complemento = '$this->complemento',cidade = '$this->cidade',fone_comercial = '$this->fone_comercial',fone_residencial = '$this->fone_residencial',contato = '$this->contato',celular = '$this->celular',observacoes = '$this->observacoes',email = '$this->email' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 
