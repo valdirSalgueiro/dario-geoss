@@ -44,11 +44,16 @@ $resp = new stdClass();
 $resp->success = false;
 
 $instance = new $type;
-
+//var_dump($_POST);
 foreach($_POST as $key => $value)
 {		
-	if(property_exists ( $instance , $key ))
+
+	if(property_exists ( $instance , $key )){
+		if(!isset($value) || $value==''){
+			$value=0;
+		}
 		$instance->$key = $value;
+	}
 }	
 
 if($id){		
@@ -91,9 +96,15 @@ function apagarVinculos(){
 
 if($instance instanceof aluno){
 	$file0=post('file0');
+	$file1=post('file1');
 	if($file0){
 		$carteira=$id.".carteira.".end((explode(".", $file0)));
 		$instance->carteira=$carteira;
+		$instance->update($id);
+	}
+	if($file1){
+		$foto=$id.".foto.".end((explode(".", $file1)));
+		$instance->foto=$foto;
 		$instance->update($id);
 	}
 	

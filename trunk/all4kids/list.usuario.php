@@ -2,38 +2,19 @@
 	<?php
 require 'header.php';
 ?>
-
-<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-
-
-		<section id="contact" class="background1 background-image" style="padding-top:180px;    height: auto;">
-			<div class="container">
-				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
-					<div class="col-sm-12">
-					<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">
-							  Usuario
-							</h3>
-						  </div>
-						  <div class="panel-body">
-
-<table id="example" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-<th>Email</th><th>Senha</th>
-				<th>Editar</th>
-				<th>Remover</th>
-            </tr>
-        </thead>
-    </table>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
+			<div class="conteudo">
+				<div class="conteudo-principal">
+				<table id="example" class="table list" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+						<th class="sortable">Email</th><th class="sortable">Senha</th>
+						<th>Editar</th>
+						<th>Remover</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
 	<script>
 	$(document).ready(function() {
     tableAjax=$('#example').dataTable({

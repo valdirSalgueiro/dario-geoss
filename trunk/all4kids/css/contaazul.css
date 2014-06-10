@@ -255,68 +255,6 @@ input.dateTimeInput {
     z-index: 1;
 }
 
-.header .mensagem-pagamento {
-    display: table;
-    list-style: none;
-    margin: 0px auto;
-    overflow: auto;
-    position: relative;
-    padding: 0px;
-    height: 35px;
-    margin-bottom: -35px;
-    z-index: 1;
-}
-
-.header .mensagem-pagamento li {
-    color: white;
-    display: block;
-    float: left;
-    font-size: 12px;
-    margin: 0px;
-    padding: 9px 5px 1px 5px;
-    line-height: normal;
-}
-
-.header .mensagem-pagamento li.first-child {
-    margin: 10px 0px 0px 9px;
-    width: 27px;
-    height: 6px;
-    background: url(/common/images/icon-mensagem-cliente-info.png) no-repeat;
-}
-
-.header .mensagem-pagamento li.last-child {
-    float: right;
-    margin: 5px 6px 0px 0px;
-    padding: 0px;
-}
-
-.header .mensagem-pagamento li.details {
-    background: url(images/image-mensagem-pagamento-fundo.png) no-repeat;
-    float: left;
-    height: 35px;
-    right: -8px;
-    width: 9px;
-    top: 0;
-    padding: 0px;
-    position: absolute;
-}
-
-.header .mensagem-pagamento .theme-button-yellow {
-    background: url(/common/images/image-theme-button-yellow-background.png) repeat-x;
-    border: 1px solid #343434;
-    color: black;
-    display: block;
-    margin: 0px;
-    padding: 4px 6px;
-    text-decoration: none;
-    height: 16px;
-}
-
-.header .mensagem-pagamento .theme-button-yellow:before {
-    background: url(/common/images/image-theme-button-yellow-left-background.png) repeat-x;
-    padding: 4px 0px;
-}
-
 .menu-novo {
     display: none;
 }
@@ -1183,73 +1121,6 @@ a:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008ece',endColorstr='#006899',GradientType=0);
 }
 
-.header .mensagem-pagamento {
-    background-image: none;
-    list-style: none;
-    overflow: auto;
-    padding: 0px;
-    height: 45px;
-    z-index: 1;
-    margin: 0 auto;
-    display: table;
-}
-
-.header .mensagem-pagamento li {
-    display: block;
-    padding: 0px 10px 0px 0px;
-    font-size: 14px;
-    color: #9a773b;
-    text-align: left;
-    text-shadow: 0 1px 0 #fff;
-    line-height: 45px;
-}
-
-.header .mensagem-pagamento li.first-child {
-    display: none;
-}
-
-.header .mensagem-pagamento li.last-child {
-    margin: 7px 6px 0px 0px;
-}
-
-.header .mensagem-pagamento li.details {
-    display: none;
-}
-
-.header .mensagem-pagamento .theme-button-yellow {
-    background-image: none;
-    display: block;
-    text-decoration: none;
-    background-image: -moz-linear-gradient(45% 0 -90deg, #fbb34c 0, #f89407 100%);
-    background-image: -webkit-gradient(linear, 45% 0, 45% 112%, color-stop(0, #fbb34c), color-stop(1, #f89407));
-    background-image: -webkit-linear-gradient(-90deg, #fbb34c 0, #f89407 100%);
-    background-image: -o-linear-gradient(-90deg, #fbb34c 0, #f89407 100%);
-    background-image: -ms-linear-gradient(-90deg, #fbb34c 0, #f89407 100%);
-    background-image: linear-gradient(-90deg, #fbb34c 0, #f89407 100%);
-    width: auto;
-    padding: 0px 18px;
-    margin-right: 8px;
-    height: 26px;
-    border-color: #e1962d;
-    border-width: 1px;
-    border-style: solid;
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbb34c,endColorstr=#fff89407,GradientType=0)";
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbb34c,endColorstr=#fff89407,GradientType=0);
-    line-height: 26px;
-    font-size: 14px;
-    color: #fff;
-    text-shadow: 0 -1px 0 #e1962d;
-    text-align: center;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.header .mensagem-pagamento .theme-button-yellow:before {
-    background: url(images/image-theme-button-yellow-left-background.png) repeat-x;
-    padding: 4px 0px;
-}
-
 .menu-antigo {
     display: none;
 }
@@ -1946,11 +1817,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.conteudo .breadcrumb li:last-child a,.conteudo .breadcrumb li:last-child a:hover {
-    color: #395a7a;
-    text-decoration: none;
-    cursor: default;
-}
 
 .conteudo .breading .divider {
     padding: 0px 1px;

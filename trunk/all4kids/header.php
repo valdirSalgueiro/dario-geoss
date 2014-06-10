@@ -47,9 +47,11 @@
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.validate.js"></script>
 	
 	<script type="text/javascript">
-		var ajaxSubmit = function(formEl,msg) {
+		var ajaxSubmit = function(formEl,msg) {	
+
 			mostrarCarregando();
 			// fetch where we want to submit the form to
 			var url = $(formEl).attr('action');
@@ -167,6 +169,7 @@
 		}
 		
 		$(document).ready(function() {
+				//$('form').validate();
 				if($('.datepicker').length>0)
 					$('.datepicker').datepicker();
 					
@@ -323,7 +326,25 @@ box-sizing: content-box;
                                             </ul>
                                         </li>                                        
                                     </ul>
-                                </li>								
+                                </li> 
+								<li class="top">
+								<a href="#" onclick="$(myModal).modal();" class="top_link">Administrativo<b class="down"></b> </a>
+                                    <ul class="sub-menu" style="width: 380px">
+                                        <li>
+                                            <ul>
+												<li>
+													<a href="cad.usuario.php"><span class="glyphicon glyphicon-user"></span> Cadastrar Usuário</a>
+												</li>
+                                                <li>
+													<a href="list.usuario.php"><span class="glyphicon glyphicon-list-alt"></span> Listar Usuários</a>
+												</li>												
+												<li>
+													<a href="cad.empresa.php"><span class="glyphicon glyphicon-tags"></span> Empresa</a>
+												</li>												
+                                            </ul>
+                                        </li>                                        
+                                    </ul>
+                                </li>									
                             </ul>                 
                         </div>
                     </div>
@@ -351,11 +372,34 @@ box-sizing: content-box;
             </div>
             <!-- /.modal-dialog -->
     </div>
-    <div class="content" id="appContent">
-        <div class="container">
-            <div class="conteudo"> 
-			
+    <div class="content" id="appContent">   
+		<div class="container">
+            <div class="conteudo"> 				
+				<ul style="display: block;" class="breadcrumb ng-scope">
+				<?php
+				$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+				$url = $crumbs[count($crumbs)-1];
+				$crumbs = explode(".",$url);
+				echo "<li><a href='inicio.php'>Inicio</a></li> <span class='divider ng-scope'>›</span> <li class='ng-scope'> ".ucfirst($crumbs[1])."</li> <span class='divider ng-scope'>›</span>  <li><a href='$url'>";
+				switch ($crumbs[0])
+				{
+					case "cad":
+						echo "Editar";
+						break;
+					case "view":
+						echo "Visualizar";	
+						break;						
+					case "list":
+						echo "Listar";												
+						break;
+					default:
+						echo "Editar";
+						break;
+				}				
+				echo "</a></li>";
+				?>
+				</ul>				
 			</div>
 		</div>
-		<div class="container angular-app">
-			<div class="conteudo"> 		    
+		<div class="container angular-app">	
+			<div class="conteudo">
