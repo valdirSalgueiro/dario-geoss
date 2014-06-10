@@ -1,5 +1,5 @@
 <?php
-
+error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED); 
 include("resources/class.database.php");
 $database = new Database();
 
@@ -40,6 +40,8 @@ $table = $row[0];
 $class = $row[0];
 $classes[].=$class;
 $key = "id";
+
+echo "creating class for $table<br>";
 
 $filename = $dir . "/classes/" . "class." . $class . ".php";
 $filenameCadastrar = $dir . "/classes/" . "cad." . $class . ".php";
@@ -95,8 +97,7 @@ if(\$id){
 \$mensagem=\"\$modo\".$genero;
 
 ?>
-		<section id=\"contact\" class=\"background1 background-image\" style=\"margin-top:160px;min-height: 67%;
-    height: 67%;\">
+		<section id=\"contact\" class=\"background1 background-image\" style=\"margin-top:160px; height: auto;\">
 			<div class=\"container\">
 				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
 					<div class=\"col-sm-12\">
@@ -136,7 +137,7 @@ require 'header.php';
 <script type=\"text/javascript\" language=\"javascript\" src=\"js/jquery.dataTables.js\"></script>
 
 
-		<section id=\"contact\" class=\"background1 background-image\" style=\"padding-top:180px;min-height: 85%;    height: 85%;\">
+		<section id=\"contact\" class=\"background1 background-image\" style=\"padding-top:180px;    height: auto;\">
 			<div class=\"container\">
 				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
 					<div class=\"col-sm-12\">
@@ -162,13 +163,13 @@ while ($row = mysql_fetch_row($result))
 	if($col!=$key)
 	{
 	$cad.="
-	<div class=\"form-group col-md-12\">"
+	<div class=\"form-group col-md-12\" style=\"text-align: left\">"
 	;
 	$colUper=ucfirst($col);
 	$colUper=str_replace("_", " ",$colUper);	
 	$atributo="$$class"."->$col";
 	
-	
+	echo "generating input for field $col<br>";
 		if(startsWith($col,"idx")){
 			$partes = explode("_", $col);
 			$partesUper=ucfirst($partes[1]);
@@ -213,11 +214,21 @@ while ($row = mysql_fetch_row($result))
 				$datepicker1="datepicker";
 				$datepicker2="data-date-format=\"yyyy-mm-dd\"";
 			}
-			//class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd"
-			$lis.="<th>$colUper</th>";
-			$cad.= "
+			if(startsWith($tipocol,"bit")){
+			    $cad.= "
+				<?php
+				\$checked=($atributo)?\"checked\":\"\";
+				?>
+				$colUper <input type=\"checkbox\" name=\"$col\" value=\"1\" <?php echo \$checked ?>>
+			    "; 				
+				
+			}else{
+			   $cad.= "
 							<input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
-			  ";
+			  ";			  
+			}
+			$lis.="<th>$colUper</th>";
+
 			$serv.="
 				array( 'db' => '$col', 'dt' => $countColumns ),
 				";
@@ -820,7 +831,7 @@ $cHeader="
 	</script>
 
 </head>
-<body>
+<body style=\"background-color: #222\">
             <div class=\"navbar navbar-default navbar-fixed-top\">
 			<div class=\"container\">
 				<div class=\"navbar-header\">
