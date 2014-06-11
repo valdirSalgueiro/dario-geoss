@@ -53,12 +53,43 @@ foreach($_POST as $key => $value)
 
 }	
 
+function alterarConta(){
+	global $instance;
+	if($instance instanceof conta){
+		$instance->repeat_start=strtotime($instance->data_vencimento)-(strtotime($instance->data_vencimento)%86400);
+		switch($instance->idx_intervalo){
+			case 1:
+				$instance->repeat_interval=86400;//dia
+				break;
+			case 2:
+				$instance->repeat_interval=604800;//semana
+				break;					
+			case 3:
+				$instance->repeat_interval=2678400;//mes
+				break;					
+			case 4:
+				$instance->repeat_interval=5356800;//2 mes
+				break;					
+			case 5:
+				$instance->repeat_interval=7776000;//3
+				break;					
+			case 6:
+				$instance->repeat_interval=15721200;//6
+				break;					
+			case 7:
+				$instance->repeat_interval=31536000;//1 ano
+				break;		
+		}	
+	}
+}
+
 if($id){		
 	if($mode){
 		$instance->delete($id);
 		apagarVinculos();
 	}
 	else{
+		alterarConta();
 		$instance->update($id);
 		apagarVinculos();
 	}
@@ -66,34 +97,8 @@ if($id){
 else{
 	if(!($instance instanceof aluno_atividade)
 		&& !($instance instanceof aluno_servico)
-	){	
-		if($instance instanceof conta){
-			$instance->repeat_start=strtotime($instance->data_vencimento)-(strtotime($instance->data_vencimento)%86400);
-			switch($instance->idx_intervalo){
-				case 1:
-					$instance->repeat_interval=86400;//dia
-					break;
-				case 2:
-					$instance->repeat_interval=604800;//semana
-					break;					
-				case 3:
-					$instance->repeat_interval=2678400;//mes
-					break;					
-				case 4:
-					$instance->repeat_interval=5356800;//2 mes
-					break;					
-				case 5:
-					$instance->repeat_interval=7776000;//3
-					break;					
-				case 6:
-					$instance->repeat_interval=15721200;//6
-					break;					
-				case 7:
-					$instance->repeat_interval=31536000;//1 ano
-					break;		
-			}	
-		}					
-
+	){								
+		alterarConta();
 		$instance->insert();
 		$id=mysqli_insert_id($db);
 		$resp->id = $id;
