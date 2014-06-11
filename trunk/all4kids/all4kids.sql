@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Jun-2014 às 03:33
+-- Generation Time: 11-Jun-2014 às 21:50
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `conta` (
 --
 
 INSERT INTO `conta` (`id`, `nome`, `valor`, `data_vencimento`, `faturado`, `pagar`, `repetir`, `juros`, `descontos`, `valor_repetir`, `idx_categoria`, `idx_intervalo`, `repeat_start`, `repeat_interval`) VALUES
-(22, 'Agua', 0, '2014-06-05 00:00:00', b'0', b'1', b'0', 0, 0, 0, 0, 1, 1401840000, 86400);
+(22, 'Agua', 100, '2014-06-05 00:00:00', b'0', b'1', b'1', 0, 0, 0, 0, 1, 1401840000, 86400);
 
 -- --------------------------------------------------------
 
@@ -354,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `dia_horario_servico` (
   `idx_horario` int(10) NOT NULL,
   `idx_dia` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Extraindo dados da tabela `dia_horario_servico`
@@ -502,9 +502,17 @@ CREATE TABLE IF NOT EXISTS `funcionario_beneficio` (
 CREATE TABLE IF NOT EXISTS `funcionario_filho` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `idx_funcionario` int(10) NOT NULL,
-  `idx_filho` int(10) NOT NULL,
+  `nome` tinytext NOT NULL,
+  `data_nasc` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `funcionario_filho`
+--
+
+INSERT INTO `funcionario_filho` (`id`, `idx_funcionario`, `nome`, `data_nasc`) VALUES
+(2, 3, 'joaozinho da vassoura', '2014-06-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -622,7 +630,7 @@ CREATE TABLE IF NOT EXISTS `servico` (
   `tipo` tinytext NOT NULL,
   `valor` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `servico`
@@ -630,7 +638,8 @@ CREATE TABLE IF NOT EXISTS `servico` (
 
 INSERT INTO `servico` (`id`, `nome`, `tipo`, `valor`) VALUES
 (1, 'Transporte Escolar', '', 0),
-(2, 'Almoco', '', 0);
+(2, 'Almoco', '', 0),
+(4, 'servico1', 'lol', 0);
 
 -- --------------------------------------------------------
 
