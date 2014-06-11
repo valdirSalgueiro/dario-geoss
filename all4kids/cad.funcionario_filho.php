@@ -13,8 +13,7 @@ if($id){
 $mensagem="$modo".o;
 
 ?>
-		<section id="contact" class="background1 background-image" style="margin-top:160px;min-height: 67%;
-    height: auto%;">
+		<section id="contact" class="background1 background-image" style="margin-top:160px; height: auto;">
 			<div class="container">
 				<div class="row text-center" style="transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;">
 					<div class="col-sm-12">
@@ -48,21 +47,13 @@ $mensagem="$modo".o;
 		</div>
 		
 	<div class="form-group col-md-12" style="text-align: left">
-			  <select class="form-control input-sm" name="idx_filho">
-					<option value="0">Selecione um Filho</option>
-					<?php
-						$db = Database::getConnection();
-						$sql = "SELECT id, nome
-								FROM filho
-								ORDER BY nome";
-						$res = $db->query( $sql );
-						while ( $row = $res->fetch_assoc() ) {
-							$checked=($funcionario_filho->idx_filho==$row['id'])?"selected":"";
-							echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['nome'].'</option>';
-						}
-					?>
-			  </select>
-			              
+							<input type="text" name="nome" class=" form-control input-sm"  placeholder="Nome" value="<?php echo $funcionario_filho->nome?>">
+			                
+		</div>
+		
+	<div class="form-group col-md-12" style="text-align: left">
+							<input type="text" name="data_nasc" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd" placeholder="Data nasc" value="<?php echo $funcionario_filho->data_nasc?>">
+			                
 		</div>
 		
 					  <div class="form-group col-md-6 col-md-offset-3">
