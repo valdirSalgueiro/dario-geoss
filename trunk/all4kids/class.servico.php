@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        servico
-* GENERATION DATE:  07.06.2014
+* GENERATION DATE:  11.06.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.servico.php
 * FOR MYSQL TABLE:  servico
 * FOR MYSQL DB:     all4kids
@@ -34,6 +34,7 @@ var $id;   // KEY ATTR. WITH AUTOINCREMENT
 
 var $nome;   // (normal Attribute)
 var $tipo;   // (normal Attribute)
+var $valor;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -69,6 +70,8 @@ $this->nome = $row->nome;
 
 $this->tipo = $row->tipo;
 
+$this->valor = $row->valor;
+
 }
 
 // **********************
@@ -90,7 +93,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO servico ( nome,tipo ) VALUES ( '$this->nome','$this->tipo' )";
+$sql = "INSERT INTO servico ( nome,tipo,valor ) VALUES ( '$this->nome','$this->tipo','$this->valor' )";
 $result = $this->database->query($sql);
 
 
@@ -105,7 +108,7 @@ function update($id)
 
 
 
-$sql = " UPDATE servico SET  nome = '$this->nome',tipo = '$this->tipo' WHERE id = $id ";
+$sql = " UPDATE servico SET  nome = '$this->nome',tipo = '$this->tipo',valor = '$this->valor' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 
