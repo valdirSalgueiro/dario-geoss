@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jun-2014 às 23:38
+-- Generation Time: 11-Jun-2014 às 03:33
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -58,16 +58,17 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `idade` int(10) NOT NULL,
   `idx_nivelescolar` int(10) NOT NULL,
   `data_nasc` datetime NOT NULL,
+  `foto` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `nome`, `email`, `nome_mae`, `nome_pai`, `responsavel_nome`, `responsavel_cpf`, `responsavel_rg`, `endereco`, `plano_saude`, `emergencia`, `responsavel_emergencia`, `carteira`, `entregou_carteira`, `ativo`, `idade`, `idx_nivelescolar`, `data_nasc`) VALUES
-(1, 'Joaozinho', 'joaozinho@gmail.com', 'Maria', 'Joao', 'Joao', '06341307497', '6982005', 'Rua Obidos numero 8', 'UNIMED', '', '', '', b'0', b'1', 4, 6, '2010-05-25 00:00:00'),
-(2, 'Mariazinha', 'mariazinha@gmail.com', 'Maria', 'Joao', 'Joao', '06341307497', '6982005', 'Rua Obidos numero 8', 'UNIMED', '', '', '', b'0', b'0', 3, 5, '2011-05-25 00:00:00');
+INSERT INTO `aluno` (`id`, `nome`, `email`, `nome_mae`, `nome_pai`, `responsavel_nome`, `responsavel_cpf`, `responsavel_rg`, `endereco`, `plano_saude`, `emergencia`, `responsavel_emergencia`, `carteira`, `entregou_carteira`, `ativo`, `idade`, `idx_nivelescolar`, `data_nasc`, `foto`) VALUES
+(1, 'Joaozinho', 'joaozinho@gmail.com', 'Maria', 'Joao', 'Joao', '06341307497', '6982005', 'Rua Obidos numero 8', 'UNIMED', '', '', '', b'0', b'1', 4, 6, '2010-05-25 00:00:00', ''),
+(2, 'Mariazinha', 'mariazinha@gmail.com', 'Maria', 'Joao', 'Joao', '06341307497', '6982005', 'Rua Obidos numero 8', 'UNIMED', '', '', '', b'0', b'0', 3, 5, '2011-05-25 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,15 @@ CREATE TABLE IF NOT EXISTS `beneficio` (
   `nome` tinytext NOT NULL,
   `valor` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `beneficio`
+--
+
+INSERT INTO `beneficio` (`id`, `nome`, `valor`) VALUES
+(1, 'Vale Transporte', 100),
+(2, 'Vale Alimentacao', 20);
 
 -- --------------------------------------------------------
 
@@ -222,18 +231,17 @@ CREATE TABLE IF NOT EXISTS `conta` (
   `valor_repetir` int(10) NOT NULL,
   `idx_categoria` int(10) NOT NULL,
   `idx_intervalo` int(10) NOT NULL,
+  `repeat_start` int(11) NOT NULL,
+  `repeat_interval` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Extraindo dados da tabela `conta`
 --
 
-INSERT INTO `conta` (`id`, `nome`, `valor`, `data_vencimento`, `faturado`, `pagar`, `repetir`, `juros`, `descontos`, `valor_repetir`, `idx_categoria`, `idx_intervalo`) VALUES
-(1, 'Agua', 100, '2014-06-04 00:00:00', b'0', b'1', b'1', 0, 0, 0, 1, 3),
-(4, 'Transporte', 200, '2014-06-08 00:00:00', b'0', b'0', b'0', 0, 0, 0, 0, 0),
-(8, 'Alimentacao', 200, '2014-06-01 00:00:00', b'1', b'0', b'0', 0, 0, 0, 1, 0),
-(9, 'Nova conta', 1000, '2014-06-18 00:00:00', b'0', b'1', b'0', 0, 0, 0, 1, 4);
+INSERT INTO `conta` (`id`, `nome`, `valor`, `data_vencimento`, `faturado`, `pagar`, `repetir`, `juros`, `descontos`, `valor_repetir`, `idx_categoria`, `idx_intervalo`, `repeat_start`, `repeat_interval`) VALUES
+(22, 'Agua', 0, '2014-06-05 00:00:00', b'0', b'1', b'0', 0, 0, 0, 0, 1, 1401840000, 86400);
 
 -- --------------------------------------------------------
 
@@ -362,12 +370,32 @@ INSERT INTO `dia_horario_servico` (`id`, `idx_servico`, `idx_horario`, `idx_dia`
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `empresa`
+--
+
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `razao_social` int(11) NOT NULL,
+  `responsavel` tinytext NOT NULL,
+  `cnpj` int(11) NOT NULL,
+  `endereco` tinytext NOT NULL,
+  `email` tinytext NOT NULL,
+  `telefone_comercial` int(11) NOT NULL,
+  `celular` int(11) NOT NULL,
+  `logomarca` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `filho`
 --
 
 CREATE TABLE IF NOT EXISTS `filho` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nome` tinytext NOT NULL,
+  `data_nasc` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -380,16 +408,33 @@ CREATE TABLE IF NOT EXISTS `filho` (
 CREATE TABLE IF NOT EXISTS `fornecedor` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nome` tinytext NOT NULL,
-  `endereco` tinytext NOT NULL,
+  `endereco` tinytext,
+  `tipo_pessoa` bit(1) DEFAULT b'0',
+  `cnpj` int(10) NOT NULL DEFAULT '0',
+  `razao_social` tinytext,
+  `inscricao_estadual` int(11) DEFAULT NULL,
+  `inscricao_municipal` int(11) DEFAULT NULL,
+  `aniversario` date DEFAULT NULL,
+  `cep` int(11) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `bairro` tinytext,
+  `complemento` tinytext,
+  `cidade` tinytext,
+  `fone_comercial` int(11) DEFAULT NULL,
+  `fone_residencial` int(11) DEFAULT NULL,
+  `contato` tinytext,
+  `celular` int(11) DEFAULT NULL,
+  `observacoes` tinytext,
+  `email` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `fornecedor`
 --
 
-INSERT INTO `fornecedor` (`id`, `nome`, `endereco`) VALUES
-(1, 'Fornecedor1', '');
+INSERT INTO `fornecedor` (`id`, `nome`, `endereco`, `tipo_pessoa`, `cnpj`, `razao_social`, `inscricao_estadual`, `inscricao_municipal`, `aniversario`, `cep`, `numero`, `bairro`, `complemento`, `cidade`, `fone_comercial`, `fone_residencial`, `contato`, `celular`, `observacoes`, `email`) VALUES
+(1, 'Fornecedor1', '', b'0', 0, '', 0, 0, '0000-00-00', 0, 0, '', '', '', 0, 0, '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -419,8 +464,21 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `telefone` int(10) NOT NULL,
   `remuneracao` int(10) NOT NULL,
   `idx_funcao` int(10) NOT NULL,
+  `foto` tinytext NOT NULL,
+  `planosaude` bit(1) NOT NULL,
+  `nomeplano` tinytext NOT NULL,
+  `contatotelefone` int(10) NOT NULL,
+  `contatonome` tinytext NOT NULL,
+  `contatoendereco` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id`, `nome`, `cpf`, `rg`, `titulo`, `endereco`, `telefone`, `remuneracao`, `idx_funcao`, `foto`, `planosaude`, `nomeplano`, `contatotelefone`, `contatonome`, `contatoendereco`) VALUES
+(3, 'joao da vassoura', '', '', '', '', 0, 0, 0, '', b'0', '', 0, '', 0);
 
 -- --------------------------------------------------------
 
