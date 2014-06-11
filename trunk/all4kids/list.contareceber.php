@@ -4,7 +4,7 @@
 
 <div class="conteudo-principal">
     <fieldset>  
-							<span class="btn btn-success fileinput-button" data-toggle="modal" data-target=".bs-example-modal-lg">
+							<span class="btn btn-success fileinput-button" onclick="$('#modalCadastro').modal('show');">
 								<i class="glyphicon glyphicon-plus"></i>
 								<span>Adicionar</span>
 							</span><br><br>

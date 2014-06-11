@@ -29,7 +29,7 @@ private $connection;
 private function __construct() {
 ///*
   $this->host = "localhost";                  //          <<---------
-  $this->password = "dariojmc";           //          <<---------
+  $this->password = "";           //          <<---------
   $this->user = "root";                   //          <<---------
   $this->database = "all4kids";           //          <<---------
   //*/  

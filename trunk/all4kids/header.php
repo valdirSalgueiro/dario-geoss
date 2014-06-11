@@ -39,6 +39,7 @@
 	<link href="css/datepicker.css" rel="stylesheet"/>
 	<link href="css/chosen.css" rel="stylesheet">
 	<link href="css/contaazul.css" rel="stylesheet" type="text/css">    
+	<link rel="stylesheet" href="css/SimpleCalendar.css" />
     <script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/chosen.jquery.js" type="text/javascript"></script>
 	<script src="js/Chart.js" type="text/javascript"></script>
@@ -263,6 +264,9 @@ box-sizing: content-box;
 												<li>
 													<a href="list.funcionario.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
+												<li>
+													<a href="assoc.funcionario.php"><span class="glyphicon glyphicon-resize-small"></span> Associar a beneficio</a>
+												</li>													
                                             </ul>
                                         </li>                                        
                                     </ul>
@@ -379,24 +383,29 @@ box-sizing: content-box;
 				<?php
 				$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
 				$url = $crumbs[count($crumbs)-1];
-				$crumbs = explode(".",$url);
-				echo "<li><a href='inicio.php'>Inicio</a></li> <span class='divider ng-scope'>›</span> <li class='ng-scope'> ".ucfirst($crumbs[1])."</li> <span class='divider ng-scope'>›</span>  <li><a href='$url'>";
-				switch ($crumbs[0])
-				{
-					case "cad":
-						echo "Editar";
-						break;
-					case "view":
-						echo "Visualizar";	
-						break;						
-					case "list":
-						echo "Listar";												
-						break;
-					default:
-						echo "Editar";
-						break;
-				}				
-				echo "</a></li>";
+				if($url!="inicio.php"){
+					$crumbs = explode(".",$url);
+					echo "<li><a href='inicio.php'>Inicio</a></li> <span class='divider ng-scope'>›</span> <li class='ng-scope'> ".ucfirst($crumbs[1])."</li> <span class='divider ng-scope'>›</span>  <li><a href='$url'>";
+					switch ($crumbs[0])
+					{
+						case "cad":
+							echo "Editar";
+							break;
+						case "view":
+							echo "Visualizar";	
+							break;						
+						case "list":
+							echo "Listar";												
+							break;
+						case "assoc":
+							echo "Associar";												
+							break;						
+						default:
+							echo "Editar";
+							break;
+					}				
+					echo "</a></li>";
+				}
 				?>
 				</ul>				
 			</div>

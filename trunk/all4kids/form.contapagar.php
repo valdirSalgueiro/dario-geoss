@@ -75,7 +75,7 @@
 						$db = Database::getConnection();
 						$sql = "SELECT id, descricao
 								FROM intervalo
-								ORDER BY descricao";
+								ORDER BY id";
 						$res = $db->query( $sql );
 						while ( $row = $res->fetch_assoc() ) {
 							$checked=($conta->idx_intervalo==$row['id'])?"selected":"";
