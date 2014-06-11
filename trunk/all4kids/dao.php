@@ -218,15 +218,15 @@ if($instance instanceof funcionario){
 		$instance->update($id);
 	}
 
-	$nome=post('nome');
+	$nomefilho=post('nomefilho');
 	$nascimento=post('nascimento');
 	
-	if(isset($nome) && is_array($nome)){
-		foreach( $nome as $key => $n ) {
+	if(isset($nomefilho) && is_array($nomefilho)){
+		foreach( $nomefilho as $key => $n ) {
 			$instance = new funcionario_filho();
 			$instance->idx_funcionario=$id;
-			$instance->nome=$nome[$key];
-			$instance->nascimento=$nascimento[$key];
+			$instance->nome=$nomefilho[$key];
+			$instance->data_nasc=$nascimento[$key];
 			$instance->insert();
 		}
 	}

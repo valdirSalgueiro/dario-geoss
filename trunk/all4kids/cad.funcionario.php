@@ -1,4 +1,3 @@
-
 <?php
 require 'header.php';
 
@@ -10,13 +9,14 @@ if($id){
 	$funcionario->select($id);
 	$db = Database::getConnection();
 	$sql = "SELECT *
-			FROM funcionario_fillho
-			WHERE idx_funcionario=$funcionario->id";
+			FROM funcionario_filho
+			WHERE idx_funcionario=$id";
 	$res = $db->query( $sql );
 	while ( $row = $res->fetch_assoc() ) {
-		$nome.=$row['nome'].",";
+		$nomefilho.=$row['nome'].",";
 		$nascimento.=$row['data_nasc'].",";
-	}	
+	}
+
 }
 
 $mensagem="$modo".o;
@@ -55,10 +55,10 @@ echo <<<EOT
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
 	if($funcionario_id){
-		var arrayText="$nome".split(",");
+		var arrayText="$nomefilho".split(",");
 		var arrayText2="$nascimento".split(",");		
-		for (var i=0;i<array.length-1; i++) {
-			adicionar_('nome','nascimento',array[i],arrayText[i],array2[i],arrayText2[i]);
+		for (var i=0;i<arrayText.length-1; i++) {
+			adicionar_('nomefilho','nascimento',arrayText[i],arrayText2[i]);
 		}			
 	}
 } 
@@ -168,15 +168,15 @@ EOT;
 		</div>			
 
           <div class="form-group col-md-4">
-            <input id="nomeCampo" type="text" class="form-control input-sm" placeholder="Nome do Filho">
+            <input id="nomefilhoCampo" type="text" class="form-control input-sm" placeholder="Nome do Filho">
 		  </div>
 		  <div class="form-group col-md-4">
             <input id="nascimentoCampo" class="datepicker form-control input-sm" data-date-format="yyyy-mm-dd"  type="text" class="form-control input-sm" placeholder="Data de Nascimento do Filho">
 		  </div>
           <div class="form-group col-md-4">
-            <input type="button" value="Adicionar Filho" onclick="adicionar('nome','nascimento');" class="btn btn-success btn-block">
+            <input type="button" value="Adicionar Filho" onclick="adicionar('nomefilho','nascimento');" class="btn btn-success btn-block">
 		</div>
-          <div id="nomeConteudo">
+          <div id="nomefilhoConteudo">
           </div>
 		
 		
