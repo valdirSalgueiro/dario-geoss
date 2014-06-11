@@ -24,7 +24,7 @@ $mensagem="$modo".a;
                         <h4 class="modal-title">
                             Cadastrar Conta a Receber</h4>
                     </div>
-                    <div class="modal-body" id="modalbody">
+                    <div class="modal-body">
 							<?php include_once("form.contareceber.php");?>
 							&nbsp;
                     </div>

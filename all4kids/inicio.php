@@ -2,6 +2,7 @@
 include_once("header.php");
 include_once("class.database.php");
 
+
 $db = Database::getConnection();
 $sql = "SELECT count(*) as total  FROM contapagar";
 $res = $db->query( $sql );
@@ -56,7 +57,8 @@ echo <<<EOT
 			var myLine = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(barChartData);
 			var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
 
-			
+			carregarCalendario_('',1,'#calendario');
+			carregarCalendario_('',0,'#calendario2');
 		}
 
 		);
@@ -65,6 +67,37 @@ echo <<<EOT
 EOT;
 
 ?>
+<script type="text/javascript">		
+	var countData=0;
+	function carregarCalendario_(countStr,pagar,where){
+			//mostrarCarregando();
+			$.ajax({
+				url: 'calendario.php',
+				data: {'dataInicio': countStr,'pagar':pagar},
+				type: 'POST',
+				success: function(data) {
+				    $(where).html(data);      
+					//esconderCarregando();
+				},
+				error: function (jqXHR, textStatus,  errorThrown) {
+					alert(textStatus);
+					alert(errorThrown);
+					//esconderCarregando();
+				}					
+			});
+	}
+	
+	function carregarCalendario(right,pagar,where) {
+
+			if(right)
+				countData++;
+			else
+				countData--;			
+			
+			var countStr=countData>0?'+'+countData:countData;	
+			carregarCalendario_(countStr+' month',pagar,where);
+		}
+</script
 <div class="conteudo-principal">
 	<table>
 	<tr>
@@ -83,6 +116,21 @@ EOT;
 		<canvas id="canvas2" height="450" width="450" style="float:right"></canvas>
 		<span style="color:lightblue;float:right" class="glyphicon glyphicon-stop">Atividades cadastradas por dia</span>
 	</td>
+	</tr>
+	<tr>
+	<td height="700px">
+	<h3 align="center"><a href="javascript:void(0);" onclick="carregarCalendario(false,1,'#calendario');"><</a> Contas a pagar <a href="javascript:void(0);" onclick="carregarCalendario(true,1,'#calendario');">></a> </h3>
+	<div id="calendario">
+	</div>
+	</td>
+	<td height="700px" >
+	
+	<div >
+	<h3 align="center"><a href="javascript:void(0);" onclick="carregarCalendario(false,0,'#calendario2');"><</a> Contas a receber <a href="javascript:void(0);" onclick="carregarCalendario(true,0,'#calendario2');">></a> </h3>
+	<div id="calendario2">
+	</div>
+	</div>
+	</td>	
 	</tr>
 	</table>
 </div>

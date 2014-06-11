@@ -48,12 +48,9 @@ $instance = new $type;
 foreach($_POST as $key => $value)
 {		
 
-	if(property_exists ( $instance , $key )){
-		if(!isset($value) || $value==''){
-			$value=0;
-		}
+	if(property_exists ( $instance , $key ))
 		$instance->$key = $value;
-	}
+
 }	
 
 if($id){		
@@ -70,6 +67,33 @@ else{
 	if(!($instance instanceof aluno_atividade)
 		&& !($instance instanceof aluno_servico)
 	){	
+		if($instance instanceof conta){
+			$instance->repeat_start=strtotime($instance->data_vencimento)-(strtotime($instance->data_vencimento)%86400);
+			switch($instance->idx_intervalo){
+				case 1:
+					$instance->repeat_interval=86400;//dia
+					break;
+				case 2:
+					$instance->repeat_interval=604800;//semana
+					break;					
+				case 3:
+					$instance->repeat_interval=2678400;//mes
+					break;					
+				case 4:
+					$instance->repeat_interval=5356800;//2 mes
+					break;					
+				case 5:
+					$instance->repeat_interval=7776000;//3
+					break;					
+				case 6:
+					$instance->repeat_interval=15721200;//6
+					break;					
+				case 7:
+					$instance->repeat_interval=31536000;//1 ano
+					break;		
+			}	
+		}					
+
 		$instance->insert();
 		$id=mysqli_insert_id($db);
 		$resp->id = $id;
@@ -92,6 +116,10 @@ function apagarVinculos(){
 		$sql = "DELETE FROM aluno_telefone WHERE idx_aluno = $id;";
 		$db->query($sql);
 	}	
+	if($instance instanceof funcionario){
+		$sql = "DELETE FROM funcionario_filho WHERE idx_funcionario = $id;";
+		$db->query($sql);
+	}		
 }
 
 if($instance instanceof aluno){
@@ -163,6 +191,37 @@ if($instance instanceof atividade){
 			$instance->idx_atividade=$id;
 			$instance->idx_horario=$horario[$key];
 			$instance->idx_dia=$dia[$key];
+			$instance->insert();
+		}
+	}
+}
+
+if($instance instanceof empresa){	
+	$file0=post('file0');
+	if($file0){
+		$logomarca=$id.".logomarca.".end((explode(".", $file0)));
+		$instance->logomarca=$logomarca;
+		$instance->update($id);
+	}
+}
+
+if($instance instanceof funcionario){	
+	$file0=post('file0');
+	if($file0){
+		$foto=$id.".foto.".end((explode(".", $file0)));
+		$instance->foto=$foto;
+		$instance->update($id);
+	}
+
+	$nome=post('nome');
+	$nascimento=post('nascimento');
+	
+	if(isset($nome) && is_array($nome)){
+		foreach( $nome as $key => $n ) {
+			$instance = new funcionario_filho();
+			$instance->idx_funcionario=$id;
+			$instance->nome=$nome[$key];
+			$instance->nascimento=$nascimento[$key];
 			$instance->insert();
 		}
 	}

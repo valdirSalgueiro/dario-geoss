@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        conta
-* GENERATION DATE:  07.06.2014
+* GENERATION DATE:  11.06.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.conta.php
 * FOR MYSQL TABLE:  conta
 * FOR MYSQL DB:     all4kids
@@ -43,6 +43,8 @@ var $descontos;   // (normal Attribute)
 var $valor_repetir;   // (normal Attribute)
 var $idx_categoria;   // (normal Attribute)
 var $idx_intervalo;   // (normal Attribute)
+var $repeat_start;   // (normal Attribute)
+var $repeat_interval;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -96,6 +98,10 @@ $this->idx_categoria = $row->idx_categoria;
 
 $this->idx_intervalo = $row->idx_intervalo;
 
+$this->repeat_start = $row->repeat_start;
+
+$this->repeat_interval = $row->repeat_interval;
+
 }
 
 // **********************
@@ -117,7 +123,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO conta ( nome,valor,data_vencimento,faturado,pagar,repetir,juros,descontos,valor_repetir,idx_categoria,idx_intervalo ) VALUES ( '$this->nome','$this->valor','$this->data_vencimento','$this->faturado','$this->pagar','$this->repetir','$this->juros','$this->descontos','$this->valor_repetir','$this->idx_categoria','$this->idx_intervalo' )";
+$sql = "INSERT INTO conta ( nome,valor,data_vencimento,faturado,pagar,repetir,juros,descontos,valor_repetir,idx_categoria,idx_intervalo,repeat_start,repeat_interval ) VALUES ( '$this->nome','$this->valor','$this->data_vencimento','$this->faturado','$this->pagar','$this->repetir','$this->juros','$this->descontos','$this->valor_repetir','$this->idx_categoria','$this->idx_intervalo','$this->repeat_start','$this->repeat_interval' )";
 $result = $this->database->query($sql);
 
 
@@ -132,7 +138,7 @@ function update($id)
 
 
 
-$sql = " UPDATE conta SET  nome = '$this->nome',valor = '$this->valor',data_vencimento = '$this->data_vencimento',faturado = '$this->faturado',pagar = '$this->pagar',repetir = '$this->repetir',juros = '$this->juros',descontos = '$this->descontos',valor_repetir = '$this->valor_repetir',idx_categoria = '$this->idx_categoria',idx_intervalo = '$this->idx_intervalo' WHERE id = $id ";
+$sql = " UPDATE conta SET  nome = '$this->nome',valor = '$this->valor',data_vencimento = '$this->data_vencimento',faturado = '$this->faturado',pagar = '$this->pagar',repetir = '$this->repetir',juros = '$this->juros',descontos = '$this->descontos',valor_repetir = '$this->valor_repetir',idx_categoria = '$this->idx_categoria',idx_intervalo = '$this->idx_intervalo',repeat_start = '$this->repeat_start',repeat_interval = '$this->repeat_interval' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 
