@@ -96,7 +96,8 @@ if($id){
 }
 else{
 	if(!($instance instanceof aluno_atividade)
-		&& !($instance instanceof aluno_servico)
+		&& !($instance instanceof aluno_servico
+		&& !($instance instanceof funcionario_beneficio)
 	){								
 		alterarConta();
 		$instance->insert();
@@ -163,6 +164,23 @@ if($instance instanceof aluno_atividade){
 				$instance = new aluno_atividade();
 				$instance->idx_aluno=$n;
 				$instance->idx_atividade=$n2;
+				$instance->insert();
+			}
+		}
+	}
+}
+
+if($instance instanceof funcionario_beneficio){
+	$funcionario=post('funcionario');
+	$beneficio=post('beneficio');
+	if(isset($funcionario) && is_array($beneficio)){
+		foreach( $funcionario as $key => $n ) {			
+			$sql = "DELETE FROM funcionario_beneficio WHERE idx_funcionario = $n;";
+			$db->query($sql);
+			foreach( $beneficio as $key2 => $n2 ) {
+				$instance = new funcionario_beneficio();
+				$instance->idx_funcionario=$n;
+				$instance->idx_beneficio=$n2;
 				$instance->insert();
 			}
 		}
