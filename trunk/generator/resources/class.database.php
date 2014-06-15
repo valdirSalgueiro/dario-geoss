@@ -36,7 +36,7 @@
   $this->host = "localhost";                  //          <<---------
   $this->password = "";           //          <<---------
   $this->user = "root";                   //          <<---------
-  $this->database = "all4kids";           //          <<---------
+  $this->database = "politicos";           //          <<---------
   $this->rows = 0;
  
  // **********************************************

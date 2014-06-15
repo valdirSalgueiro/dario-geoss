@@ -1,0 +1,15 @@
+$<?php echo $class?> = new <?php echo $class?>();
+
+if($id){
+	<?php echo $classeSelect?>;
+}
+
+$mensagem="$modo"."<?php echo $genero?>";
+
+?>
+		<div class="conteudo-principal">
+			<fieldset>
+			<form role="form"  action="dao.php" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="id" value="<?php echo addslashes("<?php echo \$id?>") ?>"> 
+			<input type="hidden" name="type" value="<?php echo $class?>">
+			<span style="display:none" id="msg"><?php echo $classeUpper?> <?php echo addslashes("<?php echo \$mensagem?>") ?> com sucesso</span>
