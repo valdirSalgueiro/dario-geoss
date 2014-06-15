@@ -3,14 +3,39 @@ error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 include("resources/class.database.php");
 $database = new Database();
 
-	function startsWith($haystack, $needle)
-	{
-		return $needle === "" || strpos($haystack, $needle) === 0;
-	}
+function startsWith($haystack, $needle)
+{
+	return $needle === "" || strpos($haystack, $needle) === 0;
+}
 
 function endsWith($haystack, $needle)
 {
 	return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
+}
+
+class Template
+{
+    protected $_file;
+    protected $_data = array();
+
+    public function __construct($file = null)
+    {
+        $this->_file = $file;
+    }
+
+    public function set($key, $value)
+    {
+        $this->_data[$key] = $value;
+        return $this;
+    }
+
+    public function render()
+    {
+        extract($this->_data);
+        ob_start();
+        include($this->_file);
+        return ob_get_clean();
+    }
 }
 
 
@@ -74,7 +99,7 @@ $fileC = fopen($filenameCadastrar, "w+");
 $fileL = fopen($filenameListar, "w+");
 $fileS = fopen($filenameServer, "w+");
 
-$genero=endsWith($class,"o")?"o":"a";
+$genero=endsWith($class,"a")?"a":"o";
 $classeUpper=ucfirst($class);
 $classeUpper=str_replace("_", " ",$classeUpper);
 $classeSelect="$$class"."->select(\$id)";
@@ -87,31 +112,14 @@ $cad = "
 require 'header.php';
 
 include_once(\"class.$class.php\");
-
-$$class = new $class();
-
-if(\$id){
-	$classeSelect;
-}
-
-\$mensagem=\"\$modo\".$genero;
-
-?>
-		<section id=\"contact\" class=\"background1 background-image\" style=\"margin-top:160px; height: auto;\">
-			<div class=\"container\">
-				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
-					<div class=\"col-sm-12\">
-						<div class=\"panel panel-default\">
-						  <div class=\"panel-heading\">
-							<h3 class=\"panel-title\">
-							  Cadastro $classeUpper
-							</h3>
-						  </div>
-						  <div class=\"panel-body\">
-							<form role=\"form\"  action=\"dao.php\" onSubmit=\"return ajaxSubmit(this,'$classeUpper <?php echo \$mensagem ?> com sucesso');\">
-							<input type=\"hidden\" name=\"id\" value=\"<?php echo \$id?>\"> 
-							<input type=\"hidden\" name=\"type\" value=\"$class\">
 ";
+$template = new Template('template_cad_header.txt');
+$template->set('classeUpper', $classeUpper);
+$template->set('class', $class);
+$template->set('classeSelect', $classeSelect);
+$template->set('genero', $genero);
+$cad.=$template->render();
+
 
 $serv="
 <?php
@@ -128,31 +136,13 @@ include_once(\"class.database.php\");
 \$columns = array(    
 ";
 
-$lis= "
-	<?php
+$lis="<?php
 require 'header.php';
-?>
+?>";
 
-<script type=\"text/javascript\" language=\"javascript\" src=\"js/dataTables.bootstrap.js\"></script>
-<script type=\"text/javascript\" language=\"javascript\" src=\"js/jquery.dataTables.js\"></script>
-
-
-		<section id=\"contact\" class=\"background1 background-image\" style=\"padding-top:180px;    height: auto;\">
-			<div class=\"container\">
-				<div class=\"row text-center\" style=\"transition: all 0s ease; -webkit-transition: all 0s ease; opacity: 1;\">
-					<div class=\"col-sm-12\">
-					<div class=\"panel panel-default\">
-						  <div class=\"panel-heading\">
-							<h3 class=\"panel-title\">
-							  $classeUpper
-							</h3>
-						  </div>
-						  <div class=\"panel-body\">
-
-<table id=\"example\" class=\"table table-hover table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">
-        <thead>
-            <tr>
-";
+$template = new Template('template_list_header.txt');
+$template->set('classeUpper', $classeUpper);
+$lis.=$template->render();
 $countColumns=0;
 			
 while ($row = mysql_fetch_row($result)) 
@@ -222,9 +212,15 @@ while ($row = mysql_fetch_row($result))
 				$colUper <input type=\"checkbox\" name=\"$col\" value=\"1\" <?php echo \$checked ?>>
 			    "; 				
 				
+			}
+			if(endsWith($tipocol,"blob")){
+			    $cad.= "
+					$colUper <input type=\"file\" name=\"$col\" class=\"form-control input-sm\">
+			    "; 				
+				
 			}else{
 			   $cad.= "
-							<input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
+					$colUper <input type=\"text\" name=\"$col\" class=\"$datepicker1 form-control input-sm\" $datepicker2 placeholder=\"$colUper\" value=\"<?php echo $atributo?>\">
 			  ";			  
 			}
 			$lis.="<th>$colUper</th>";
@@ -280,52 +276,10 @@ echo json_encode(
 ?>
 ";
 
-$lis.="
-				<th>Editar</th>
-				<th>Remover</th>
-            </tr>
-        </thead>
-    </table>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
-	<script>
-	$(document).ready(function() {
-    tableAjax=$('#example').dataTable({
-	\"processing\": true,
-    \"serverSide\": true,
-    \"ajax\": \"server.$class.php\",
-	\"oLanguage\": {
-    \"sEmptyTable\":     \"Nenhum registro encontrado na tabela\",
-    \"sInfo\": \"Mostrar _START_ até _END_ do _TOTAL_ registros\",
-    \"sInfoEmpty\": \"Mostrar 0 até 0 de 0 Registros\",
-    \"sInfoFiltered\": \"(Filtrar de _MAX_ total registros)\",
-    \"sInfoPostFix\":    \"\",
-    \"sInfoThousands\":  \".\",
-    \"sLengthMenu\": \"Mostrar _MENU_ registros por pagina\",
-    \"sLoadingRecords\": \"Carregando...\",
-    \"sProcessing\":     \"Processando...\",
-    \"sZeroRecords\": \"Nenhum registro encontrado\",
-    \"sSearch\": \"Pesquisar\",
-    \"oPaginate\": {
-        \"sNext\": \"Proximo\",
-        \"sPrevious\": \"Anterior\",
-        \"sFirst\": \"Primeiro\",
-        \"sLast\":\"Ultimo\"
-    },
-    \"oAria\": {
-        \"sSortAscending\":  \": Ordenar colunas de forma ascendente\",
-        \"sSortDescending\": \": Ordenar colunas de forma descendente\"
-    }
-}
-	});
-	$('#example').footable();
-} );
-	</script>
-    
+$template = new Template('template_list_footer.txt');
+$template->set('class', $class);
+$lis.=$template->render();
+$lis.="   
 <?php
     require 'footer.php'
 ?>
@@ -334,20 +288,13 @@ $lis.="
 fwrite($fileL, $lis);
 fwrite($fileS, $serv);	
 
+$template = new Template('template_cad_footer.txt');
+$cad.=$template->render();
+
 $cad.="
-					  <div class=\"form-group col-md-6 col-md-offset-3\">
-						<input type=\"submit\" value=\"<?php echo \$textoBotao?>\" class=\"btn btn-info btn-block\">
-					  </div>	
-					</form>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		</div>
-	</section>
 	<?php
            require 'footer.php'
-        ?>
+    ?>
 "; 
 fwrite($fileC, $cad);
 
@@ -640,271 +587,21 @@ back
 </b></font>
 
 ";
-
 }
 $fileDao = fopen($dao, "w+");
+$fileHeader = fopen($header, "w+");
+
 $cDao="<?php";
 foreach($classes as $bla){
 $cDao.="
 include_once(\"class.$bla.php\");";
 }
-$cDao.="
+$cDao.=file_get_contents('template_dao.txt');
 
-include_once(\"class.database.php\");
-
-\$db = Database::getConnection(); 
-
-function post(\$key) {
-    if (isset(\$_REQUEST[\$key]))
-        return \$_REQUEST[\$key];
-    return false;
-}
-
-\$type = post('type');
-\$id = post('id');
-\$mode= post('mode');
-
-\$resp = new stdClass();	
-\$resp->success = false;
-
-\$instance = new \$type;
-
-foreach(\$_POST as \$key => \$value)
-{		
-	if(property_exists ( \$instance , \$key ))
-		\$instance->\$key = \$value;
-}	
-
-if(\$id){		
-	if(\$mode){
-		\$instance->delete(\$id);
-	}
-	else{
-		\$instance->update(\$id);
-	}
-}
-else{
-	\$instance->insert();
-}
-
-\$resp->success = true;
-
-echo json_encode(\$resp);
-
-?>";
-
+;
 fwrite($fileDao, $cDao);
+fwrite($fileHeader, "\xEF\xBB\xBF".file_get_contents('template_header.txt'));
 
-$fileHeader = fopen($header, "w+");
 
-$cHeader="
-<?php
-	error_reporting (E_ALL ^ E_NOTICE); 
 
-	session_start();
-	if(!isset(\$_SESSION[\"user\"])) {
-		header(\"Location:login.php\");
-	}
-	
-	function post(\$key) {
-		if (isset(\$_REQUEST[\$key]))
-			return \$_REQUEST[\$key];
-		return false;
-	}
-	
-	function startsWith(\$haystack, \$needle)
-	{
-		return \$needle === \"\" || strpos(\$haystack, \$needle) === 0;
-	}
-	function endsWith(\$haystack, \$needle)
-	{
-		return \$needle === \"\" || substr(\$haystack, -strlen(\$needle)) === \$needle;
-	}
-	
-	\$id = post('id')==0?0:post('id');
-	\$textoBotao=\$id?\"Alterar\":\"Cadastrar\";
-	\$modo=\$id?\"alterad\":\"cadastrad\";
-	
-?>
-<html lang='pt-br'>
-<head>
-    <meta charset=\"utf-8\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <!--meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"-->
-    <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
-    <meta name=\"description\" content=\"\">
-    <meta name=\"author\" content=\"\">
-    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\"/>
-	<link href=\"css/datepicker.css\" rel=\"stylesheet\"/>
-	<link href=\"css/style.css\" rel=\"stylesheet\">
-    <script type=\"text/javascript\" language=\"javascript\" src=\"js/jquery-1.11.1.min.js\"></script>
-    <script type=\"text/javascript\" language=\"javascript\" src=\"js/bootstrap.min.js\"></script>
-	<script type=\"text/javascript\" language=\"javascript\" src=\"js/bootstrap-datepicker.js\"></script>
-	<script type=\"text/javascript\">
-		var ajaxSubmit = function(formEl,msg) {
-			mostrarCarregando();
-			// fetch where we want to submit the form to
-			var url = \$(formEl).attr('action');
-
-			// fetch the data for the form
-			var data = \$(formEl).serializeArray();
-
-			// setup the ajax request
-			\$.ajax({
-				url: url,
-				data: data,
-				type: 'POST',
-				dataType: 'json',
-				success: function(rsp) {
-					if(rsp.success) {
-					    \$(modalbody).html(msg);      
-						\$(myModal).modal();
-					}
-					esconderCarregando();
-				},
-				error: function (jqXHR, textStatus,  errorThrown) {
-					alert(textStatus);
-					alert(errorThrown);
-					esconderCarregando();
-					}					
-			});
-
-			// return false so the form does not actually
-			// submit to the page
-			return false;
-		}
-		
-		var tableAjax;
-		function apagar(tipo,id) {
-			mostrarCarregando();
-
-			// setup the ajax request
-			\$.ajax({
-				url: 'dao.php',
-				data: 'mode=deletar&type='+tipo+'&id='+id,
-				type: 'POST',
-				dataType: 'json',
-				success: function(rsp) {
-					if(rsp.success) {
-					    \$(modalbody).html(\"Removido com sucesso!\");      
-						\$(myModal).modal();
-						tableAjax.fnDraw();
-					}
-					esconderCarregando();
-				},
-				error: function (jqXHR, textStatus,  errorThrown) {
-					alert(textStatus);
-					alert(errorThrown);
-					esconderCarregando();
-					}					
-			});
-
-			// return false so the form does not actually
-			// submit to the page
-			return false;
-		}
-		
-		var pleaseWaitDiv = \$(\"<div class='modal js-loading-bar'><div class='modal-dialog' id='modalLoading'><div class='modal-content'><div class='modal-header'><h3>Carregando...</h3></div><div class='modal-body'><div class='progress progress-striped active'><div class='progress-bar'  role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100' style='width:70%'><span class='sr-only'>Carregando...</span></div></div></div></div></div></div>\");
-
-        function mostrarCarregando(){
-            pleaseWaitDiv.modal({ show: true });
-            centralizarModal();
-			\$(window).resize(function () { centralizarModal(); });
-        }
-		
-        function esconderCarregando(){
-            pleaseWaitDiv.modal('hide');
-        }
-
-		function centralizarModal() {
-			var modalH = \$(modalLoading).height();
-			var windowH = \$(window).height();
-			\$('.modal-dialog').css({ 'top': windowH/2 - modalH});
-		}
-		
-		$(document).ready(function() {
-				if(typeof $('.datepicker') != 'undefined')
-					$('.datepicker').datepicker();
-			}
-		);
-
-	</script>
-
-</head>
-<body style=\"background-color: #222\">
-            <div class=\"navbar navbar-default navbar-fixed-top\">
-			<div class=\"container\">
-				<div class=\"navbar-header\">
-					<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
-						<span class=\"icon-bar\"></span>
-						<span class=\"icon-bar\"></span>
-						<span class=\"icon-bar\"></span>
-					</button>
-					<a class=\"navbar-brand\" href=\"index-2.html\"><img src=\"images/logo.gif\" alt=\"Magicreche. Responsive site theme for Creche, Playschool, Preschool and Montessori.\" class=\"img-responsive\"></a>
-				</div>
-				<div class=\"navbar-collapse collapse\">
-					<ul class=\"nav navbar-nav navbar-right\">
-						<li class=\"\"><a href=\"#home\">HOME</a></li>
-						<li class=\"dropdown\">
-							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">ALL4KIDS <b class=\"caret\"></b></a>
-							<ul class=\"dropdown-menu\">";
-foreach($classes as $bla){
-	$blaUper=ucfirst($bla);
-	$blaUper=str_replace("_", " ",$blaUper);
-	$cHeader.="
-	<li><a href=\"cad.$bla.php\"> $blaUper</a></li>
-	";		
-}				
-$cHeader.=
-"					
-							</ul>
-						</li>
-						<li class=\"dropdown\">
-							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Listagens <b class=\"caret\"></b></a>
-							<ul class=\"dropdown-menu\">";
-							
-foreach($classes as $bla){	
-	$blaUper=ucfirst($bla);	
-	$blaUper=str_replace("_", " ",$blaUper);	
-	$cHeader.="					
-	<li><a href=\"list.$bla.php\"> $blaUper</a></li>
-	";
-}			
-$cHeader.="
-						</ul>
-					</li>	
-					
-                    <li>
-                        <a href=\"logout.php\">Logout</a>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div><!-- Begin page content -->
-	
-	<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\"
-            aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
-                <div class=\"modal-content\">
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">
-                            &times;</button>
-                        <h4 class=\"modal-title\">
-                            All4kids</h4>
-                    </div>
-                    <div class=\"modal-body\" id=\"modalbody\">
-                    </div>
-                    <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">
-                            Ok</button>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-";
-
-fwrite($fileHeader, $cHeader);
 ?>
