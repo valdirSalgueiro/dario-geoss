@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        usua_nivaces
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.usua_nivaces.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.usua_nivaces.php
 * FOR MYSQL TABLE:  cad_usua_nivaces
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -48,36 +48,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getnivaces_nome()
-{
-return $this->nivaces_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setnivaces_nome($val)
-{
-$this->nivaces_nome =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

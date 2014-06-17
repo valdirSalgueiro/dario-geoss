@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        origem_ocorrenc
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.origem_ocorrenc.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.origem_ocorrenc.php
 * FOR MYSQL TABLE:  cad_origem_ocorrenc
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -48,36 +48,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getorigem_nome()
-{
-return $this->origem_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setorigem_nome($val)
-{
-$this->origem_nome =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

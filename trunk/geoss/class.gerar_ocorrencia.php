@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        gerar_ocorrencia
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.gerar_ocorrencia.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.gerar_ocorrencia.php
 * FOR MYSQL TABLE:  cad_gerar_ocorrencia
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -56,116 +56,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getdata_hora_ocorr()
-{
-return $this->data_hora_ocorr;
-}
-
-function getprotocolo()
-{
-return $this->protocolo;
-}
-
-function getidx_semaforo()
-{
-return $this->idx_semaforo;
-}
-
-function getidx_origem_ocorr()
-{
-return $this->idx_origem_ocorr;
-}
-
-function getidx_reclamante()
-{
-return $this->idx_reclamante;
-}
-
-function getstatus()
-{
-return $this->status;
-}
-
-function getobs()
-{
-return $this->obs;
-}
-
-function getidx_tipo_equipe()
-{
-return $this->idx_tipo_equipe;
-}
-
-function getidx_tipo_ocorr()
-{
-return $this->idx_tipo_ocorr;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setdata_hora_ocorr($val)
-{
-$this->data_hora_ocorr =  $val;
-}
-
-function setprotocolo($val)
-{
-$this->protocolo =  $val;
-}
-
-function setidx_semaforo($val)
-{
-$this->idx_semaforo =  $val;
-}
-
-function setidx_origem_ocorr($val)
-{
-$this->idx_origem_ocorr =  $val;
-}
-
-function setidx_reclamante($val)
-{
-$this->idx_reclamante =  $val;
-}
-
-function setstatus($val)
-{
-$this->status =  $val;
-}
-
-function setobs($val)
-{
-$this->obs =  $val;
-}
-
-function setidx_tipo_equipe($val)
-{
-$this->idx_tipo_equipe =  $val;
-}
-
-function setidx_tipo_ocorr($val)
-{
-$this->idx_tipo_ocorr =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

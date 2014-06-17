@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        logradouro
-* GENERATION DATE:  23.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.logradouro.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.logradouro.php
 * FOR MYSQL TABLE:  cad_logradouro
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -51,66 +51,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_uf()
-{
-return $this->idx_uf;
-}
-
-function getidx_cid()
-{
-return $this->idx_cid;
-}
-
-function getidx_bai()
-{
-return $this->idx_bai;
-}
-
-function getlograd_nome()
-{
-return $this->lograd_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_uf($val)
-{
-$this->idx_uf =  $val;
-}
-
-function setidx_cid($val)
-{
-$this->idx_cid =  $val;
-}
-
-function setidx_bai($val)
-{
-$this->idx_bai =  $val;
-}
-
-function setlograd_nome($val)
-{
-$this->lograd_nome =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

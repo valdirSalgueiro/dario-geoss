@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        kit_ferramenta
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.kit_ferramenta.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.kit_ferramenta.php
 * FOR MYSQL TABLE:  cad_kit_ferramenta
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -50,56 +50,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_ferramenta()
-{
-return $this->idx_ferramenta;
-}
-
-function getquant_item()
-{
-return $this->quant_item;
-}
-
-function getidx_tipo_equipe()
-{
-return $this->idx_tipo_equipe;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_ferramenta($val)
-{
-$this->idx_ferramenta =  $val;
-}
-
-function setquant_item($val)
-{
-$this->quant_item =  $val;
-}
-
-function setidx_tipo_equipe($val)
-{
-$this->idx_tipo_equipe =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

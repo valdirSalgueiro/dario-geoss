@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        material
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.material.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.material.php
 * FOR MYSQL TABLE:  cad_material
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -48,90 +49,10 @@ var $database; // Instance of class database
 function material()
 {
 
-$this->database = Database::getDb(); 
+$this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getmat_nome()
-{
-return $this->mat_nome;
-}
-
-function getidx_unidade()
-{
-return $this->idx_unidade;
-}
-
-function getmodelo()
-{
-return $this->modelo;
-}
-
-function getvida_util()
-{
-return $this->vida_util;
-}
-
-function getquant_estoque()
-{
-return $this->quant_estoque;
-}
-
-function getidx_fornecedor()
-{
-return $this->idx_fornecedor;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setmat_nome($val)
-{
-$this->mat_nome =  $val;
-}
-
-function setidx_unidade($val)
-{
-$this->idx_unidade =  $val;
-}
-
-function setmodelo($val)
-{
-$this->modelo =  $val;
-}
-
-function setvida_util($val)
-{
-$this->vida_util =  $val;
-}
-
-function setquant_estoque($val)
-{
-$this->quant_estoque =  $val;
-}
-
-function setidx_fornecedor($val)
-{
-$this->idx_fornecedor =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD
@@ -183,6 +104,8 @@ $this->id = ""; // clear key for autoincrement
 
 $sql = "INSERT INTO cad_material ( mat_nome,idx_unidade,modelo,vida_util,quant_estoque,idx_fornecedor ) VALUES ( '$this->mat_nome','$this->idx_unidade','$this->modelo','$this->vida_util','$this->quant_estoque','$this->idx_fornecedor' )";
 $result = $this->database->query($sql);
+
+
 }
 
 // **********************

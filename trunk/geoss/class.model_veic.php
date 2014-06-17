@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        model_veic
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.model_veic.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.model_veic.php
 * FOR MYSQL TABLE:  cad_model_veic
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -48,36 +48,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getmodel_nome()
-{
-return $this->model_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setmodel_nome($val)
-{
-$this->model_nome =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

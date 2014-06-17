@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        servicos
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.servicos.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.servicos.php
 * FOR MYSQL TABLE:  cad_servicos
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -48,36 +48,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getservicos_nome()
-{
-return $this->servicos_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setservicos_nome($val)
-{
-$this->servicos_nome =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

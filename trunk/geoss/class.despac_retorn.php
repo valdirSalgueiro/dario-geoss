@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        despac_retorn
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.despac_retorn.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.despac_retorn.php
 * FOR MYSQL TABLE:  cad_despac_retorn
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -53,86 +53,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getsituac_veic_equipam()
-{
-return $this->situac_veic_equipam;
-}
-
-function getidx_equipam_devolv()
-{
-return $this->idx_equipam_devolv;
-}
-
-function getidx_despac_sai()
-{
-return $this->idx_despac_sai;
-}
-
-function getobs()
-{
-return $this->obs;
-}
-
-function getdata_hora_ret()
-{
-return $this->data_hora_ret;
-}
-
-function getkilom_final()
-{
-return $this->kilom_final;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setsituac_veic_equipam($val)
-{
-$this->situac_veic_equipam =  $val;
-}
-
-function setidx_equipam_devolv($val)
-{
-$this->idx_equipam_devolv =  $val;
-}
-
-function setidx_despac_sai($val)
-{
-$this->idx_despac_sai =  $val;
-}
-
-function setobs($val)
-{
-$this->obs =  $val;
-}
-
-function setdata_hora_ret($val)
-{
-$this->data_hora_ret =  $val;
-}
-
-function setkilom_final($val)
-{
-$this->kilom_final =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

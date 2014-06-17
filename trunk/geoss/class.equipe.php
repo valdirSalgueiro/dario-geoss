@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        equipe
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.equipe.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.equipe.php
 * FOR MYSQL TABLE:  cad_equipe
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -50,46 +51,6 @@ $this->database = Database::getDb();
 
 
 // **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getcod_equipe()
-{
-return $this->cod_equipe;
-}
-
-function getidx_tipo_equipe()
-{
-return $this->idx_tipo_equipe;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setcod_equipe($val)
-{
-$this->cod_equipe =  $val;
-}
-
-function setidx_tipo_equipe($val)
-{
-$this->idx_tipo_equipe =  $val;
-}
-
-// **********************
 // SELECT METHOD / LOAD
 // **********************
 
@@ -131,7 +92,7 @@ $this->id = ""; // clear key for autoincrement
 
 $sql = "INSERT INTO cad_equipe ( cod_equipe,idx_tipo_equipe ) VALUES ( '$this->cod_equipe','$this->idx_tipo_equipe' )";
 $result = $this->database->query($sql);
-//$this->id = mysql_insert_id($this->database->link);
+
 
 }
 

@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        cidade
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.cidade.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.cidade.php
 * FOR MYSQL TABLE:  cad_cidade
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -50,46 +51,6 @@ $this->database = Database::getDb();
 
 
 // **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_uf()
-{
-return $this->idx_uf;
-}
-
-function getcid_nome()
-{
-return $this->cid_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_uf($val)
-{
-$this->idx_uf =  $val;
-}
-
-function setcid_nome($val)
-{
-$this->cid_nome =  $val;
-}
-
-// **********************
 // SELECT METHOD / LOAD
 // **********************
 
@@ -131,7 +92,7 @@ $this->id = ""; // clear key for autoincrement
 
 $sql = "INSERT INTO cad_cidade ( idx_uf,cid_nome ) VALUES ( '$this->idx_uf','$this->cid_nome' )";
 $result = $this->database->query($sql);
-$this->id = mysql_insert_id($this->database->link);
+
 
 }
 

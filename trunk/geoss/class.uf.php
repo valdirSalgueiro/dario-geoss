@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        uf
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.uf.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.uf.php
 * FOR MYSQL TABLE:  cad_uf
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -49,36 +50,6 @@ $this->database = Database::getDb();
 
 
 // **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getuf_nome()
-{
-return $this->uf_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setuf_nome($val)
-{
-$this->uf_nome =  $val;
-}
-
-// **********************
 // SELECT METHOD / LOAD
 // **********************
 
@@ -118,7 +89,7 @@ $this->id = ""; // clear key for autoincrement
 
 $sql = "INSERT INTO cad_uf ( uf_nome ) VALUES ( '$this->uf_nome' )";
 $result = $this->database->query($sql);
-$this->id = mysql_insert_id($this->database->link);
+
 
 }
 
