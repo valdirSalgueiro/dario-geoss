@@ -3,9 +3,9 @@
 /*
 *
 * -------------------------------------------------------
-* CLASSNAME:        cad_inventario
-* GENERATION DATE:  03.06.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/classes/class.cad_inventario.php
+* CLASSNAME:        inventario
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.inventario.php
 * FOR MYSQL TABLE:  cad_inventario
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------

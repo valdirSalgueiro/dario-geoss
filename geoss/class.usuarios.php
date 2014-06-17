@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        usuarios
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.usuarios.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.usuarios.php
 * FOR MYSQL TABLE:  cad_usuarios
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -54,96 +54,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_niv_acesso()
-{
-return $this->idx_niv_acesso;
-}
-
-function getsenha()
-{
-return $this->senha;
-}
-
-function getcontrat_acesso()
-{
-return $this->contrat_acesso;
-}
-
-function getusuario()
-{
-return $this->usuario;
-}
-
-function getidx_empresa_usua()
-{
-return $this->idx_empresa_usua;
-}
-
-function getlogin_nome()
-{
-return $this->login_nome;
-}
-
-function getnivelacesso()
-{
-return $this->nivelacesso;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_niv_acesso($val)
-{
-$this->idx_niv_acesso =  $val;
-}
-
-function setsenha($val)
-{
-$this->senha =  $val;
-}
-
-function setcontrat_acesso($val)
-{
-$this->contrat_acesso =  $val;
-}
-
-function setusuario($val)
-{
-$this->usuario =  $val;
-}
-
-function setidx_empresa_usua($val)
-{
-$this->idx_empresa_usua =  $val;
-}
-
-function setlogin_nome($val)
-{
-$this->login_nome =  $val;
-}
-
-function setnivelacesso($val)
-{
-$this->nivelacesso =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

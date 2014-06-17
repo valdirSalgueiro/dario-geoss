@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        ocorrencia
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.ocorrencia.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.ocorrencia.php
 * FOR MYSQL TABLE:  cad_ocorrencia
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -51,66 +51,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function gettipo_ocorrenc()
-{
-return $this->tipo_ocorrenc;
-}
-
-function getidx_ocorrenc_prior()
-{
-return $this->idx_ocorrenc_prior;
-}
-
-function getidx_tipo_veic()
-{
-return $this->idx_tipo_veic;
-}
-
-function getprazo_atend()
-{
-return $this->prazo_atend;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function settipo_ocorrenc($val)
-{
-$this->tipo_ocorrenc =  $val;
-}
-
-function setidx_ocorrenc_prior($val)
-{
-$this->idx_ocorrenc_prior =  $val;
-}
-
-function setidx_tipo_veic($val)
-{
-$this->idx_tipo_veic =  $val;
-}
-
-function setprazo_atend($val)
-{
-$this->prazo_atend =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

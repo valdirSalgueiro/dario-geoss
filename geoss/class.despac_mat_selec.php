@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        despac_mat_selec
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.despac_mat_selec.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.despac_mat_selec.php
 * FOR MYSQL TABLE:  cad_despac_mat_selec
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -50,56 +50,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getquantidade()
-{
-return $this->quantidade;
-}
-
-function getidx_material()
-{
-return $this->idx_material;
-}
-
-function getidx_despac_sai()
-{
-return $this->idx_despac_sai;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setquantidade($val)
-{
-$this->quantidade =  $val;
-}
-
-function setidx_material($val)
-{
-$this->idx_material =  $val;
-}
-
-function setidx_despac_sai($val)
-{
-$this->idx_despac_sai =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

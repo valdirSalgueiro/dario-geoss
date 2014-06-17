@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        veiculo
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.veiculo.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.veiculo.php
 * FOR MYSQL TABLE:  cad_veiculo
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -52,76 +52,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getplaca()
-{
-return $this->placa;
-}
-
-function getano()
-{
-return $this->ano;
-}
-
-function getidx_modelo()
-{
-return $this->idx_modelo;
-}
-
-function getidx_tipo()
-{
-return $this->idx_tipo;
-}
-
-function getimei_gps()
-{
-return $this->imei_gps;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setplaca($val)
-{
-$this->placa =  $val;
-}
-
-function setano($val)
-{
-$this->ano =  $val;
-}
-
-function setidx_modelo($val)
-{
-$this->idx_modelo =  $val;
-}
-
-function setidx_tipo($val)
-{
-$this->idx_tipo =  $val;
-}
-
-function setimei_gps($val)
-{
-$this->imei_gps =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        reclamante
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.reclamante.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.reclamante.php
 * FOR MYSQL TABLE:  cad_reclamante
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -49,46 +49,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getreclam_nome()
-{
-return $this->reclam_nome;
-}
-
-function gettelefone()
-{
-return $this->telefone;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setreclam_nome($val)
-{
-$this->reclam_nome =  $val;
-}
-
-function settelefone($val)
-{
-$this->telefone =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

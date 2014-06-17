@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        bairro
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.bairro.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.bairro.php
 * FOR MYSQL TABLE:  cad_bairro
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -51,56 +52,6 @@ $this->database = Database::getDb();
 
 
 // **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_uf()
-{
-return $this->idx_uf;
-}
-
-function getidx_cid()
-{
-return $this->idx_cid;
-}
-
-function getbai_nome()
-{
-return $this->bai_nome;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_uf($val)
-{
-$this->idx_uf =  $val;
-}
-
-function setidx_cid($val)
-{
-$this->idx_cid =  $val;
-}
-
-function setbai_nome($val)
-{
-$this->bai_nome =  $val;
-}
-
-// **********************
 // SELECT METHOD / LOAD
 // **********************
 
@@ -144,7 +95,7 @@ $this->id = ""; // clear key for autoincrement
 
 $sql = "INSERT INTO cad_bairro ( idx_uf,idx_cid,bai_nome ) VALUES ( '$this->idx_uf','$this->idx_cid','$this->bai_nome' )";
 $result = $this->database->query($sql);
-$this->id = mysql_insert_id($this->database->link);
+
 
 }
 

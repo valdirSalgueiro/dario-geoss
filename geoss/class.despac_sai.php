@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        despac_sai
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.despac_sai.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.despac_sai.php
 * FOR MYSQL TABLE:  cad_despac_sai
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -57,126 +57,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getnum_ordem()
-{
-return $this->num_ordem;
-}
-
-function getidx_veiculo()
-{
-return $this->idx_veiculo;
-}
-
-function getidx_equipe()
-{
-return $this->idx_equipe;
-}
-
-function getdata_hora()
-{
-return $this->data_hora;
-}
-
-function getsituac_veic_equipam()
-{
-return $this->situac_veic_equipam;
-}
-
-function getidx_equipam_acess()
-{
-return $this->idx_equipam_acess;
-}
-
-function getidx_resp_tecnic()
-{
-return $this->idx_resp_tecnic;
-}
-
-function getmotorista()
-{
-return $this->motorista;
-}
-
-function getstatus_atual()
-{
-return $this->status_atual;
-}
-
-function getkilom_inicial()
-{
-return $this->kilom_inicial;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setnum_ordem($val)
-{
-$this->num_ordem =  $val;
-}
-
-function setidx_veiculo($val)
-{
-$this->idx_veiculo =  $val;
-}
-
-function setidx_equipe($val)
-{
-$this->idx_equipe =  $val;
-}
-
-function setdata_hora($val)
-{
-$this->data_hora =  $val;
-}
-
-function setsituac_veic_equipam($val)
-{
-$this->situac_veic_equipam =  $val;
-}
-
-function setidx_equipam_acess($val)
-{
-$this->idx_equipam_acess =  $val;
-}
-
-function setidx_resp_tecnic($val)
-{
-$this->idx_resp_tecnic =  $val;
-}
-
-function setmotorista($val)
-{
-$this->motorista =  $val;
-}
-
-function setstatus_atual($val)
-{
-$this->status_atual =  $val;
-}
-
-function setkilom_inicial($val)
-{
-$this->kilom_inicial =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

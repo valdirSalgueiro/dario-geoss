@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        os
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.os.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.os.php
 * FOR MYSQL TABLE:  cad_os
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -56,116 +56,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getstatus()
-{
-return $this->status;
-}
-
-function getidx_semaforo()
-{
-return $this->idx_semaforo;
-}
-
-function getidx_tipo_servico()
-{
-return $this->idx_tipo_servico;
-}
-
-function getdata_hora_os()
-{
-return $this->data_hora_os;
-}
-
-function getlaudo_tecnico()
-{
-return $this->laudo_tecnico;
-}
-
-function getidx_mater_usado()
-{
-return $this->idx_mater_usado;
-}
-
-function getidx_problema_local()
-{
-return $this->idx_problema_local;
-}
-
-function getidx_gerar_ocorrencia()
-{
-return $this->idx_gerar_ocorrencia;
-}
-
-function getdata_os_fecha()
-{
-return $this->data_os_fecha;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setstatus($val)
-{
-$this->status =  $val;
-}
-
-function setidx_semaforo($val)
-{
-$this->idx_semaforo =  $val;
-}
-
-function setidx_tipo_servico($val)
-{
-$this->idx_tipo_servico =  $val;
-}
-
-function setdata_hora_os($val)
-{
-$this->data_hora_os =  $val;
-}
-
-function setlaudo_tecnico($val)
-{
-$this->laudo_tecnico =  $val;
-}
-
-function setidx_mater_usado($val)
-{
-$this->idx_mater_usado =  $val;
-}
-
-function setidx_problema_local($val)
-{
-$this->idx_problema_local =  $val;
-}
-
-function setidx_gerar_ocorrencia($val)
-{
-$this->idx_gerar_ocorrencia =  $val;
-}
-
-function setdata_os_fecha($val)
-{
-$this->data_os_fecha =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

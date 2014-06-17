@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        funcionario
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.funcionario.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.funcionario.php
 * FOR MYSQL TABLE:  cad_funcionario
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -50,56 +50,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getfuncionar_nome()
-{
-return $this->funcionar_nome;
-}
-
-function getidx_funcao()
-{
-return $this->idx_funcao;
-}
-
-function getfoto()
-{
-return $this->foto;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setfuncionar_nome($val)
-{
-$this->funcionar_nome =  $val;
-}
-
-function setidx_funcao($val)
-{
-$this->idx_funcao =  $val;
-}
-
-function setfoto($val)
-{
-$this->foto =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

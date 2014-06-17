@@ -1,10 +1,11 @@
+
 <?php
 /*
 *
 * -------------------------------------------------------
 * CLASSNAME:        semaforo
-* GENERATION DATE:  21.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.semaforo.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.semaforo.php
 * FOR MYSQL TABLE:  cad_semaforo
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -54,150 +55,10 @@ var $database; // Instance of class database
 function semaforo()
 {
 
-$this->database = Database::getDb(); 
+$this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getidx_uf()
-{
-return $this->idx_uf;
-}
-
-function getidx_cidade()
-{
-return $this->idx_cidade;
-}
-
-function getidx_bairro()
-{
-return $this->idx_bairro;
-}
-
-function getidx_lograd()
-{
-return $this->idx_lograd;
-}
-
-function getidx_area()
-{
-return $this->idx_area;
-}
-
-function getlatitude()
-{
-return $this->latitude;
-}
-
-function getlongitude()
-{
-return $this->longitude;
-}
-
-function getid()
-{
-return $this->id;
-}
-
-function getnum_semaforo()
-{
-return $this->num_semaforo;
-}
-
-function getlograd_transver()
-{
-return $this->lograd_transver;
-}
-
-function getmodo()
-{
-return $this->modo;
-}
-
-function getcontrolador()
-{
-return $this->controlador;
-}
-
-function getoperacao()
-{
-return $this->operacao;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setidx_uf($val)
-{
-$this->idx_uf =  $val;
-}
-
-function setidx_cidade($val)
-{
-$this->idx_cidade =  $val;
-}
-
-function setidx_bairro($val)
-{
-$this->idx_bairro =  $val;
-}
-
-function setidx_lograd($val)
-{
-$this->idx_lograd =  $val;
-}
-
-function setidx_area($val)
-{
-$this->idx_area =  $val;
-}
-
-function setlatitude($val)
-{
-$this->latitude =  $val;
-}
-
-function setlongitude($val)
-{
-$this->longitude =  $val;
-}
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setnum_semaforo($val)
-{
-$this->num_semaforo =  $val;
-}
-
-function setlograd_transver($val)
-{
-$this->lograd_transver =  $val;
-}
-
-function setmodo($val)
-{
-$this->modo =  $val;
-}
-
-function setcontrolador($val)
-{
-$this->controlador =  $val;
-}
-
-function setoperacao($val)
-{
-$this->operacao =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD
@@ -262,7 +123,6 @@ $this->id = ""; // clear key for autoincrement
 $sql = "INSERT INTO cad_semaforo ( idx_uf,idx_cidade,idx_bairro,idx_lograd,idx_area,latitude,longitude,num_semaforo,lograd_transver,modo,controlador,operacao ) VALUES ( '$this->idx_uf','$this->idx_cidade','$this->idx_bairro','$this->idx_lograd','$this->idx_area','$this->latitude','$this->longitude','$this->num_semaforo','$this->lograd_transver','$this->modo','$this->controlador','$this->operacao' )";
 $result = $this->database->query($sql);
 
-//$this->id = mysql_insert_id($this->database->connection);
 
 }
 
@@ -272,6 +132,8 @@ $result = $this->database->query($sql);
 
 function update($id)
 {
+
+
 
 $sql = " UPDATE cad_semaforo SET  idx_uf = '$this->idx_uf',idx_cidade = '$this->idx_cidade',idx_bairro = '$this->idx_bairro',idx_lograd = '$this->idx_lograd',idx_area = '$this->idx_area',latitude = '$this->latitude',longitude = '$this->longitude',num_semaforo = '$this->num_semaforo',lograd_transver = '$this->lograd_transver',modo = '$this->modo',controlador = '$this->controlador',operacao = '$this->operacao' WHERE id = $id ";
 

@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        vistoria
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.vistoria.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.vistoria.php
 * FOR MYSQL TABLE:  cad_vistoria
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -49,46 +49,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_semaforo()
-{
-return $this->idx_semaforo;
-}
-
-function getidx_cad_os()
-{
-return $this->idx_cad_os;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_semaforo($val)
-{
-$this->idx_semaforo =  $val;
-}
-
-function setidx_cad_os($val)
-{
-$this->idx_cad_os =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD

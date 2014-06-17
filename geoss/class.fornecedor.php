@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        fornecedor
-* GENERATION DATE:  22.05.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/generated_classes/class.fornecedor.php
+* GENERATION DATE:  17.06.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.fornecedor.php
 * FOR MYSQL TABLE:  cad_fornecedor
 * FOR MYSQL DB:     geoss
 * -------------------------------------------------------
@@ -57,126 +57,6 @@ $this->database = Database::getDb();
 
 }
 
-
-// **********************
-// GETTER METHODS
-// **********************
-
-
-function getid()
-{
-return $this->id;
-}
-
-function getidx_uf()
-{
-return $this->idx_uf;
-}
-
-function getidx_cid()
-{
-return $this->idx_cid;
-}
-
-function getidx_bai()
-{
-return $this->idx_bai;
-}
-
-function getidx_lograd()
-{
-return $this->idx_lograd;
-}
-
-function getcep()
-{
-return $this->cep;
-}
-
-function gettelefone()
-{
-return $this->telefone;
-}
-
-function gete_mail()
-{
-return $this->e_mail;
-}
-
-function getfornec_nome()
-{
-return $this->fornec_nome;
-}
-
-function getcnpj()
-{
-return $this->cnpj;
-}
-
-function getnumero()
-{
-return $this->numero;
-}
-
-// **********************
-// SETTER METHODS
-// **********************
-
-
-function setid($val)
-{
-$this->id =  $val;
-}
-
-function setidx_uf($val)
-{
-$this->idx_uf =  $val;
-}
-
-function setidx_cid($val)
-{
-$this->idx_cid =  $val;
-}
-
-function setidx_bai($val)
-{
-$this->idx_bai =  $val;
-}
-
-function setidx_lograd($val)
-{
-$this->idx_lograd =  $val;
-}
-
-function setcep($val)
-{
-$this->cep =  $val;
-}
-
-function settelefone($val)
-{
-$this->telefone =  $val;
-}
-
-function sete_mail($val)
-{
-$this->e_mail =  $val;
-}
-
-function setfornec_nome($val)
-{
-$this->fornec_nome =  $val;
-}
-
-function setcnpj($val)
-{
-$this->cnpj =  $val;
-}
-
-function setnumero($val)
-{
-$this->numero =  $val;
-}
 
 // **********************
 // SELECT METHOD / LOAD
