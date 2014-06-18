@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* RESET */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin : 0; padding : 0; border : 0; outline : 0; font-size : 100%; vertical-align : baseline; background : transparent; }
+
+body { line-height : 1; }
+ol, ul { list-style : none; }
+blockquote, q { quotes : none; }
+blockquote:before, blockquote:after, q:before, q:after { content : ''; content : none; }
+:focus { outline : 0; }
+ins { text-decoration : none; }
+del { text-decoration : line-through; }
+table { border-collapse : collapse; border-spacing : 0; }
+
+a:link { text-decoration: none; color: #fff; }
+a:visited { text-decoration: none; color: #fff;  }
+a:hover { text-decoration: none; color: #fff; }
+a:active { text-decoration: none; color: #fff; }
+
+body {
+	/*font-family: 'Raleway', sans-serif;*/
+	font-weight: 300;
+	background: #eee;
+	/*color: #333;*/
+	-webkit-text-size-adjust: none;
+	
+}
+
+body.show-nav { height: 100%; overflow: hidden; }
+
+	/* HEADER */
+	
+		@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+	/* CONTAINER */
+	
+		.container-topo { width:960px; height:150px; margin:0px auto; }
+	
+	/* BARRA-COR */
+	
+		.cor-partido-01 /* PARTIDO PT */
+		{ width:100%; height:150px; background-color:#00AA89; margin-top:0px; }
+		.cor-partido-02 /* PARTIDO PSDB */
+		{ width:100%; height:150px; background-color:#0B59A1; margin-top:0px; }
+		.cor-partido-03 /* PARTIDO PCdoB */
+		{ width:100%; height:150px; background-color:#FF0000; margin-top:0px; }
+		.cor-partido-04 /* PARTIDO PMDB */
+		{ width:100%; height:150px; background-color:#000; margin-top:0px; }
+	
+	/* LOGOMARCA */
+	
+		.logo { position: absolute; width:320px; text-align:center; height:180px; background-color:#fff; border-bottom-left-radius:1em; border-bottom-right-radius:1em; margin-top:0;}
+		.logo-align { margin-top:70px; }
+
+	/* MENU */
+	
+		.menu { float: left; width:100px; height:70px; text-align:center; font-family: 'Montserrat', sans-serif; font-size:10px; color:#fff; text-decoration:none; padding-top:40px; }
+		.separa-menu { float:left; width:2px; height:150px; background-image: url(../images/separa-menu.png); }
+		.alinhamento-menu { margin-left:340px; }
+		.ico { margin-bottom:10px; }
+		.link-menu 
+			a:link { color: #FFF; } 
+			a:hover { text-decoration: none; color: #000; }
+		
+
+
+/* MIOLO 1 */
+	
+	/* SLIDE SHOW */
+		
+		.container-slide { width:100%; background-image:url(../images/slide/bg_artepolitico.jpg); background-repeat:repeat-x; }
+		.slide { width:1024px; height:400px; margin:0px auto; }
+		
+		
+		.numero-candidato01 { float:left; font-family: 'Montserrat', sans-serif; font-size:100px; color:#9C0917; }
+		.numero-candidato02 { font-family: 'Montserrat', sans-serif; font-size:100px; color:#0B59A1; }
+		.numero-candidato03 { font-family: 'Montserrat', sans-serif; font-size:100px; color:#FF0000; }
+		.numero-candidato04 { font-family: 'Montserrat', sans-serif; font-size:100px; color:#000; }
+		
+		.nome-candidato01 { float:left; font-family: 'Montserrat', sans-serif; font-size:50px; color:#F7BB00; margin-left:90px; margin-top:-75px; }
+		.nome-candidato02 { font-family: 'Montserrat', sans-serif; font-size:50px; color:#0B59A1; }
+		.nome-candidato03 { font-family: 'Montserrat', sans-serif; font-size:50px; color:#FF0000; }
+		.nome-candidato04 { font-family: 'Montserrat', sans-serif; font-size:50px; color:#000; }
+		
+		.partido-candidato { float:left; font-family: 'Montserrat', sans-serif; color:#999; font-weight:bold; font-size:30px; }
+		
+		
+
+/* MIOLO 2 */
+
+		.container-miolo02 { width:100%; height:392px; margin:auto; background-color:#eee; }
+		.conteudo01 { width:960px; margin: 0 auto; }
+		.separa-miolo01 { height:72px; }
+		
+		.slide-noticia { width:960px; margin:auto; }
+		.box-imagem-noticia { float:left; width:480px; height:320px; }
+		.imagem-noticia { width:480px; height:320px; }
+		.box-noticia { float:right; width:430px; height:320px; padding-left:50px; background-color:#FFF; }
+		.tit-noticia { width:400px; margin-top:40px; margin-bottom:45px; font-family: 'Montserrat', sans-serif; font-size:25px; color:#00AA89; }
+		.chamada-noticia { width:380px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#666; line-height:25px;}
+		
+			/* BOX LEIA MAIS */
+			
+			.box-01 {
+				width:130px;
+     			display: table;
+     			height: 60px;
+     			#position: relative;
+     			overflow: hidden;
+				border-top-left-radius:1em; 
+				border-top-right-radius:1em; 
+				background-color:#00AA89; 
+				margin-top:25px; 
+				margin-left:260px; 
+					}
+			.box-02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+				
+				.link-leia-mais 
+					a:link { color: #FFF; } 
+					a:hover { text-decoration: none; color: #000; }
+			
+			
+/* MIOLO 3 */
+
+	.container-miolo03 { width:100%; height:605px; margin:auto; background-color:#eee; }
+	.conteudo03 { width:960px; height:605px; margin: 0 auto; }
+	.separa-miolo03 { width:54px; float:left; position:relative; }
+	.tit-galeria { width:275px; height:70px;  }
+	
+	
+	/* BOX GALERIA */
+			
+			.box-galeria01 {
+				width:275px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#00AA89; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-galeria02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-galeria03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+					
+	
+	
+	
+	
+	/* BOX NOTICIA PARTIDO */
+			
+			.box-noticia-partido01 {
+				margin-left: 554px;
+				width:275px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-noticia-partido02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-noticia-partido03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+			.alinhamento-box-noticia-partido { float:left; position: relative; margin-left:554px; margin-top:-70px; }
+			
+			.bg-box { width:405px; float:left; position:relative; height:464px; background-color:#FFF; }
+			
+			.foto-chamada-noticia-partido { float:left; padding-left:20px; padding-top:20px; padding-right:10px; }
+			.data-chamada-noticia-partido { float:left; padding-top:20px; padding-bottom:10px; width:280px; font-family: 'Montserrat', sans-serif; font-size:12px; color:#999; }
+			.chamada-noticia-partido {float:left; width:280px; padding-bottom:25px; font-family: 'Montserrat', sans-serif; font-size:13px; color: #00AA89; }
+			.linha-separa-noticia-partido { float: left; margin-left:20px; width:360px; height:1px; background-image:url(../images/noticias/px_cinza.gif); }
+			
+			/* BOX LEIA MAIS NOTICIA PARTIDO */
+			
+			.box-leia-mais-noticia-partido01 {
+				width:130px;
+     			display: table;
+     			height: 60px;
+     			#position: relative;
+     			overflow: hidden;
+				border-top-left-radius:1em;
+				border-top-right-radius:1em; 
+				background-color:#00AA89; 
+				margin-top:25px; 
+				margin-left:250px; 
+					}
+			.box-leia-mais-noticia-partido02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-leia-mais-noticia-partido03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+					
+				.alinhamento-box-noticia-partido2 { float:left; margin-left:0px; margin-top:3px; }
+				
+				
+	/* BOX GALERIA DE FOTOS */
+	
+			
+			.geral-miolo3 { width:100%; height:535px; margin:0 auto; margin-top:70px; background-color:#eee;}
+			.geral-conteudo-miolo3 { width:960px; height:535px; margin: 0 auto;  }
+			.box-geral-galeria { float:left; position:relative; width:500px; height:464px;}
+			.box-geral-galeria2 { float:left; position:relative; width:500px; height:464px; background-color:#FFF;}
+			.foto-galeria { float:left; width:90px; height:90px; padding-left:27px; padding-top:27px; }
+			
+			.box-geral-noticia-partido { float:left; position:relative; width:405px; height:464px; }
+			.box-geral-noticia-partido2 { float:left; position:relative; width:405px; height:464px; background-color:#FFF; }
+			
+			
+			
+			/* BOX LEIA MAIS GALERIA FOTOS */
+			
+			.box-leia-mais-galeria-fotos01 {
+				width:130px;
+     			display: table;
+     			height: 60px;
+     			#position: relative;
+     			overflow: hidden;
+				border-top-left-radius:1em;
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:50px; 
+				margin-left:335px; 
+					}
+			.box-leia-mais-galeria-fotos02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-leia-mais-galeria-fotos03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+					
+			.alinhamento-box-galeria-fotos { float:left; margin-left:10px; margin-top:3px; }
+			
+			
+			
+						
+/* FOOTER */
+
+	
+	.separa-miolo-footer { width:100%; height:70px; background-color:#eee; }
+	.footer-geral01 /* PARTIDO PT */
+		{ width:100%; height:450px; background-color:#00AA89; margin-top:0px; margin:0 auto; } 
+	.footer-geral02 /* PARTIDO PSDB */
+		{ width:100%; height:430px; background-color:#0B59A1; margin-top:0px; margin:0 auto; } 
+	.footer-geral03 /* PARTIDO PCdoB */
+		{ width:100%; height:430px; background-color:#FF0000; margin-top:0px; margin:0 auto; } 
+	.footer-geral04 /* PARTIDO PMDB */
+		{ width:100%; height:430px; background-color:#000; margin-top:0px; margin:0 auto; } 
+
+
+	.footer-geral-partido01 /* PARTIDO PT */
+		{ width:960px; height:430px; margin-top:0px; margin:0 auto; } 
+	.footer-geral-partido02 /* PARTIDO PSDB */
+		{ width:960px; height:430px; background-color:#0B59A1; margin-top:0px; } 
+	.footer-geral-partido03 /* PARTIDO PCdoB */
+		{ width:960px; height:430px; background-color:#FF0000; margin-top:0px; } 
+	.footer-geral-partido04 /* PARTIDO PMDB */
+		{ width:960px; height:430px; background-color:#000; margin-top:0px; } 
+	
+
+	.conteudo_contato { width:960px; height:430px; margin:auto; padding-top:20px; padding-left:20px; background-color:#00AA89;}
+	.conteudo_contato_1 { width:400px; float:left; position:relative; padding-top:55px; }
+	.conteudo_infos_divider {width:100px; float:left; position:relative; margin-top: 40px;}
+	.conteudo_contato_2 { width:450px; float:left; position:relative; padding-top:55px; }
+	
+	.nome_partido { font-family: 'Montserrat', sans-serif; font-size:18px; color:#fff; padding-bottom:20px; }
+	.tit_endereco { font-family: 'Montserrat', sans-serif; font-size:15px; color:#fff; padding-bottom:20px; }
+	.endereco_partido { font-family: 'Montserrat', sans-serif; font-size:13px; color:#fff; padding-bottom:30px; line-height:20px; }
+	.tit_news { font-family: 'Montserrat', sans-serif; font-size:18px; color:#fff; padding-bottom:20px;  }
+	
+	.form_news_partido { border:solid 1px #006955; background:#FFF; height:40px; width:400px; padding-left:10px; font-family: 'Montserrat', sans-serif; font-size:12px; color:#999;}
+	.botao-enviar { float: left; width:117px; padding-top:20px }
+	
+	.fale_candidato { font-family: 'Montserrat', sans-serif; font-size:18px; color:#fff; padding-bottom:20px; }
+	.form_fale_candidato { border:solid 1px #006955; background:#FFF; height:165px; width:400px; padding-left:10px; padding-top:10px; font-family: 'Montserrat', sans-serif; font-size:12px; color:#999; }
+	.input_fale_candidato { border:solid 1px #006955; background:#FFF; height:40px; width:400px; padding-left:10px; font-family: 'Montserrat', sans-serif; font-size:12px; color:#999; }
+	
+	
+	.copyright-geral { width:100%; height:90px; margin: 0 auto; background-color:#006955;  }
+	.copyright { width:960px; margin: 0 auto; text-align:center; background-color:#006955; padding-top:45px; font-family: 'Montserrat', sans-serif; font-size:11px; color:#fff; }
+
