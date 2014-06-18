@@ -32,7 +32,7 @@
 
 	<div class="box-galeria-interna01">
     <div class="box-galeria-interna02">
-    <div class="box-galeria-interna03">NOME DA GALERIA #1</div>
+    <div class="box-galeria-interna03">GALERIA</div>
     	</div>
     	</div>
 
@@ -41,34 +41,17 @@
 
 <div id="box-geral-galeria-interna2" class="box-geral-galeria-interna2">
 	<div id="conteudo-galeria" class="conteudo-galeria">
-    
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
- 		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
+    <?php
+			$sql = "SELECT * FROM galeria";
+			$res = $db->query( $sql );			
+			while ( $row = $res->fetch_assoc() ) {
+				$imagem=base64_encode( $row['imagem'] );
+				$imagem="<img src='data:image/jpeg;base64,$imagem' width='95' height='95'>";
+				echo "	
+					<div id=\"foto-galeria-interna\" class=\"foto-galeria-interna\">$imagem</div>
+				";
+			}
+	?>  
 
 	</div>
 </div>
@@ -82,79 +65,6 @@
 </div>
 <!-- termina DIV CLASS geral-miolo3 -->
 </div>
-
-
-
-<div id="geral-conteudo-miolo3" class="geral-conteudo-miolo3">
-
-
-
-<div id="box-geral-galeria-interna" class="box-geral-galeria-interna">
-
-<div id="tit-galeria-interna" class="tit-galeria-interna">
-
-	<div class="box-galeria-interna01">
-    <div class="box-galeria-interna02">
-    <div class="box-galeria-interna03">NOME DA GALERIA #2</div>
-    	</div>
-    	</div>
-
-</div>
-
-
-<div id="box-geral-galeria-interna2" class="box-geral-galeria-interna2">
-	<div id="conteudo-galeria" class="conteudo-galeria">
-    
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
- 		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  		<div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-        <div id="foto-galeria-interna" class="foto-galeria-interna"><img src="images/galeria/90x90.gif" width="95" height="95" /></div>
-  
-
-	</div>
-</div>
-
-
-
-
-</div>
-
-<!-- termina DIV CLASS geral-conteudo-miolo3 -->
-</div>
-<!-- termina DIV CLASS geral-miolo3 -->
-</div>
-
-
-
-
-
-
-
-
-
-
 
 <?php require_once('inc/inc_footer.php'); ?>
 

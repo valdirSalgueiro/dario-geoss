@@ -40,49 +40,26 @@
 <div id="box-geral-agenda2" class="box-geral-agenda2">
   <div id="conteudo-agenda-candidato" class="conteudo-agenda-candidato">
     
-    <div id="tit_agenda" class="tit_agenda">04/07/2014</div>
-    <div id="conteudo-agenda" class="conteudo-agenda">
-    
-    <span class="hora_agenda">10:00h:</span> Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit.<br />
-	<span class="hora_agenda">16:00h:</span> Lorem ipsum dolor sit amet, consectuteur adpiscing elit.<br />
-	<span class="hora_agenda">20:00h:</span> Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor.<br />
-    
-</div>
-	
-    <div id="tit_agenda" class="tit_agenda">05/07/2014</div>
-    <div id="conteudo-agenda" class="conteudo-agenda">
-    
-    <span class="hora_agenda">10:00h:</span> Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit.<br />
-	<span class="hora_agenda">16:00h:</span> Lorem ipsum dolor sit amet, consectuteur adpiscing elit.<br />
-	<span class="hora_agenda">20:00h:</span> Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor.<br />
-</div>
-
-	<div id="tit_agenda" class="tit_agenda">06/07/2014</div>
-    <div id="conteudo-agenda" class="conteudo-agenda">
-    
-    <span class="hora_agenda">10:00h:</span> Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit.<br />
-	<span class="hora_agenda">16:00h:</span> Lorem ipsum dolor sit amet, consectuteur adpiscing elit.<br />
-	<span class="hora_agenda">20:00h:</span> Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor.<br />
-    
-</div>
-
-	<div id="tit_agenda" class="tit_agenda">07/07/2014</div>
-    <div id="conteudo-agenda" class="conteudo-agenda">
-    
-    <span class="hora_agenda">10:00h:</span> Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit.<br />
-	<span class="hora_agenda">16:00h:</span> Lorem ipsum dolor sit amet, consectuteur adpiscing elit.<br />
-	<span class="hora_agenda">20:00h:</span> Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor.<br />
-</div>
-
-	<div id="tit_agenda" class="tit_agenda">08/07/2014</div>
-    <div id="conteudo-agenda" class="conteudo-agenda">
-    
-    <span class="hora_agenda">10:00h:</span> Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit.<br />
-	<span class="hora_agenda">16:00h:</span> Lorem ipsum dolor sit amet, consectuteur adpiscing elit.<br />
-	<span class="hora_agenda">20:00h:</span> Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor.<br />
-</div>
-
-	
+	<?php
+		$sql = "SELECT * FROM agenda";
+		$res = $db->query( $sql );			
+		while ( $row = $res->fetch_assoc() ) {
+			$dia=$row['dia'];
+			$id=$row['id'];
+			$sql = "SELECT * FROM agenda_conteudo WHERE idx_agenda=$id";
+			echo "<div id=\"tit_agenda\" class=\"tit_agenda\">$dia</div>";
+			$res2 = $db->query( $sql );			
+			echo "<div id=\"conteudo-agenda\" class=\"conteudo-agenda\">";
+			while ( $row2 = $res2->fetch_assoc() ) {
+				$hora=$row2['hora'];
+				$conteudo=$row2['conteudo'];
+				echo "
+					<span class=\"hora_agenda\">$hora:</span> $conteudo<br/>					
+				";
+			}
+			echo "</div>";
+		}
+	?>		
 
 
 </div>
