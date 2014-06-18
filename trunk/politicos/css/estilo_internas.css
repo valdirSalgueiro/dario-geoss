@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* CSS INTERNAS */
+
+/* HISTORIA CANDIDATO */
+
+	.box-geral-historia { width:960px; height:814px }
+	.box-geral-historia2 { float:left; position:relative; width:960px; height:814px; background-color:#FFF; }
+	.foto-candidato-historia { float:left; width:315px; height:425px; padding-left:83px; padding-top:77px; padding-right:72px; }
+	.conteudo-historia-candidato { float:left; width:410px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#999; padding-top:77px; line-height:17px; }
+	
+	/* BOX HISTORIA CANDIDATO */
+			
+			.box-historia01 {
+				
+				width:275px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-historia02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-historia03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+	
+
+/* PORPOSTAS CANDIDATO */
+
+	.box-geral-propostas { width:960px; height:814px }
+	.box-geral-propostas2 { float:left; position:relative; width:960px; height:814px; background-color:#FFF; }
+	
+	.conteudo-propostas-candidato { float:left; width:774px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#999; padding-left:90px; padding-top:50px; line-height:17px; }
+	.tit_proposta { font-family: 'Montserrat', sans-serif; font-size:20px; color:#00AA89; padding-bottom:20px; padding-top:30px; }
+	.conteudo_proposta { font-family: 'Montserrat', sans-serif; font-size:15px; color:#00AA89; padding-bottom:30px; }
+
+	/* BOX PORPOSTAS CANDIDATO */
+			
+			.box-propostas01 {
+				
+				width:194px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-propostas02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-propostas03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+					
+/* NOTÍCIAS CANDIDATO */
+
+	.box-geral-noticias { width:960px; height:814px }
+	.box-geral-noticias2 { float:left; position:relative; width:960px; height:814px; background-color:#FFF; }
+	
+	.conteudo-noticias-candidato { float:left; width:774px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#999; padding-left:90px; padding-top:50px; line-height:17px; }
+	.tit_noticias { font-family: 'Montserrat', sans-serif; font-size:20px; color:#00AA89; padding-bottom:15px; padding-top:30px; }
+	.conteudo_noticias { font-family: 'Montserrat', sans-serif; font-size:15px; color:#00AA89; padding-bottom:30px; line-height:30px; }
+	.data_noticias { font-family: 'Montserrat', sans-serif; font-size:16px; color:#999; font-weight:900; line-height:20px; padding-bottom:25px; }
+	.imagem_noticia { width:315px; height:260px; padding-top:10px; padding-right:20px; padding-bottom:10px; float:left;  }
+	.imagem_noticia2 { width:315px; height:260px; padding-top:10px; padding-left:20px; padding-bottom:10px; float: right;  }
+	.btn_noticias_antigas { float:left; padding-top:30px; }
+	.btn_noticias_recentes { float:right; padding-top:30px; }
+	
+	
+	/* BOX NOTÍCIAS CANDIDATO */
+			
+			.box-noticias01 {
+				
+				width:194px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em;
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-noticias02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-noticias03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}					
+
+
+/* GALERIA INTERNA */
+
+	.box-geral-galeria-interna { width:960px; height:400px }
+	.box-geral-galeria-interna2 { float:left; position:relative; width:960px; height:400px; background-color:#FFF; }
+	
+	.conteudo-galeria { float:left; width:960px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#999; }
+	.tit_galeria-interna { font-family: 'Montserrat', sans-serif; font-size:20px; color:#00AA89; padding-bottom:20px; padding-top:30px; }
+	.conteudo_proposta { font-family: 'Montserrat', sans-serif; font-size:15px; color:#00AA89; padding-bottom:30px; }
+	.foto-galeria-interna { float:left; width:95px; height:95px; padding-left:22px; padding-top:27px; }
+	.separa-galeria-interna { height:70px; }
+
+	/* BOX GALERIA */
+			
+			.box-galeria-interna01 {
+				
+				width:280px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-galeria-interna02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-galeria-interna03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}
+					
+					
+/* AGENDA CANDIDATO */
+
+	.box-geral-agenda { width:960px; height:814px }
+	.box-geral-agenda2 { float:left; position:relative; width:960px; height:814px; background-color:#FFF; }
+	
+	.conteudo-agenda-candidato { float:left; width:774px; text-align:justify; font-family: 'Montserrat', sans-serif; font-size:14px; color:#999; padding-left:90px; padding-top:50px; line-height:17px; }
+	.tit_agenda { font-family: 'Montserrat', sans-serif; font-size:20px; color:#00AA89; padding-bottom:20px; padding-top:30px; }
+	.conteudo_agenda { font-family: 'Montserrat', sans-serif; font-size:15px; color:#00AA89; padding-bottom:30px; line-height:30px; }
+	.hora_agenda { font-family: 'Montserrat', sans-serif; font-size:16px; color:#999; font-weight:900; line-height:20px; }
+
+	/* BOX AGENDA CANDIDATO */
+			
+			.box-agenda01 {
+				
+				width:194px;
+     			display: table;
+     			height: 70px;
+     			#position: relative;
+     			overflow: hidden;
+				
+				border-top-right-radius:1em; 
+				background-color:#FAAF3A; 
+				margin-top:0px; 
+				margin-left:0px; 
+					}
+			.box-agenda02 {
+     			#position: absolute;
+     			#top: 50%;
+     			display: table-cell;
+     			vertical-align: middle;
+					}
+					
+			.box-agenda03 {
+    			#position: relative;
+     			#top: -50%;
+				text-align:center;
+				font-family: 'Montserrat', sans-serif; 
+				font-size:16px; 
+				color:#fff;
+					}					
