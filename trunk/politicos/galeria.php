@@ -42,7 +42,7 @@
 <div id="box-geral-galeria-interna2" class="box-geral-galeria-interna2">
 	<div id="conteudo-galeria" class="conteudo-galeria">
     <?php
-			$sql = "SELECT * FROM galeria";
+			$sql = "SELECT * FROM galeria_interna";
 			$res = $db->query( $sql );			
 			while ( $row = $res->fetch_assoc() ) {
 				$imagem=base64_encode( $row['imagem'] );

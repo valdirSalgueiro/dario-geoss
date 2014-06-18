@@ -113,11 +113,9 @@
 <div id="box-geral-galeria2" class="box-geral-galeria2">
 
 			<?php
-			$sql = "SELECT * FROM noticiaspartido";
+			$sql = "SELECT * FROM galeria";
 			$res = $db->query( $sql );			
 			while ( $row = $res->fetch_assoc() ) {
-				$data=$row['data'];
-				$titulo=$row['titulo'];
 				$imagem=base64_encode( $row['imagem'] );
 				$imagem="<img src='data:image/jpeg;base64,$imagem' width='95' height='95'>";
 				echo "
