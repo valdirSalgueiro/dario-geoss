@@ -1,3 +1,15 @@
+<?php
+	include_once("admin/class.database.php");
+	$db = Database::getConnection();
+	$sql = "SELECT * FROM config";
+	$res = $db->query( $sql );			
+	$row = $res->fetch_assoc();	
+	$logomarca=base64_encode( $row['logomarca'] );
+	$full_banner=base64_encode( $row['full_banner'] );
+	$logomarca="<img src='data:image/jpeg;base64,$logomarca' width='281' height='45' border='0'>";
+	$full_banner="<img src='data:image/jpeg;base64,$full_banner' width='1024' height='400'>";
+?>
+
 <style type="text/css">
 @import url("../css/estilos.css");
 </style>
@@ -8,7 +20,7 @@
     <div id="container" class="container-topo"> 
       <!-- Logomarca do Partido -->
       <div id="logo" class="logo">
-        <div id="logo-align" class="logo-align"> <a href="index.php"><img src="images/logos-politicos/logo01.png" width="281" height="45" border="0" /></a> </div>
+        <div id="logo-align" class="logo-align"> <a href="index.php"><?php echo $logomarca?></a> </div>
       </div>
       
       <!-- MENU PADRÃO -->

@@ -39,29 +39,19 @@
 
 <div id="box-geral-propostas2" class="box-geral-propostas2">
   <div id="conteudo-propostas-candidato" class="conteudo-propostas-candidato">
-    
-    <div id="tit_proposta" class="tit_proposta">PROPOSTA #1</div>
-    <div id="conteudo-proposta" class="conteudo-proposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus.
+    		<?php
+			$sql = "SELECT * FROM propostas";
+			$res = $db->query( $sql );			
+			while ( $row = $res->fetch_assoc() ) {
+				$titulo=$row['titulo'];
+				$conteudo=$row['conteudo'];
+				echo "
+					<div id=\"tit_proposta\" class=\"tit_proposta\">$titulo</div>
+					<div id=\"conteudo-proposta\" class=\"conteudo-proposta\">$conteudo</div>					
+					";
+			}
+			?>	
 </div>
-	
-    <div id="tit_proposta" class="tit_proposta">PROPOSTA #2</div>
-    <div id="conteudo-proposta" class="conteudo-proposta">Cras odio leo, tincidunt eget condimentum nec, suscipit at eros. Vivamus ipsum dolor, fermentum adipiscing adipiscing sed, cursus eu metus. Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor, in viverra eros nisl eu quam. Ut ut congue diam, vitae euismod nibh. Pellentesque placerat tortor convallis est malesuada elementum. Donec convallis semper enim, non elementum nunc elementum eget. Fusce id eros a dui consectetur vestibulum et eget nisl. Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit. Cras vitae tincidunt odio.
-</div>
-
-	<div id="tit_proposta" class="tit_proposta">PROPOSTA #3</div>
-    <div id="conteudo-proposta" class="conteudo-proposta">Donec a elementum eros. Suspendisse non diam non risus eleifend convallis. Duis cursus vestibulum viverra. Donec eleifend risus risus. Pellentesque fringilla laoreet mauris, eget hendrerit leo sagittis id. Mauris sit amet scelerisque est. Integer blandit convallis felis, vitae cursus nulla cursus ac. Aliquam ut purus ac felis tempus gravida vitae a erat. Curabitur congue neque faucibus sem dictum, auctor adipiscing est pulvinar. Duis hendrerit varius nunc adipiscing.
-</div>
-
-	<div id="tit_proposta" class="tit_proposta">PROPOSTA #4</div>
-    <div id="conteudo-proposta" class="conteudo-proposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus.
-</div>
-
-	
-
-
-</div>
-
-
 
 </div>
 </div>

@@ -178,7 +178,7 @@ box-sizing: content-box;
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.config.php"><span class="glyphicon glyphicon-user"></span> Configurar</a>
+													<a href="cad.config.php?id=1"><span class="glyphicon glyphicon-user"></span> Configurar</a>
 												</li>												
                                             </ul>
                                         </li>                                        
@@ -200,31 +200,28 @@ box-sizing: content-box;
                                     </ul>
                                 </li> 
 								<li class="top">
-								<a href="#"  class="top_link"><span>Noticias Geral</span><b class="down"></b> </a>
+								<a href="#"  class="top_link"><span>Noticias</span><b class="down"></b> </a>
                                     <ul class="sub-menu" style="width: 380px">
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.noticiasgeral.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
+													<a href="cad.noticiasgeral.php"><span class="glyphicon glyphicon-user"></span> Cadastro Geral</a>
 												</li>												
 												<li>
-													<a href="list.noticiasgeral.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
+													<a href="list.noticiasgeral.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem Geral</a>
 												</li>
-                                            </ul>
-                                        </li>                 
-                                    </ul>
-                                </li>
-								<li class="top">
-								<a href="#"  class="top_link"><span>Noticias partido</span><b class="down"></b> </a>
-                                    <ul class="sub-menu" style="width: 380px">
-                                        <li>
-                                            <ul>
-                                                <li>
-													<a href="cad.noticiaspartido.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
+												<li>
+													<a href="cad.noticiaspartido.php"><span class="glyphicon glyphicon-user"></span> Cadastro Partido</a>
 												</li>												
 												<li>
-													<a href="list.noticiaspartido.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
+													<a href="list.noticiaspartido.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem Partido</a>
 												</li>
+												<li>
+													<a href="cad.noticias.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
+												</li>												
+												<li>
+													<a href="list.noticias.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
+												</li>												
                                             </ul>
                                         </li>                 
                                     </ul>
@@ -235,11 +232,11 @@ box-sizing: content-box;
                                         <li>
                                             <ul>
                                                 <li>
-													<a href="cad.historia.php"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
+													<a href="cad.historia.php?id=1"><span class="glyphicon glyphicon-user"></span> Cadastro</a>
 												</li>												
-												<li>
+												<!--li>
 													<a href="list.historia.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
-												</li>
+												</li-->
                                             </ul>
                                         </li>                 
                                     </ul>

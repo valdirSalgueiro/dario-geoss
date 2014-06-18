@@ -13,6 +13,14 @@
 <body>
 
 <?php require_once('inc/inc_menu.php'); ?>
+<?php
+	$sql = "SELECT * FROM historia";
+	$res = $db->query( $sql );			
+	$row = $res->fetch_assoc();	
+	$imagem=base64_encode( $row['imagem'] );
+	$texto=$row['texto'];
+	$imagem="<img src='data:image/jpeg;base64,$imagem' width='315' height='425'>";
+?>
 
 
 <!-- MIOLO 02 -->
@@ -43,21 +51,8 @@
 
 <div id="box-geral-historia2" class="box-geral-historia2">
 
-<div id="foto-candidato-historia" class="foto-candidato-historia"><img src="images/historia/foto-candidato.gif" width="315" height="425" /></div>
-<div id="conteudo-historia-candidato" class="conteudo-historia-candidato">
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus.<br /><br />
-
-Cras odio leo, tincidunt eget condimentum nec, suscipit at eros. Vivamus ipsum dolor, fermentum adipiscing adipiscing sed, cursus eu metus. Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor, in viverra eros nisl eu quam. Ut ut congue diam, vitae euismod nibh. Pellentesque placerat tortor convallis est malesuada elementum. Donec convallis semper enim, non elementum nunc elementum eget. Fusce id eros a dui consectetur vestibulum et eget nisl. Nam vel cursus dui. Cras eu fermentum arcu, vitae adipiscing velit. Cras vitae tincidunt odio.<br /><br />
-
-Donec a elementum eros. Suspendisse non diam non risus eleifend convallis. Duis cursus vestibulum viverra. Donec eleifend risus risus. Pellentesque fringilla laoreet mauris, eget hendrerit leo sagittis id. Mauris sit amet scelerisque est. Integer blandit convallis felis, vitae cursus nulla cursus ac. Aliquam ut purus ac felis tempus gravida vitae a erat. Curabitur congue neque faucibus sem dictum, auctor adipiscing est pulvinar. Duis hendrerit varius nunc adipiscing.<br />
-<br />
- 
-
-Cras odio leo, tincidunt eget condimentum nec, suscipit at eros. Vivamus ipsum dolor, fermentum adipiscing adipiscing sed, cursus eu metus. Maecenas pharetra, est sit amet ultrices bibendum, justo enim faucibus tortor, in viverra eros nisl eu quam. Ut ut congue diam, vitae euismod nibh. Duis cursus vestibulum viverra. Donec eleifend risus risus.Mauris sit amet scelerisque est. Integer blandit convallis felis, vitae cursus nulla cursus ac. 
-
-
-</div>
+<div id="foto-candidato-historia" class="foto-candidato-historia"><?php echo $imagem?></div>
+<div id="conteudo-historia-candidato" class="conteudo-historia-candidato"><?php echo $texto?></div>
 
 
 

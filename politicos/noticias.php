@@ -40,14 +40,25 @@
 <div id="box-geral-noticias2" class="box-geral-noticias2">
   <div id="conteudo-noticias-candidato" class="conteudo-noticias-candidato">
     
-    <div id="tit_noticias" class="tit_noticias">Título da notícia do candidato #01</div>
-    <div id="tit_noticias" class="data_noticias">04/06/2014</div>
+	<?php
+			$sql = "SELECT * FROM noticias";
+			$res = $db->query( $sql );			
+			while ( $row = $res->fetch_assoc() ) {
+				$titulo=$row['titulo'];
+				$imagem=base64_encode( $row['imagem'] );
+				$imagem="<img src='data:image/jpeg;base64,$imagem' width='315' height='259'>";
+				$data=$row['data'];
+				$texto=$row['texto'];
+				echo "	
+					<div id=\"tit_noticias\" class=\"tit_noticias\">$titulo</div>
+					<div id=\"tit_noticias\" class=\"data_noticias\">$data</div>
+				    <div id=\"conteudo-noticias\" class=\"conteudo-noticias\">$texto<br /><br />
+					<div id=\"imagem_noticia\" class=\"imagem_noticia\">$imagem</div>
+				";
+			}
+	?>
     
-    <div id="conteudo-noticias" class="conteudo-noticias">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus.<br /><br />
 
-	<div id="imagem_noticia" class="imagem_noticia"><img src="images/noticias/315x260.png" width="315" height="259" /></div>
-    
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus consectetur consequat. Etiam urna nulla, convallis at cursus eget, suscipit tristique nunc. Pellentesque in vestibulum ligula, a semper enim. Integer suscipit malesuada turpis, et tempus est rhoncus at. Proin egestas at est vitae placerat. Nulla eu libero vitae diam posuere blandit. Vivamus vitae rhoncus neque. Ut rutrum facilisis quam non vestibulum. Nullam aliquet erat in blandit eleifend. Vivamus nec aliquet elit, nec luctus nisl. Suspendisse in enim sit amet elit cursus.
     
     
     
