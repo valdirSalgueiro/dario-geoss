@@ -16,7 +16,15 @@ $columns = array(
 				
 				array( 'db' => 'data', 'dt' => 1 ),
 				
-				array( 'db' => 'imagem', 'dt' => 2 ),
+	array(
+        'db'        => 'imagem',
+        'dt'        => 2,
+        'formatter' => function( $d, $row ) {
+			$imagem=base64_encode( $d );
+			$imagem="<img src='data:image/jpeg;base64,$imagem' width='100' height='100'>";
+            return $imagem;
+        }
+    ),	
 				
 				array( 'db' => 'texto', 'dt' => 3 ),
 				

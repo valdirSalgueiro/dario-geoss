@@ -12,7 +12,15 @@ $primaryKey = 'id';
  
 $columns = array(    
 
-				array( 'db' => 'imagem', 'dt' => 0 ),
+	array(
+        'db'        => 'imagem',
+        'dt'        => 0,
+        'formatter' => function( $d, $row ) {
+			$imagem=base64_encode( $d );
+			$imagem="<img src='data:image/jpeg;base64,$imagem' width='100' height='100'>";
+            return $imagem;
+        }
+    ),	
 				
 	array(
         'db'        => 'id',

@@ -12,10 +12,17 @@ $primaryKey = 'id';
  
 $columns = array(    
 
-				array( 'db' => 'arquivo', 'dt' => 0 ),
+	array(
+        'db'        => 'arquivo',
+        'dt'        => 0,
+        'formatter' => function( $d, $row ) {
+			//$imagem=base64_encode( $d );
+			//$imagem="<a href='' data:application/octet-stream,$imagem'>Baixar</a>";
+            return "";
+        }
+    ),
 				
 				array( 'db' => 'descricao', 'dt' => 1 ),
-				
 	array(
         'db'        => 'id',
         'dt'        => 2,
