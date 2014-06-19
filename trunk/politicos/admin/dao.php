@@ -48,7 +48,9 @@ if($id){
 		//apagarVinculos();
 	}
 	else{
-		$instance->update($id);
+		$instance->update($id);		
+		echo "updated";
+		//var_dump($instance);		
 		//apagarVinculos();
 	}
 }
@@ -58,6 +60,8 @@ else{
 	$resp->id = $id;
 
 }
+
+echo mysql_error();
 
 function apagarVinculos(){
 	global $id;

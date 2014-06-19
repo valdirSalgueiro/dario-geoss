@@ -53,7 +53,14 @@
 	<script type="text/javascript">
 		(function() {			
 		$('form').ajaxForm({
-					beforeSend: function() {
+					beforeSerialize: function($form, options) {
+						$('textarea.ckeditor').each(function () {
+							var $textarea = $(this);
+							$textarea.val(CKEDITOR.instances[$textarea.attr('name')].getData());
+						});
+					}, 
+ 
+					beforeSend: function() {						
 						mostrarCarregando();
 					},
 					success: function() {

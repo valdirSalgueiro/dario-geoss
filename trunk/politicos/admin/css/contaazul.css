@@ -650,6 +650,7 @@ input.dateTimeInput {
     margin: 0;
     padding: 0;
     padding-bottom: 1px;
+	margin-bottom:50px;
     clear: left;
 }
 
