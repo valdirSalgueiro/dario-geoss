@@ -1,4 +1,4 @@
-﻿﻿<!doctype html>
+﻿<!DOCTYPE html>
 <?php
 	error_reporting (E_ALL ^ E_NOTICE); 
 
@@ -24,11 +24,10 @@
 	
 	$id = post('id')==0?0:post('id');
 	$textoBotao=$id?"Alterar":"Cadastrar";
-	$modo=$id?"alterad":"cadastrad";
-	
+	$modo=$id?"alterad":"cadastrad";	
 ?>
 <html lang='en'>
-<head>
+	<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
@@ -46,11 +45,11 @@
     <script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>	
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>	
 	<script type="text/javascript" language="javascript" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" language="javascript" src="js/jquery.form.min.js"></script>
-	
+	<script type="text/javascript" language="javascript" src="js/ckeditor.js"></script>	
 	<script type="text/javascript">
 		(function() {			
 		$('form').ajaxForm({
@@ -131,8 +130,8 @@ box-sizing: content-box;
 }
 	</style>
 </head>
-<body class="">
-    <div class="container-header sem-mensagem-pagamento">
+<body>
+	<div class="container-header sem-mensagem-pagamento">
         <div class="ng-scope">
             <div class="header header-top ng-scope">
                 <div class="container">                    

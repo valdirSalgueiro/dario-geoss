@@ -1,4 +1,3 @@
-
 <?php
 require 'header.php';
 
@@ -19,7 +18,7 @@ $mensagem="$modo"."o";
 			<input type="hidden" name="type" value="noticias">
 			<span style="display:none" id="msg">Noticias <?php echo $mensagem?> com sucesso</span>
 	<div class="form-group col-md-12" style="text-align: left">
-					Titulo <input type="text" name="titulo" class=" form-control input-sm"  placeholder="Titulo" value="<?php echo $noticias->titulo?>">
+					Titulo <textarea  type="text" name="titulo" class="ckeditor" cols="80" rows="10"><?php echo $noticias->titulo?></textarea>
 			                
 		</div>
 		
@@ -34,7 +33,7 @@ $mensagem="$modo"."o";
 		</div>
 		
 	<div class="form-group col-md-12" style="text-align: left">
-					Texto <input type="text" name="texto" class=" form-control input-sm"  placeholder="Texto" value="<?php echo $noticias->texto?>">
+					Texto <textarea  type="text" name="texto" class="ckeditor" cols="80" rows="10"><?php echo $noticias->texto?></textarea>
 			                
 		</div>
 							  <div class="form-group col-md-6 col-md-offset-3">

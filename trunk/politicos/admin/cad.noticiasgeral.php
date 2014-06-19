@@ -1,4 +1,3 @@
-
 <?php
 require 'header.php';
 
@@ -24,7 +23,7 @@ $mensagem="$modo"."o";
 		</div>
 		
 	<div class="form-group col-md-12" style="text-align: left">
-					Chamada <input type="text" name="chamada" class=" form-control input-sm"  placeholder="Chamada" value="<?php echo $noticiasgeral->chamada?>">
+					Chamada <textarea  type="text" name="chamada" class="ckeditor" cols="80" rows="10"><?php echo $noticiasgeral->chamada?></textarea>
 			                
 		</div>
 		
