@@ -108,7 +108,7 @@ include_once('class.database.php');
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Geosweb</h1>
-                        <p class="intro-text">Controlador de Semaforos <em>RealTime.</em></p>
+                        <p class="intro-text">Controlador de Semáforos <em>RealTime.</em></p>
                         <div class="page-scroll">
                             <a href="#about" class="btn btn-circle">
                                 <i class="fa fa-angle-double-down animated"></i>
@@ -124,8 +124,9 @@ include_once('class.database.php');
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <h2>Controlador de semáforos</h2>
-                <p> Sinalvida Dispositivos de Seguranca Viaria Ltda, buscando continuamente a excelencia na prestacao de Servicos de Tecnologia da Informacao e controle semaforico de ruas e avenidas em todo Pais, tem como tradicao a excelencia no bem-estar e seguranca de nossos colaboradores. A importancia que atribuimos a esta iniciativa obtendo o resultado do nosso comprometimento em manter um estilo de vida saudavel dos nossos profissionais, clientes e a sociedade.</p>
-				<p>	As estrategias, instrucoes e os procedimentos da empresa devem suportar nosso compromisso ao bem-estar do colaborador, assegurando a continuidade dos seguintes objetivos da SINALVIDA: Atender aos requisitos legais e corporativos;Comprometer-se com o Bem Estar, Seguranca e Saude do Trabalho dos colaboradores; Incentivar a participacao de todos os colaboradores, dos nossos Parceiros, Fornecedores e Clientes nos Programas de Bem Estar, Seguranca do Trabalho e Saude Ocupacional da SINALVIDA; Gerenciar os custos, riscos e qualidade de saude e seguranca no ambiente de trabalho; Assegurar melhoria continua e excelencia na qualidade e execucao das atividades relativas ao Bem Estar, Seguranca do Trabalho e Saude Ocupacional da SINALVIDA.</p>
+                <p> Sinalvida Dispositivos de Segurança Viária Ltda, buscando continuamente a excelência na prestação de Serviços de Tecnologia da Informação e controle semafórico de ruas e avenidas em todo País, tem como tradição a excelência no bem-estar e segurança de nossos colaboradores. A importância que atribuímos a esta iniciativa obtendo o resultado do nosso comprometimento em manter um estilo de vida saudável dos nossos profissionais, clientes e a sociedade.</p>
+				<p>	As estratégias, instruções e os procedimentos da empresa devem suportar nosso compromisso ao bem-estar do colaborador, assegurando a continuidade dos seguintes objetivos da SINALVIDA: Atender aos requisitos legais e corporativos; Comprometer-se com o Bem Estar, Segurança e Saúde do Trabalho dos colaboradores; Incentivar a participação de todos os colaboradores, dos nossos Parceiros, Fornecedores e Clientes nos Programas de Bem Estar, Segurança do Trabalho e Saúde Ocupacional da SINALVIDA; Gerenciar os custos, riscos e qualidade de saúde e segurança no ambiente de trabalho; Assegurar melhoria continua e excelência na qualidade e execução das atividades relativas ao Bem Estar, Segurança do Trabalho e Saúde Ocupacional da SINALVIDA
+.</p>
             </div>
         </div>
     </section>
@@ -135,7 +136,7 @@ include_once('class.database.php');
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Sistema de monitoramento</h2>
-                    <p>Utilizando cameras de ultima geracao e possivel fazer a deteccao, sentido de deslocamento e contagem dos veiculos na via em tempo real, possibilitando uma alteracao AUTOMATICA nos tempos de acionamento dos semaforos, conforme a quantidade de veiculos trafegando veja mais Atraves de um link dedicado, todo o trafego tem acompanhado em Tempo Real, em uma central remota de monitoramento, com a possibilidade de conectar cameras para monitoramento das vias.</p>
+                    <p>Utilizando câmeras de ultima geração é possível fazer a detecção, sentido de deslocamento e contagem dos veículos na via em tempo real, possibilitando uma alteração AUTOMÁTICA nos tempos de acionamento dos semáforos, conforme a quantidade de veículos trafegando. Através de um link dedicado, todo o trafego pode ser acompanhado em Tempo Real, em uma central remota de monitoramento, com a possibilidade de conectar câmeras para monitoramento das vias.</p>
                 </div>
             </div>
         </div>
@@ -243,7 +244,7 @@ include_once('class.database.php');
     </section>
 	
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-					aria-hidden="true">
+					aria-hidden="true" style="color:black">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
