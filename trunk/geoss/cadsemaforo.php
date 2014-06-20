@@ -83,7 +83,7 @@ EOT;
 			// setup the ajax request
 			$.ajax({
 				url: 'base.php',
-				data: {'ids': ids},
+				data: {'ids': ids, 'height':100,'width':200},
 				type: 'POST',
 				success: function(data) {
 				    $(mapaDigital).html(data);      
@@ -103,17 +103,16 @@ EOT;
 </script>
 
     <div class="row centered-form">
-      <div class="col-xs-12 col-sm-8 col-md-12">
+      <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
               Cadastro semáforo
             </h3>
           </div>
+		  
           <div class="panel-body">
-			<table>
-			<tr>
-			<td>
+			<div class="form-group col-md-6">
             <form role="form" method="post" action="dao.php" onSubmit="return ajaxSubmit(this,'Semáforo cadastrado com sucesso');">
 			  <?php echo $semaforo->id?"<input type=\"hidden\" name=\"mode\" value=\"update\">":"";?>
 			  <input type="hidden" name="type" value="semaforo">
@@ -217,22 +216,20 @@ EOT;
                   Em Rede
                 </option>
               </select>
-			  </div>	
-			</td>	
-			<td style="vertical-align:middle">		
+			  </div>
+			</div>
+			<div class="form-group col-md-6"> 
+			<!--<div class = "mapa">-->
 				<div id="mapaDigital">
 				</div>
-			</td>			
-			</tr>
-			<tr>
-			<td>
+			</div>
+
+
               <div class="form-group col-md-6 col-md-offset-3">
                 <input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">
               </div>              			  
             </form>
-			</td>
-			
-			</tr>
+
           </div>
         </div>
       </div>

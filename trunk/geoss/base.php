@@ -8,6 +8,9 @@ function post($key) {
     return false;
 }
 
+//$mapaWidth=post('width');
+//$mapaHeight=post('height');
+
 $ids=post('ids');
 if (strpos($ids,',') !== false) {
     $ids=substr ( $ids, 0, strlen($ids)-1 );
@@ -24,9 +27,10 @@ function IsNullOrEmptyString($question){
 
 <script type="text/javascript">
 //< ![CDATA[
+var map;
 function load() {
 if (GBrowserIsCompatible()) {
-var map = new GMap2(document.getElementById("map"));
+map = new GMap2(document.getElementById("map"));
 map.addControl(new GLargeMapControl());
 map.addControl(new GMapTypeControl());
 map.addControl(new GOverviewMapControl());
@@ -110,11 +114,18 @@ map.setCenter(new GLatLng(-8.277852510903883,-35.96824049949646), 12);
 
 }
 }
+
 //]>
 </script>
-<center>
-<div id="map" style="width: 564px; height: 294px"></div>
-</center>
+
+<?php
+	if(!isset($mapaWidth) || !isset($mapaHeight)){
+		$mapaWidth="100%";
+		$mapaHeight="61%";
+	}
+?>
+<div id="map" style="width: <?php echo $mapaWidth?>; height: <?php echo $mapaHeight?>"></div>
+
 <script>
 $('document').ready(function(){load();});
 </script>
