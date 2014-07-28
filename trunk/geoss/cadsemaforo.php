@@ -163,6 +163,9 @@ EOT;
                 <input type="text" name="longitude" id="longitude" class="form-control input-sm" placeholder="Longitude" value="<?php echo $semaforo->longitude?>">
               </div>
               <div class="form-group col-md-12">
+                <input type="text" name="lograd_transver" id="longitude" class="form-control input-sm" placeholder="Rua Transversal" value="<?php echo $semaforo->lograd_transver?>">
+              </div>			  
+              <div class="form-group col-md-12">
                 <select class="form-control input-sm" name="modo" id="estados_config_escola">
 				
                   <option value="">
