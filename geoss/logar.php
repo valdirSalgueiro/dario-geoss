@@ -12,11 +12,12 @@ function post($key) {
 
 $user = post('user');
 $password = post('password');
+$contrat_acesso = post('contrat_acesso');
 
 $resp = new stdClass();	
 $resp->success = false;
 
-$query="SELECT * FROM cad_usuarios WHERE (login_nome = '$user') and (senha = '$password')";
+$query="SELECT * FROM cad_usuarios WHERE (login_nome = '$user') and (senha = '$password') and (contrat_acesso='$contrat_acesso')";
 $login = $db->query($query);
 
 if ($login->num_rows == 1) {

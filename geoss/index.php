@@ -43,7 +43,7 @@ include_once('class.database.php');
 							$(modalbody).html(msg);      
 							$(myModal).modal();
 						}else{
-							location.href="cadsemaforo.php";
+							location.href="inicio.php";
 						}
 					}else{
 						$(modalbody).html("Erro ao logar");      
@@ -156,6 +156,19 @@ include_once('class.database.php');
 					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 					<input id="login-password" type="password" class="form-control" name="password" placeholder="Senha">
 				  </div>
+				  <div style="margin-bottom: 25px" class="input-group" >
+					<select class="form-control input-sm" style="width:100%" name="contrat_acesso" >
+					  <?php
+						 $db = Database::getConnection();
+					     $sql = "SELECT DISTINCT contrat_acesso
+									  FROM cad_usuarios";
+						  $res = $db->query( $sql );
+						  while ( $row = $res->fetch_assoc() ) {
+							echo '<option value="'.$row['contrat_acesso'].'">'.utf8_encode($row['contrat_acesso']).'</option>';
+						  }
+					  ?>						
+					</select>
+				  </div>				  
 				  <div style="margin-top:10px" class="form-group">
 					<!-- Button -->
 					<div class="col-sm-12 controls">
