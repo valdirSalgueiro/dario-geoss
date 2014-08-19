@@ -38,6 +38,8 @@ include_once("class.despac_mat_devolv.php");
 include_once("class.despac_mat_retirad.php");
 include_once("class.despac_mat_selec.php");
 
+include_once("class.inventario.php");
+
 $db = Database::getConnection(); 
 
 function post($key) {
@@ -55,11 +57,25 @@ $resp->success = false;
 
 $instance = new $type;
 
+if($instance instanceof inventario){
+	$material=new material();
+	foreach($_POST as $key => $value)
+	{		
+		if(property_exists ( $material , $key ))
+			$material->$key = $value;	
+	}
+	$material->insert();
+	$idx_material=mysqli_insert_id($db);
+}
+
 foreach($_POST as $key => $value)
 {		
-	if(property_exists ( $instance , $key ))
-		$instance->$key = $value;
+	if(property_exists ( $instance , $key )){
+		$instance->$key = $value;	
+	}
 }	
+
+
 
 function apagarDespachoSaida(){
 	global $instance;
@@ -77,6 +93,10 @@ function apagarDespachoRetorno(){
 		$sql = "DELETE FROM cad_despac_mat_devolv WHERE idx_despac_retorn = $id;";
 		$db->query($sql);
 	}
+}
+
+if($instance instanceof inventario){
+	$instance->idx_material=$idx_material;
 }
 
 if($id){		
