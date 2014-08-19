@@ -1,6 +1,7 @@
 ﻿<?php
 require 'header.php';
 include_once("class.ocorrencia.php");
+include_once("class.ocorrencia.php");
 
 $db = Database::getConnection(); 
 $query = "SELECT id FROM cad_ocorrencia";
@@ -15,6 +16,7 @@ $query = "SELECT id FROM cad_ocorrencia";
         <thead>
             <tr>
 				<th>Nome</th>
+				<th>Prioridade</th>
 				<th>Prazo Atendimento</th>
 				<th>Editar</th>
 				<th>Remover</th>
@@ -30,14 +32,23 @@ $query = "SELECT id FROM cad_ocorrencia";
 				foreach($ocorrencia as $key => $value)
 				{				
 					if(is_scalar($value) || !$value){
-						if(
-						$key=="id" 
-						|| startsWith($key,"idx_")
+						if(				   $key=="id" 
+						|| (startsWith($key,"idx_") && $key!="idx_ocorrenc_prior" )
 						){
 								continue;
 						}											
 						else{
+							if($key=="idx_ocorrenc_prior"){
+								if($value==1)
+									echo "<td>ALTA</td>";
+								else if($value==2)
+									echo "<td>MEDIA</td>";
+								else if($value==3)
+									echo "<td>BAIXA</td>";
+							}
+							else{
 								echo "<td>".utf8_encode($value)."</td>";
+							}
 						}
 					}
 				}	
