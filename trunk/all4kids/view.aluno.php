@@ -4,10 +4,12 @@ include_once("header.php");
 include_once("class.aluno.php");
 include_once("class.atividade.php");
 include_once("class.servico.php");
+include_once("class.horario.php");
 
 $aluno = new aluno();
 $atividade = new atividade();
 $servico = new servico();
+
 
 if($id){
 	$aluno->select($id);
@@ -24,6 +26,7 @@ while ( $row = $res->fetch_assoc() ) {
 		$atividades[$row['idx_dia']][$row['idx_horario']].="<br>".$atividade->nome;
 }		
 
+
 $sql = "SELECT aluno_servico.idx_servico, dia_horario_servico.idx_dia,dia_horario_servico.idx_horario  FROM  dia_horario_servico, aluno_servico WHERE dia_horario_servico.idx_servico=aluno_servico.idx_servico AND idx_aluno=$aluno->id";
 $res = $db->query( $sql );
 while ( $row = $res->fetch_assoc() ) {						
@@ -32,7 +35,17 @@ while ( $row = $res->fetch_assoc() ) {
 		$servicos[$row['idx_dia']][$row['idx_horario']]=$servico->nome;
 	else
 		$servicos[$row['idx_dia']][$row['idx_horario']].="<br>".$servico->nome;
+}
+
+$sql = "SELECT * from horario ORDER BY horario";
+$res = $db->query( $sql );
+$horarios=array();
+while ( $row = $res->fetch_assoc() ) {	
+	$horario = new horario();	
+	$horario->select($row['id']);
+	$horarios[]=$horario;
 }	
+
 
 $timestamp = strtotime('next Monday');
 setlocale(LC_ALL, 'pt_BR.UTF-8', 'Portuguese_Brazil.1252');
@@ -41,8 +54,6 @@ for ($i = 0; $i < 7; $i++) {
  $days[] = strftime('%A', $timestamp);
  $timestamp = strtotime('+1 day', $timestamp);
 }
-
-
 
 ?>
 
@@ -63,16 +74,17 @@ for ($i = 0; $i < 7; $i++) {
 			</thead>			
 			<tbody>				
 				<?php				
-					for($i=1;$i<11;$i++){
+					for($i=0;$i<count($horarios);$i++){
+						$curHorario=$horarios[$i];
 						echo "<tr>";						
-						echo "<td>".($i+6).":00h as ".($i+7).":00h</td>";
+						echo "<td>".$curHorario->horario."</td>";
 						for($j=1;$j<6;$j++){
 							echo "<td>";
-							if(isset($atividades[$j][$i]))
-								echo $atividades[$j][$i];
-							if(isset($servicos[$j][$i]))
-								echo $servicos[$j][$i];								
-							else if(!isset($atividades[$j][$i]) && !isset($servicos[$j][$i]))
+							if(isset($atividades[$j][$curHorario->id]))
+								echo $atividades[$j][$curHorario->id];
+							if(isset($servicos[$j][$curHorario->id]))
+								echo $servicos[$j][$curHorario->id];								
+							else if(!isset($atividades[$j][$curHorario->id]) && !isset($servicos[$j][$curHorario->id]))
 								echo "-";
 							echo "</td>";
 						}

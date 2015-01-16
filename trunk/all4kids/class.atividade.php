@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        atividade
-* GENERATION DATE:  07.06.2014
+* GENERATION DATE:  25.08.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.atividade.php
 * FOR MYSQL TABLE:  atividade
 * FOR MYSQL DB:     all4kids
@@ -34,6 +34,7 @@ var $id;   // KEY ATTR. WITH AUTOINCREMENT
 
 var $nome;   // (normal Attribute)
 var $vagas;   // (normal Attribute)
+var $valor;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -69,6 +70,8 @@ $this->nome = $row->nome;
 
 $this->vagas = $row->vagas;
 
+$this->valor = $row->valor;
+
 }
 
 // **********************
@@ -90,7 +93,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO atividade ( nome,vagas ) VALUES ( '$this->nome','$this->vagas' )";
+$sql = "INSERT INTO atividade ( nome,vagas,valor ) VALUES ( '$this->nome','$this->vagas','$this->valor' )";
 $result = $this->database->query($sql);
 
 
@@ -105,7 +108,7 @@ function update($id)
 
 
 
-$sql = " UPDATE atividade SET  nome = '$this->nome',vagas = '$this->vagas' WHERE id = $id ";
+$sql = " UPDATE atividade SET  nome = '$this->nome',vagas = '$this->vagas',valor = '$this->valor' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 

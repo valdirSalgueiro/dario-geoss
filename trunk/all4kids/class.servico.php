@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        servico
-* GENERATION DATE:  11.06.2014
+* GENERATION DATE:  19.07.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.servico.php
 * FOR MYSQL TABLE:  servico
 * FOR MYSQL DB:     all4kids

@@ -82,9 +82,27 @@
 							echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['descricao'].'</option>';
 						}
 					?>
-			  </select>
-			              
+			  </select>			              
 		</div>
+		
+	<div class="form-group col-md-12" style="text-align: left">
+		  <select class="form-control input-sm" name="idx_fornecedor">
+				<option value="0">Selecione o Fornecedor</option>
+				<?php
+					$db = Database::getConnection();
+					$sql = "SELECT id, nome
+							FROM fornecedor
+							ORDER BY nome";
+					$res = $db->query( $sql );
+					while ( $row = $res->fetch_assoc() ) {
+						$checked=($conta->idx_fornecedor==$row['id'])?"selected":"";
+						echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['nome'].'</option>';
+					}
+				?>
+	  </select>
+	</div>
+		
+		
 		
 					  <div class="form-group col-md-6 col-md-offset-3">
 						<input type="submit" value="<?php echo $textoBotao?>" class="btn btn-info btn-block">

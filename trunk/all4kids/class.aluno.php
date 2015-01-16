@@ -4,8 +4,8 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        aluno
-* GENERATION DATE:  10.06.2014
-* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\generator/classes/class.aluno.php
+* GENERATION DATE:  24.08.2014
+* CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.aluno.php
 * FOR MYSQL TABLE:  aluno
 * FOR MYSQL DB:     all4kids
 * -------------------------------------------------------
@@ -46,10 +46,25 @@ var $responsavel_emergencia;   // (normal Attribute)
 var $carteira;   // (normal Attribute)
 var $entregou_carteira;   // (normal Attribute)
 var $ativo;   // (normal Attribute)
-var $idade;   // (normal Attribute)
 var $idx_nivelescolar;   // (normal Attribute)
 var $data_nasc;   // (normal Attribute)
 var $foto;   // (normal Attribute)
+var $sexo;   // (normal Attribute)
+var $naturalidade;   // (normal Attribute)
+var $uf;   // (normal Attribute)
+var $pais;   // (normal Attribute)
+var $numero;   // (normal Attribute)
+var $complemento;   // (normal Attribute)
+var $bairro;   // (normal Attribute)
+var $cidade;   // (normal Attribute)
+var $estado;   // (normal Attribute)
+var $cep;   // (normal Attribute)
+var $reside;   // (normal Attribute)
+var $reside_outros;   // (normal Attribute)
+var $escola;   // (normal Attribute)
+var $alergia;   // (normal Attribute)
+var $restricao_alimentar;   // (normal Attribute)
+var $pessoas_autorizadas;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -109,13 +124,43 @@ $this->entregou_carteira = $row->entregou_carteira;
 
 $this->ativo = $row->ativo;
 
-$this->idade = $row->idade;
-
 $this->idx_nivelescolar = $row->idx_nivelescolar;
 
 $this->data_nasc = $row->data_nasc;
 
 $this->foto = $row->foto;
+
+$this->sexo = $row->sexo;
+
+$this->naturalidade = $row->naturalidade;
+
+$this->uf = $row->uf;
+
+$this->pais = $row->pais;
+
+$this->numero = $row->numero;
+
+$this->complemento = $row->complemento;
+
+$this->bairro = $row->bairro;
+
+$this->cidade = $row->cidade;
+
+$this->estado = $row->estado;
+
+$this->cep = $row->cep;
+
+$this->reside = $row->reside;
+
+$this->reside_outros = $row->reside_outros;
+
+$this->escola = $row->escola;
+
+$this->alergia = $row->alergia;
+
+$this->restricao_alimentar = $row->restricao_alimentar;
+
+$this->pessoas_autorizadas = $row->pessoas_autorizadas;
 
 }
 
@@ -138,7 +183,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO aluno ( nome,email,nome_mae,nome_pai,responsavel_nome,responsavel_cpf,responsavel_rg,endereco,plano_saude,emergencia,responsavel_emergencia,carteira,entregou_carteira,ativo,idade,idx_nivelescolar,data_nasc,foto ) VALUES ( '$this->nome','$this->email','$this->nome_mae','$this->nome_pai','$this->responsavel_nome','$this->responsavel_cpf','$this->responsavel_rg','$this->endereco','$this->plano_saude','$this->emergencia','$this->responsavel_emergencia','$this->carteira','$this->entregou_carteira','$this->ativo','$this->idade','$this->idx_nivelescolar','$this->data_nasc','$this->foto' )";
+$sql = "INSERT INTO aluno ( nome,email,nome_mae,nome_pai,responsavel_nome,responsavel_cpf,responsavel_rg,endereco,plano_saude,emergencia,responsavel_emergencia,carteira,entregou_carteira,ativo,idx_nivelescolar,data_nasc,foto,sexo,naturalidade,uf,pais,numero,complemento,bairro,cidade,estado,cep,reside,reside_outros,escola,alergia,restricao_alimentar,pessoas_autorizadas ) VALUES ( '$this->nome','$this->email','$this->nome_mae','$this->nome_pai','$this->responsavel_nome','$this->responsavel_cpf','$this->responsavel_rg','$this->endereco','$this->plano_saude','$this->emergencia','$this->responsavel_emergencia','$this->carteira','$this->entregou_carteira','$this->ativo','$this->idx_nivelescolar','$this->data_nasc','$this->foto','$this->sexo','$this->naturalidade','$this->uf','$this->pais','$this->numero','$this->complemento','$this->bairro','$this->cidade','$this->estado','$this->cep','$this->reside','$this->reside_outros','$this->escola','$this->alergia','$this->restricao_alimentar','$this->pessoas_autorizadas' )";
 $result = $this->database->query($sql);
 
 
@@ -153,7 +198,7 @@ function update($id)
 
 
 
-$sql = " UPDATE aluno SET  nome = '$this->nome',email = '$this->email',nome_mae = '$this->nome_mae',nome_pai = '$this->nome_pai',responsavel_nome = '$this->responsavel_nome',responsavel_cpf = '$this->responsavel_cpf',responsavel_rg = '$this->responsavel_rg',endereco = '$this->endereco',plano_saude = '$this->plano_saude',emergencia = '$this->emergencia',responsavel_emergencia = '$this->responsavel_emergencia',carteira = '$this->carteira',entregou_carteira = '$this->entregou_carteira',ativo = '$this->ativo',idade = '$this->idade',idx_nivelescolar = '$this->idx_nivelescolar',data_nasc = '$this->data_nasc',foto = '$this->foto' WHERE id = $id ";
+$sql = " UPDATE aluno SET  nome = '$this->nome',email = '$this->email',nome_mae = '$this->nome_mae',nome_pai = '$this->nome_pai',responsavel_nome = '$this->responsavel_nome',responsavel_cpf = '$this->responsavel_cpf',responsavel_rg = '$this->responsavel_rg',endereco = '$this->endereco',plano_saude = '$this->plano_saude',emergencia = '$this->emergencia',responsavel_emergencia = '$this->responsavel_emergencia',carteira = '$this->carteira',entregou_carteira = '$this->entregou_carteira',ativo = '$this->ativo',idx_nivelescolar = '$this->idx_nivelescolar',data_nasc = '$this->data_nasc',foto = '$this->foto',sexo = '$this->sexo',naturalidade = '$this->naturalidade',uf = '$this->uf',pais = '$this->pais',numero = '$this->numero',complemento = '$this->complemento',bairro = '$this->bairro',cidade = '$this->cidade',estado = '$this->estado',cep = '$this->cep',reside = '$this->reside',reside_outros = '$this->reside_outros',escola = '$this->escola',alergia = '$this->alergia',restricao_alimentar = '$this->restricao_alimentar',pessoas_autorizadas = '$this->pessoas_autorizadas' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 

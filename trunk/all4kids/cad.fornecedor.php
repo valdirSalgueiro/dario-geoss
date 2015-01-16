@@ -11,8 +11,22 @@ if($id){
 }
 
 $mensagem="$modo".a;
-
 ?>
+
+<script>
+function frescura(var1){
+	if(!var1){
+		$('input[name=cnpj]').mask('999.999.999-99'); 
+		$('input[name=cnpj]').attr("placeholder","CPF");
+	}	
+	else{
+		$('input[name=cnpj]').mask('99.999.999/9999-99'); 
+		$('input[name=cnpj]').attr("placeholder","CNPJ");
+		
+	}
+	
+}
+</script>
 <div class="conteudo-principal">
   <div class="iconGroup cliente">
     <fieldset class="groupFields open">  
@@ -36,18 +50,15 @@ $mensagem="$modo".a;
 	
 	<div id="opcionais" style="display:none">		
 		
-		          <div class="form-group col-md-6" style="text-align: left">
-            <?php
-				$checked=($fornecedor->tipo_pessoa)?"checked":"";
-				?>
-            Tipo pessoa <input type="checkbox" name="ativo" value="1" <?php echo $checked ?>>
-
+		  <div class="form-group col-md-6" style="text-align: left">
+			<input type="radio" name="tipo" value="0"  <?php if (!$fornecedor->tipo_pessoa): ?>checked='checked'<?php endif; ?> onclick="frescura(0)"/> CPF
+			<input type="radio" name="tipo" value="1"   <?php if ($fornecedor->tipo_pessoa): ?>checked='checked'<?php endif; ?> onclick="frescura(1)" /> CPNJ
           </div>    
 		
 
 		
 	<div class="form-group col-md-6">
-							<input type="text" name="cnpj" class=" form-control input-sm"  placeholder="Cnpj" value="<?php echo $fornecedor->cnpj?>">
+							<input type="text" name="cnpj" class=" form-control input-sm"  placeholder="CPF ou CNPJ" value="<?php echo $fornecedor->cnpj?>">
 			                
 		</div>
 		

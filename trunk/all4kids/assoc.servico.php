@@ -19,6 +19,7 @@ $mensagem="$modo".a;
 						  <form role="form"  action="dao.php" onSubmit="return ajaxSubmit(this,'Associacao <?php echo $mensagem ?> com sucesso');">
 						  <input type="hidden" name="type" value="aluno_servico">
 						  <div class="form-group col-md-6" style="text-align: left">
+							  Alunos:
 							  <select data-placeholder="Escolha os alunos" class="chosen-select" multiple style="width:500px;" name="aluno[]">
 									<?php
 										$db = Database::getConnection();
@@ -34,6 +35,7 @@ $mensagem="$modo".a;
 							  </select>							  
 						 </div>						  
 						  <div class="form-group col-md-6" style="text-align: left">
+							  Servicos:
 							  <select id="servico" data-placeholder="Escolha os servicos" class="chosen-select" multiple style="width:500px;" name="servico[]">
 									<?php
 										$db = Database::getConnection();
@@ -46,9 +48,22 @@ $mensagem="$modo".a;
 											echo '<option value="'.$row['id'].'" '.$checked.'>'.$row['nome'].' ('.$row['valor'].')</option>';
 										}
 									?>
-							  </select>							  
+							  </select>										  
 						</div>	
 						<div class="form-group col-md-6" style="text-align: left">
+							Tipo:
+							  <select style="width:500px;" name="tipo">
+									<?php
+										echo '<option value="0">1x</option>';
+										echo '<option value="1">2x</option>';
+										echo '<option value="2">3x</option>';
+										echo '<option value="3">4x</option>';
+										echo '<option value="4">5x</option>';
+									?>
+							  </select>		
+						</div>
+						<div class="form-group col-md-6" style="text-align: left">
+							Desconto:
 							<input type="text" id="desconto" class=" form-control input-sm"  style="width:500px" placeholder="Desconto  (em %)">											
 						</div>		
 						<div class="form-group col-md-6" style="text-align: left">

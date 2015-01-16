@@ -198,7 +198,7 @@ class SSP {
 	 *  @param  array $columns Column information array
 	 *  @return array          Server-side processing response array
 	 */
-	static function simple ( $request, $sql_details, $table, $primaryKey, $columns )
+	static function simple ( $request, $sql_details, $table, $primaryKey, $columns, $extraWhere = '')
 	{
 		$bindings = array();
 		$db = SSP::sql_connect( $sql_details );
@@ -207,15 +207,20 @@ class SSP {
 		$limit = SSP::limit( $request, $columns );
 		$order = SSP::order( $request, $columns );
 		$where = SSP::filter( $request, $columns, $bindings );
+		
+		if($extraWhere)
+		   $extraWhere = ($where) ? ' AND '.$extraWhere : ' WHERE '.$extraWhere;
 
 		// Main query to actually get the data
 		$data = SSP::sql_exec( $db, $bindings,
 			"SELECT SQL_CALC_FOUND_ROWS `".implode("`, `", SSP::pluck($columns, 'db'))."`
 			 FROM `$table`
 			 $where
+			 $extraWhere
 			 $order
 			 $limit"
-		);
+		);		
+
 
 		// Data set length after filtering
 		$resFilterLength = SSP::sql_exec( $db,
