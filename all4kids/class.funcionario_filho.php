@@ -4,7 +4,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        funcionario_filho
-* GENERATION DATE:  11.06.2014
+* GENERATION DATE:  25.08.2014
 * CLASS FILE:       C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\generator/classes/class.funcionario_filho.php
 * FOR MYSQL TABLE:  funcionario_filho
 * FOR MYSQL DB:     all4kids
@@ -34,7 +34,7 @@ var $id;   // KEY ATTR. WITH AUTOINCREMENT
 
 var $idx_funcionario;   // (normal Attribute)
 var $nome;   // (normal Attribute)
-var $data_nasc;   // (normal Attribute)
+var $nascimento;   // (normal Attribute)
 
 var $database; // Instance of class database
 
@@ -70,7 +70,7 @@ $this->idx_funcionario = $row->idx_funcionario;
 
 $this->nome = $row->nome;
 
-$this->data_nasc = $row->data_nasc;
+$this->nascimento = $row->nascimento;
 
 }
 
@@ -93,7 +93,7 @@ function insert()
 {
 $this->id = ""; // clear key for autoincrement
 
-$sql = "INSERT INTO funcionario_filho ( idx_funcionario,nome,data_nasc ) VALUES ( '$this->idx_funcionario','$this->nome','$this->data_nasc' )";
+$sql = "INSERT INTO funcionario_filho ( idx_funcionario,nome,nascimento ) VALUES ( '$this->idx_funcionario','$this->nome','$this->nascimento' )";
 $result = $this->database->query($sql);
 
 
@@ -108,7 +108,7 @@ function update($id)
 
 
 
-$sql = " UPDATE funcionario_filho SET  idx_funcionario = '$this->idx_funcionario',nome = '$this->nome',data_nasc = '$this->data_nasc' WHERE id = $id ";
+$sql = " UPDATE funcionario_filho SET  idx_funcionario = '$this->idx_funcionario',nome = '$this->nome',nascimento = '$this->nascimento' WHERE id = $id ";
 
 $result = $this->database->query($sql);
 

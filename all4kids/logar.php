@@ -16,7 +16,7 @@ $password = post('password');
 $resp = new stdClass();	
 $resp->success = false;
 
-$query="SELECT * FROM usuario WHERE (email = '$user') and (senha = '$password')";
+$query="SELECT * FROM usuario WHERE (email = '$user') and (senha = md5('$password'))";
 $login = $db->query($query);
 
 if ($login->num_rows == 1) {

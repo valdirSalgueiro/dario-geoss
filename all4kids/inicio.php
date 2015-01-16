@@ -80,8 +80,8 @@ EOT;
 					//esconderCarregando();
 				},
 				error: function (jqXHR, textStatus,  errorThrown) {
-					alert(textStatus);
-					alert(errorThrown);
+					//alert(textStatus);
+					//alert(errorThrown);
 					//esconderCarregando();
 				}					
 			});

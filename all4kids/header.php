@@ -39,18 +39,62 @@
 	<link href="css/datepicker.css" rel="stylesheet"/>
 	<link href="css/chosen.css" rel="stylesheet">
 	<link href="css/contaazul.css" rel="stylesheet" type="text/css">    
+	
+	<link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/croppic.css" rel="stylesheet">
+	
+	<link rel="StyleSheet" href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css" type="text/css" media="all"/>
+    <link rel="StyleSheet" href="css/jquery.tagedit.css" type="text/css" media="all"/>
+	<link href="css/lightbox.css" rel="stylesheet" />
+
+	
 	<link rel="stylesheet" href="css/SimpleCalendar.css" />
     <script type="text/javascript" language="javascript" src="js/jquery-1.11.1.min.js"></script>
+	
 	<script src="js/chosen.jquery.js" type="text/javascript"></script>
 	<script src="js/Chart.js" type="text/javascript"></script>
+	
     <script type="text/javascript" language="javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" language="javascript" src="js/bootstrap-datepicker.js"></script>	
-	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
+	
 	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
-	<script type="text/javascript" language="javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.validate.js"></script>		
+    
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.autoGrowInput.js"></script>
+    <script type="text/javascript" src="js/jquery.tagedit.js"></script>
 	
-	<script type="text/javascript">
+
+    <script src="js/cep.js" type="text/javascript"></script>   
+	<script src="js/lightbox.min.js" type="text/javascript"></script>   
+	
+	<script type="text/javascript">	
+	
+		function abrirTermo2(var1){
+			var2=$(var22).val();
+			var3=$(var23).val();
+			var4=$(var24).val();
+			var5=$(var25).val();
+			window.open("termo.php?var1="+var1+"&var2="+var2+"&var3="+var3+"&var4="+var4+"&var5="+var5);
+		}
+		
+		function abrirTermo1(var1){
+			var2=$(var12).val();
+			var3=$(var13).val();
+			var4=$(var14).val();
+			var5=$(var15).val();
+			window.open("termo.php?var1="+var1+"&var2="+var2+"&var3="+var3+"&var4="+var4+"&var5="+var5);
+		}
+		
+		function recibo(var1){
+			var2=$(var2).val();
+			var3=$(var3).val();
+			var4=$(var4).val();
+			var5=$(var5).val();
+			window.open("recibo.php?var1="+var1+"&var2="+var2+"&var3="+var3+"&var4="+var4+"&var5="+var5);
+		}
+	
 		var ajaxSubmit = function(formEl,msg) {	
 
 			mostrarCarregando();
@@ -63,48 +107,41 @@
 			// setup the ajax request
 			$.ajax({
 				url: url,
-				data: data,
+				data: new FormData(formEl),
 				type: 'POST',
+				///*
+				processData: false,
+				contentType: false,
 				dataType: 'json',
-				success: function(rsp) {
+				//*/
+				//dataType: 'json',
+				success: function(rsp) {				
 					if(rsp.success) {
-						if(typeof files != 'undefined' && files.length>0){
-							var data = new FormData();
-							$.each(files, function(key, value)
-							{
-								data.append(key, value);
-							});
-									
-							$.ajax({
-								url: 'upload.php?files=1&id='+rsp.id,
-								type: 'POST',
-								data: data,
-								cache: false,
-								dataType: 'json',
-								processData: false, // Don't process the files
-								contentType: false, // Set content type to false as jQuery will tell the server its a query string request
-								success: function(data, textStatus, jqXHR)
-								{
-									if(typeof data.error === 'undefined')
-									{
-									}
-									else
-									{
-										console.log('ERRORS: ' + data.error);
-									}
-								},
-								error: function(jqXHR, textStatus, errorThrown)
-								{
-									console.log('ERRORS: ' + textStatus);
-								}
-							});
-						}
+					
 						if($('#modalCadastro').length>0){
 							$('#modalCadastro').modal('hide');
 							tableAjax.fnDraw();
 						}
-					    $(modalbody).html(msg);      
-						$(myModal).modal();
+						
+						if($('#modalCadastro1').length>0){
+							$('#modalCadastro1').modal('hide');
+							tableAjax.fnDraw();
+						}
+						
+						if($('#modalCadastro2').length>0){
+							$('#modalCadastro2').modal('hide');
+							tableAjax.fnDraw();
+						}
+						
+						var uri= document.URL.split("/");
+						uri=uri[uri.length-1].replace("#","");
+						if(uri.indexOf("?")==-1){
+							location.href=uri+"?id="+rsp.id;
+						}else{
+							//location.reload();
+						}
+						//$(modalbody).html(msg);      
+						//$(myModal).modal();
 					}
 					esconderCarregando();
 				},
@@ -121,7 +158,7 @@
 		}
 		
 		var tableAjax;
-		var files;
+		var files=[];
 		function apagar(tipo,id) {
 			mostrarCarregando();
 
@@ -137,6 +174,7 @@
 						$(myModal).modal();
 						tableAjax.fnDraw();
 					}
+					location.reload();
 					esconderCarregando();
 				},
 				error: function (jqXHR, textStatus,  errorThrown) {
@@ -169,23 +207,63 @@
 			$('.modal-dialog').css({ 'top': windowH/2 - modalH});
 		}
 		
+		var upload_key=0;
 		$(document).ready(function() {
-				//$('form').validate();
-				if($('.datepicker').length>0)
-					$('.datepicker').datepicker();
+		 
+			calcular_idade();
+		 
+			function calcular_idade(){
+				if($('.idade').length>0){
+					var date=$('.datepicker').val();						
+					var dd = new Date().getFullYear();
+					var de = new Date().getMonth();
+					var res=date.split("-"); 		
+					date=res[2];
+						if (typeof date != 'undefined'){
+							date=dd-res[2];
+						if(de<res[1])
+							date-=1;
 					
+						$('.idade').val(Math.max(0, date) +" ano(s)");					
+					}
+				}
+			}
+			
+		
+				$('input[name=cpf]').mask('999.999.999-99'); 
+				//$('input[name=rg]').mask('99.999.99-9');
+				$('input[name=celular1]').mask('(99)9999-9999');
+				$('input[name=celular2]').mask('(99)9999-9999');
+				$('input[name=telefone_comercial]').mask('(99)9999-9999');
+				$('input[name=telefone_residencial]').mask('(99)9999-9999');			
+
+				
+				function dateChanged(ev) {
+					$(this).datepicker('hide');							
+					calcular_idade();
+				}
+		
+
+				if($('.datepicker').length>0){
+					$.fn.datepicker.defaults.format = "dd-mm-yyyy";
+					$('.datepicker').datepicker()
+					.change(dateChanged)
+					.on('changeDate', dateChanged);
+				}
+					
+				/*	
 				$('input[type=file]').on('change', prepareUpload);
 				function prepareUpload(event)
 				{
-					files = event.target.files;
-					$.each(files, function(key, value)
-					{
-						$('<input>').attr('type','hidden').attr('name','file'+key).attr('value',value.name).appendTo('form');
-					});
+					files.push(event.target.files);
+					$('<input>').attr('type','hidden').attr('name','file'+upload_key).attr('value',value.name).appendTo('form');
 				}
+				*/
 					
 			}
 		);
+		
+		
 		
 
 	</script>
@@ -203,7 +281,7 @@ box-sizing: content-box;
                     <div class="navbar nav-collapse menu-novo">
                         <ul class="nav pull-right">
                             <li class="dropdown pull-right ">
-								<a href="javascript:void(0);"><span class="glyphicon-log-out"></span> Sair </a></li>
+								<a href="logout.php"><span class="glyphicon-log-out"></span> Sair </a></li>
                             <li class="divider-vertical"></li>
                             <li class="dropdown pull-right">
 								<a href="javascript:void(0);"><span class="glyphicon glyphicon-cog"></span>  Admin</a>                                
@@ -264,6 +342,21 @@ box-sizing: content-box;
 												<li>
 													<a href="list.funcionario.php"><span class="glyphicon glyphicon-list-alt"></span> Listagem</a>
 												</li>
+												
+                                                <li>
+													<a href="cad.funcao.php"><span class="glyphicon glyphicon-user"></span> Funcao</a>
+												</li>
+												<li>
+													<a href="list.funcao.php"><span class="glyphicon glyphicon-list-alt"></span> Funcao</a>
+												</li>	
+												
+                                                <li>
+													<a href="cad.beneficio.php"><span class="glyphicon glyphicon-user"></span> Beneficio</a>
+												</li>
+												<li>
+													<a href="list.beneficio.php"><span class="glyphicon glyphicon-list-alt"></span> Beneficio</a>
+												</li>
+												
 												<li>
 													<a href="assoc.funcionario.php"><span class="glyphicon glyphicon-resize-small"></span> Associar a beneficio</a>
 												</li>													
@@ -284,6 +377,9 @@ box-sizing: content-box;
 												</li>
 												<li>
 													<a href="assoc.atividade.php"><span class="glyphicon glyphicon-resize-small"></span> Associar ao aluno</a>
+												</li>													
+												<li>
+													<a href="list.aluno_atividade.php"><span class="glyphicon glyphicon-resize-small"></span> Listar Associacoes</a>
 												</li>	
 												<li  style="width: 300px">
 													<a href="view.atividade.php"><span class="glyphicon glyphicon-calendar"></span> Calendario de Atividades</a>
@@ -305,7 +401,10 @@ box-sizing: content-box;
 												</li>
 												<li>
 													<a href="assoc.servico.php"><span class="glyphicon glyphicon-resize-small"></span> Associar ao aluno</a>
-												</li>		
+												</li>	
+												<li>
+													<a href="list.aluno_servico.php"><span class="glyphicon glyphicon-resize-small"></span> Listar Associacoes</a>
+												</li>													
 												<li style="width: 300px">
 													<a href="view.servico.php"><span class="glyphicon glyphicon-calendar"></span> Calendario de Servicos</a>
 												</li>												
@@ -326,6 +425,12 @@ box-sizing: content-box;
 												</li>
 												<li>
 													<a href="cad.fornecedor.php"><span class="glyphicon glyphicon-tags"></span> Fornecedor</a>
+												</li>	
+												<li>
+													<a href="cad.categoria.php"><span class="glyphicon glyphicon-tags"></span> Categoria</a>
+												</li>	
+												<li>
+													<a href="list.categoria.php"><span class="glyphicon glyphicon-tags"></span> Listagem Categoria</a>
 												</li>												
                                             </ul>
                                         </li>                                        

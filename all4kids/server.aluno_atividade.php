@@ -2,6 +2,8 @@
 <?php
 
 include_once("class.database.php");
+include_once("class.aluno.php");
+include_once("class.atividade.php");
 
 $db = Database::getDb(); 
 
@@ -13,8 +15,28 @@ $primaryKey = 'id';
 $columns = array(    
 
 	array(
-        'db'        => 'id',
+        'db'        => 'idx_atividade',
+        'dt'        => 1,
+        'formatter' => function( $d, $row ) {
+			$atividade=new atividade;
+			$atividade->select($d);
+            return $atividade->nome;
+        }
+    ),	
+	
+		array(
+        'db'        => 'idx_aluno',
         'dt'        => 0,
+        'formatter' => function( $d, $row ) {
+			$aluno=new aluno;
+			$aluno->select($d);
+            return $aluno->nome;
+        }
+    ),	
+
+	array(
+        'db'        => 'id',
+        'dt'        => 2,
         'formatter' => function( $d, $row ) {
             return "<a href='cad.aluno_atividade.php?id=$d' class='glyphicon glyphicon-edit'></a>";
         }
@@ -22,7 +44,7 @@ $columns = array(
 	
 	array(
         'db'        => 'id',
-        'dt'        => 1,
+        'dt'        => 3,
         'formatter' => function( $d, $row ) {
             return "<a href='#' onclick='apagar(\"aluno_atividade\",$d)' class='glyphicon glyphicon-remove'></a>";
         }

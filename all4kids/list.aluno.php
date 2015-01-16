@@ -10,10 +10,12 @@ require 'header.php';
 <table id="example" class="table list" cellspacing="0" width="100%">
         <thead>
             <tr>
-<th class="sortable">Nome</th><th class="sortable">Idade</th><th class="sortable">Atividade 1</th><th class="sortable">Atividade 2</th><th class="sortable">Servico 1</th><th class="sortable">Servico 2</th>
+<th class="sortable">Nome</th><th class="sortable">Atividade 1</th><th class="sortable">Atividade 2</th><th class="sortable">Servico 1</th><th class="sortable">Servico 2</th>
 				<th>Editar</th>
 				<th>Remover</th>
-								<th>Visualizar</th>
+				<th>Visualizar</th>
+				<th>Contrato</th>
+				<th>Calendario</th>
             </tr>
         </thead>
     </table>
